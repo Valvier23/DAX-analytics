@@ -10,13 +10,15 @@ function ensurePowerBiProject(outputDir) {
   const targetDir = path.join(outputDir, "PowerBI");
   const targetPbip = path.join(targetDir, "People Analytics DAX Kit.pbip");
   if (fs.existsSync(targetPbip)) return targetPbip;
-  const bundledDir = app.isPackaged
-    ? path.join(process.resourcesPath, "PowerBI")
-    : path.resolve(__dirname, "..", "kit-free", "PowerBI");
-  if (!fs.existsSync(path.join(bundledDir, "People Analytics DAX Kit.pbip"))) {
+  const bundledDirs = app.isPackaged
+    ? [path.join(process.resourcesPath, "PowerBI"), path.join(path.dirname(process.execPath), "resources", "PowerBI")]
+    : [path.resolve(__dirname, "..", "kit-free", "PowerBI")];
+  const bundledDir = bundledDirs.find((dir) => fs.existsSync(path.join(dir, "People Analytics DAX Kit.pbip")));
+  if (!bundledDir) {
     throw new Error("No se encontró el proyecto Power BI incluido en el importador.");
   }
   fs.cpSync(bundledDir, targetDir, { recursive: true, force: true });
+  if (!fs.existsSync(targetPbip)) throw new Error("No se pudo copiar el proyecto Power BI en la carpeta de datos.");
   return targetPbip;
 }
 
@@ -91,7 +93,7 @@ app.whenReady().then(() => {
       result.powerBiError = openError || "";
     } catch (error) {
       result.powerBiOpened = false;
-      result.powerBiError = "No se encontró el archivo PBIP junto al ejecutable.";
+      result.powerBiError = `No se pudo crear el proyecto PBIP: ${error.message || String(error)}`;
     }
     return result;
   });
