@@ -11,6 +11,7 @@ $staging = Join-Path ([System.IO.Path]::GetTempPath()) "people-analytics-kit-pac
 if (Test-Path -LiteralPath $staging) { Remove-Item -LiteralPath $staging -Recurse -Force }
 New-Item -ItemType Directory -Force -Path $staging | Out-Null
 Copy-Item -LiteralPath $importer -Destination (Join-Path $staging "PeopleAnalyticsImporter-Desktop.exe")
+Copy-Item -LiteralPath (Join-Path $root "importer-desktop\Abrir importador desde esta carpeta.cmd") -Destination (Join-Path $staging "Abrir importador desde esta carpeta.cmd")
 Copy-Item -LiteralPath (Join-Path $root "kit-free\medidas.dax") -Destination (Join-Path $staging "medidas.dax")
 Copy-Item -LiteralPath (Join-Path $root "kit-free\diccionario-datos.md") -Destination (Join-Path $staging "diccionario-datos.md")
 Copy-Item -LiteralPath (Join-Path $root "kit-free\README.md") -Destination (Join-Path $staging "LEEME.md")

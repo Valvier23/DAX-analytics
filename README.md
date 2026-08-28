@@ -4,7 +4,7 @@ Kit gratuito para analizar plantilla, altas, bajas, rotación y absentismo en Po
 
 ## Contenido y uso
 
-El kit incluye diez medidas DAX, datos de ejemplo, un diccionario de datos y un importador local para Windows. El proyecto Power BI va integrado en el importador y se crea automáticamente junto a los CSV.
+El kit incluye diez medidas DAX, datos de ejemplo, un diccionario de datos y un importador local para Windows. El proyecto Power BI va integrado en el importador y se crea automáticamente junto a los CSV. En equipos con poco espacio en C:, abre `Abrir importador desde esta carpeta.cmd` después de extraer el ZIP: usa una carpeta temporal local y evita la extracción en C:.
 
 1. Abre el importador y selecciona o arrastra tu Excel.
 2. Revisa el mapeo de Personas y Bajas médicas; puedes guardar perfiles para reutilizarlos.
