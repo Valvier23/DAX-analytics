@@ -6,10 +6,8 @@ const core = require("./core");
 
 app.disableHardwareAcceleration();
 
-function ensurePowerBiProject(outputDir) {
-  const targetDir = path.join(outputDir, "PowerBI");
-  const targetPbip = path.join(targetDir, "People Analytics DAX Kit.pbip");
-  if (fs.existsSync(targetPbip)) return targetPbip;
+function ensurePowerBiProject(projectDir, outputDir) {
+  const targetPbip = path.join(projectDir, "People Analytics DAX Kit.pbip");
   const bundledDirs = app.isPackaged
     ? [path.join(process.resourcesPath, "PowerBI"), path.join(path.dirname(process.execPath), "resources", "PowerBI")]
     : [path.resolve(__dirname, "..", "kit-free", "PowerBI")];
@@ -17,7 +15,21 @@ function ensurePowerBiProject(outputDir) {
   if (!bundledDir) {
     throw new Error("No se encontró el proyecto Power BI incluido en el importador.");
   }
-  fs.cpSync(bundledDir, targetDir, { recursive: true, force: true });
+  if (!fs.existsSync(targetPbip)) {
+    for (const entry of fs.readdirSync(bundledDir)) {
+      fs.cpSync(path.join(bundledDir, entry), path.join(projectDir, entry), { recursive: true, force: true });
+    }
+  }
+  const sources = [
+    ["Personas.tmdl", "personas.csv"],
+    ["BajasMedicas.tmdl", "bajas_medicas.csv"],
+  ];
+  for (const [fileName, csvName] of sources) {
+    const definition = path.join(projectDir, "People Analytics DAX Kit.SemanticModel", "definition", "tables", fileName);
+    const source = fs.readFileSync(definition, "utf8");
+    const updated = source.replace(/File\.Contents\("[^"]+"\)/, `File.Contents("${path.join(outputDir, csvName)}")`);
+    fs.writeFileSync(definition, updated, "utf8");
+  }
   if (!fs.existsSync(targetPbip)) throw new Error("No se pudo copiar el proyecto Power BI en la carpeta de datos.");
   return targetPbip;
 }
@@ -84,10 +96,11 @@ app.whenReady().then(() => {
       const missingLeave = requiredLeave.filter((field) => !config.bajasMapping[field]);
       if (missingLeave.length) throw new Error(`Falta mapear en Bajas médicas: ${missingLeave.join(", ")}.`);
     }
-    const outputDir = path.join(process.env.SystemDrive || "C:", "PeopleAnalyticsDaxKit", "datos-ejemplo");
+    const projectDir = process.env.PORTABLE_EXECUTABLE_DIR || (app.isPackaged ? path.dirname(process.execPath) : path.resolve(__dirname, "..", "kit-free"));
+    const outputDir = path.join(projectDir, "datos-ejemplo");
     const result = core.convertWorkbook({ ...config, outputDir });
     try {
-      const pbip = ensurePowerBiProject(outputDir);
+      const pbip = ensurePowerBiProject(projectDir, outputDir);
       const openError = await shell.openPath(pbip);
       result.powerBiOpened = !openError;
       result.powerBiError = openError || "";
