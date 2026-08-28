@@ -21,7 +21,7 @@ Se necesita Node.js 22.13 o posterior.
 - `npm run dev`: inicia la landing.
 - `npm test`: prueba la landing.
 - `npm run lint`: comprueba estilo y tipos.
-- `npm run package:kit`: crea `public/downloads/people-analytics-dax-kit-free.zip`.
+- `npm run package:kit`: crea `public/downloads/people-analytics-dax-kit-free.zip` a partir del ejecutable portable ya compilado.
 - `cd importer-desktop; npm test`: prueba la conversión de Excel.
 - `cd importer-desktop; npm run dist:win`: crea el ejecutable portable Windows x64.
 
