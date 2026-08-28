@@ -24,5 +24,7 @@
 
 - Firma digital del ejecutable para eliminar el aviso de SmartScreen.
 - Prueba visual final en Windows 10 y Windows 11.
-- Perfiles de mapeo reutilizables.
-- Informe de filas rechazadas y motivo.
+- [x] Perfiles de mapeo reutilizables.
+- [x] Informe de filas rechazadas y motivo.
+- [ ] Prueba de rendimiento con Excels de más de 100.000 filas.
+- [ ] Configuración de pago y soporte antes de comercializar la versión Pro.

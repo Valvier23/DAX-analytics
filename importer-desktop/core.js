@@ -1,101 +1,19 @@
 const fs = require("fs");
 const path = require("path");
 const XLSX = require("xlsx");
-
 const PERSONAS_FIELDS = ["PersonaID", "FechaAlta", "FechaBajaEmpresa", "Departamento", "PuestoTrabajo", "Centro", "Sexo", "FechaNacimiento", "SalarioAnual"];
 const BAJAS_FIELDS = ["EpisodioID", "PersonaID", "FechaInicio", "FechaFin", "TipoBaja"];
-
-const SYNONYMS = {
-  PersonaID: ["personaid", "persona_id", "empleadoid", "empleado_id", "idpersona", "idempleado", "employeeid", "workerid"],
-  FechaAlta: ["fechaalta", "fecha_alta", "fechaingreso", "fecha_ingreso", "fechacontratacion", "hiredate", "startdate"],
-  FechaBajaEmpresa: ["fechabajaempresa", "fecha_baja_empresa", "fechabaja", "fecha_baja", "fechasalida", "fecha_salida", "terminationdate", "leavedate", "enddate"],
-  Departamento: ["departamento", "area", "unidad", "department", "team"],
-  PuestoTrabajo: ["puestotrabajo", "puesto_trabajo", "puesto", "cargo", "posicion", "posición", "jobtitle", "job_title", "role", "rol"],
-  Centro: ["centro", "centrotrabajo", "centro_trabajo", "ubicacion", "ubicación", "location", "office"],
-  Sexo: ["sexo", "genero", "género", "gender", "sex"],
-  FechaNacimiento: ["fechanacimiento", "fecha_nacimiento", "nacimiento", "birthdate", "dateofbirth"],
-  SalarioAnual: ["salarioanual", "salario_anual", "salario", "retribucionfija", "retribuciónfija", "annualsalary", "salary"],
-  EpisodioID: ["episodioid", "episodio_id", "bajaid", "baja_id", "ausenciaid", "absenceid", "leaveid"],
-  FechaInicio: ["fechainicio", "fecha_inicio", "iniciobaja", "inicio_baja", "startdate", "from"],
-  FechaFin: ["fechafin", "fecha_fin", "finbaja", "fin_baja", "enddate", "to"],
-  TipoBaja: ["tipobaja", "tipo_baja", "tipoausencia", "tipo_ausencia", "motivo", "leavetype", "absencetype"]
-};
-
-function normalize(value) {
-  return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
-}
-
-function guessMapping(headers, fields) {
-  const normalized = headers.map((header) => ({ header, value: normalize(header) }));
-  return Object.fromEntries(fields.map((field) => {
-    const choices = [field, ...(SYNONYMS[field] || [])].map(normalize);
-    const exact = normalized.find((item) => choices.includes(item.value));
-    const partial = normalized.find((item) => choices.some((choice) => item.value.includes(choice) || choice.includes(item.value)));
-    return [field, (exact || partial || {}).header || ""];
-  }));
-}
-
-function analyzeWorkbook(filePath) {
-  const workbook = XLSX.readFile(filePath, { cellDates: true });
-  const sheets = workbook.SheetNames.map((name) => {
-    const rows = XLSX.utils.sheet_to_json(workbook.Sheets[name], { defval: "", raw: false });
-    const headers = rows.length ? Object.keys(rows[0]) : [];
-    return { name, headers, rowCount: rows.length };
-  });
-  return { filePath, fileName: path.basename(filePath), sheets };
-}
-
-function csvEscape(value) {
-  const text = value == null ? "" : String(value);
-  return /[";,\n\r]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
-}
-
+const REQUIRED = { personas: ["PersonaID", "FechaAlta"], bajas: ["EpisodioID", "PersonaID", "FechaInicio"] };
+const SYNONYMS = { PersonaID:["personaid","persona_id","empleadoid","empleado_id","idpersona","idempleado","employeeid","workerid"], FechaAlta:["fechaalta","fechaingreso","fechacontratacion","hiredate","startdate"], FechaBajaEmpresa:["fechabajaempresa","fechabaja","fechasalida","terminationdate","leavedate","enddate"], Departamento:["departamento","area","unidad","department","team"], PuestoTrabajo:["puestotrabajo","puesto","cargo","posicion","jobtitle","role","rol"], Centro:["centro","centrotrabajo","ubicacion","location","office"], Sexo:["sexo","genero","gender","sex"], FechaNacimiento:["fechanacimiento","nacimiento","birthdate","dateofbirth"], SalarioAnual:["salarioanual","salario","retribucionfija","annualsalary","salary"], EpisodioID:["episodioid","bajaid","ausenciaid","absenceid","leaveid"], FechaInicio:["fechainicio","iniciobaja","startdate","from"], FechaFin:["fechafin","finbaja","enddate","to"], TipoBaja:["tipobaja","tipoausencia","motivo","leavetype","absencetype"] };
 const DATE_FIELDS = new Set(["FechaAlta", "FechaBajaEmpresa", "FechaNacimiento", "FechaInicio", "FechaFin"]);
-
-function pad(value) { return String(value).padStart(2, "0"); }
-
-function normalizeDate(value) {
-  if (value == null || value === "") return "";
-  if (value instanceof Date && !Number.isNaN(value.getTime())) {
-    return `${value.getUTCFullYear()}-${pad(value.getUTCMonth() + 1)}-${pad(value.getUTCDate())}`;
-  }
-  if (typeof value === "number") {
-    const parsed = XLSX.SSF.parse_date_code(value);
-    if (parsed) return `${parsed.y}-${pad(parsed.m)}-${pad(parsed.d)}`;
-  }
-  const text = String(value).trim();
-  let match = text.match(/^(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})/);
-  if (match) return `${match[1]}-${pad(match[2])}-${pad(match[3])}`;
-  match = text.match(/^(\d{1,2})[-/.](\d{1,2})[-/.](\d{4})$/);
-  if (match) return `${match[3]}-${pad(match[2])}-${pad(match[1])}`;
-  return text;
-}
-
-function normalizeValue(field, value) {
-  if (DATE_FIELDS.has(field)) return normalizeDate(value);
-  if (field === "SalarioAnual" && typeof value === "number") return String(value);
-  return value == null ? "" : String(value).replace(/\r?\n/g, " ").trim();
-}
-
-function convertSheet(workbook, sheetName, fields, mapping) {
-  if (!sheetName || !workbook.Sheets[sheetName]) return [];
-  const rows = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], { defval: "", raw: true });
-  return rows.map((row) => Object.fromEntries(fields.map((field) => [field, normalizeValue(field, mapping[field] ? row[mapping[field]] : "")])));
-}
-
-function writeCsv(filePath, fields, rows) {
-  const lines = [fields.join(","), ...rows.map((row) => fields.map((field) => csvEscape(row[field])).join(","))];
-  fs.writeFileSync(filePath, `\uFEFF${lines.join("\r\n")}`, "utf8");
-}
-
-function convertWorkbook({ inputPath, personasSheet, personasMapping, bajasSheet, bajasMapping, outputDir }) {
-  const workbook = XLSX.readFile(inputPath, { cellDates: true });
-  fs.mkdirSync(outputDir, { recursive: true });
-  const personas = convertSheet(workbook, personasSheet, PERSONAS_FIELDS, personasMapping);
-  const bajas = convertSheet(workbook, bajasSheet, BAJAS_FIELDS, bajasMapping);
-  writeCsv(path.join(outputDir, "personas.csv"), PERSONAS_FIELDS, personas);
-  writeCsv(path.join(outputDir, "bajas_medicas.csv"), BAJAS_FIELDS, bajas);
-  return { personas: personas.length, bajas: bajas.length, outputDir };
-}
-
+const normalize = (value) => String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
+function guessMapping(headers, fields) { const normalized = headers.map((header) => ({ header, value: normalize(header) })); return Object.fromEntries(fields.map((field) => { const choices = [field, ...(SYNONYMS[field] || [])].map(normalize); const hit = normalized.find((item) => choices.includes(item.value)) || normalized.find((item) => choices.some((choice) => item.value.includes(choice) || choice.includes(item.value))); return [field, hit?.header || ""]; })); }
+function analyzeWorkbook(filePath) { const workbook = XLSX.readFile(filePath, { cellDates: true }); return { filePath, fileName: path.basename(filePath), sheets: workbook.SheetNames.map((name) => { const rows = XLSX.utils.sheet_to_json(workbook.Sheets[name], { defval: "", raw: false }); return { name, headers: rows.length ? Object.keys(rows[0]) : [], rowCount: rows.length }; }) }; }
+function date(value) { if (value == null || value === "") return ""; if (value instanceof Date && !Number.isNaN(value.getTime())) return value.toISOString().slice(0, 10); if (typeof value === "number") { const d = XLSX.SSF.parse_date_code(value); if (d) return `${d.y}-${String(d.m).padStart(2,"0")}-${String(d.d).padStart(2,"0")}`; } const text = String(value).trim(); let m = text.match(/^(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})$/); if (m) return `${m[1]}-${m[2].padStart(2,"0")}-${m[3].padStart(2,"0")}`; m = text.match(/^(\d{1,2})[-/.](\d{1,2})[-/.](\d{4})$/); return m ? `${m[3]}-${m[2].padStart(2,"0")}-${m[1].padStart(2,"0")}` : ""; }
+function value(field, raw) { if (DATE_FIELDS.has(field)) return date(raw); if (field === "SalarioAnual" && raw !== "" && !Number.isFinite(Number(raw))) return ""; return raw == null ? "" : String(raw).replace(/\r?\n/g, " ").trim(); }
+function sourceRows(workbook, sheet, fields, mapping) { if (!sheet || !workbook.Sheets[sheet]) return []; return XLSX.utils.sheet_to_json(workbook.Sheets[sheet], { defval:"", raw:true }).map((raw, i) => ({ line:i + 2, data:Object.fromEntries(fields.map((field) => [field, value(field, mapping[field] ? raw[mapping[field]] : "")])) })); }
+function validate(kind, rows, people) { const seen = new Set(), accepted = [], rejected = []; for (const row of rows) { const errors = REQUIRED[kind].filter((field) => !row.data[field]).map((field) => `${field} es obligatorio`); const id = kind === "personas" ? row.data.PersonaID : row.data.EpisodioID; if (id && seen.has(id)) errors.push(`${kind === "personas" ? "PersonaID" : "EpisodioID"} duplicado`); seen.add(id); if (kind === "personas" && row.data.FechaBajaEmpresa && row.data.FechaBajaEmpresa < row.data.FechaAlta) errors.push("La baja de empresa es anterior al alta"); if (kind === "bajas") { if (people && !people.has(row.data.PersonaID)) errors.push("PersonaID no existe en Personas"); if (row.data.FechaFin && row.data.FechaFin < row.data.FechaInicio) errors.push("La fecha fin es anterior a la fecha inicio"); } (errors.length ? rejected : accepted).push(errors.length ? { ...row, reason:errors.join("; ") } : row); } return { accepted, rejected }; }
+function escape(value) { const text = String(value ?? ""); return /[";,\n\r]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text; }
+function writeCsv(file, fields, rows) { fs.writeFileSync(file, `\uFEFF${[fields.join(","), ...rows.map((row) => fields.map((field) => escape(row[field])).join(","))].join("\r\n")}`, "utf8"); }
+function convertWorkbook({ inputPath, personasSheet, personasMapping, bajasSheet, bajasMapping, outputDir }) { const workbook = XLSX.readFile(inputPath, { cellDates:true }); fs.mkdirSync(outputDir, { recursive:true }); const persons = validate("personas", sourceRows(workbook, personasSheet, PERSONAS_FIELDS, personasMapping)); const leaves = validate("bajas", sourceRows(workbook, bajasSheet, BAJAS_FIELDS, bajasMapping), new Set(persons.accepted.map((row) => row.data.PersonaID))); writeCsv(path.join(outputDir,"personas.csv"), PERSONAS_FIELDS, persons.accepted.map((row) => row.data)); writeCsv(path.join(outputDir,"bajas_medicas.csv"), BAJAS_FIELDS, leaves.accepted.map((row) => row.data)); const report = [...persons.rejected.map((row) => ({ Tipo:"Personas", Fila:row.line, Motivo:row.reason })), ...leaves.rejected.map((row) => ({ Tipo:"Bajas médicas", Fila:row.line, Motivo:row.reason }))]; const reportPath = path.join(outputDir,"filas_rechazadas.csv"); writeCsv(reportPath,["Tipo","Fila","Motivo"],report); return { personas:persons.accepted.length, bajas:leaves.accepted.length, rejected:report.length, reportPath, outputDir }; }
 module.exports = { PERSONAS_FIELDS, BAJAS_FIELDS, analyzeWorkbook, guessMapping, convertWorkbook };

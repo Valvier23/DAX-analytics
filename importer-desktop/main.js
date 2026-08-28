@@ -28,6 +28,18 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+  const profilesPath = path.join(app.getPath("userData"), "mapping-profiles.json");
+  const readProfiles = () => {
+    try { return JSON.parse(fs.readFileSync(profilesPath, "utf8")); } catch { return {}; }
+  };
+  ipcMain.handle("profiles:list", () => Object.keys(readProfiles()).sort());
+  ipcMain.handle("profiles:load", (_event, name) => readProfiles()[name] || null);
+  ipcMain.handle("profiles:save", (_event, name, profile) => {
+    if (!/^[\p{L}\p{N} _.-]{1,60}$/u.test(name || "")) throw new Error("El nombre del perfil no es válido.");
+    const profiles = readProfiles(); profiles[name] = profile;
+    fs.writeFileSync(profilesPath, JSON.stringify(profiles, null, 2), "utf8");
+    return Object.keys(profiles).sort();
+  });
   ipcMain.handle("choose-file", async () => {
     const result = await dialog.showOpenDialog({
       title: "Selecciona el Excel de People Analytics",

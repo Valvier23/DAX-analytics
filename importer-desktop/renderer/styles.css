@@ -22,6 +22,7 @@ button:disabled { opacity: .55; cursor: wait; }
 .file-card strong { color: #35d07f; }
 .secondary { color: #c7d3e1; background: #172e47; }
 .summary { color: #90a5bb; font-size: 13px; margin: 12px 2px 18px; }
+.profiles { display: flex; align-items: end; gap: 10px; margin: 0 0 18px; } .profiles label { flex: 1; margin: 0; }
 .mapping-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .panel { background: #0d1e31; border: 1px solid #203b55; border-radius: 13px; padding: 18px; }
 .panel-title { display: flex; align-items: center; gap: 11px; margin-bottom: 16px; }

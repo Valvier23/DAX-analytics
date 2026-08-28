@@ -57,6 +57,23 @@ function mapping(kind) {
   return Object.fromEntries([...$(`${kind}Fields`).querySelectorAll("select[data-field]")].map((select) => [select.dataset.field, select.value]));
 }
 
+async function refreshProfiles() {
+  const names = await window.peopleAnalytics.listProfiles();
+  $("profileSelect").innerHTML = '<option value="">Selecciona un perfil</option>' + names.map((name) => `<option value="${escapeHtml(name)}">${escapeHtml(name)}</option>`).join("");
+}
+
+$("saveProfileButton").onclick = async () => {
+  const name = window.prompt("Nombre del perfil de mapeo:");
+  if (!name) return;
+  try { await window.peopleAnalytics.saveProfile(name, { personasSheet: $("personasSheet").value, bajasSheet: $("bajasSheet").value, personasMapping: mapping("personas"), bajasMapping: mapping("bajas") }); await refreshProfiles(); showStatus("Perfil guardado.", "ok"); } catch (error) { showStatus(error.message || String(error), "error"); }
+};
+$("profileSelect").onchange = async (event) => {
+  const profile = await window.peopleAnalytics.loadProfile(event.target.value); if (!profile) return;
+  $("personasSheet").value = profile.personasSheet; $("bajasSheet").value = profile.bajasSheet; renderFields("personas"); renderFields("bajas");
+  for (const [kind, saved] of [["personas", profile.personasMapping], ["bajas", profile.bajasMapping]]) for (const select of $(`${kind}Fields`).querySelectorAll("select[data-field]")) select.value = saved[select.dataset.field] || "";
+  showStatus("Perfil aplicado. Revisa las columnas antes de generar.", "ok");
+};
+
 function escapeHtml(value) { return String(value).replace(/[&<>"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[char])); }
 
 $("chooseButton").onclick = $("changeButton").onclick = async () => loadFile(await window.peopleAnalytics.chooseFile());
@@ -74,12 +91,14 @@ $("convertButton").onclick = async () => {
       bajasMapping: mapping("bajas")
     });
     const end = result.powerBiOpened ? " Power BI se está abriendo." : ` ${result.powerBiError}`;
-    showStatus(`Listo: ${result.personas} personas y ${result.bajas} bajas guardadas en ${result.outputDir}.${end}`, result.powerBiOpened ? "ok" : "");
+    const rejected = result.rejected ? ` ${result.rejected} fila(s) rechazada(s): consulta filas_rechazadas.csv.` : "";
+    showStatus(`Listo: ${result.personas} personas y ${result.bajas} bajas guardadas en ${result.outputDir}.${rejected}${end}`, result.powerBiOpened ? "ok" : "");
   } catch (error) { showStatus(error.message || String(error), "error"); }
   finally { button.disabled = false; button.textContent = "Generar y abrir Power BI →"; }
 };
 
 const drop = $("dropZone");
+refreshProfiles();
 ["dragenter", "dragover"].forEach((name) => drop.addEventListener(name, (event) => { event.preventDefault(); drop.classList.add("drag"); }));
 ["dragleave", "drop"].forEach((name) => drop.addEventListener(name, (event) => { event.preventDefault(); drop.classList.remove("drag"); }));
 drop.addEventListener("drop", (event) => {
