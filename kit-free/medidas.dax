@@ -1,0 +1,111 @@
+-- 01 · Plantilla al cierre
+Plantilla al cierre =
+VAR FechaCorte = MAX ( Calendario[Fecha] )
+RETURN
+CALCULATE (
+    DISTINCTCOUNT ( Personas[PersonaID] ),
+    REMOVEFILTERS ( Calendario ),
+    Personas[FechaAlta] <= FechaCorte,
+    ISBLANK ( Personas[FechaBajaEmpresa] )
+        || Personas[FechaBajaEmpresa] > FechaCorte
+)
+
+-- 02 · Plantilla al inicio
+Plantilla al inicio =
+VAR FechaCorte = MIN ( Calendario[Fecha] )
+RETURN
+CALCULATE (
+    DISTINCTCOUNT ( Personas[PersonaID] ),
+    REMOVEFILTERS ( Calendario ),
+    Personas[FechaAlta] < FechaCorte,
+    ISBLANK ( Personas[FechaBajaEmpresa] )
+        || Personas[FechaBajaEmpresa] >= FechaCorte
+)
+
+-- 03 · Plantilla media diaria
+Plantilla media diaria =
+AVERAGEX ( VALUES ( Calendario[Fecha] ), [Plantilla al cierre] )
+
+-- 04 · Altas del periodo
+Altas del periodo =
+VAR InicioPeriodo = MIN ( Calendario[Fecha] )
+VAR FinPeriodo = MAX ( Calendario[Fecha] )
+RETURN
+CALCULATE (
+    DISTINCTCOUNT ( Personas[PersonaID] ),
+    REMOVEFILTERS ( Calendario ),
+    Personas[FechaAlta] >= InicioPeriodo,
+    Personas[FechaAlta] <= FinPeriodo
+)
+
+-- 05 · Bajas del periodo
+Bajas del periodo =
+VAR InicioPeriodo = MIN ( Calendario[Fecha] )
+VAR FinPeriodo = MAX ( Calendario[Fecha] )
+RETURN
+CALCULATE (
+    DISTINCTCOUNT ( Personas[PersonaID] ),
+    REMOVEFILTERS ( Calendario ),
+    NOT ISBLANK ( Personas[FechaBajaEmpresa] ),
+    Personas[FechaBajaEmpresa] >= InicioPeriodo,
+    Personas[FechaBajaEmpresa] <= FinPeriodo
+)
+
+-- 06 · Rotación del periodo
+Rotación del periodo =
+DIVIDE ( [Bajas del periodo], [Plantilla media diaria] )
+
+-- 07 · Personas con baja médica
+Personas con baja médica =
+VAR InicioPeriodo = MIN ( Calendario[Fecha] )
+VAR FinPeriodo = MAX ( Calendario[Fecha] )
+RETURN
+CALCULATE (
+    DISTINCTCOUNT ( BajasMedicas[PersonaID] ),
+    REMOVEFILTERS ( Calendario ),
+    BajasMedicas[FechaInicio] <= FinPeriodo,
+    ISBLANK ( BajasMedicas[FechaFin] )
+        || BajasMedicas[FechaFin] >= InicioPeriodo
+)
+
+-- 08 · Episodios de baja médica
+Episodios de baja médica =
+VAR InicioPeriodo = MIN ( Calendario[Fecha] )
+VAR FinPeriodo = MAX ( Calendario[Fecha] )
+RETURN
+CALCULATE (
+    DISTINCTCOUNT ( BajasMedicas[EpisodioID] ),
+    REMOVEFILTERS ( Calendario ),
+    BajasMedicas[FechaInicio] <= FinPeriodo,
+    ISBLANK ( BajasMedicas[FechaFin] )
+        || BajasMedicas[FechaFin] >= InicioPeriodo
+)
+
+-- 09 · Días de baja dentro del periodo
+Días de baja dentro del periodo =
+VAR InicioPeriodo = MIN ( Calendario[Fecha] )
+VAR FinPeriodo = MAX ( Calendario[Fecha] )
+RETURN
+SUMX (
+    FILTER (
+        BajasMedicas,
+        BajasMedicas[FechaInicio] <= FinPeriodo
+            && ( ISBLANK ( BajasMedicas[FechaFin] )
+                || BajasMedicas[FechaFin] >= InicioPeriodo )
+    ),
+    VAR InicioImputable = MAX ( BajasMedicas[FechaInicio], InicioPeriodo )
+    VAR FinImputable = MIN ( COALESCE ( BajasMedicas[FechaFin], FinPeriodo ), FinPeriodo )
+    RETURN DATEDIFF ( InicioImputable, FinImputable, DAY ) + 1
+)
+
+-- 10 · Personas con baja médica únicas
+Personas con baja médica (únicas) =
+VAR InicioPeriodo = MIN ( Calendario[Fecha] )
+VAR FinPeriodo = MAX ( Calendario[Fecha] )
+RETURN
+CALCULATE (
+    DISTINCTCOUNT ( BajasMedicas[PersonaID] ),
+    REMOVEFILTERS ( Calendario ),
+    BajasMedicas[FechaInicio] <= FinPeriodo,
+    COALESCE ( BajasMedicas[FechaFin], FinPeriodo ) >= InicioPeriodo
+)

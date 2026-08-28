@@ -1,0 +1,68 @@
+table Personas
+	measure 'Plantilla al cierre' =
+			VAR FechaCorte = MAX ( Calendario[Fecha] )
+			RETURN CALCULATE ( DISTINCTCOUNT ( Personas[PersonaID] ), REMOVEFILTERS ( Calendario ), Personas[FechaAlta] <= FechaCorte, ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > FechaCorte )
+		formatString: 0
+
+	measure 'Altas del periodo' =
+			VAR InicioPeriodo = MIN ( Calendario[Fecha] )
+			VAR FinPeriodo = MAX ( Calendario[Fecha] )
+			RETURN CALCULATE ( DISTINCTCOUNT ( Personas[PersonaID] ), REMOVEFILTERS ( Calendario ), Personas[FechaAlta] >= InicioPeriodo, Personas[FechaAlta] <= FinPeriodo )
+		formatString: 0
+
+	measure 'Bajas del periodo' =
+			VAR InicioPeriodo = MIN ( Calendario[Fecha] )
+			VAR FinPeriodo = MAX ( Calendario[Fecha] )
+			RETURN CALCULATE ( DISTINCTCOUNT ( Personas[PersonaID] ), REMOVEFILTERS ( Calendario ), NOT ISBLANK ( Personas[FechaBajaEmpresa] ), Personas[FechaBajaEmpresa] >= InicioPeriodo, Personas[FechaBajaEmpresa] <= FinPeriodo )
+		formatString: 0
+
+	column PersonaID
+		dataType: string
+		sourceColumn: PersonaID
+		summarizeBy: none
+	column FechaAlta
+		dataType: dateTime
+		formatString: Short Date
+		sourceColumn: FechaAlta
+		summarizeBy: none
+	column FechaBajaEmpresa
+		dataType: dateTime
+		formatString: Short Date
+		sourceColumn: FechaBajaEmpresa
+		summarizeBy: none
+	column Departamento
+		dataType: string
+		sourceColumn: Departamento
+		summarizeBy: none
+	column PuestoTrabajo
+		dataType: string
+		sourceColumn: PuestoTrabajo
+		summarizeBy: none
+	column Centro
+		dataType: string
+		sourceColumn: Centro
+		summarizeBy: none
+	column Sexo
+		dataType: string
+		sourceColumn: Sexo
+		summarizeBy: none
+	column FechaNacimiento
+		dataType: dateTime
+		formatString: Short Date
+		sourceColumn: FechaNacimiento
+		summarizeBy: none
+	column SalarioAnual
+		dataType: int64
+		formatString: #,0
+		sourceColumn: SalarioAnual
+		summarizeBy: sum
+
+	partition Personas = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\PeopleAnalyticsDaxKit\datos-ejemplo\personas.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Types = Table.TransformColumnTypes(Headers,{{"PersonaID", type text},{"FechaAlta", type date},{"FechaBajaEmpresa", type date},{"Departamento", type text},{"PuestoTrabajo", type text},{"Centro", type text},{"Sexo", type text},{"FechaNacimiento", type date},{"SalarioAnual", Int64.Type}}, "en-US")
+				in
+				    Types
