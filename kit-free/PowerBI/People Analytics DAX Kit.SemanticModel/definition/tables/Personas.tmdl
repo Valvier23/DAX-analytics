@@ -16,6 +16,9 @@ table Personas
 			RETURN CALCULATE ( DISTINCTCOUNT ( Personas[PersonaID] ), REMOVEFILTERS ( Calendario ), NOT ISBLANK ( Personas[FechaBajaEmpresa] ), Personas[FechaBajaEmpresa] >= InicioPeriodo, Personas[FechaBajaEmpresa] <= FinPeriodo )
 		formatString: 0
 
+	measure 'Salario medio' = AVERAGE ( Personas[SalarioAnual] )
+		formatString: #,0 €
+
 	column PersonaID
 		dataType: string
 		sourceColumn: PersonaID
@@ -56,13 +59,32 @@ table Personas
 		formatString: #,0
 		sourceColumn: SalarioAnual
 		summarizeBy: sum
+	column NivelEducativo
+		dataType: string
+		sourceColumn: NivelEducativo
+	column EstadoCivil
+		dataType: string
+		sourceColumn: EstadoCivil
+	column NumeroHijos
+		dataType: int64
+		sourceColumn: NumeroHijos
+		summarizeBy: sum
+	column ModalidadTrabajo
+		dataType: string
+		sourceColumn: ModalidadTrabajo
+	column TipoContrato
+		dataType: string
+		sourceColumn: TipoContrato
+	column NivelPuesto
+		dataType: string
+		sourceColumn: NivelPuesto
 
 	partition Personas = m
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\PeopleAnalyticsDaxKit\datos-ejemplo\personas.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Source = Csv.Document(File.Contents("C:\PeopleAnalyticsDaxKit\datos-ejemplo\personas.csv"),[Delimiter=",", Columns=15, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
 				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				    Types = Table.TransformColumnTypes(Headers,{{"PersonaID", type text},{"FechaAlta", type date},{"FechaBajaEmpresa", type date},{"Departamento", type text},{"PuestoTrabajo", type text},{"Centro", type text},{"Sexo", type text},{"FechaNacimiento", type date},{"SalarioAnual", Int64.Type}}, "en-US")
+				    Types = Table.TransformColumnTypes(Headers,{{"PersonaID", type text},{"FechaAlta", type date},{"FechaBajaEmpresa", type date},{"Departamento", type text},{"PuestoTrabajo", type text},{"Centro", type text},{"Sexo", type text},{"FechaNacimiento", type date},{"SalarioAnual", Int64.Type},{"NivelEducativo", type text},{"EstadoCivil", type text},{"NumeroHijos", Int64.Type},{"ModalidadTrabajo", type text},{"TipoContrato", type text},{"NivelPuesto", type text}}, "en-US")
 				in
 				    Types

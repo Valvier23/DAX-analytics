@@ -1,41 +1,41 @@
-PersonaID,FechaAlta,FechaBajaEmpresa,Departamento,PuestoTrabajo,Centro,Sexo,FechaNacimiento,SalarioAnual
-P001,2023-01-09,,Operaciones,Técnico de operaciones,Barcelona,Mujer,1988-04-12,28500
-P002,2023-01-16,2025-04-18,Ventas,Ejecutivo de ventas,Madrid,Hombre,1992-08-21,32000
-P003,2023-02-06,,Tecnología,Analista de datos,Barcelona,Mujer,1996-11-03,41000
-P004,2023-02-20,2024-11-29,Operaciones,Supervisor de turno,Valencia,Hombre,1984-01-17,27000
-P005,2023-03-13,,Finanzas,Controller financiero,Madrid,Mujer,1979-06-25,46000
-P006,2023-04-03,,Ventas,Gestor de cuentas,Barcelona,Hombre,1990-09-14,35000
-P007,2023-04-17,2025-02-14,Tecnología,Desarrollador BI,Madrid,Hombre,1998-05-08,38000
-P008,2023-05-08,,Operaciones,Técnico de operaciones,Valencia,Mujer,1987-12-19,29500
-P009,2023-06-05,,Personas,Técnico de RRHH,Barcelona,Mujer,1985-03-02,39000
-P010,2023-07-03,2024-12-20,Ventas,Ejecutivo de ventas,Madrid,Hombre,1994-07-29,31000
-P011,2023-08-14,,Tecnología,Arquitecto de datos,Barcelona,Hombre,1982-10-11,52000
-P012,2023-09-04,,Finanzas,Analista financiero,Valencia,Mujer,1991-02-23,43000
-P013,2023-10-02,,Operaciones,Técnico de operaciones,Madrid,Hombre,1997-09-06,26500
-P014,2023-11-06,2025-05-30,Personas,Generalista de RRHH,Barcelona,Mujer,1989-05-18,37000
-P015,2023-12-11,,Ventas,Gestor de cuentas,Valencia,Mujer,1995-01-30,33000
-P016,2024-01-08,,Tecnología,Ingeniero de datos,Madrid,Hombre,1986-06-09,48000
-P017,2024-01-22,2024-09-27,Operaciones,Auxiliar de operaciones,Barcelona,Mujer,1999-12-01,25500
-P018,2024-02-05,,Finanzas,Controller financiero,Madrid,Hombre,1981-03-15,51000
-P019,2024-02-19,,Ventas,Ejecutivo de ventas,Valencia,Mujer,1993-08-04,34500
-P020,2024-03-04,,Operaciones,Técnico de operaciones,Barcelona,Hombre,1990-11-27,28000
-P021,2024-03-18,2025-03-31,Tecnología,Analista BI,Madrid,Mujer,1997-04-16,39500
-P022,2024-04-08,,Personas,Técnico de selección,Valencia,Hombre,1988-07-07,36000
-P023,2024-05-06,,Ventas,Gestor de cuentas,Barcelona,Mujer,1996-02-10,32500
-P024,2024-06-03,2025-01-24,Operaciones,Supervisor de turno,Madrid,Hombre,1983-09-22,30000
-P025,2024-07-01,,Tecnología,Ingeniero de datos,Valencia,Mujer,1992-05-31,44000
-P026,2024-08-05,,Finanzas,Analista financiero,Barcelona,Hombre,1987-01-14,47000
-P027,2024-09-02,,Ventas,Ejecutivo de ventas,Madrid,Mujer,1998-10-26,31500
-P028,2024-10-07,2025-06-13,Operaciones,Técnico de operaciones,Valencia,Hombre,1994-03-20,27500
-P029,2024-11-04,,Personas,People partner,Barcelona,Mujer,1985-12-08,40500
-P030,2024-12-02,,Tecnología,Ingeniero de datos,Madrid,Hombre,1991-06-17,45500
-P031,2025-01-07,,Operaciones,Auxiliar de operaciones,Barcelona,Mujer,1999-02-28,26000
-P032,2025-01-20,,Ventas,Ejecutivo de ventas,Valencia,Hombre,1996-07-12,30500
-P033,2025-02-03,2025-05-16,Finanzas,Analista financiero,Madrid,Mujer,1989-09-03,42500
-P034,2025-02-17,,Tecnología,Analista de datos,Barcelona,Hombre,1993-04-24,42000
-P035,2025-03-03,,Operaciones,Técnico de operaciones,Valencia,Mujer,1997-11-15,27000
-P036,2025-03-17,,Personas,Técnico de RRHH,Madrid,Hombre,1986-02-06,38500
-P037,2025-04-01,2025-04-30,Ventas,Ejecutivo de ventas,Barcelona,Mujer,2000-05-19,29000
-P038,2025-04-14,,Tecnología,Analista BI,Valencia,Hombre,1995-08-30,40000
-P039,2025-05-05,,Operaciones,Técnico de operaciones,Madrid,Mujer,1998-01-22,26500
-P040,2025-06-02,,Ventas,Gestor de cuentas,Barcelona,Hombre,1992-12-13,33500
+﻿PersonaID,FechaAlta,FechaBajaEmpresa,Departamento,PuestoTrabajo,Centro,Sexo,FechaNacimiento,SalarioAnual,NivelEducativo,EstadoCivil,NumeroHijos,ModalidadTrabajo,TipoContrato,NivelPuesto
+P001,2023-01-09,,Operaciones,Técnico de operaciones,Barcelona,Mujer,1988-04-12,28500,FP,Soltero/a,0,Híbrido,Indefinido,Junior
+P002,2023-01-16,2025-04-18,Ventas,Ejecutivo de ventas,Madrid,Hombre,1992-08-21,32000,Grado,Casado/a,1,Presencial,Indefinido,Profesional
+P003,2023-02-06,,Tecnología,Analista de datos,Barcelona,Mujer,1996-11-03,41000,Máster,Pareja de hecho,2,Remoto,Indefinido,Senior
+P004,2023-02-20,2024-11-29,Operaciones,Supervisor de turno,Valencia,Hombre,1984-01-17,27000,Bachillerato,Soltero/a,3,Híbrido,Temporal,Manager
+P005,2023-03-13,,Finanzas,Controller financiero,Madrid,Mujer,1979-06-25,46000,FP,Casado/a,0,Presencial,Indefinido,Junior
+P006,2023-04-03,,Ventas,Gestor de cuentas,Barcelona,Hombre,1990-09-14,35000,Grado,Pareja de hecho,1,Remoto,Indefinido,Profesional
+P007,2023-04-17,2025-02-14,Tecnología,Desarrollador BI,Madrid,Hombre,1998-05-08,38000,Máster,Soltero/a,2,Híbrido,Indefinido,Senior
+P008,2023-05-08,,Operaciones,Técnico de operaciones,Valencia,Mujer,1987-12-19,29500,Bachillerato,Casado/a,3,Presencial,Temporal,Manager
+P009,2023-06-05,,Personas,Técnico de RRHH,Barcelona,Mujer,1985-03-02,39000,FP,Pareja de hecho,0,Remoto,Indefinido,Junior
+P010,2023-07-03,2024-12-20,Ventas,Ejecutivo de ventas,Madrid,Hombre,1994-07-29,31000,Grado,Soltero/a,1,Híbrido,Indefinido,Profesional
+P011,2023-08-14,,Tecnología,Arquitecto de datos,Barcelona,Hombre,1982-10-11,52000,Máster,Casado/a,2,Presencial,Indefinido,Senior
+P012,2023-09-04,,Finanzas,Analista financiero,Valencia,Mujer,1991-02-23,43000,Bachillerato,Pareja de hecho,3,Remoto,Temporal,Manager
+P013,2023-10-02,,Operaciones,Técnico de operaciones,Madrid,Hombre,1997-09-06,26500,FP,Soltero/a,0,Híbrido,Indefinido,Junior
+P014,2023-11-06,2025-05-30,Personas,Generalista de RRHH,Barcelona,Mujer,1989-05-18,37000,Grado,Casado/a,1,Presencial,Indefinido,Profesional
+P015,2023-12-11,,Ventas,Gestor de cuentas,Valencia,Mujer,1995-01-30,33000,Máster,Pareja de hecho,2,Remoto,Indefinido,Senior
+P016,2024-01-08,,Tecnología,Ingeniero de datos,Madrid,Hombre,1986-06-09,48000,Bachillerato,Soltero/a,3,Híbrido,Temporal,Manager
+P017,2024-01-22,2024-09-27,Operaciones,Auxiliar de operaciones,Barcelona,Mujer,1999-12-01,25500,FP,Casado/a,0,Presencial,Indefinido,Junior
+P018,2024-02-05,,Finanzas,Controller financiero,Madrid,Hombre,1981-03-15,51000,Grado,Pareja de hecho,1,Remoto,Indefinido,Profesional
+P019,2024-02-19,,Ventas,Ejecutivo de ventas,Valencia,Mujer,1993-08-04,34500,Máster,Soltero/a,2,Híbrido,Indefinido,Senior
+P020,2024-03-04,,Operaciones,Técnico de operaciones,Barcelona,Hombre,1990-11-27,28000,Bachillerato,Casado/a,3,Presencial,Temporal,Manager
+P021,2024-03-18,2025-03-31,Tecnología,Analista BI,Madrid,Mujer,1997-04-16,39500,FP,Pareja de hecho,0,Remoto,Indefinido,Junior
+P022,2024-04-08,,Personas,Técnico de selección,Valencia,Hombre,1988-07-07,36000,Grado,Soltero/a,1,Híbrido,Indefinido,Profesional
+P023,2024-05-06,,Ventas,Gestor de cuentas,Barcelona,Mujer,1996-02-10,32500,Máster,Casado/a,2,Presencial,Indefinido,Senior
+P024,2024-06-03,2025-01-24,Operaciones,Supervisor de turno,Madrid,Hombre,1983-09-22,30000,Bachillerato,Pareja de hecho,3,Remoto,Temporal,Manager
+P025,2024-07-01,,Tecnología,Ingeniero de datos,Valencia,Mujer,1992-05-31,44000,FP,Soltero/a,0,Híbrido,Indefinido,Junior
+P026,2024-08-05,,Finanzas,Analista financiero,Barcelona,Hombre,1987-01-14,47000,Grado,Casado/a,1,Presencial,Indefinido,Profesional
+P027,2024-09-02,,Ventas,Ejecutivo de ventas,Madrid,Mujer,1998-10-26,31500,Máster,Pareja de hecho,2,Remoto,Indefinido,Senior
+P028,2024-10-07,2025-06-13,Operaciones,Técnico de operaciones,Valencia,Hombre,1994-03-20,27500,Bachillerato,Soltero/a,3,Híbrido,Temporal,Manager
+P029,2024-11-04,,Personas,People partner,Barcelona,Mujer,1985-12-08,40500,FP,Casado/a,0,Presencial,Indefinido,Junior
+P030,2024-12-02,,Tecnología,Ingeniero de datos,Madrid,Hombre,1991-06-17,45500,Grado,Pareja de hecho,1,Remoto,Indefinido,Profesional
+P031,2025-01-07,,Operaciones,Auxiliar de operaciones,Barcelona,Mujer,1999-02-28,26000,Máster,Soltero/a,2,Híbrido,Indefinido,Senior
+P032,2025-01-20,,Ventas,Ejecutivo de ventas,Valencia,Hombre,1996-07-12,30500,Bachillerato,Casado/a,3,Presencial,Temporal,Manager
+P033,2025-02-03,2025-05-16,Finanzas,Analista financiero,Madrid,Mujer,1989-09-03,42500,FP,Pareja de hecho,0,Remoto,Indefinido,Junior
+P034,2025-02-17,,Tecnología,Analista de datos,Barcelona,Hombre,1993-04-24,42000,Grado,Soltero/a,1,Híbrido,Indefinido,Profesional
+P035,2025-03-03,,Operaciones,Técnico de operaciones,Valencia,Mujer,1997-11-15,27000,Máster,Casado/a,2,Presencial,Indefinido,Senior
+P036,2025-03-17,,Personas,Técnico de RRHH,Madrid,Hombre,1986-02-06,38500,Bachillerato,Pareja de hecho,3,Remoto,Temporal,Manager
+P037,2025-04-01,2025-04-30,Ventas,Ejecutivo de ventas,Barcelona,Mujer,2000-05-19,29000,FP,Soltero/a,0,Híbrido,Indefinido,Junior
+P038,2025-04-14,,Tecnología,Analista BI,Valencia,Hombre,1995-08-30,40000,Grado,Casado/a,1,Presencial,Indefinido,Profesional
+P039,2025-05-05,,Operaciones,Técnico de operaciones,Madrid,Mujer,1998-01-22,26500,Máster,Pareja de hecho,2,Remoto,Indefinido,Senior
+P040,2025-06-02,,Ventas,Gestor de cuentas,Barcelona,Hombre,1992-12-13,33500,Bachillerato,Soltero/a,3,Híbrido,Temporal,Manager
