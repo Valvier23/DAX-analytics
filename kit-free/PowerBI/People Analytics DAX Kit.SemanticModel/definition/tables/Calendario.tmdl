@@ -1,0 +1,10 @@
+table Calendario
+	column Fecha
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: [Fecha]
+
+	partition Calendario = calculated
+		mode: import
+		source = SELECTCOLUMNS ( CALENDAR ( DATE ( 2023, 1, 1 ), DATE ( 2025, 12, 31 ) ), "Fecha", [Date] )

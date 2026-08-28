@@ -1,0 +1,12 @@
+PEOPLE ANALYTICS IMPORTER
+
+1. Extrae completamente el ZIP.
+2. Haz doble clic en PeopleAnalyticsImporter.exe, situado en la raíz.
+3. Se abrirá un menú en el navegador.
+4. Selecciona tu .xlsx o arrástralo dentro de la zona indicada.
+5. Revisa el mapeo de hojas y columnas.
+6. Pulsa “Generar CSV y abrir Power BI”.
+
+La aplicación procesa los datos en tu ordenador, genera los CSV normalizados y abre el proyecto PBIP. No necesita PowerShell, Python ni Node.
+
+El ejecutable no está firmado digitalmente, por lo que Windows SmartScreen puede mostrar una advertencia la primera vez.

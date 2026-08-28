@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>People Analytics Importer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <div class="logo">PA</div>
+      <div><p class="eyebrow">PEOPLE ANALYTICS DAX KIT</p><h1>Importador de Excel</h1></div>
+      <span class="local">100 % local</span>
+    </header>
+
+    <section id="dropZone" class="drop-zone">
+      <div class="excel">X</div>
+      <h2>Arrastra aquí tu archivo Excel</h2>
+      <p>También puedes seleccionarlo manualmente. No se sube ningún dato a internet.</p>
+      <button id="chooseButton">Seleccionar Excel</button>
+      <small>Formatos admitidos: .xlsx y .xls</small>
+    </section>
+
+    <section id="workspace" class="hidden">
+      <div class="file-card"><div><span>Archivo seleccionado</span><strong id="fileName"></strong></div><button id="changeButton" class="secondary">Cambiar archivo</button></div>
+      <div id="summary" class="summary"></div>
+
+      <div class="mapping-grid">
+        <article class="panel">
+          <div class="panel-title"><span>1</span><div><h3>Personas</h3><p>Plantilla, altas, bajas y segmentación</p></div></div>
+          <label>Hoja de Excel<select id="personasSheet"></select></label>
+          <div id="personasFields" class="fields"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-title"><span>2</span><div><h3>Bajas médicas</h3><p>Episodios de absentismo (opcional)</p></div></div>
+          <label>Hoja de Excel<select id="bajasSheet"></select></label>
+          <div id="bajasFields" class="fields"></div>
+        </article>
+      </div>
+      <div class="footer-action">
+        <div><strong>Los campos con * son obligatorios</strong><p>Se generarán los CSV y se abrirá Power BI automáticamente.</p></div>
+        <button id="convertButton">Generar y abrir Power BI →</button>
+      </div>
+    </section>
+
+    <div id="status" class="status hidden"></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

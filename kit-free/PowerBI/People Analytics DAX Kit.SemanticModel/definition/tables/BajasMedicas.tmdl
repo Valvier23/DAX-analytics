@@ -1,0 +1,48 @@
+table BajasMedicas
+	measure 'Personas con baja médica' =
+			VAR InicioPeriodo = MIN ( Calendario[Fecha] )
+			VAR FinPeriodo = MAX ( Calendario[Fecha] )
+			RETURN CALCULATE ( DISTINCTCOUNT ( BajasMedicas[PersonaID] ), REMOVEFILTERS ( Calendario ), BajasMedicas[FechaInicio] <= FinPeriodo, ISBLANK ( BajasMedicas[FechaFin] ) || BajasMedicas[FechaFin] >= InicioPeriodo )
+		formatString: 0
+
+	measure 'Episodios de baja médica' = DISTINCTCOUNT ( BajasMedicas[EpisodioID] )
+		formatString: 0
+
+	measure 'Días de baja' =
+			VAR InicioPeriodo = MIN ( Calendario[Fecha] )
+			VAR FinPeriodo = MAX ( Calendario[Fecha] )
+			RETURN SUMX ( FILTER ( BajasMedicas, BajasMedicas[FechaInicio] <= FinPeriodo && ( ISBLANK ( BajasMedicas[FechaFin] ) || BajasMedicas[FechaFin] >= InicioPeriodo ) ), VAR InicioImputable = MAX ( BajasMedicas[FechaInicio], InicioPeriodo ) VAR FinImputable = MIN ( COALESCE ( BajasMedicas[FechaFin], FinPeriodo ), FinPeriodo ) RETURN DATEDIFF ( InicioImputable, FinImputable, DAY ) + 1 )
+		formatString: 0
+
+	column EpisodioID
+		dataType: string
+		sourceColumn: EpisodioID
+		summarizeBy: none
+	column PersonaID
+		dataType: string
+		sourceColumn: PersonaID
+		summarizeBy: none
+	column FechaInicio
+		dataType: dateTime
+		formatString: Short Date
+		sourceColumn: FechaInicio
+		summarizeBy: none
+	column FechaFin
+		dataType: dateTime
+		formatString: Short Date
+		sourceColumn: FechaFin
+		summarizeBy: none
+	column TipoBaja
+		dataType: string
+		sourceColumn: TipoBaja
+		summarizeBy: none
+
+	partition BajasMedicas = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\PeopleAnalyticsDaxKit\datos-ejemplo\bajas_medicas.csv"),[Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Types = Table.TransformColumnTypes(Headers,{{"EpisodioID", type text},{"PersonaID", type text},{"FechaInicio", type date},{"FechaFin", type date},{"TipoBaja", type text}})
+				in
+				    Types
