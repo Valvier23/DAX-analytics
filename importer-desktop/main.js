@@ -6,6 +6,20 @@ const core = require("./core");
 
 app.disableHardwareAcceleration();
 
+function ensurePowerBiProject(outputDir) {
+  const targetDir = path.join(outputDir, "PowerBI");
+  const targetPbip = path.join(targetDir, "People Analytics DAX Kit.pbip");
+  if (fs.existsSync(targetPbip)) return targetPbip;
+  const bundledDir = app.isPackaged
+    ? path.join(process.resourcesPath, "PowerBI")
+    : path.resolve(__dirname, "..", "kit-free", "PowerBI");
+  if (!fs.existsSync(path.join(bundledDir, "People Analytics DAX Kit.pbip"))) {
+    throw new Error("No se encontró el proyecto Power BI incluido en el importador.");
+  }
+  fs.cpSync(bundledDir, targetDir, { recursive: true, force: true });
+  return targetPbip;
+}
+
 function createWindow() {
   const win = new BrowserWindow({
     width: 1080,
@@ -70,18 +84,12 @@ app.whenReady().then(() => {
     }
     const outputDir = path.join(process.env.SystemDrive || "C:", "PeopleAnalyticsDaxKit", "datos-ejemplo");
     const result = core.convertWorkbook({ ...config, outputDir });
-    const base = app.isPackaged ? path.dirname(process.execPath) : path.resolve(__dirname, "..");
-    const candidates = [
-      path.join(base, "PowerBI", "People Analytics DAX Kit.pbip"),
-      path.join(base, "kit-free", "PowerBI", "People Analytics DAX Kit.pbip"),
-      path.join(base, "People Analytics DAX Kit.pbip")
-    ];
-    const pbip = candidates.find(fs.existsSync);
-    if (pbip) {
+    try {
+      const pbip = ensurePowerBiProject(outputDir);
       const openError = await shell.openPath(pbip);
       result.powerBiOpened = !openError;
       result.powerBiError = openError || "";
-    } else {
+    } catch (error) {
       result.powerBiOpened = false;
       result.powerBiError = "No se encontró el archivo PBIP junto al ejecutable.";
     }

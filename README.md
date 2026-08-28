@@ -4,7 +4,7 @@ Kit gratuito para analizar plantilla, altas, bajas, rotación y absentismo en Po
 
 ## Contenido y uso
 
-El kit incluye diez medidas DAX, un proyecto Power BI de dos páginas, datos de ejemplo, un diccionario de datos y un importador local para Windows.
+El kit incluye diez medidas DAX, datos de ejemplo, un diccionario de datos y un importador local para Windows. El proyecto Power BI va integrado en el importador y se crea automáticamente junto a los CSV.
 
 1. Abre el importador y selecciona o arrastra tu Excel.
 2. Revisa el mapeo de Personas y Bajas médicas; puedes guardar perfiles para reutilizarlos.
@@ -12,7 +12,7 @@ El kit incluye diez medidas DAX, un proyecto Power BI de dos páginas, datos de 
 
 Los campos mínimos son `PersonaID` y `FechaAlta` en Personas, y `EpisodioID`, `PersonaID` y `FechaInicio` en Bajas médicas. Las filas con IDs duplicados, fechas incoherentes o personas inexistentes se excluyen y quedan detalladas en `filas_rechazadas.csv`.
 
-Todo el procesamiento se hace localmente. Los CSV se guardan en `C:\PeopleAnalyticsDaxKit\datos-ejemplo`.
+Todo el procesamiento se hace localmente. Los CSV y el proyecto PBIP se guardan en `C:\PeopleAnalyticsDaxKit\datos-ejemplo`.
 
 ## Desarrollo y distribución
 

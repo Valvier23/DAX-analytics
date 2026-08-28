@@ -25,6 +25,12 @@
       "renderer/**/*",
       "package.json"
     ],
+    "extraResources": [
+      {
+        "from": "../kit-free/PowerBI",
+        "to": "PowerBI"
+      }
+    ],
     "win": {
       "signAndEditExecutable": false,
       "target": [
