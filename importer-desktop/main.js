@@ -15,10 +15,8 @@ function ensurePowerBiProject(projectDir, outputDir) {
   if (!bundledDir) {
     throw new Error("No se encontró el proyecto Power BI incluido en el importador.");
   }
-  if (!fs.existsSync(targetPbip)) {
-    for (const entry of fs.readdirSync(bundledDir)) {
-      fs.cpSync(path.join(bundledDir, entry), path.join(projectDir, entry), { recursive: true, force: true });
-    }
+  for (const entry of fs.readdirSync(bundledDir)) {
+    fs.cpSync(path.join(bundledDir, entry), path.join(projectDir, entry), { recursive: true, force: true });
   }
   const sources = [
     ["Personas.tmdl", "personas.csv"],

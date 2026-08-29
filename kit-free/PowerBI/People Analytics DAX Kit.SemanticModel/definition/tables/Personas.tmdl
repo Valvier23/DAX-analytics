@@ -78,13 +78,36 @@ table Personas
 	column NivelPuesto
 		dataType: string
 		sourceColumn: NivelPuesto
+	column Provincia
+		dataType: string
+		sourceColumn: Provincia
+	column Nacionalidad
+		dataType: string
+		sourceColumn: Nacionalidad
+	column FechaInicioPuesto
+		dataType: dateTime
+		formatString: Short Date
+		sourceColumn: FechaInicioPuesto
+	column JornadaSemanal
+		dataType: int64
+		sourceColumn: JornadaSemanal
+	column Edad = DATEDIFF ( Personas[FechaNacimiento], TODAY (), YEAR )
+		dataType: int64
+	column 'Tramo edad' = SWITCH ( TRUE (), Personas[Edad] < 30, "Menos de 30", Personas[Edad] < 40, "30–39", Personas[Edad] < 50, "40–49", Personas[Edad] < 60, "50–59", "60 o más" )
+		dataType: string
+	column 'Antigüedad años' = DATEDIFF ( Personas[FechaAlta], TODAY (), YEAR )
+		dataType: int64
+	column 'Tramo antigüedad' = SWITCH ( TRUE (), Personas[Antigüedad años] < 1, "Menos de 1 año", Personas[Antigüedad años] < 3, "1–2 años", Personas[Antigüedad años] < 5, "3–4 años", "5+ años" )
+		dataType: string
+	column 'Tramo salarial' = SWITCH ( TRUE (), Personas[SalarioAnual] < 30000, "< 30k", Personas[SalarioAnual] < 40000, "30k–40k", Personas[SalarioAnual] < 50000, "40k–50k", "50k+" )
+		dataType: string
 
 	partition Personas = m
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\PeopleAnalyticsDaxKit\datos-ejemplo\personas.csv"),[Delimiter=",", Columns=15, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Source = Csv.Document(File.Contents("C:\PeopleAnalyticsDaxKit\datos-ejemplo\personas.csv"),[Delimiter=",", Columns=19, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
 				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				    Types = Table.TransformColumnTypes(Headers,{{"PersonaID", type text},{"FechaAlta", type date},{"FechaBajaEmpresa", type date},{"Departamento", type text},{"PuestoTrabajo", type text},{"Centro", type text},{"Sexo", type text},{"FechaNacimiento", type date},{"SalarioAnual", Int64.Type},{"NivelEducativo", type text},{"EstadoCivil", type text},{"NumeroHijos", Int64.Type},{"ModalidadTrabajo", type text},{"TipoContrato", type text},{"NivelPuesto", type text}}, "en-US")
+				    Types = Table.TransformColumnTypes(Headers,{{"PersonaID", type text},{"FechaAlta", type date},{"FechaBajaEmpresa", type date},{"Departamento", type text},{"PuestoTrabajo", type text},{"Centro", type text},{"Sexo", type text},{"FechaNacimiento", type date},{"SalarioAnual", Int64.Type},{"NivelEducativo", type text},{"EstadoCivil", type text},{"NumeroHijos", Int64.Type},{"ModalidadTrabajo", type text},{"TipoContrato", type text},{"NivelPuesto", type text},{"Provincia", type text},{"Nacionalidad", type text},{"FechaInicioPuesto", type date},{"JornadaSemanal", Int64.Type}}, "en-US")
 				in
 				    Types
