@@ -1,1 +1,17 @@
-{"$schema":"https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json","name":"chartSalario","position":{"x":880,"y":710,"z":6,"height":210,"width":360,"tabOrder":6},"visual":{"visualType":"clusteredColumnChart","query":{"queryState":{"Category":{"projections":[{"field":{"Column":{"Expression":{"SourceRef":{"Entity":"Personas"}},"Property":"Tramo salarial"}},"queryRef":"Personas.Tramo salarial","nativeQueryRef":"Tramo salarial","active":true}]},"Y":{"projections":[{"field":{"Measure":{"Expression":{"SourceRef":{"Entity":"Personas"}},"Property":"Plantilla al cierre"}},"queryRef":"Personas.Plantilla al cierre","nativeQueryRef":"Plantilla al cierre"}]}}},"visualContainerObjects":{"title":[{"properties":{"text":{"expr":{"Literal":{"Value":"'Distribución por salario'"}}}}]}}}
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "chartSalario",
+  "position": { "x": 880, "y": 710, "z": 6, "height": 210, "width": 360, "tabOrder": 6 },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": { "projections": [{ "field": { "Column": { "Expression": { "SourceRef": { "Entity": "Personas" } }, "Property": "Tramo salarial" } }, "queryRef": "Personas.Tramo salarial", "nativeQueryRef": "Tramo salarial", "active": true }] },
+        "Y": { "projections": [{ "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Personas" } }, "Property": "Plantilla al cierre" } }, "queryRef": "Personas.Plantilla al cierre", "nativeQueryRef": "Plantilla al cierre" }] }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "text": { "expr": { "Literal": { "Value": "'Distribuci\\u00f3n por salario'" } } } } }]
+    }
+  }
+}

@@ -1,1 +1,17 @@
-{"$schema":"https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json","name":"chartAntiguedad","position":{"x":460,"y":710,"z":5,"height":210,"width":380,"tabOrder":5},"visual":{"visualType":"clusteredColumnChart","query":{"queryState":{"Category":{"projections":[{"field":{"Column":{"Expression":{"SourceRef":{"Entity":"Personas"}},"Property":"Tramo antigüedad"}},"queryRef":"Personas.Tramo antigüedad","nativeQueryRef":"Tramo antigüedad","active":true}]},"Y":{"projections":[{"field":{"Measure":{"Expression":{"SourceRef":{"Entity":"Personas"}},"Property":"Plantilla al cierre"}},"queryRef":"Personas.Plantilla al cierre","nativeQueryRef":"Plantilla al cierre"}]}}},"visualContainerObjects":{"title":[{"properties":{"text":{"expr":{"Literal":{"Value":"'Distribución por antigüedad'"}}}}]}}}
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "chartAntiguedad",
+  "position": { "x": 460, "y": 710, "z": 5, "height": 210, "width": 380, "tabOrder": 5 },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": { "projections": [{ "field": { "Column": { "Expression": { "SourceRef": { "Entity": "Personas" } }, "Property": "Tramo antig\\u00fcedad" } }, "queryRef": "Personas.Tramo antig\\u00fcedad", "nativeQueryRef": "Tramo antig\\u00fcedad", "active": true }] },
+        "Y": { "projections": [{ "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Personas" } }, "Property": "Plantilla al cierre" } }, "queryRef": "Personas.Plantilla al cierre", "nativeQueryRef": "Plantilla al cierre" }] }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [{ "properties": { "show": { "expr": { "Literal": { "Value": "true" } } }, "text": { "expr": { "Literal": { "Value": "'Distribuci\\u00f3n por antig\\u00fcedad'" } } } } }]
+    }
+  }
+}
