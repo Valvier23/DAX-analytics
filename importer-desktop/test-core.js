@@ -22,6 +22,9 @@ const leaveMap = core.guessMapping(analysis.sheets[1].headers, core.BAJAS_FIELDS
 const output = path.join(temp, "datos-ejemplo");
 const result = core.convertWorkbook({ inputPath: input, personasSheet: "Empleados", personasMapping: peopleMap, bajasSheet: "Ausencias", bajasMapping: leaveMap, outputDir: output });
 if (result.personas !== 2 || result.bajas !== 1) throw new Error("El recuento convertido no es correcto.");
+if (!result.insights || !fs.existsSync(result.insightsPath)) throw new Error("No se generÃ³ insights.csv.");
+const insightsCsv = fs.readFileSync(result.insightsPath, "utf8");
+if (!insightsCsv.includes("InsightID") || !insightsCsv.includes("INS-001")) throw new Error("El archivo de insights no tiene la estructura esperada.");
 if (!fs.readFileSync(path.join(output, "personas.csv"), "utf8").includes("P-001")) throw new Error("No se generó personas.csv correctamente.");
 const peopleCsv = fs.readFileSync(path.join(output, "personas.csv"), "utf8");
 if (!peopleCsv.includes("2024-01-15") || !peopleCsv.includes("1988-04-12")) throw new Error("Las fechas no se normalizaron a ISO.");
