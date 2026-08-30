@@ -105,7 +105,8 @@ async function generateReport(edition) {
     });
     const end = result.powerBiOpened ? " Power BI se está abriendo." : ` ${result.powerBiError}`;
     const rejected = result.rejected ? ` ${result.rejected} fila(s) rechazada(s): consulta filas_rechazadas.csv.` : "";
-    showStatus(`Listo: ${result.personas} personas y ${result.bajas} bajas guardadas en ${result.outputDir}.${rejected}${end}`, result.powerBiOpened ? "ok" : "");
+    const dynamic = result.dynamicPages?.length ? ` Páginas añadidas: ${result.dynamicPages.join(", ")}.` : "";
+    showStatus(`Listo: ${result.personas} personas y ${result.bajas} bajas guardadas en ${result.outputDir}.${dynamic}${rejected}${end}`, result.powerBiOpened ? "ok" : "");
   } catch (error) { showStatus(error.message || String(error), "error"); }
   finally { button.disabled = false; otherButton.disabled = false; button.textContent = edition === "plus" ? "Generar informe Plus" : "Generar informe Demo →"; }
 }

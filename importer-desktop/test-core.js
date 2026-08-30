@@ -24,6 +24,9 @@ const result = core.convertWorkbook({ inputPath: input, personasSheet: "Empleado
 if (result.personas !== 2 || result.bajas !== 1) throw new Error("El recuento convertido no es correcto.");
 if (!result.insights || !fs.existsSync(result.insightsPath)) throw new Error("No se generÃ³ insights.csv.");
 const insightsCsv = fs.readFileSync(result.insightsPath, "utf8");
+if (!result.kpis || !fs.existsSync(result.kpisPath)) throw new Error("No se generó kpis_detectados.csv.");
+const kpisCsv = fs.readFileSync(result.kpisPath, "utf8");
+if (!kpisCsv.includes("KPIID") || !kpisCsv.includes("Plantilla total")) throw new Error("El catálogo de KPIs no tiene la estructura esperada.");
 if (!insightsCsv.includes("InsightID") || !insightsCsv.includes("INS-001")) throw new Error("El archivo de insights no tiene la estructura esperada.");
 if (!fs.readFileSync(path.join(output, "personas.csv"), "utf8").includes("P-001")) throw new Error("No se generó personas.csv correctamente.");
 const peopleCsv = fs.readFileSync(path.join(output, "personas.csv"), "utf8");

@@ -16,8 +16,62 @@ function validate(kind, rows, people) { const seen = new Set(), accepted = [], r
 function escape(value) { const text = String(value ?? ""); return /[";,\n\r]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text; }
 function writeCsv(file, fields, rows) { fs.writeFileSync(file, `\uFEFF${[fields.join(","), ...rows.map((row) => fields.map((field) => escape(row[field])).join(","))].join("\r\n")}`, "utf8"); }
 const INSIGHT_FIELDS = ["InsightID", "Categoria", "Prioridad", "Titulo", "Detalle", "Metrica", "Periodo", "Segmento", "ValorActual", "ValorAnterior", "VariacionPct", "Impacto", "Urgencia", "Confianza", "Recomendacion", "Grafico", "PaginaValidacion"];
+const KPI_FIELDS = ["KPIID", "KPI", "Categoria", "Definicion", "ValorActual", "Unidad", "Disponibilidad", "Fuente", "DimensionesSugeridas"];
 const percent = (part, total) => total ? Math.round((part / total) * 1000) / 10 : 0;
 const month = (dateText) => String(dateText || "").slice(0, 7);
+const DYNAMIC_PAGE_RULES = [
+  { key:"estructura", title:"Estructura organizativa", category:"Estructura", patterns:["manager","responsable","supervisor","jefe","reporta","teamlead"], numeric:false },
+  { key:"talento", title:"Talento y desempeño", category:"Talento", patterns:["desempeno","performance","rendimiento","evaluacion","rating","potencial"], numeric:true },
+  { key:"compromiso", title:"Clima y compromiso", category:"Compromiso", patterns:["engagement","clima","enps","satisfaccion","compromiso"], numeric:true },
+  { key:"formacion", title:"Desarrollo y formación", category:"Formación", patterns:["formacion","curso","certificacion","learning","capacitacion"], numeric:false },
+  { key:"variable", title:"Compensación avanzada", category:"Compensación", patterns:["bonus","variable","incentivo","comision","commission"], numeric:true }
+];
+function fieldId(header, used) { const base = `Extra_${normalize(header).slice(0, 42) || "campo"}`; let result = base, index = 2; while (used.has(result)) result = `${base}_${index++}`; used.add(result); return result; }
+function detectDynamicProfile(workbook, sheet, mapping, accepted) {
+  if (!sheet || !workbook.Sheets[sheet]) return { fields:[], pages:[] };
+  const rawRows = XLSX.utils.sheet_to_json(workbook.Sheets[sheet], { defval:"", raw:true });
+  const headers = rawRows.length ? Object.keys(rawRows[0]) : [];
+  const mapped = new Set(Object.values(mapping || {}).filter(Boolean));
+  const used = new Set(PERSONAS_FIELDS), fields = [];
+  for (const header of headers.filter((item) => !mapped.has(item))) {
+    const rule = DYNAMIC_PAGE_RULES.find((item) => item.patterns.some((pattern) => normalize(header).includes(pattern)));
+    if (!rule) continue;
+    const values = accepted.map((row) => rawRows[row.line - 2]?.[header]).map((item) => String(item ?? "").trim()).filter(Boolean);
+    const coverage = accepted.length ? values.length / accepted.length : 0;
+    const distinct = new Set(values).size;
+    const numericCoverage = values.length ? values.filter((item) => Number.isFinite(Number(String(item).replace(",", ".")))).length / values.length : 0;
+    if (coverage < 0.7 || distinct < 2 || (!rule.numeric && distinct > 80) || (rule.numeric && numericCoverage < 0.7)) continue;
+    const name = fieldId(header, used);
+    const field = { name, source:header, label:header, type:rule.numeric ? "number" : "text", coverage:Math.round(coverage * 100), distinct, pageKey:rule.key, pageTitle:rule.title, category:rule.category };
+    fields.push(field);
+    accepted.forEach((row) => { const raw = rawRows[row.line - 2]?.[header]; row.data[name] = raw == null ? "" : (rule.numeric ? String(raw).replace(",", ".") : String(raw).replace(/\r?\n/g, " ").trim()); });
+  }
+  const pages = DYNAMIC_PAGE_RULES.map((rule) => ({ ...rule, fields:fields.filter((field) => field.pageKey === rule.key) })).filter((page) => page.fields.length);
+  return { fields, pages };
+}
+function generateKpiCatalog(personas, bajas, outputDir) {
+  const kpis = [];
+  const add = (data) => kpis.push(Object.fromEntries(KPI_FIELDS.map((field) => [field, data[field] ?? ""])));
+  const activePeople = personas.filter((row) => !row.FechaBajaEmpresa).length;
+  const exits = personas.filter((row) => row.FechaBajaEmpresa).length;
+  const has = (field) => personas.some((row) => String(row[field] || "").trim());
+  const dimensions = ["Departamento", "PuestoTrabajo", "Centro", "Sexo", "NivelPuesto"].filter(has).join(" · ");
+  add({ KPIID:"KPI-001", KPI:"Plantilla total", Categoria:"Plantilla", Definicion:"Personas válidas identificadas en el dataset.", ValorActual:personas.length, Unidad:"personas", Disponibilidad:"Disponible", Fuente:"Personas[PersonaID]", DimensionesSugeridas:dimensions });
+  add({ KPIID:"KPI-002", KPI:"Plantilla activa", Categoria:"Plantilla", Definicion:"Personas sin fecha de baja de empresa.", ValorActual:activePeople, Unidad:"personas", Disponibilidad:"Disponible", Fuente:"Personas[FechaBajaEmpresa]", DimensionesSugeridas:dimensions });
+  if (has("FechaBajaEmpresa")) add({ KPIID:"KPI-003", KPI:"Bajas de empresa", Categoria:"Rotación", Definicion:"Personas con fecha de baja de empresa informada.", ValorActual:exits, Unidad:"personas", Disponibilidad:"Disponible", Fuente:"Personas[FechaBajaEmpresa]", DimensionesSugeridas:dimensions });
+  if (has("FechaBajaEmpresa") && personas.length) add({ KPIID:"KPI-004", KPI:"Tasa de rotación observada", Categoria:"Rotación", Definicion:"Bajas de empresa / plantilla total del dataset. Es una tasa observada, no anualizada.", ValorActual:percent(exits, personas.length), Unidad:"%", Disponibilidad:"Disponible", Fuente:"Personas[FechaBajaEmpresa]", DimensionesSugeridas:dimensions });
+  const salaries = personas.map((row) => Number(row.SalarioAnual)).filter(Number.isFinite);
+  if (salaries.length) add({ KPIID:"KPI-005", KPI:"Salario anual medio", Categoria:"Compensación", Definicion:"Media de SalarioAnual para los registros con importe válido.", ValorActual:Math.round(salaries.reduce((total, salary) => total + salary, 0) / salaries.length), Unidad:"EUR", Disponibilidad:"Disponible", Fuente:"Personas[SalarioAnual]", DimensionesSugeridas:["Departamento", "PuestoTrabajo", "Sexo", "NivelPuesto"].filter(has).join(" · ") });
+  if (has("Sexo")) add({ KPIID:"KPI-006", KPI:"Distribución por género", Categoria:"Diversidad", Definicion:"Recuento y porcentaje de plantilla por Sexo.", ValorActual:personas.filter((row) => row.Sexo).length, Unidad:"personas", Disponibilidad:"Disponible", Fuente:"Personas[Sexo]", DimensionesSugeridas:"Departamento · PuestoTrabajo · Centro" });
+  if (bajas.length) add({ KPIID:"KPI-007", KPI:"Episodios de baja médica", Categoria:"Absentismo", Definicion:"Episodios válidos de baja médica vinculados a una persona.", ValorActual:bajas.length, Unidad:"episodios", Disponibilidad:"Disponible", Fuente:"BajasMedicas[EpisodioID]", DimensionesSugeridas:["Departamento", "PuestoTrabajo", "Centro", "TipoBaja"].filter((field) => field === "TipoBaja" || has(field)).join(" · ") });
+  const datedLeaves = bajas.filter((row) => row.FechaInicio && row.FechaFin);
+  if (datedLeaves.length) {
+    const days = datedLeaves.reduce((total, row) => total + Math.max(0, Math.round((new Date(`${row.FechaFin}T00:00:00Z`) - new Date(`${row.FechaInicio}T00:00:00Z`)) / 86400000) + 1), 0);
+    add({ KPIID:"KPI-008", KPI:"Días de ausencia", Categoria:"Absentismo", Definicion:"Suma de días naturales de episodios con fecha de inicio y fin.", ValorActual:days, Unidad:"días", Disponibilidad:"Disponible", Fuente:"BajasMedicas[FechaInicio, FechaFin]", DimensionesSugeridas:["Departamento", "PuestoTrabajo", "Centro", "TipoBaja"].filter((field) => field === "TipoBaja" || has(field)).join(" · ") });
+  }
+  const catalogPath = path.join(outputDir, "kpis_detectados.csv"); writeCsv(catalogPath, KPI_FIELDS, kpis);
+  return { count:kpis.length, path:catalogPath, rows:kpis };
+}
 function generateInsights(personas, bajas, outputDir) {
   const insights = [];
   const validationPage = { Rotacion:"Rotacion y retencion: filtrar Departamento", Absentismo:"Absentismo: filtrar Departamento", "Equidad salarial":"Compensacion: filtrar PuestoTrabajo y usar la fila del puesto, no la tarjeta total", Concentracion:"Plantilla y Centros: filtrar Departamento", "Calidad de datos":"Revisar datos-procesados", Cobertura:"Insights automaticos" };
@@ -64,7 +118,7 @@ function generateInsights(personas, bajas, outputDir) {
   const insightsPath = path.join(outputDir, "insights.csv"); writeCsv(insightsPath, INSIGHT_FIELDS, insights);
   return { count:insights.length, path:insightsPath, rows:insights };
 }
-function convertWorkbook({ inputPath, personasSheet, personasMapping, bajasSheet, bajasMapping, outputDir }) { const workbook = XLSX.readFile(inputPath, { cellDates:true }); fs.mkdirSync(outputDir, { recursive:true }); const persons = validate("personas", sourceRows(workbook, personasSheet, PERSONAS_FIELDS, personasMapping)); const leaves = validate("bajas", sourceRows(workbook, bajasSheet, BAJAS_FIELDS, bajasMapping), new Set(persons.accepted.map((row) => row.data.PersonaID))); writeCsv(path.join(outputDir,"personas.csv"), PERSONAS_FIELDS, persons.accepted.map((row) => row.data)); writeCsv(path.join(outputDir,"bajas_medicas.csv"), BAJAS_FIELDS, leaves.accepted.map((row) => row.data)); const insightResult = generateInsights(persons.accepted.map((row) => row.data), leaves.accepted.map((row) => row.data), outputDir); const report = [...persons.rejected.map((row) => ({ Tipo:"Personas", Fila:row.line, Motivo:row.reason })), ...leaves.rejected.map((row) => ({ Tipo:"Bajas médicas", Fila:row.line, Motivo:row.reason }))]; const reportPath = path.join(outputDir,"filas_rechazadas.csv"); writeCsv(reportPath,["Tipo","Fila","Motivo"],report); return { personas:persons.accepted.length, bajas:leaves.accepted.length, rejected:report.length, insights:insightResult.count, insightsPath:insightResult.path, reportPath, outputDir }; }
+function convertWorkbook({ inputPath, personasSheet, personasMapping, bajasSheet, bajasMapping, outputDir }) { const workbook = XLSX.readFile(inputPath, { cellDates:true }); fs.mkdirSync(outputDir, { recursive:true }); const persons = validate("personas", sourceRows(workbook, personasSheet, PERSONAS_FIELDS, personasMapping)); const profile = detectDynamicProfile(workbook, personasSheet, personasMapping, persons.accepted); const leaves = validate("bajas", sourceRows(workbook, bajasSheet, BAJAS_FIELDS, bajasMapping), new Set(persons.accepted.map((row) => row.data.PersonaID))); const people = persons.accepted.map((row) => row.data), leavesData = leaves.accepted.map((row) => row.data); writeCsv(path.join(outputDir,"personas.csv"), [...PERSONAS_FIELDS, ...profile.fields.map((field) => field.name)], people); writeCsv(path.join(outputDir,"bajas_medicas.csv"), BAJAS_FIELDS, leavesData); fs.writeFileSync(path.join(outputDir, "perfil_dataset.json"), JSON.stringify(profile, null, 2), "utf8"); const insightResult = generateInsights(people, leavesData, outputDir), kpiResult = generateKpiCatalog(people, leavesData, outputDir); const report = [...persons.rejected.map((row) => ({ Tipo:"Personas", Fila:row.line, Motivo:row.reason })), ...leaves.rejected.map((row) => ({ Tipo:"Bajas médicas", Fila:row.line, Motivo:row.reason }))]; const reportPath = path.join(outputDir,"filas_rechazadas.csv"); writeCsv(reportPath,["Tipo","Fila","Motivo"],report); return { personas:people.length, bajas:leavesData.length, rejected:report.length, insights:insightResult.count, insightsPath:insightResult.path, kpis:kpiResult.count, kpisPath:kpiResult.path, dynamicPages:profile.pages.map((page) => page.title), profilePath:path.join(outputDir, "perfil_dataset.json"), reportPath, outputDir }; }
 function normalizeHex(value, fallback) { const hex = String(value || "").trim().replace(/^#/, ""); return /^[0-9a-f]{6}$/i.test(hex) ? `#${hex.toUpperCase()}` : fallback; }
 function hexToRgb(hex) { const value = normalizeHex(hex, "#000000").slice(1); return [0, 2, 4].map((offset) => parseInt(value.slice(offset, offset + 2), 16)); }
 function rgbToHex(rgb) { return `#${rgb.map((value) => Math.round(Math.max(0, Math.min(255, value))).toString(16).padStart(2, "0")).join("").toUpperCase()}`; }
@@ -113,4 +167,4 @@ function applyPowerBiPalette(projectDir, colors) {
   for (const file of visit(pagesDir).filter((file) => file.endsWith(".json"))) fs.writeFileSync(file, JSON.stringify(replacePaletteTokens(JSON.parse(fs.readFileSync(file, "utf8")), palette)), "utf8");
   return palette;
 }
-module.exports = { PERSONAS_FIELDS, BAJAS_FIELDS, INSIGHT_FIELDS, analyzeWorkbook, guessMapping, convertWorkbook, generateInsights, createPalette, applyPowerBiPalette };
+module.exports = { PERSONAS_FIELDS, BAJAS_FIELDS, INSIGHT_FIELDS, KPI_FIELDS, analyzeWorkbook, guessMapping, convertWorkbook, generateInsights, generateKpiCatalog, detectDynamicProfile, createPalette, applyPowerBiPalette };

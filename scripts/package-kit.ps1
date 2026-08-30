@@ -2,7 +2,7 @@ param([string]$Output = "public/downloads/people-analytics-dax-kit-free.zip")
 
 $root = Split-Path -Parent $PSScriptRoot
 $destination = Join-Path $root $Output
-$importer = Join-Path $root "importer-desktop\dist\PeopleAnalyticsImporter-Desktop-hierarchy.exe"
+$importer = Join-Path $root "importer-desktop\dist\PeopleAnalyticsImporter-Desktop-next.exe"
 if (-not (Test-Path -LiteralPath $importer)) {
   $importer = Join-Path $root "importer-desktop\dist\PeopleAnalyticsImporter-Desktop-combinedfilter.exe"
 }
@@ -20,9 +20,6 @@ if (-not (Test-Path -LiteralPath $importer)) {
 }
 if (-not (Test-Path -LiteralPath $importer)) {
   $importer = Join-Path $root "importer-desktop\dist\PeopleAnalyticsImporter-Desktop-updated.exe"
-}
-if (-not (Test-Path -LiteralPath $importer)) {
-  $importer = Join-Path $root "importer-desktop\dist\PeopleAnalyticsImporter-Desktop-next.exe"
 }
 if (-not (Test-Path -LiteralPath $importer)) {
   throw "No existe el ejecutable portable. Ejecuta 'npm run dist:win' en importer-desktop antes de crear el ZIP."

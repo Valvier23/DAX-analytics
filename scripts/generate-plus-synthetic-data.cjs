@@ -30,4 +30,15 @@ const workbook = XLSX.utils.book_new();
 XLSX.utils.book_append_sheet(workbook, XLSX.utils.aoa_to_sheet([headers, ...people]), "Personas");
 XLSX.utils.book_append_sheet(workbook, XLSX.utils.aoa_to_sheet([["EpisodioID","PersonaID","FechaInicio","FechaFin","TipoBaja"], ...leaves]), "Bajas médicas");
 XLSX.writeFile(workbook, path.join(out, "plantilla-demografica-ejemplo.xlsx"));
+const managers = ["Ana Martín", "Luis García", "Marta López", "Carlos Ruiz", "Elena Soto", "Javier Pérez", "Laura Díaz", "Pablo Ramos"];
+const advancedHeaders = [...headers, "Manager", "Desempeño", "Engagement", "HorasFormacion", "BonusAnual"];
+const advancedPeople = people.map((person, index) => {
+  const level = person[14];
+  const bonusBase = { Junior: 500, Especialista: 1800, Manager: 6000, "Dirección": 14000 }[level] || 1000;
+  return [...person, managers[index % managers.length], 2 + (index % 4), 55 + ((index * 7) % 41), 4 + ((index * 3) % 37), bonusBase + ((index % 6) * 350)];
+});
+const advancedWorkbook = XLSX.utils.book_new();
+XLSX.utils.book_append_sheet(advancedWorkbook, XLSX.utils.aoa_to_sheet([advancedHeaders, ...advancedPeople]), "Personas");
+XLSX.utils.book_append_sheet(advancedWorkbook, XLSX.utils.aoa_to_sheet([["EpisodioID","PersonaID","FechaInicio","FechaFin","TipoBaja"], ...leaves]), "Bajas medicas");
+XLSX.writeFile(advancedWorkbook, path.join(out, "plantilla-avanzada-ejemplo.xlsx"));
 console.log(JSON.stringify({ people: people.length, active: people.filter((row) => !row[2]).length, leavers: people.filter((row) => row[2]).length, leaveEpisodes: leaves.length }));

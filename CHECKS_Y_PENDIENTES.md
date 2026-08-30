@@ -6,7 +6,7 @@
 
 - [ ] Comprension semantica automatica del dataset.
 - [ ] Perfilado y calidad de datos.
-- [ ] Identificacion automatica de KPIs, dimensiones y fechas.
+- [-] Identificacion automatica de KPIs, dimensiones y fechas. — Catalogo inicial de KPIs y dimensiones sugeridas; pendiente deteccion generica de fechas y medidas no estandar.
 - [ ] Analisis descriptivo inteligente.
 - [-] Motor automatico de descubrimiento de insights. (5/5) — Implementacion inicial; revisar y pulir despues.
 - [ ] Ranking de insights por relevancia e impacto. (5/5)
