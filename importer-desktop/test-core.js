@@ -26,4 +26,11 @@ if (!fs.readFileSync(path.join(output, "personas.csv"), "utf8").includes("P-001"
 const peopleCsv = fs.readFileSync(path.join(output, "personas.csv"), "utf8");
 if (!peopleCsv.includes("2024-01-15") || !peopleCsv.includes("1988-04-12")) throw new Error("Las fechas no se normalizaron a ISO.");
 if (!peopleCsv.includes('"Técnico, soporte"')) throw new Error("El puesto con coma no se escapó correctamente.");
+const palette = core.createPalette("#E8590C", "#5F3DC4");
+if (palette.primary !== "#E8590C" || palette.secondary !== "#5F3DC4" || palette.border === palette.primary || palette.canvas === "#FFFFFF") throw new Error("La paleta derivada no se generó correctamente.");
+const project = path.join(temp, "PowerBI");
+fs.cpSync(path.resolve(__dirname, "..", "kit-free", "PowerBI"), project, { recursive: true });
+core.applyPowerBiPalette(project, { primary: "#E8590C", secondary: "#5F3DC4" });
+const theme = JSON.parse(fs.readFileSync(path.join(project, "People Analytics DAX Kit.Report", "StaticResources", "SharedResources", "BaseThemes", "CY25SU03.json"), "utf8"));
+if (theme.dataColors[0] !== "#E8590C" || theme.dataColors[1] !== "#5F3DC4" || theme.tableAccent !== "#E8590C") throw new Error("El tema Power BI no recibió los colores personalizados.");
 console.log(JSON.stringify({ ok: true, sheets: analysis.sheets, peopleMap, leaveMap, result }, null, 2));

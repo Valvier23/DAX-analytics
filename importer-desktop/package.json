@@ -29,6 +29,10 @@
       {
         "from": "../kit-free/PowerBI",
         "to": "PowerBI"
+      },
+      {
+        "from": "../kit-plus/PowerBI",
+        "to": "PowerBIPlus"
       }
     ],
     "win": {

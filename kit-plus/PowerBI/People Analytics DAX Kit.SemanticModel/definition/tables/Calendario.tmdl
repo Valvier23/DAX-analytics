@@ -1,0 +1,17 @@
+table Calendario
+	column Fecha
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: [Fecha]
+
+	column Ano = YEAR ( Calendario[Fecha] )
+		dataType: int64
+	column Mes = FORMAT ( Calendario[Fecha], "MMM" )
+		dataType: string
+	column AnoMes = FORMAT ( Calendario[Fecha], "YYYY-MM" )
+		dataType: string
+
+	partition Calendario = calculated
+		mode: import
+		source = SELECTCOLUMNS ( CALENDAR ( DATE ( 2023, 1, 1 ), DATE ( 2025, 12, 31 ) ), "Fecha", [Date] )
