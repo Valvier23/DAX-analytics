@@ -16,4 +16,52 @@ function validate(kind, rows, people) { const seen = new Set(), accepted = [], r
 function escape(value) { const text = String(value ?? ""); return /[";,\n\r]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text; }
 function writeCsv(file, fields, rows) { fs.writeFileSync(file, `\uFEFF${[fields.join(","), ...rows.map((row) => fields.map((field) => escape(row[field])).join(","))].join("\r\n")}`, "utf8"); }
 function convertWorkbook({ inputPath, personasSheet, personasMapping, bajasSheet, bajasMapping, outputDir }) { const workbook = XLSX.readFile(inputPath, { cellDates:true }); fs.mkdirSync(outputDir, { recursive:true }); const persons = validate("personas", sourceRows(workbook, personasSheet, PERSONAS_FIELDS, personasMapping)); const leaves = validate("bajas", sourceRows(workbook, bajasSheet, BAJAS_FIELDS, bajasMapping), new Set(persons.accepted.map((row) => row.data.PersonaID))); writeCsv(path.join(outputDir,"personas.csv"), PERSONAS_FIELDS, persons.accepted.map((row) => row.data)); writeCsv(path.join(outputDir,"bajas_medicas.csv"), BAJAS_FIELDS, leaves.accepted.map((row) => row.data)); const report = [...persons.rejected.map((row) => ({ Tipo:"Personas", Fila:row.line, Motivo:row.reason })), ...leaves.rejected.map((row) => ({ Tipo:"Bajas médicas", Fila:row.line, Motivo:row.reason }))]; const reportPath = path.join(outputDir,"filas_rechazadas.csv"); writeCsv(reportPath,["Tipo","Fila","Motivo"],report); return { personas:persons.accepted.length, bajas:leaves.accepted.length, rejected:report.length, reportPath, outputDir }; }
-module.exports = { PERSONAS_FIELDS, BAJAS_FIELDS, analyzeWorkbook, guessMapping, convertWorkbook };
+function normalizeHex(value, fallback) { const hex = String(value || "").trim().replace(/^#/, ""); return /^[0-9a-f]{6}$/i.test(hex) ? `#${hex.toUpperCase()}` : fallback; }
+function hexToRgb(hex) { const value = normalizeHex(hex, "#000000").slice(1); return [0, 2, 4].map((offset) => parseInt(value.slice(offset, offset + 2), 16)); }
+function rgbToHex(rgb) { return `#${rgb.map((value) => Math.round(Math.max(0, Math.min(255, value))).toString(16).padStart(2, "0")).join("").toUpperCase()}`; }
+function mix(color, target, amount) { const source = hexToRgb(color), destination = hexToRgb(target); return rgbToHex(source.map((value, index) => value + (destination[index] - value) * amount)); }
+function luminance(color) { const channels = hexToRgb(color).map((value) => { const normalized = value / 255; return normalized <= 0.04045 ? normalized / 12.92 : ((normalized + 0.055) / 1.055) ** 2.4; }); return channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722; }
+function contrast(colorA, colorB) { const [light, dark] = [luminance(colorA), luminance(colorB)].sort((a, b) => b - a); return (light + 0.05) / (dark + 0.05); }
+function readableInk(primary) { const candidate = mix(primary, "#000000", 0.78); return contrast(candidate, "#FFFFFF") >= 4.5 ? candidate : "#102A43"; }
+function createPalette(primaryInput, secondaryInput) {
+  const primary = normalizeHex(primaryInput, "#123AA7"), secondary = normalizeHex(secondaryInput, "#3569D4");
+  const ink = readableInk(primary), canvas = mix(primary, "#FFFFFF", 0.965), border = mix(primary, "#FFFFFF", 0.84), muted = mix(ink, "#FFFFFF", 0.57);
+  return { primary, secondary, primaryDark: mix(primary, "#000000", 0.25), primaryMid: mix(primary, "#FFFFFF", 0.36), primaryLight: mix(primary, "#FFFFFF", 0.72), secondaryDark: mix(secondary, "#000000", 0.2), secondaryLight: mix(secondary, "#FFFFFF", 0.68), accent: mix(primary, secondary, 0.5), accentLight: mix(mix(primary, secondary, 0.5), "#FFFFFF", 0.56), ink, muted, canvas, border, grid: mix(primary, "#FFFFFF", 0.9) };
+}
+function setThemeValue(theme, path, value) { let target = theme; for (const key of path.slice(0, -1)) target = target?.[key]; if (target) target[path.at(-1)] = value; }
+function applyPaletteToTheme(theme, palette) {
+  theme.name = `People Analytics · ${palette.primary.slice(1)} / ${palette.secondary.slice(1)}`;
+  theme.dataColors = [palette.primary, palette.secondary, palette.primaryMid, palette.secondaryLight, palette.accent, palette.primaryLight, palette.secondaryDark];
+  Object.assign(theme, { firstLevelElements: palette.ink, secondLevelElements: palette.muted, thirdLevelElements: palette.grid, fourthLevelElements: palette.border, background: "#FFFFFF", secondaryBackground: palette.canvas, tableAccent: palette.primary });
+  setThemeValue(theme, ["visualStyles", "*", "*", "title", 0, "fontColor"], palette.primary);
+  setThemeValue(theme, ["visualStyles", "*", "*", "border", 0, "color", "solid", "color"], palette.border);
+  setThemeValue(theme, ["visualStyles", "card", "*", "labels", 0, "color"], palette.primary);
+  setThemeValue(theme, ["visualStyles", "card", "*", "categoryLabels", 0, "color"], palette.muted);
+  setThemeValue(theme, ["visualStyles", "clusteredBarChart", "*", "categoryAxis", 0, "labelColor"], palette.ink);
+  setThemeValue(theme, ["visualStyles", "clusteredBarChart", "*", "valueAxis", 0, "labelColor"], palette.muted);
+  setThemeValue(theme, ["visualStyles", "clusteredBarChart", "*", "dataPoint", 0, "fill", "solid", "color"], palette.primary);
+  setThemeValue(theme, ["visualStyles", "clusteredColumnChart", "*", "categoryAxis", 0, "labelColor"], palette.ink);
+  setThemeValue(theme, ["visualStyles", "clusteredColumnChart", "*", "valueAxis", 0, "labelColor"], palette.muted);
+  setThemeValue(theme, ["visualStyles", "clusteredColumnChart", "*", "dataPoint", 0, "fill", "solid", "color"], palette.secondary);
+  setThemeValue(theme, ["visualStyles", "donutChart", "*", "legend", 0, "labelColor"], palette.ink);
+  setThemeValue(theme, ["visualStyles", "donutChart", "*", "labels", 0, "color"], palette.ink);
+  return theme;
+}
+function replacePaletteTokens(value, palette) {
+  if (typeof value === "string") return ({ "#123AA7": palette.primary, "#3569D4": palette.secondary, "#6392E6": palette.primaryMid, "#9DBBF1": palette.secondaryLight, "#12A89D": palette.accent, "#F0A22E": palette.accentLight, "#6B7893": palette.muted, "#102A6B": palette.ink, "#566682": palette.muted, "#E9EEF7": palette.grid, "#AAB6CA": palette.border, "#F4F6FA": palette.canvas, "#D8E1F0": palette.border }[value.toUpperCase()] || value);
+  if (Array.isArray(value)) return value.map((item) => replacePaletteTokens(item, palette));
+  if (value && typeof value === "object") return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, replacePaletteTokens(item, palette)]));
+  return value;
+}
+function applyPowerBiPalette(projectDir, colors) {
+  const palette = createPalette(colors?.primary, colors?.secondary);
+  const reportDir = path.join(projectDir, "People Analytics DAX Kit.Report");
+  const themePath = path.join(reportDir, "StaticResources", "SharedResources", "BaseThemes", "CY25SU03.json");
+  const theme = applyPaletteToTheme(JSON.parse(fs.readFileSync(themePath, "utf8")), palette);
+  fs.writeFileSync(themePath, JSON.stringify(theme), "utf8");
+  const pagesDir = path.join(reportDir, "definition", "pages");
+  const visit = (directory) => fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => entry.isDirectory() ? visit(path.join(directory, entry.name)) : [path.join(directory, entry.name)]);
+  for (const file of visit(pagesDir).filter((file) => file.endsWith(".json"))) fs.writeFileSync(file, JSON.stringify(replacePaletteTokens(JSON.parse(fs.readFileSync(file, "utf8")), palette)), "utf8");
+  return palette;
+}
+module.exports = { PERSONAS_FIELDS, BAJAS_FIELDS, analyzeWorkbook, guessMapping, convertWorkbook, createPalette, applyPowerBiPalette };

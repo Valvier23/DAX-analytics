@@ -16,6 +16,7 @@ Copy-Item -LiteralPath (Join-Path $root "kit-free\medidas.dax") -Destination (Jo
 Copy-Item -LiteralPath (Join-Path $root "kit-free\diccionario-datos.md") -Destination (Join-Path $staging "diccionario-datos.md")
 Copy-Item -LiteralPath (Join-Path $root "kit-free\README.md") -Destination (Join-Path $staging "LEEME.md")
 Copy-Item -LiteralPath (Join-Path $root "kit-free\datos-ejemplo") -Destination (Join-Path $staging "datos-ejemplo") -Recurse
+Copy-Item -LiteralPath (Join-Path $root "kit-plus\datos-ejemplo") -Destination (Join-Path $staging "datos-ejemplo-plus") -Recurse
 
 $destinationDirectory = Split-Path -Parent $destination
 New-Item -ItemType Directory -Force -Path $destinationDirectory | Out-Null

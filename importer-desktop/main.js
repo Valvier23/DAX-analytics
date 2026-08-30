@@ -6,11 +6,12 @@ const core = require("./core");
 
 app.disableHardwareAcceleration();
 
-function ensurePowerBiProject(projectDir, outputDir) {
+function ensurePowerBiProject(projectDir, outputDir, edition = "demo") {
   const targetPbip = path.join(projectDir, "People Analytics DAX Kit.pbip");
+  const template = edition === "plus" ? "PowerBIPlus" : "PowerBI";
   const bundledDirs = app.isPackaged
-    ? [path.join(process.resourcesPath, "PowerBI"), path.join(path.dirname(process.execPath), "resources", "PowerBI")]
-    : [path.resolve(__dirname, "..", "kit-free", "PowerBI")];
+    ? [path.join(process.resourcesPath, template), path.join(path.dirname(process.execPath), "resources", template)]
+    : [path.resolve(__dirname, "..", edition === "plus" ? "kit-plus" : "kit-free", "PowerBI")];
   const bundledDir = bundledDirs.find((dir) => fs.existsSync(path.join(dir, "People Analytics DAX Kit.pbip")));
   if (!bundledDir) {
     throw new Error("No se encontró el proyecto Power BI incluido en el importador.");
@@ -98,7 +99,8 @@ app.whenReady().then(() => {
     const outputDir = path.join(projectDir, "datos-ejemplo");
     const result = core.convertWorkbook({ ...config, outputDir });
     try {
-      const pbip = ensurePowerBiProject(projectDir, outputDir);
+      const pbip = ensurePowerBiProject(projectDir, outputDir, config.edition);
+      result.palette = core.applyPowerBiPalette(projectDir, config.colors);
       const openError = await shell.openPath(pbip);
       result.powerBiOpened = !openError;
       result.powerBiError = openError || "";
