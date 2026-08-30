@@ -1,0 +1,1001 @@
+﻿PersonaID,FechaAlta,FechaBajaEmpresa,Departamento,PuestoTrabajo,Centro,Sexo,FechaNacimiento,SalarioAnual,NivelEducativo,EstadoCivil,NumeroHijos,ModalidadTrabajo,TipoContrato,NivelPuesto,Provincia,Nacionalidad,FechaInicioPuesto,JornadaSemanal
+EMP-0001,2024-12-21,,Atención al cliente,Especialista Atención al cliente,Madrid,F,1988-09-23,46500,Bachillerato,Otro,2,Híbrido,Indefinido,Especialista,Madrid,España,2024-12-21,40
+EMP-0002,2017-06-01,,Operaciones,Dirección Operaciones,Madrid,F,1977-04-26,80700,FP,Casado/a,1,Presencial,Indefinido,Dirección,Madrid,Colombia,2017-06-01,40
+EMP-0003,2021-09-09,,Ventas,Junior Ventas,Sevilla,M,1971-03-27,29100,FP,Otro,0,Remoto,Indefinido,Junior,Sevilla,Colombia,2021-09-09,40
+EMP-0004,2020-11-01,,Operaciones,Especialista Operaciones,Madrid,M,1977-04-24,46600,Bachillerato,Otro,3,Híbrido,Indefinido,Especialista,Madrid,Colombia,2020-11-01,40
+EMP-0005,2022-02-26,,Legal,Manager Legal,Barcelona,F,1996-08-14,56900,Bachillerato,Casado/a,0,Remoto,Indefinido,Manager,Barcelona,Argentina,2022-02-26,40
+EMP-0006,2015-10-15,,Tecnología,Dirección Tecnología,Madrid,M,1980-06-07,75900,Bachillerato,Casado/a,1,Remoto,Indefinido,Dirección,Madrid,Argentina,2015-10-15,40
+EMP-0007,2015-03-28,,Ventas,Junior Ventas,Barcelona,F,1977-04-01,27500,FP,Otro,1,Remoto,Indefinido,Junior,Barcelona,España,2015-03-28,40
+EMP-0008,2018-09-09,,Operaciones,Especialista Operaciones,Madrid,F,1995-10-01,38800,Grado,Soltero/a,0,Presencial,Indefinido,Especialista,Madrid,Portugal,2018-09-09,40
+EMP-0009,2015-11-29,,Operaciones,Manager Operaciones,Bilbao,F,1966-10-12,56100,Bachillerato,Soltero/a,2,Remoto,Indefinido,Manager,Bizkaia,España,2015-11-29,40
+EMP-0010,2021-06-15,,Ventas,Dirección Ventas,Valencia,M,1970-10-20,82600,FP,Soltero/a,2,Híbrido,Indefinido,Dirección,Valencia,España,2021-06-15,40
+EMP-0011,2025-09-24,,Legal,Junior Legal,Barcelona,F,1997-04-08,28700,Grado,Soltero/a,1,Presencial,Indefinido,Junior,Barcelona,España,2025-09-24,30
+EMP-0012,2017-02-16,,Personas,Manager Personas,Barcelona,F,1991-11-14,56700,FP,Otro,1,Presencial,Indefinido,Manager,Barcelona,Portugal,2017-02-16,30
+EMP-0013,2024-10-20,,Personas,Junior Personas,Sevilla,M,2000-09-24,34000,Bachillerato,Otro,0,Presencial,Indefinido,Junior,Sevilla,España,2024-10-20,40
+EMP-0014,2016-12-10,,Atención al cliente,Manager Atención al cliente,Valencia,F,1984-06-24,54400,Máster,Otro,3,Remoto,Indefinido,Manager,Valencia,Portugal,2016-12-10,40
+EMP-0015,2023-04-23,,Marketing,Dirección Marketing,Barcelona,F,1999-07-25,75100,Grado,Otro,2,Presencial,Temporal,Dirección,Barcelona,Portugal,2023-04-23,40
+EMP-0016,2018-05-08,,Legal,Especialista Legal,Sevilla,F,1972-09-17,44100,Grado,Casado/a,2,Híbrido,Temporal,Especialista,Sevilla,Argentina,2018-05-08,40
+EMP-0017,2020-08-01,,Ventas,Dirección Ventas,Valencia,F,1982-06-25,81500,FP,Otro,1,Híbrido,Indefinido,Dirección,Valencia,España,2020-08-01,30
+EMP-0018,2015-03-30,,Personas,Manager Personas,Sevilla,M,1967-02-06,56800,Bachillerato,Soltero/a,0,Híbrido,Indefinido,Manager,Sevilla,Portugal,2015-03-30,40
+EMP-0019,2023-06-01,,Personas,Dirección Personas,Madrid,M,2001-12-12,81600,Bachillerato,Otro,1,Híbrido,Temporal,Dirección,Madrid,Portugal,2023-06-01,40
+EMP-0020,2015-03-15,,Atención al cliente,Especialista Atención al cliente,Barcelona,M,1966-02-26,43500,Bachillerato,Casado/a,1,Remoto,Indefinido,Especialista,Barcelona,Argentina,2015-03-15,40
+EMP-0021,2019-11-25,,Operaciones,Dirección Operaciones,Barcelona,F,1965-03-16,82400,Bachillerato,Soltero/a,0,Híbrido,Indefinido,Dirección,Barcelona,Colombia,2019-11-25,40
+EMP-0022,2020-09-03,,Operaciones,Dirección Operaciones,Barcelona,F,1973-11-03,78200,Grado,Otro,3,Híbrido,Indefinido,Dirección,Barcelona,Colombia,2020-09-03,40
+EMP-0023,2022-12-20,,Tecnología,Especialista Tecnología,Bilbao,M,1969-05-17,45700,Bachillerato,Otro,2,Híbrido,Indefinido,Especialista,Bizkaia,Colombia,2022-12-20,40
+EMP-0024,2019-07-22,,Operaciones,Manager Operaciones,Valencia,F,1981-07-09,54200,Grado,Casado/a,0,Remoto,Indefinido,Manager,Valencia,Portugal,2019-07-22,40
+EMP-0025,2020-10-04,,Personas,Junior Personas,Barcelona,F,1968-04-07,28300,Bachillerato,Soltero/a,1,Remoto,Indefinido,Junior,Barcelona,Portugal,2020-10-04,40
+EMP-0026,2022-08-21,,Legal,Manager Legal,Bilbao,M,1983-03-09,58100,FP,Soltero/a,3,Presencial,Indefinido,Manager,Bizkaia,España,2022-08-21,40
+EMP-0027,2017-10-17,,Finanzas,Manager Finanzas,Sevilla,F,1972-11-07,52000,Máster,Otro,2,Híbrido,Indefinido,Manager,Sevilla,Italia,2017-10-17,40
+EMP-0028,2016-02-05,,Operaciones,Dirección Operaciones,Valencia,M,1991-01-03,80800,Bachillerato,Soltero/a,2,Presencial,Indefinido,Dirección,Valencia,Portugal,2016-02-05,40
+EMP-0029,2020-04-30,,Atención al cliente,Especialista Atención al cliente,Madrid,F,1998-07-12,44100,Bachillerato,Soltero/a,3,Híbrido,Indefinido,Especialista,Madrid,Italia,2020-04-30,30
+EMP-0030,2022-04-20,,Ventas,Especialista Ventas,Barcelona,F,1990-07-07,43000,Grado,Otro,0,Híbrido,Temporal,Especialista,Barcelona,Colombia,2022-04-20,40
+EMP-0031,2015-05-21,,Atención al cliente,Dirección Atención al cliente,Madrid,M,1980-08-29,75500,Máster,Casado/a,0,Remoto,Indefinido,Dirección,Madrid,Italia,2015-05-21,30
+EMP-0032,2024-04-11,,Tecnología,Junior Tecnología,Valencia,F,1968-12-06,30900,Grado,Otro,2,Híbrido,Indefinido,Junior,Valencia,Italia,2024-04-11,40
+EMP-0033,2017-04-07,,Tecnología,Manager Tecnología,Madrid,F,1999-12-26,54800,Bachillerato,Soltero/a,0,Remoto,Temporal,Manager,Madrid,Argentina,2017-04-07,40
+EMP-0034,2016-12-17,,Tecnología,Manager Tecnología,Barcelona,F,1974-06-30,56100,FP,Casado/a,3,Híbrido,Indefinido,Manager,Barcelona,Argentina,2016-12-17,40
+EMP-0035,2021-06-05,,Personas,Manager Personas,Bilbao,F,1984-11-23,57900,Grado,Soltero/a,2,Presencial,Indefinido,Manager,Bizkaia,Argentina,2021-06-05,40
+EMP-0036,2021-03-16,,Finanzas,Dirección Finanzas,Madrid,M,1988-10-10,80700,FP,Otro,0,Remoto,Indefinido,Dirección,Madrid,España,2021-03-16,40
+EMP-0037,2020-02-02,,Tecnología,Manager Tecnología,Sevilla,F,1990-09-14,55600,Bachillerato,Casado/a,1,Remoto,Indefinido,Manager,Sevilla,Portugal,2020-02-02,40
+EMP-0038,2017-04-27,,Ventas,Especialista Ventas,Madrid,F,1995-04-20,40000,Bachillerato,Otro,1,Híbrido,Indefinido,Especialista,Madrid,España,2017-04-27,40
+EMP-0039,2021-08-24,,Operaciones,Dirección Operaciones,Barcelona,M,1982-04-28,78700,Grado,Soltero/a,0,Remoto,Indefinido,Dirección,Barcelona,Portugal,2021-08-24,40
+EMP-0040,2015-09-11,,Personas,Dirección Personas,Barcelona,F,1971-01-22,81000,Máster,Casado/a,3,Remoto,Temporal,Dirección,Barcelona,Colombia,2015-09-11,40
+EMP-0041,2018-08-08,,Tecnología,Junior Tecnología,Barcelona,F,1980-01-30,34800,Bachillerato,Casado/a,0,Remoto,Indefinido,Junior,Barcelona,Portugal,2018-08-08,30
+EMP-0042,2022-06-09,,Finanzas,Manager Finanzas,Valencia,F,1980-08-15,52000,Grado,Otro,1,Presencial,Indefinido,Manager,Valencia,Portugal,2022-06-09,40
+EMP-0043,2023-06-12,,Atención al cliente,Manager Atención al cliente,Madrid,F,1994-07-10,57800,Bachillerato,Otro,3,Remoto,Temporal,Manager,Madrid,España,2023-06-12,40
+EMP-0044,2015-06-23,,Operaciones,Dirección Operaciones,Valencia,F,1970-01-04,82300,Máster,Soltero/a,2,Remoto,Indefinido,Dirección,Valencia,Italia,2015-06-23,40
+EMP-0045,2015-02-13,,Ventas,Manager Ventas,Valencia,F,1999-06-01,60200,Grado,Casado/a,2,Remoto,Indefinido,Manager,Valencia,Colombia,2015-02-13,40
+EMP-0046,2016-11-09,,Personas,Especialista Personas,Barcelona,M,1976-07-04,41200,FP,Otro,3,Híbrido,Indefinido,Especialista,Barcelona,Portugal,2016-11-09,40
+EMP-0047,2017-07-31,,Legal,Manager Legal,Sevilla,F,1979-05-19,57500,Grado,Casado/a,2,Híbrido,Indefinido,Manager,Sevilla,Italia,2017-07-31,40
+EMP-0048,2016-08-15,,Personas,Especialista Personas,Madrid,M,2000-01-23,46300,Grado,Casado/a,1,Remoto,Indefinido,Especialista,Madrid,Colombia,2016-08-15,40
+EMP-0049,2018-09-25,,Marketing,Especialista Marketing,Madrid,F,1986-10-14,43100,FP,Soltero/a,0,Presencial,Temporal,Especialista,Madrid,Italia,2018-09-25,40
+EMP-0050,2022-02-23,,Ventas,Especialista Ventas,Valencia,F,1975-01-01,44400,Máster,Casado/a,0,Híbrido,Indefinido,Especialista,Valencia,Italia,2022-02-23,40
+EMP-0051,2021-02-20,,Ventas,Especialista Ventas,Barcelona,F,1966-11-14,41700,FP,Casado/a,3,Híbrido,Indefinido,Especialista,Barcelona,Argentina,2021-02-20,40
+EMP-0052,2015-02-05,,Finanzas,Junior Finanzas,Sevilla,F,1994-02-23,29200,Bachillerato,Otro,1,Híbrido,Indefinido,Junior,Sevilla,Italia,2015-02-05,40
+EMP-0053,2024-02-16,,Finanzas,Dirección Finanzas,Sevilla,M,1970-03-28,75000,Máster,Casado/a,2,Remoto,Temporal,Dirección,Sevilla,Italia,2024-02-16,40
+EMP-0054,2020-02-14,,Marketing,Especialista Marketing,Valencia,F,1984-08-12,39400,Bachillerato,Casado/a,1,Híbrido,Indefinido,Especialista,Valencia,Argentina,2020-02-14,40
+EMP-0055,2019-01-31,,Marketing,Manager Marketing,Sevilla,F,1975-02-25,61000,Máster,Otro,1,Presencial,Temporal,Manager,Sevilla,Colombia,2019-01-31,40
+EMP-0056,2018-12-30,,Legal,Dirección Legal,Madrid,F,1967-10-30,80600,Máster,Casado/a,2,Presencial,Indefinido,Dirección,Madrid,Colombia,2018-12-30,40
+EMP-0057,2017-12-10,,Finanzas,Manager Finanzas,Madrid,F,1994-04-21,53400,Bachillerato,Soltero/a,0,Híbrido,Indefinido,Manager,Madrid,Colombia,2017-12-10,40
+EMP-0058,2016-06-24,,Tecnología,Manager Tecnología,Barcelona,F,1973-08-03,55800,Máster,Casado/a,0,Híbrido,Temporal,Manager,Barcelona,España,2016-06-24,40
+EMP-0059,2019-04-17,,Personas,Especialista Personas,Bilbao,M,1965-12-25,43400,Bachillerato,Otro,0,Híbrido,Indefinido,Especialista,Bizkaia,España,2019-04-17,40
+EMP-0060,2018-06-21,,Marketing,Junior Marketing,Sevilla,M,1982-03-16,32200,Grado,Otro,3,Remoto,Temporal,Junior,Sevilla,Italia,2018-06-21,40
+EMP-0061,2023-06-05,,Marketing,Manager Marketing,Madrid,M,1974-10-22,58500,Bachillerato,Casado/a,0,Presencial,Indefinido,Manager,Madrid,Portugal,2023-06-05,40
+EMP-0062,2019-02-11,,Legal,Dirección Legal,Sevilla,M,1981-12-25,77300,Máster,Casado/a,1,Presencial,Indefinido,Dirección,Sevilla,Colombia,2019-02-11,40
+EMP-0063,2016-12-15,,Personas,Especialista Personas,Madrid,F,1987-06-12,45700,Máster,Otro,3,Remoto,Indefinido,Especialista,Madrid,Italia,2016-12-15,40
+EMP-0064,2020-10-19,,Operaciones,Manager Operaciones,Sevilla,M,1979-09-01,57200,Grado,Otro,3,Remoto,Indefinido,Manager,Sevilla,Italia,2020-10-19,40
+EMP-0065,2022-02-23,,Tecnología,Manager Tecnología,Sevilla,F,2000-01-01,60900,FP,Otro,3,Presencial,Indefinido,Manager,Sevilla,Italia,2022-02-23,40
+EMP-0066,2017-02-03,,Ventas,Manager Ventas,Barcelona,F,1995-07-26,57300,Máster,Soltero/a,2,Presencial,Indefinido,Manager,Barcelona,Colombia,2017-02-03,40
+EMP-0067,2018-09-25,,Tecnología,Junior Tecnología,Bilbao,M,1985-12-25,34300,Máster,Otro,0,Híbrido,Indefinido,Junior,Bizkaia,Portugal,2018-09-25,40
+EMP-0068,2021-08-28,,Ventas,Junior Ventas,Madrid,M,1973-06-14,34300,Bachillerato,Casado/a,0,Presencial,Temporal,Junior,Madrid,Portugal,2021-08-28,40
+EMP-0069,2021-06-30,,Operaciones,Manager Operaciones,Sevilla,M,1968-01-06,60400,Grado,Soltero/a,2,Remoto,Indefinido,Manager,Sevilla,Colombia,2021-06-30,40
+EMP-0070,2024-10-27,,Marketing,Especialista Marketing,Valencia,M,1988-07-12,42300,Bachillerato,Soltero/a,0,Híbrido,Indefinido,Especialista,Valencia,Argentina,2024-10-27,30
+EMP-0071,2019-03-22,,Personas,Especialista Personas,Bilbao,M,1990-09-30,43800,FP,Otro,2,Híbrido,Indefinido,Especialista,Bizkaia,España,2019-03-22,40
+EMP-0072,2020-01-11,,Personas,Junior Personas,Sevilla,M,1998-12-30,31100,Máster,Otro,2,Híbrido,Temporal,Junior,Sevilla,Colombia,2020-01-11,40
+EMP-0073,2020-09-24,,Tecnología,Especialista Tecnología,Sevilla,M,1966-08-06,44700,Máster,Soltero/a,0,Presencial,Indefinido,Especialista,Sevilla,Portugal,2020-09-24,40
+EMP-0074,2019-05-13,,Finanzas,Dirección Finanzas,Sevilla,M,1987-01-05,78500,Bachillerato,Otro,2,Híbrido,Indefinido,Dirección,Sevilla,Italia,2019-05-13,40
+EMP-0075,2015-09-14,,Tecnología,Manager Tecnología,Sevilla,M,1967-04-07,54600,FP,Otro,2,Híbrido,Indefinido,Manager,Sevilla,Portugal,2015-09-14,40
+EMP-0076,2023-01-27,,Atención al cliente,Dirección Atención al cliente,Madrid,M,1975-02-14,74900,FP,Otro,2,Presencial,Temporal,Dirección,Madrid,España,2023-01-27,40
+EMP-0077,2015-05-01,,Ventas,Junior Ventas,Madrid,F,1989-03-12,27900,Grado,Casado/a,2,Híbrido,Indefinido,Junior,Madrid,España,2015-05-01,40
+EMP-0078,2018-03-08,,Operaciones,Manager Operaciones,Valencia,F,1968-06-03,59800,FP,Soltero/a,0,Remoto,Indefinido,Manager,Valencia,Colombia,2018-03-08,40
+EMP-0079,2018-03-19,,Tecnología,Dirección Tecnología,Bilbao,M,1969-05-28,81000,Máster,Casado/a,1,Presencial,Indefinido,Dirección,Bizkaia,España,2018-03-19,40
+EMP-0080,2019-05-23,,Personas,Especialista Personas,Madrid,M,1993-01-08,39800,FP,Soltero/a,3,Híbrido,Indefinido,Especialista,Madrid,Italia,2019-05-23,40
+EMP-0081,2018-02-15,,Personas,Junior Personas,Barcelona,F,1986-05-03,28300,Grado,Otro,0,Presencial,Temporal,Junior,Barcelona,Portugal,2018-02-15,40
+EMP-0082,2017-10-30,,Tecnología,Dirección Tecnología,Valencia,M,1966-08-06,78000,Bachillerato,Casado/a,3,Remoto,Temporal,Dirección,Valencia,Portugal,2017-10-30,30
+EMP-0083,2022-08-24,,Tecnología,Dirección Tecnología,Barcelona,M,1997-09-04,78800,FP,Casado/a,3,Remoto,Indefinido,Dirección,Barcelona,Colombia,2022-08-24,40
+EMP-0084,2017-06-18,,Personas,Dirección Personas,Sevilla,M,1997-01-26,82900,Máster,Casado/a,3,Presencial,Indefinido,Dirección,Sevilla,Portugal,2017-06-18,40
+EMP-0085,2021-12-31,,Tecnología,Junior Tecnología,Valencia,M,1993-04-24,30900,Grado,Casado/a,2,Híbrido,Indefinido,Junior,Valencia,Italia,2021-12-31,40
+EMP-0086,2019-04-11,,Legal,Especialista Legal,Barcelona,F,1975-10-03,38200,FP,Soltero/a,0,Remoto,Indefinido,Especialista,Barcelona,Italia,2019-04-11,40
+EMP-0087,2022-02-22,,Ventas,Especialista Ventas,Valencia,F,1970-10-27,40800,Grado,Otro,2,Presencial,Temporal,Especialista,Valencia,Italia,2022-02-22,40
+EMP-0088,2020-04-07,,Ventas,Dirección Ventas,Sevilla,F,1967-06-09,79800,Máster,Casado/a,0,Remoto,Indefinido,Dirección,Sevilla,España,2020-04-07,40
+EMP-0089,2022-05-16,,Personas,Dirección Personas,Madrid,F,2001-03-13,79200,Bachillerato,Otro,1,Remoto,Indefinido,Dirección,Madrid,Italia,2022-05-16,40
+EMP-0090,2021-09-01,,Atención al cliente,Especialista Atención al cliente,Sevilla,M,1986-04-09,46000,Bachillerato,Soltero/a,3,Híbrido,Indefinido,Especialista,Sevilla,Argentina,2021-09-01,40
+EMP-0091,2024-07-24,,Legal,Junior Legal,Barcelona,F,1995-09-21,27800,Máster,Soltero/a,1,Presencial,Indefinido,Junior,Barcelona,Italia,2024-07-24,40
+EMP-0092,2022-01-27,,Operaciones,Junior Operaciones,Valencia,M,1975-06-30,33200,Máster,Otro,1,Remoto,Indefinido,Junior,Valencia,Portugal,2022-01-27,40
+EMP-0093,2024-03-27,,Legal,Manager Legal,Sevilla,M,1978-02-24,58400,FP,Otro,1,Híbrido,Indefinido,Manager,Sevilla,España,2024-03-27,40
+EMP-0094,2016-10-12,,Operaciones,Junior Operaciones,Valencia,M,1967-04-03,33400,FP,Soltero/a,2,Híbrido,Indefinido,Junior,Valencia,España,2016-10-12,40
+EMP-0095,2022-03-12,,Operaciones,Especialista Operaciones,Valencia,M,1973-08-20,44000,Grado,Casado/a,0,Presencial,Indefinido,Especialista,Valencia,Colombia,2022-03-12,40
+EMP-0096,2016-08-24,,Legal,Especialista Legal,Sevilla,M,2001-02-04,45700,Máster,Casado/a,0,Remoto,Indefinido,Especialista,Sevilla,Portugal,2016-08-24,40
+EMP-0097,2022-12-23,,Operaciones,Dirección Operaciones,Bilbao,M,1967-01-24,81500,Grado,Otro,2,Remoto,Indefinido,Dirección,Bizkaia,Italia,2022-12-23,40
+EMP-0098,2016-05-15,,Tecnología,Dirección Tecnología,Barcelona,F,1980-12-12,80300,Bachillerato,Casado/a,3,Remoto,Indefinido,Dirección,Barcelona,Argentina,2016-05-15,40
+EMP-0099,2021-04-29,,Tecnología,Junior Tecnología,Madrid,M,1985-09-23,28500,Bachillerato,Casado/a,3,Presencial,Indefinido,Junior,Madrid,Portugal,2021-04-29,40
+EMP-0100,2016-11-19,,Legal,Junior Legal,Bilbao,F,1992-08-04,28400,Máster,Soltero/a,3,Presencial,Temporal,Junior,Bizkaia,Portugal,2016-11-19,40
+EMP-0101,2023-07-07,,Ventas,Junior Ventas,Bilbao,F,2000-06-29,35200,Grado,Soltero/a,3,Presencial,Indefinido,Junior,Bizkaia,España,2023-07-07,40
+EMP-0102,2015-09-09,,Personas,Manager Personas,Barcelona,F,1984-12-11,53600,FP,Soltero/a,2,Presencial,Indefinido,Manager,Barcelona,Argentina,2015-09-09,40
+EMP-0103,2024-01-28,,Legal,Especialista Legal,Valencia,M,1977-12-01,40500,FP,Casado/a,0,Presencial,Indefinido,Especialista,Valencia,Argentina,2024-01-28,40
+EMP-0104,2021-05-10,,Tecnología,Junior Tecnología,Valencia,F,1984-09-19,29700,Bachillerato,Casado/a,0,Híbrido,Indefinido,Junior,Valencia,España,2021-05-10,40
+EMP-0105,2022-06-18,,Atención al cliente,Dirección Atención al cliente,Madrid,F,1980-12-03,81100,FP,Casado/a,0,Presencial,Indefinido,Dirección,Madrid,España,2022-06-18,40
+EMP-0106,2022-03-18,,Finanzas,Manager Finanzas,Sevilla,M,1988-03-13,54800,FP,Soltero/a,2,Híbrido,Temporal,Manager,Sevilla,Portugal,2022-03-18,40
+EMP-0107,2016-04-07,,Marketing,Manager Marketing,Valencia,F,1966-01-16,55200,Máster,Casado/a,3,Híbrido,Indefinido,Manager,Valencia,Portugal,2016-04-07,40
+EMP-0108,2024-07-18,,Atención al cliente,Manager Atención al cliente,Barcelona,F,1978-04-06,55500,Grado,Casado/a,1,Híbrido,Indefinido,Manager,Barcelona,Argentina,2024-07-18,40
+EMP-0109,2017-11-14,,Ventas,Manager Ventas,Bilbao,M,1970-04-28,60500,Máster,Soltero/a,3,Remoto,Indefinido,Manager,Bizkaia,España,2017-11-14,40
+EMP-0110,2020-06-26,,Ventas,Manager Ventas,Madrid,M,1968-11-10,54900,FP,Otro,0,Presencial,Indefinido,Manager,Madrid,Argentina,2020-06-26,40
+EMP-0111,2015-02-14,,Marketing,Manager Marketing,Bilbao,M,1984-05-05,54700,FP,Soltero/a,3,Híbrido,Indefinido,Manager,Bizkaia,Portugal,2015-02-14,40
+EMP-0112,2016-12-26,,Personas,Junior Personas,Sevilla,M,1988-07-24,36000,Máster,Casado/a,3,Remoto,Indefinido,Junior,Sevilla,Argentina,2016-12-26,40
+EMP-0113,2024-12-18,,Operaciones,Especialista Operaciones,Sevilla,F,2001-01-15,38500,FP,Casado/a,1,Híbrido,Indefinido,Especialista,Sevilla,Colombia,2024-12-18,40
+EMP-0114,2023-09-12,,Tecnología,Especialista Tecnología,Madrid,M,1997-12-06,46100,Máster,Soltero/a,3,Remoto,Indefinido,Especialista,Madrid,Italia,2023-09-12,40
+EMP-0115,2015-06-28,,Finanzas,Dirección Finanzas,Sevilla,M,1999-03-26,76600,FP,Otro,0,Presencial,Temporal,Dirección,Sevilla,España,2015-06-28,40
+EMP-0116,2018-05-03,,Ventas,Manager Ventas,Bilbao,F,1966-10-19,56600,Bachillerato,Casado/a,0,Presencial,Indefinido,Manager,Bizkaia,España,2018-05-03,40
+EMP-0117,2022-09-28,,Personas,Dirección Personas,Madrid,M,1999-12-30,76900,Grado,Otro,1,Presencial,Indefinido,Dirección,Madrid,España,2022-09-28,40
+EMP-0118,2018-05-18,,Atención al cliente,Junior Atención al cliente,Madrid,F,1976-09-17,35300,FP,Casado/a,0,Híbrido,Indefinido,Junior,Madrid,España,2018-05-18,40
+EMP-0119,2017-05-13,,Tecnología,Especialista Tecnología,Barcelona,F,1973-05-27,40600,FP,Soltero/a,3,Híbrido,Indefinido,Especialista,Barcelona,España,2017-05-13,40
+EMP-0120,2025-02-10,,Atención al cliente,Dirección Atención al cliente,Sevilla,F,2001-02-13,80900,Máster,Soltero/a,1,Híbrido,Indefinido,Dirección,Sevilla,España,2025-02-10,30
+EMP-0121,2024-10-19,,Tecnología,Manager Tecnología,Sevilla,F,1974-03-03,58400,Grado,Casado/a,3,Híbrido,Temporal,Manager,Sevilla,Italia,2024-10-19,40
+EMP-0122,2017-04-13,,Marketing,Dirección Marketing,Madrid,F,1987-01-31,79200,Grado,Soltero/a,2,Remoto,Temporal,Dirección,Madrid,Portugal,2017-04-13,40
+EMP-0123,2016-06-20,,Atención al cliente,Dirección Atención al cliente,Valencia,F,1969-03-30,77300,Grado,Casado/a,0,Presencial,Indefinido,Dirección,Valencia,España,2016-06-20,30
+EMP-0124,2023-08-13,,Ventas,Especialista Ventas,Barcelona,F,1983-07-25,38400,Bachillerato,Casado/a,1,Híbrido,Indefinido,Especialista,Barcelona,Colombia,2023-08-13,30
+EMP-0125,2016-07-14,,Legal,Junior Legal,Bilbao,M,1976-06-09,34800,Bachillerato,Otro,3,Híbrido,Indefinido,Junior,Bizkaia,España,2016-07-14,40
+EMP-0126,2016-03-22,,Atención al cliente,Junior Atención al cliente,Madrid,F,1996-08-01,33600,Grado,Soltero/a,2,Híbrido,Indefinido,Junior,Madrid,Portugal,2016-03-22,40
+EMP-0127,2022-05-11,,Marketing,Manager Marketing,Madrid,F,1995-07-25,60000,Máster,Otro,2,Híbrido,Indefinido,Manager,Madrid,Colombia,2022-05-11,40
+EMP-0128,2024-12-29,,Operaciones,Manager Operaciones,Madrid,M,2000-10-19,55300,Bachillerato,Soltero/a,0,Híbrido,Indefinido,Manager,Madrid,Portugal,2024-12-29,40
+EMP-0129,2016-07-21,,Marketing,Junior Marketing,Bilbao,M,1999-09-15,35800,Bachillerato,Casado/a,1,Remoto,Temporal,Junior,Bizkaia,Colombia,2016-07-21,40
+EMP-0130,2016-01-16,,Ventas,Junior Ventas,Valencia,M,1991-04-23,32500,Bachillerato,Casado/a,0,Presencial,Indefinido,Junior,Valencia,Portugal,2016-01-16,40
+EMP-0131,2018-02-09,,Ventas,Manager Ventas,Barcelona,F,1967-08-14,55700,Máster,Soltero/a,0,Presencial,Indefinido,Manager,Barcelona,Colombia,2018-02-09,40
+EMP-0132,2015-01-10,,Legal,Especialista Legal,Valencia,F,1968-09-07,38600,FP,Casado/a,2,Remoto,Indefinido,Especialista,Valencia,España,2015-01-10,40
+EMP-0133,2015-03-18,,Marketing,Especialista Marketing,Bilbao,F,1984-05-01,41300,Bachillerato,Soltero/a,2,Híbrido,Indefinido,Especialista,Bizkaia,Portugal,2015-03-18,40
+EMP-0134,2023-10-04,,Marketing,Manager Marketing,Barcelona,F,1981-08-14,59200,FP,Soltero/a,0,Presencial,Indefinido,Manager,Barcelona,España,2023-10-04,40
+EMP-0135,2022-10-04,,Operaciones,Dirección Operaciones,Bilbao,M,1965-06-22,78700,FP,Soltero/a,0,Remoto,Indefinido,Dirección,Bizkaia,Colombia,2022-10-04,40
+EMP-0136,2022-10-09,,Operaciones,Manager Operaciones,Bilbao,M,1990-08-15,58400,Bachillerato,Soltero/a,2,Remoto,Indefinido,Manager,Bizkaia,Argentina,2022-10-09,40
+EMP-0137,2015-11-21,,Finanzas,Dirección Finanzas,Sevilla,F,1975-11-28,82200,FP,Otro,1,Híbrido,Indefinido,Dirección,Sevilla,Colombia,2015-11-21,40
+EMP-0138,2022-02-25,,Ventas,Especialista Ventas,Bilbao,F,1991-08-31,43200,Bachillerato,Casado/a,1,Híbrido,Indefinido,Especialista,Bizkaia,Portugal,2022-02-25,40
+EMP-0139,2020-02-01,,Finanzas,Manager Finanzas,Sevilla,F,1976-08-30,55400,Máster,Soltero/a,1,Híbrido,Indefinido,Manager,Sevilla,España,2020-02-01,40
+EMP-0140,2017-12-12,,Marketing,Dirección Marketing,Sevilla,M,1996-09-28,77300,Bachillerato,Soltero/a,2,Remoto,Temporal,Dirección,Sevilla,Argentina,2017-12-12,40
+EMP-0141,2017-11-08,,Legal,Junior Legal,Valencia,F,1989-04-20,29500,Bachillerato,Casado/a,2,Remoto,Indefinido,Junior,Valencia,España,2017-11-08,30
+EMP-0142,2015-04-11,,Tecnología,Junior Tecnología,Sevilla,F,1995-09-17,31800,Máster,Soltero/a,2,Remoto,Indefinido,Junior,Sevilla,Portugal,2015-04-11,40
+EMP-0143,2022-05-27,,Legal,Junior Legal,Barcelona,F,1974-02-25,27800,Máster,Otro,0,Híbrido,Temporal,Junior,Barcelona,Argentina,2022-05-27,40
+EMP-0144,2023-12-05,,Tecnología,Junior Tecnología,Sevilla,M,1995-11-23,27500,FP,Casado/a,3,Remoto,Indefinido,Junior,Sevilla,Colombia,2023-12-05,40
+EMP-0145,2015-11-24,,Tecnología,Especialista Tecnología,Barcelona,M,1986-01-23,38300,Grado,Otro,3,Híbrido,Indefinido,Especialista,Barcelona,España,2015-11-24,40
+EMP-0146,2020-11-04,,Ventas,Dirección Ventas,Sevilla,M,1986-04-18,78800,FP,Otro,3,Híbrido,Temporal,Dirección,Sevilla,España,2020-11-04,40
+EMP-0147,2022-03-03,,Ventas,Dirección Ventas,Barcelona,F,1996-08-22,74100,Bachillerato,Soltero/a,3,Presencial,Indefinido,Dirección,Barcelona,España,2022-03-03,40
+EMP-0148,2016-06-13,,Operaciones,Junior Operaciones,Bilbao,F,1978-06-13,33100,Máster,Soltero/a,3,Presencial,Indefinido,Junior,Bizkaia,Colombia,2016-06-13,40
+EMP-0149,2016-10-07,,Ventas,Manager Ventas,Sevilla,M,1965-02-06,55800,Máster,Casado/a,1,Remoto,Temporal,Manager,Sevilla,Portugal,2016-10-07,30
+EMP-0150,2020-05-09,,Ventas,Junior Ventas,Bilbao,F,1989-03-08,35500,FP,Casado/a,0,Remoto,Indefinido,Junior,Bizkaia,Portugal,2020-05-09,40
+EMP-0151,2024-11-19,,Finanzas,Dirección Finanzas,Madrid,M,1972-02-28,79800,Máster,Otro,2,Remoto,Indefinido,Dirección,Madrid,Argentina,2024-11-19,40
+EMP-0152,2016-06-25,,Personas,Manager Personas,Valencia,F,1987-11-28,53300,Grado,Soltero/a,0,Remoto,Indefinido,Manager,Valencia,Italia,2016-06-25,40
+EMP-0153,2018-09-01,,Atención al cliente,Junior Atención al cliente,Sevilla,F,1981-09-09,28000,FP,Otro,0,Remoto,Indefinido,Junior,Sevilla,España,2018-09-01,40
+EMP-0154,2017-05-02,,Legal,Manager Legal,Madrid,M,1988-02-18,54300,Grado,Otro,3,Presencial,Indefinido,Manager,Madrid,Argentina,2017-05-02,40
+EMP-0155,2023-07-20,,Marketing,Dirección Marketing,Bilbao,M,1987-12-21,79100,Máster,Soltero/a,3,Presencial,Indefinido,Dirección,Bizkaia,Italia,2023-07-20,40
+EMP-0156,2022-07-01,,Ventas,Junior Ventas,Barcelona,M,1991-05-05,34700,FP,Otro,3,Remoto,Indefinido,Junior,Barcelona,Italia,2022-07-01,30
+EMP-0157,2018-04-13,,Atención al cliente,Manager Atención al cliente,Bilbao,F,1983-10-19,57900,Grado,Casado/a,0,Remoto,Indefinido,Manager,Bizkaia,Portugal,2018-04-13,40
+EMP-0158,2021-01-13,,Marketing,Junior Marketing,Bilbao,M,1981-06-26,34800,FP,Otro,3,Presencial,Indefinido,Junior,Bizkaia,Portugal,2021-01-13,40
+EMP-0159,2022-02-21,,Ventas,Especialista Ventas,Bilbao,F,1970-10-21,38400,Máster,Soltero/a,2,Presencial,Indefinido,Especialista,Bizkaia,Italia,2022-02-21,40
+EMP-0160,2018-09-15,,Operaciones,Manager Operaciones,Valencia,M,1992-08-16,56200,Bachillerato,Soltero/a,1,Presencial,Indefinido,Manager,Valencia,Argentina,2018-09-15,40
+EMP-0161,2023-11-10,,Personas,Especialista Personas,Barcelona,M,1983-09-16,45200,Bachillerato,Casado/a,3,Híbrido,Indefinido,Especialista,Barcelona,Argentina,2023-11-10,40
+EMP-0162,2020-01-17,,Finanzas,Manager Finanzas,Sevilla,F,1985-07-25,55500,Máster,Otro,2,Presencial,Indefinido,Manager,Sevilla,España,2020-01-17,40
+EMP-0163,2022-03-03,,Legal,Junior Legal,Barcelona,F,1998-05-23,31400,FP,Casado/a,1,Híbrido,Indefinido,Junior,Barcelona,Portugal,2022-03-03,40
+EMP-0164,2016-02-26,,Finanzas,Manager Finanzas,Madrid,M,1981-06-25,52300,FP,Soltero/a,3,Híbrido,Temporal,Manager,Madrid,Italia,2016-02-26,40
+EMP-0165,2020-08-04,,Legal,Junior Legal,Bilbao,F,1972-12-20,32200,Grado,Casado/a,2,Remoto,Indefinido,Junior,Bizkaia,Italia,2020-08-04,40
+EMP-0166,2021-01-17,,Operaciones,Junior Operaciones,Madrid,F,1984-11-15,27700,Bachillerato,Casado/a,0,Presencial,Indefinido,Junior,Madrid,España,2021-01-17,40
+EMP-0167,2015-04-07,,Operaciones,Junior Operaciones,Valencia,F,1984-04-24,33600,Máster,Soltero/a,1,Presencial,Indefinido,Junior,Valencia,Portugal,2015-04-07,30
+EMP-0168,2019-04-24,,Personas,Especialista Personas,Barcelona,F,1977-05-12,41500,FP,Otro,3,Híbrido,Indefinido,Especialista,Barcelona,Italia,2019-04-24,40
+EMP-0169,2017-04-15,,Operaciones,Dirección Operaciones,Valencia,M,1987-08-24,76600,Máster,Otro,3,Híbrido,Indefinido,Dirección,Valencia,España,2017-04-15,40
+EMP-0170,2023-10-21,,Ventas,Junior Ventas,Sevilla,F,1977-02-18,32900,FP,Otro,0,Híbrido,Temporal,Junior,Sevilla,Italia,2023-10-21,40
+EMP-0171,2024-10-19,,Legal,Junior Legal,Barcelona,F,1994-03-03,27900,Máster,Soltero/a,0,Remoto,Indefinido,Junior,Barcelona,España,2024-10-19,40
+EMP-0172,2025-07-10,,Finanzas,Dirección Finanzas,Bilbao,F,1983-02-12,81800,Grado,Casado/a,3,Híbrido,Temporal,Dirección,Bizkaia,Portugal,2025-07-10,40
+EMP-0173,2023-11-03,,Personas,Junior Personas,Valencia,F,1990-11-20,28800,Máster,Casado/a,2,Remoto,Indefinido,Junior,Valencia,España,2023-11-03,40
+EMP-0174,2018-03-31,,Atención al cliente,Dirección Atención al cliente,Sevilla,F,1965-02-07,78500,Grado,Casado/a,3,Presencial,Temporal,Dirección,Sevilla,Argentina,2018-03-31,40
+EMP-0175,2024-08-04,,Ventas,Junior Ventas,Valencia,M,1972-01-14,29900,Grado,Soltero/a,2,Remoto,Indefinido,Junior,Valencia,Colombia,2024-08-04,30
+EMP-0176,2025-03-02,,Ventas,Dirección Ventas,Barcelona,F,1996-06-24,77200,Máster,Soltero/a,2,Presencial,Indefinido,Dirección,Barcelona,Portugal,2025-03-02,30
+EMP-0177,2023-12-31,,Legal,Manager Legal,Valencia,M,1979-10-23,52800,Máster,Soltero/a,2,Remoto,Indefinido,Manager,Valencia,Argentina,2023-12-31,40
+EMP-0178,2025-04-19,,Ventas,Dirección Ventas,Bilbao,F,1969-03-26,74200,Bachillerato,Casado/a,3,Remoto,Indefinido,Dirección,Bizkaia,Portugal,2025-04-19,40
+EMP-0179,2024-11-13,,Marketing,Manager Marketing,Barcelona,M,1987-04-11,54300,Grado,Soltero/a,0,Presencial,Indefinido,Manager,Barcelona,España,2024-11-13,40
+EMP-0180,2023-12-21,,Tecnología,Especialista Tecnología,Sevilla,M,1968-05-21,43800,FP,Otro,2,Remoto,Indefinido,Especialista,Sevilla,España,2023-12-21,40
+EMP-0181,2018-09-07,,Marketing,Dirección Marketing,Bilbao,M,1983-09-11,79700,Máster,Soltero/a,2,Híbrido,Indefinido,Dirección,Bizkaia,Italia,2018-09-07,40
+EMP-0182,2020-01-28,,Legal,Dirección Legal,Valencia,F,1987-02-12,78100,Bachillerato,Soltero/a,1,Presencial,Temporal,Dirección,Valencia,Colombia,2020-01-28,40
+EMP-0183,2024-07-17,,Personas,Manager Personas,Barcelona,F,1965-08-14,55200,Máster,Casado/a,1,Remoto,Indefinido,Manager,Barcelona,Colombia,2024-07-17,40
+EMP-0184,2022-12-30,,Ventas,Manager Ventas,Valencia,M,1967-01-28,52800,Bachillerato,Casado/a,2,Híbrido,Temporal,Manager,Valencia,Argentina,2022-12-30,30
+EMP-0185,2021-08-05,,Legal,Manager Legal,Bilbao,F,1990-06-25,57400,FP,Soltero/a,2,Presencial,Indefinido,Manager,Bizkaia,Italia,2021-08-05,40
+EMP-0186,2017-01-10,,Tecnología,Junior Tecnología,Bilbao,F,1973-10-09,35200,FP,Casado/a,2,Híbrido,Indefinido,Junior,Bizkaia,Colombia,2017-01-10,40
+EMP-0187,2023-04-17,,Tecnología,Dirección Tecnología,Valencia,F,1977-07-31,74600,Máster,Otro,3,Remoto,Indefinido,Dirección,Valencia,Italia,2023-04-17,40
+EMP-0188,2020-10-24,,Ventas,Especialista Ventas,Bilbao,F,1993-01-05,43100,Bachillerato,Casado/a,1,Presencial,Indefinido,Especialista,Bizkaia,Argentina,2020-10-24,40
+EMP-0189,2017-11-17,,Personas,Junior Personas,Sevilla,M,1986-08-10,34100,Máster,Casado/a,1,Presencial,Indefinido,Junior,Sevilla,Italia,2017-11-17,30
+EMP-0190,2016-01-04,,Operaciones,Dirección Operaciones,Madrid,F,1990-09-20,80800,Grado,Otro,0,Presencial,Temporal,Dirección,Madrid,Italia,2016-01-04,40
+EMP-0191,2018-03-04,,Personas,Especialista Personas,Bilbao,F,1974-03-12,46500,Grado,Otro,3,Remoto,Indefinido,Especialista,Bizkaia,España,2018-03-04,40
+EMP-0192,2016-04-29,,Ventas,Dirección Ventas,Sevilla,M,1999-08-27,81000,Bachillerato,Casado/a,0,Híbrido,Indefinido,Dirección,Sevilla,España,2016-04-29,40
+EMP-0193,2025-07-27,,Operaciones,Manager Operaciones,Bilbao,M,1999-02-10,60100,FP,Otro,3,Remoto,Indefinido,Manager,Bizkaia,Italia,2025-07-27,40
+EMP-0194,2024-04-02,,Operaciones,Dirección Operaciones,Sevilla,F,1968-11-17,77100,FP,Soltero/a,2,Híbrido,Indefinido,Dirección,Sevilla,Italia,2024-04-02,40
+EMP-0195,2017-01-15,,Atención al cliente,Manager Atención al cliente,Madrid,F,1969-01-13,57500,FP,Soltero/a,3,Híbrido,Indefinido,Manager,Madrid,Italia,2017-01-15,40
+EMP-0196,2023-01-12,,Ventas,Especialista Ventas,Sevilla,F,1971-12-22,45700,Bachillerato,Casado/a,3,Remoto,Indefinido,Especialista,Sevilla,Colombia,2023-01-12,40
+EMP-0197,2023-05-12,,Ventas,Dirección Ventas,Bilbao,F,1992-02-05,74700,Bachillerato,Otro,3,Presencial,Temporal,Dirección,Bizkaia,Argentina,2023-05-12,40
+EMP-0198,2025-04-10,,Ventas,Dirección Ventas,Bilbao,F,1973-04-14,82700,Máster,Soltero/a,1,Remoto,Indefinido,Dirección,Bizkaia,Portugal,2025-04-10,40
+EMP-0199,2015-01-06,,Personas,Dirección Personas,Sevilla,F,2000-07-30,78600,Máster,Soltero/a,1,Remoto,Indefinido,Dirección,Sevilla,España,2015-01-06,40
+EMP-0200,2019-06-12,,Tecnología,Dirección Tecnología,Valencia,F,1988-11-02,76200,FP,Otro,2,Presencial,Indefinido,Dirección,Valencia,Colombia,2019-06-12,40
+EMP-0201,2024-02-19,,Tecnología,Dirección Tecnología,Valencia,M,1987-06-27,77400,Bachillerato,Soltero/a,1,Híbrido,Indefinido,Dirección,Valencia,Portugal,2024-02-19,40
+EMP-0202,2023-09-14,,Personas,Especialista Personas,Sevilla,M,1970-08-05,39800,Máster,Otro,1,Híbrido,Indefinido,Especialista,Sevilla,Argentina,2023-09-14,40
+EMP-0203,2019-12-26,,Operaciones,Manager Operaciones,Madrid,M,1985-11-11,56900,Grado,Otro,3,Remoto,Temporal,Manager,Madrid,Italia,2019-12-26,40
+EMP-0204,2018-06-17,,Ventas,Manager Ventas,Sevilla,F,1973-03-11,60700,Máster,Soltero/a,2,Presencial,Indefinido,Manager,Sevilla,Argentina,2018-06-17,40
+EMP-0205,2025-07-27,,Tecnología,Junior Tecnología,Madrid,M,1966-01-28,27300,FP,Soltero/a,3,Remoto,Temporal,Junior,Madrid,Portugal,2025-07-27,40
+EMP-0206,2015-07-13,,Operaciones,Manager Operaciones,Barcelona,M,1987-06-07,56800,FP,Soltero/a,0,Presencial,Temporal,Manager,Barcelona,Italia,2015-07-13,30
+EMP-0207,2019-09-02,,Personas,Especialista Personas,Barcelona,F,1983-06-15,41700,Máster,Otro,0,Híbrido,Indefinido,Especialista,Barcelona,Portugal,2019-09-02,40
+EMP-0208,2019-02-08,,Ventas,Dirección Ventas,Valencia,M,1981-01-14,75300,FP,Soltero/a,3,Remoto,Indefinido,Dirección,Valencia,Argentina,2019-02-08,40
+EMP-0209,2020-07-15,,Finanzas,Junior Finanzas,Valencia,M,1992-12-08,31100,Grado,Otro,1,Remoto,Indefinido,Junior,Valencia,Portugal,2020-07-15,30
+EMP-0210,2023-07-12,,Ventas,Manager Ventas,Bilbao,F,1993-07-14,54900,Máster,Soltero/a,2,Remoto,Indefinido,Manager,Bizkaia,Italia,2023-07-12,40
+EMP-0211,2019-03-20,,Tecnología,Especialista Tecnología,Valencia,M,1977-09-28,45600,Bachillerato,Casado/a,0,Remoto,Temporal,Especialista,Valencia,Portugal,2019-03-20,40
+EMP-0212,2023-07-04,,Ventas,Manager Ventas,Sevilla,M,1993-03-29,59300,Máster,Otro,0,Remoto,Temporal,Manager,Sevilla,Italia,2023-07-04,40
+EMP-0213,2024-04-11,,Legal,Dirección Legal,Valencia,M,1975-02-02,74900,Máster,Soltero/a,3,Híbrido,Indefinido,Dirección,Valencia,España,2024-04-11,40
+EMP-0214,2015-02-03,,Legal,Manager Legal,Sevilla,M,1990-09-17,52300,Máster,Casado/a,0,Remoto,Indefinido,Manager,Sevilla,Portugal,2015-02-03,40
+EMP-0215,2020-05-10,,Tecnología,Manager Tecnología,Bilbao,F,1998-07-16,57900,Máster,Soltero/a,2,Presencial,Indefinido,Manager,Bizkaia,Portugal,2020-05-10,40
+EMP-0216,2022-03-24,,Operaciones,Especialista Operaciones,Sevilla,F,1987-02-23,39400,Grado,Otro,1,Remoto,Indefinido,Especialista,Sevilla,Colombia,2022-03-24,30
+EMP-0217,2021-08-25,,Operaciones,Dirección Operaciones,Sevilla,F,1976-07-08,75900,Grado,Soltero/a,0,Remoto,Indefinido,Dirección,Sevilla,Italia,2021-08-25,40
+EMP-0218,2025-01-01,,Ventas,Especialista Ventas,Bilbao,F,1974-08-10,45200,Máster,Otro,0,Presencial,Indefinido,Especialista,Bizkaia,Portugal,2025-01-01,40
+EMP-0219,2017-05-12,,Atención al cliente,Manager Atención al cliente,Madrid,M,1983-12-30,56700,Máster,Casado/a,3,Híbrido,Indefinido,Manager,Madrid,Portugal,2017-05-12,40
+EMP-0220,2023-05-04,,Finanzas,Dirección Finanzas,Sevilla,F,1992-01-04,82100,Bachillerato,Soltero/a,1,Presencial,Indefinido,Dirección,Sevilla,Italia,2023-05-04,40
+EMP-0221,2017-03-01,,Personas,Especialista Personas,Valencia,M,1980-06-29,40100,Bachillerato,Soltero/a,1,Remoto,Indefinido,Especialista,Valencia,Colombia,2017-03-01,40
+EMP-0222,2020-11-13,,Personas,Dirección Personas,Bilbao,F,1991-04-19,76800,Máster,Casado/a,1,Híbrido,Indefinido,Dirección,Bizkaia,Colombia,2020-11-13,40
+EMP-0223,2020-07-08,,Atención al cliente,Manager Atención al cliente,Bilbao,F,1978-10-24,57700,Bachillerato,Casado/a,2,Presencial,Indefinido,Manager,Bizkaia,Italia,2020-07-08,40
+EMP-0224,2017-08-07,,Tecnología,Especialista Tecnología,Madrid,F,1980-03-24,39500,Grado,Soltero/a,3,Presencial,Indefinido,Especialista,Madrid,Colombia,2017-08-07,40
+EMP-0225,2015-10-20,,Legal,Especialista Legal,Bilbao,M,1987-03-12,39400,FP,Otro,3,Presencial,Indefinido,Especialista,Bizkaia,Colombia,2015-10-20,40
+EMP-0226,2016-06-24,,Ventas,Manager Ventas,Bilbao,M,1992-09-04,52400,Bachillerato,Otro,3,Híbrido,Indefinido,Manager,Bizkaia,Italia,2016-06-24,40
+EMP-0227,2021-03-09,,Atención al cliente,Dirección Atención al cliente,Valencia,F,2001-10-15,75900,Bachillerato,Otro,1,Remoto,Indefinido,Dirección,Valencia,Portugal,2021-03-09,40
+EMP-0228,2019-08-10,,Personas,Junior Personas,Madrid,F,2001-05-28,31800,Bachillerato,Otro,1,Presencial,Indefinido,Junior,Madrid,Argentina,2019-08-10,40
+EMP-0229,2020-08-25,,Finanzas,Especialista Finanzas,Valencia,M,1965-08-27,43600,Bachillerato,Casado/a,1,Híbrido,Indefinido,Especialista,Valencia,Portugal,2020-08-25,40
+EMP-0230,2024-07-31,,Operaciones,Dirección Operaciones,Sevilla,F,1971-09-04,80200,Máster,Casado/a,1,Presencial,Temporal,Dirección,Sevilla,Portugal,2024-07-31,40
+EMP-0231,2016-08-18,,Atención al cliente,Manager Atención al cliente,Valencia,F,1989-08-31,58400,Máster,Soltero/a,3,Remoto,Indefinido,Manager,Valencia,Argentina,2016-08-18,40
+EMP-0232,2023-08-02,,Marketing,Dirección Marketing,Sevilla,M,1967-03-15,78100,Máster,Casado/a,3,Presencial,Indefinido,Dirección,Sevilla,Argentina,2023-08-02,40
+EMP-0233,2015-02-01,,Tecnología,Dirección Tecnología,Valencia,F,1993-01-08,81700,Bachillerato,Otro,0,Híbrido,Temporal,Dirección,Valencia,Colombia,2015-02-01,40
+EMP-0234,2021-02-01,,Legal,Especialista Legal,Bilbao,F,1970-04-08,38600,Grado,Casado/a,0,Presencial,Temporal,Especialista,Bizkaia,Portugal,2021-02-01,40
+EMP-0235,2019-05-28,,Finanzas,Especialista Finanzas,Valencia,M,1965-04-17,46700,Grado,Otro,0,Híbrido,Indefinido,Especialista,Valencia,Portugal,2019-05-28,30
+EMP-0236,2024-05-16,,Legal,Dirección Legal,Barcelona,F,1975-01-11,74100,Máster,Soltero/a,3,Híbrido,Indefinido,Dirección,Barcelona,Argentina,2024-05-16,40
+EMP-0237,2015-06-24,,Personas,Especialista Personas,Valencia,F,1989-02-16,41500,FP,Casado/a,2,Híbrido,Indefinido,Especialista,Valencia,España,2015-06-24,40
+EMP-0238,2017-06-12,,Marketing,Junior Marketing,Madrid,M,1997-04-28,28400,Bachillerato,Otro,2,Remoto,Indefinido,Junior,Madrid,Argentina,2017-06-12,40
+EMP-0239,2019-01-14,,Ventas,Especialista Ventas,Madrid,F,1986-02-08,38100,Máster,Otro,1,Remoto,Indefinido,Especialista,Madrid,Portugal,2019-01-14,40
+EMP-0240,2017-07-27,,Operaciones,Especialista Operaciones,Sevilla,M,1986-07-12,46100,FP,Casado/a,3,Híbrido,Indefinido,Especialista,Sevilla,Portugal,2017-07-27,40
+EMP-0241,2022-06-19,,Tecnología,Dirección Tecnología,Bilbao,F,1971-05-11,79700,Bachillerato,Casado/a,0,Presencial,Indefinido,Dirección,Bizkaia,Argentina,2022-06-19,40
+EMP-0242,2015-06-10,,Marketing,Especialista Marketing,Madrid,M,1967-03-30,43600,Grado,Casado/a,3,Remoto,Indefinido,Especialista,Madrid,Colombia,2015-06-10,40
+EMP-0243,2025-01-04,,Operaciones,Junior Operaciones,Madrid,M,1983-11-26,34900,Bachillerato,Soltero/a,1,Presencial,Indefinido,Junior,Madrid,Italia,2025-01-04,40
+EMP-0244,2021-11-03,,Finanzas,Junior Finanzas,Barcelona,M,1970-11-16,34400,Grado,Otro,0,Remoto,Indefinido,Junior,Barcelona,Colombia,2021-11-03,40
+EMP-0245,2021-04-11,,Tecnología,Manager Tecnología,Valencia,M,1978-11-08,54200,Grado,Otro,3,Remoto,Indefinido,Manager,Valencia,España,2021-04-11,40
+EMP-0246,2016-05-25,,Personas,Manager Personas,Valencia,M,1992-05-30,56800,Bachillerato,Casado/a,3,Presencial,Indefinido,Manager,Valencia,Argentina,2016-05-25,40
+EMP-0247,2019-01-13,,Operaciones,Especialista Operaciones,Valencia,F,1976-12-12,38300,Máster,Casado/a,1,Presencial,Indefinido,Especialista,Valencia,España,2019-01-13,40
+EMP-0248,2015-12-04,,Tecnología,Manager Tecnología,Madrid,F,1994-11-26,53100,Bachillerato,Otro,3,Híbrido,Indefinido,Manager,Madrid,Italia,2015-12-04,40
+EMP-0249,2020-05-01,,Operaciones,Manager Operaciones,Bilbao,M,1999-01-07,54500,Bachillerato,Otro,1,Presencial,Indefinido,Manager,Bizkaia,Argentina,2020-05-01,30
+EMP-0250,2020-05-03,,Marketing,Especialista Marketing,Valencia,M,1993-06-28,41800,FP,Soltero/a,2,Remoto,Indefinido,Especialista,Valencia,Argentina,2020-05-03,40
+EMP-0251,2020-11-11,,Tecnología,Junior Tecnología,Valencia,F,1988-05-23,34100,Grado,Casado/a,3,Híbrido,Indefinido,Junior,Valencia,Portugal,2020-11-11,40
+EMP-0252,2016-01-13,,Personas,Dirección Personas,Barcelona,F,2001-01-05,81200,Bachillerato,Soltero/a,0,Híbrido,Indefinido,Dirección,Barcelona,Argentina,2016-01-13,40
+EMP-0253,2020-08-28,,Marketing,Manager Marketing,Bilbao,F,1970-05-03,53800,Bachillerato,Soltero/a,2,Híbrido,Indefinido,Manager,Bizkaia,Italia,2020-08-28,40
+EMP-0254,2015-01-12,,Legal,Manager Legal,Barcelona,F,1996-06-23,58300,FP,Soltero/a,3,Remoto,Indefinido,Manager,Barcelona,Colombia,2015-01-12,40
+EMP-0255,2020-06-07,,Finanzas,Especialista Finanzas,Valencia,F,1966-12-28,41500,FP,Otro,1,Presencial,Indefinido,Especialista,Valencia,Italia,2020-06-07,40
+EMP-0256,2024-12-11,,Atención al cliente,Manager Atención al cliente,Madrid,M,1975-12-09,58500,Máster,Soltero/a,2,Remoto,Indefinido,Manager,Madrid,Argentina,2024-12-11,40
+EMP-0257,2023-08-04,,Personas,Especialista Personas,Barcelona,M,1972-06-28,44300,Bachillerato,Casado/a,0,Presencial,Indefinido,Especialista,Barcelona,Italia,2023-08-04,40
+EMP-0258,2019-06-22,,Legal,Dirección Legal,Barcelona,F,1969-08-14,76700,Grado,Soltero/a,2,Remoto,Temporal,Dirección,Barcelona,Portugal,2019-06-22,40
+EMP-0259,2023-07-05,,Operaciones,Dirección Operaciones,Sevilla,F,1969-02-18,82900,Grado,Otro,1,Remoto,Indefinido,Dirección,Sevilla,Argentina,2023-07-05,40
+EMP-0260,2024-10-05,,Atención al cliente,Especialista Atención al cliente,Bilbao,M,1992-04-09,41000,Máster,Otro,2,Presencial,Indefinido,Especialista,Bizkaia,Portugal,2024-10-05,40
+EMP-0261,2023-01-11,,Ventas,Junior Ventas,Valencia,M,1974-10-31,29300,Grado,Otro,2,Híbrido,Indefinido,Junior,Valencia,Portugal,2023-01-11,40
+EMP-0262,2020-07-21,,Tecnología,Dirección Tecnología,Valencia,F,1977-02-11,80600,Grado,Casado/a,1,Presencial,Indefinido,Dirección,Valencia,Argentina,2020-07-21,40
+EMP-0263,2017-05-28,,Marketing,Dirección Marketing,Bilbao,M,1973-03-19,78000,Bachillerato,Soltero/a,0,Presencial,Temporal,Dirección,Bizkaia,Portugal,2017-05-28,40
+EMP-0264,2024-01-28,,Legal,Manager Legal,Bilbao,M,1974-11-08,56000,Máster,Soltero/a,3,Presencial,Indefinido,Manager,Bizkaia,Italia,2024-01-28,40
+EMP-0265,2025-03-26,,Legal,Dirección Legal,Valencia,M,1994-02-08,79800,Grado,Casado/a,2,Remoto,Indefinido,Dirección,Valencia,Italia,2025-03-26,40
+EMP-0266,2017-11-16,,Atención al cliente,Junior Atención al cliente,Valencia,F,1983-08-22,30500,Máster,Soltero/a,1,Remoto,Indefinido,Junior,Valencia,Colombia,2017-11-16,30
+EMP-0267,2018-01-02,,Atención al cliente,Especialista Atención al cliente,Sevilla,M,1992-04-06,45900,Bachillerato,Otro,1,Híbrido,Indefinido,Especialista,Sevilla,Portugal,2018-01-02,30
+EMP-0268,2019-10-29,,Atención al cliente,Manager Atención al cliente,Madrid,F,1968-12-07,57100,FP,Otro,1,Híbrido,Indefinido,Manager,Madrid,Argentina,2019-10-29,40
+EMP-0269,2020-12-04,,Tecnología,Dirección Tecnología,Barcelona,F,1995-07-18,74700,Bachillerato,Otro,1,Presencial,Indefinido,Dirección,Barcelona,Portugal,2020-12-04,40
+EMP-0270,2015-07-03,,Atención al cliente,Manager Atención al cliente,Bilbao,F,1975-09-02,53400,Máster,Soltero/a,0,Presencial,Indefinido,Manager,Bizkaia,Portugal,2015-07-03,30
+EMP-0271,2015-04-20,,Marketing,Junior Marketing,Madrid,F,1966-12-15,27500,Grado,Casado/a,2,Híbrido,Temporal,Junior,Madrid,España,2015-04-20,40
+EMP-0272,2024-04-30,,Tecnología,Manager Tecnología,Madrid,M,1985-03-02,55300,Máster,Otro,2,Presencial,Indefinido,Manager,Madrid,Portugal,2024-04-30,40
+EMP-0273,2017-03-06,,Finanzas,Especialista Finanzas,Bilbao,F,1981-03-25,41300,Grado,Casado/a,0,Híbrido,Indefinido,Especialista,Bizkaia,Italia,2017-03-06,40
+EMP-0274,2025-02-15,,Finanzas,Manager Finanzas,Sevilla,F,1992-08-24,55200,Grado,Soltero/a,3,Híbrido,Temporal,Manager,Sevilla,Italia,2025-02-15,40
+EMP-0275,2021-10-04,,Marketing,Especialista Marketing,Madrid,F,1993-11-14,43900,Máster,Otro,1,Presencial,Indefinido,Especialista,Madrid,España,2021-10-04,40
+EMP-0276,2017-09-17,,Personas,Dirección Personas,Madrid,M,1976-05-31,79000,Máster,Soltero/a,3,Remoto,Indefinido,Dirección,Madrid,España,2017-09-17,40
+EMP-0277,2021-08-07,,Marketing,Dirección Marketing,Valencia,M,1969-10-20,80200,Bachillerato,Casado/a,2,Híbrido,Indefinido,Dirección,Valencia,España,2021-08-07,40
+EMP-0278,2016-03-03,,Ventas,Junior Ventas,Madrid,F,1993-12-03,27400,Grado,Otro,0,Híbrido,Indefinido,Junior,Madrid,Portugal,2016-03-03,40
+EMP-0279,2019-03-22,,Tecnología,Junior Tecnología,Valencia,M,2001-02-09,28900,FP,Soltero/a,3,Presencial,Indefinido,Junior,Valencia,Italia,2019-03-22,40
+EMP-0280,2019-04-12,,Marketing,Manager Marketing,Barcelona,F,1983-05-14,52500,Máster,Casado/a,1,Híbrido,Indefinido,Manager,Barcelona,Argentina,2019-04-12,40
+EMP-0281,2021-10-31,,Marketing,Especialista Marketing,Sevilla,M,1978-06-16,41000,Bachillerato,Otro,0,Remoto,Temporal,Especialista,Sevilla,Argentina,2021-10-31,40
+EMP-0282,2017-01-17,,Legal,Manager Legal,Sevilla,M,1968-07-12,56900,Grado,Soltero/a,0,Híbrido,Indefinido,Manager,Sevilla,Italia,2017-01-17,40
+EMP-0283,2019-05-07,,Tecnología,Dirección Tecnología,Bilbao,F,1981-03-13,74300,Bachillerato,Soltero/a,1,Presencial,Indefinido,Dirección,Bizkaia,España,2019-05-07,40
+EMP-0284,2019-10-20,,Operaciones,Junior Operaciones,Sevilla,M,1967-12-17,31200,FP,Otro,3,Híbrido,Indefinido,Junior,Sevilla,Colombia,2019-10-20,40
+EMP-0285,2024-10-29,,Personas,Manager Personas,Barcelona,M,1970-04-05,53300,Máster,Casado/a,2,Híbrido,Temporal,Manager,Barcelona,Italia,2024-10-29,40
+EMP-0286,2023-08-04,,Atención al cliente,Dirección Atención al cliente,Madrid,M,1991-10-09,76800,FP,Casado/a,0,Presencial,Indefinido,Dirección,Madrid,Argentina,2023-08-04,40
+EMP-0287,2022-08-12,,Personas,Junior Personas,Sevilla,F,1967-04-24,33800,FP,Casado/a,0,Híbrido,Indefinido,Junior,Sevilla,Colombia,2022-08-12,40
+EMP-0288,2021-12-25,,Finanzas,Especialista Finanzas,Madrid,M,2000-08-14,45500,Máster,Otro,2,Híbrido,Indefinido,Especialista,Madrid,Italia,2021-12-25,40
+EMP-0289,2016-03-07,,Atención al cliente,Dirección Atención al cliente,Madrid,F,1988-10-15,81900,FP,Otro,0,Presencial,Indefinido,Dirección,Madrid,Colombia,2016-03-07,40
+EMP-0290,2015-09-03,,Operaciones,Especialista Operaciones,Bilbao,M,1969-08-16,39600,Bachillerato,Casado/a,3,Remoto,Temporal,Especialista,Bizkaia,Italia,2015-09-03,40
+EMP-0291,2015-08-08,,Finanzas,Dirección Finanzas,Madrid,F,1974-10-25,82100,Bachillerato,Casado/a,2,Presencial,Indefinido,Dirección,Madrid,Argentina,2015-08-08,40
+EMP-0292,2017-01-28,,Finanzas,Junior Finanzas,Madrid,F,1987-04-28,34100,Bachillerato,Casado/a,1,Híbrido,Temporal,Junior,Madrid,Portugal,2017-01-28,40
+EMP-0293,2022-04-04,,Personas,Manager Personas,Sevilla,M,1999-01-25,54300,Grado,Otro,0,Híbrido,Indefinido,Manager,Sevilla,Italia,2022-04-04,40
+EMP-0294,2017-06-20,,Tecnología,Junior Tecnología,Valencia,M,1995-12-06,34300,Bachillerato,Otro,0,Presencial,Indefinido,Junior,Valencia,España,2017-06-20,40
+EMP-0295,2017-05-03,,Finanzas,Manager Finanzas,Madrid,F,1982-02-12,52600,FP,Otro,0,Remoto,Temporal,Manager,Madrid,Italia,2017-05-03,40
+EMP-0296,2015-12-13,,Personas,Manager Personas,Bilbao,M,1972-06-13,60100,Grado,Casado/a,0,Híbrido,Indefinido,Manager,Bizkaia,Argentina,2015-12-13,40
+EMP-0297,2017-02-11,,Operaciones,Junior Operaciones,Bilbao,M,1989-10-30,35300,Grado,Soltero/a,2,Remoto,Indefinido,Junior,Bizkaia,Argentina,2017-02-11,40
+EMP-0298,2018-09-06,,Legal,Especialista Legal,Madrid,F,1990-06-07,43000,Máster,Casado/a,1,Híbrido,Indefinido,Especialista,Madrid,Italia,2018-09-06,40
+EMP-0299,2024-03-05,,Operaciones,Especialista Operaciones,Sevilla,M,1987-10-26,38300,Máster,Otro,3,Presencial,Indefinido,Especialista,Sevilla,Argentina,2024-03-05,40
+EMP-0300,2016-04-23,,Tecnología,Dirección Tecnología,Sevilla,F,1981-06-18,78200,Máster,Soltero/a,3,Híbrido,Indefinido,Dirección,Sevilla,Colombia,2016-04-23,40
+EMP-0301,2018-03-24,,Finanzas,Junior Finanzas,Barcelona,M,1967-01-28,28900,Máster,Casado/a,0,Híbrido,Indefinido,Junior,Barcelona,Argentina,2018-03-24,40
+EMP-0302,2025-05-22,,Legal,Manager Legal,Madrid,F,1986-08-09,57000,Bachillerato,Otro,2,Presencial,Indefinido,Manager,Madrid,Italia,2025-05-22,40
+EMP-0303,2025-03-29,,Tecnología,Especialista Tecnología,Bilbao,F,1996-03-14,44300,Bachillerato,Soltero/a,3,Híbrido,Indefinido,Especialista,Bizkaia,Argentina,2025-03-29,40
+EMP-0304,2024-05-04,,Tecnología,Junior Tecnología,Madrid,F,1995-06-01,31700,Grado,Otro,0,Remoto,Indefinido,Junior,Madrid,Argentina,2024-05-04,40
+EMP-0305,2016-04-02,,Atención al cliente,Dirección Atención al cliente,Sevilla,M,1986-12-18,79900,Bachillerato,Casado/a,2,Presencial,Temporal,Dirección,Sevilla,Italia,2016-04-02,40
+EMP-0306,2025-08-13,,Finanzas,Especialista Finanzas,Sevilla,F,1996-04-17,39900,FP,Soltero/a,3,Híbrido,Indefinido,Especialista,Sevilla,Italia,2025-08-13,40
+EMP-0307,2023-11-22,,Personas,Junior Personas,Barcelona,F,1968-01-04,33700,Bachillerato,Casado/a,0,Presencial,Indefinido,Junior,Barcelona,Italia,2023-11-22,30
+EMP-0308,2023-04-14,,Legal,Especialista Legal,Madrid,M,1983-03-24,39500,Bachillerato,Soltero/a,2,Remoto,Indefinido,Especialista,Madrid,Portugal,2023-04-14,40
+EMP-0309,2018-05-06,,Ventas,Junior Ventas,Madrid,F,1969-01-01,30200,Grado,Casado/a,1,Híbrido,Indefinido,Junior,Madrid,Colombia,2018-05-06,40
+EMP-0310,2020-01-11,,Tecnología,Junior Tecnología,Sevilla,M,1969-03-10,35300,Grado,Otro,1,Remoto,Indefinido,Junior,Sevilla,Argentina,2020-01-11,40
+EMP-0311,2022-04-02,,Legal,Dirección Legal,Barcelona,M,1995-07-17,75500,FP,Casado/a,2,Presencial,Indefinido,Dirección,Barcelona,España,2022-04-02,40
+EMP-0312,2017-12-01,,Operaciones,Manager Operaciones,Bilbao,F,1991-10-25,54300,Máster,Otro,2,Presencial,Indefinido,Manager,Bizkaia,Colombia,2017-12-01,40
+EMP-0313,2022-04-10,,Ventas,Dirección Ventas,Valencia,M,1992-07-21,75800,Máster,Otro,1,Híbrido,Temporal,Dirección,Valencia,Argentina,2022-04-10,40
+EMP-0314,2021-01-30,,Atención al cliente,Dirección Atención al cliente,Barcelona,F,1995-01-28,75400,Grado,Otro,1,Híbrido,Indefinido,Dirección,Barcelona,Argentina,2021-01-30,40
+EMP-0315,2022-07-17,,Marketing,Especialista Marketing,Barcelona,F,1999-01-30,43500,FP,Soltero/a,1,Presencial,Indefinido,Especialista,Barcelona,Portugal,2022-07-17,40
+EMP-0316,2015-03-27,,Finanzas,Junior Finanzas,Barcelona,M,1998-01-10,30300,FP,Casado/a,3,Híbrido,Indefinido,Junior,Barcelona,Argentina,2015-03-27,40
+EMP-0317,2018-01-26,,Finanzas,Especialista Finanzas,Bilbao,F,1966-08-25,45200,Bachillerato,Soltero/a,1,Remoto,Indefinido,Especialista,Bizkaia,Portugal,2018-01-26,30
+EMP-0318,2020-08-04,,Legal,Manager Legal,Sevilla,F,1971-12-11,59400,Grado,Otro,3,Remoto,Indefinido,Manager,Sevilla,Italia,2020-08-04,40
+EMP-0319,2023-09-08,,Personas,Manager Personas,Bilbao,M,1980-08-07,56800,Grado,Soltero/a,1,Híbrido,Indefinido,Manager,Bizkaia,España,2023-09-08,40
+EMP-0320,2016-07-03,,Personas,Manager Personas,Valencia,F,1966-05-13,52900,Bachillerato,Casado/a,0,Presencial,Temporal,Manager,Valencia,Portugal,2016-07-03,40
+EMP-0321,2017-03-30,,Legal,Manager Legal,Bilbao,M,1968-02-14,55000,FP,Soltero/a,3,Híbrido,Indefinido,Manager,Bizkaia,Colombia,2017-03-30,40
+EMP-0322,2022-06-13,,Tecnología,Especialista Tecnología,Barcelona,F,1997-11-10,47000,Máster,Otro,1,Remoto,Indefinido,Especialista,Barcelona,Portugal,2022-06-13,40
+EMP-0323,2023-12-29,,Personas,Dirección Personas,Barcelona,M,1983-10-25,75300,Bachillerato,Casado/a,0,Presencial,Indefinido,Dirección,Barcelona,Italia,2023-12-29,40
+EMP-0324,2020-10-21,,Marketing,Dirección Marketing,Bilbao,M,2001-07-20,79900,Máster,Soltero/a,0,Remoto,Temporal,Dirección,Bizkaia,Italia,2020-10-21,40
+EMP-0325,2023-07-14,,Tecnología,Junior Tecnología,Valencia,M,1990-01-21,28200,Grado,Otro,0,Remoto,Indefinido,Junior,Valencia,Colombia,2023-07-14,30
+EMP-0326,2022-04-13,,Marketing,Manager Marketing,Valencia,F,1969-09-11,60000,Grado,Soltero/a,1,Remoto,Indefinido,Manager,Valencia,Argentina,2022-04-13,40
+EMP-0327,2019-02-05,,Tecnología,Manager Tecnología,Sevilla,M,1982-07-09,53500,FP,Soltero/a,2,Presencial,Indefinido,Manager,Sevilla,Colombia,2019-02-05,40
+EMP-0328,2018-06-07,,Tecnología,Junior Tecnología,Bilbao,M,1966-11-19,33600,Máster,Otro,2,Híbrido,Temporal,Junior,Bizkaia,Italia,2018-06-07,40
+EMP-0329,2020-06-12,,Tecnología,Especialista Tecnología,Sevilla,M,1988-07-16,39300,Bachillerato,Otro,3,Remoto,Indefinido,Especialista,Sevilla,Italia,2020-06-12,40
+EMP-0330,2020-01-17,,Finanzas,Manager Finanzas,Barcelona,M,1979-08-20,53600,Bachillerato,Otro,1,Híbrido,Indefinido,Manager,Barcelona,Colombia,2020-01-17,40
+EMP-0331,2016-09-30,,Tecnología,Dirección Tecnología,Barcelona,M,1993-04-06,78100,Bachillerato,Soltero/a,0,Presencial,Indefinido,Dirección,Barcelona,Portugal,2016-09-30,40
+EMP-0332,2017-04-04,,Marketing,Junior Marketing,Barcelona,M,1974-06-05,34200,Máster,Casado/a,2,Híbrido,Indefinido,Junior,Barcelona,Argentina,2017-04-04,30
+EMP-0333,2018-08-15,,Tecnología,Dirección Tecnología,Valencia,F,1968-09-21,75100,Bachillerato,Casado/a,1,Presencial,Indefinido,Dirección,Valencia,Colombia,2018-08-15,40
+EMP-0334,2022-06-30,,Operaciones,Especialista Operaciones,Sevilla,M,1992-07-06,43900,Grado,Casado/a,1,Presencial,Temporal,Especialista,Sevilla,Argentina,2022-06-30,40
+EMP-0335,2025-05-03,,Finanzas,Dirección Finanzas,Valencia,M,1968-04-22,77400,FP,Casado/a,1,Remoto,Indefinido,Dirección,Valencia,Italia,2025-05-03,40
+EMP-0336,2015-12-31,,Atención al cliente,Manager Atención al cliente,Barcelona,F,1970-12-27,57500,Máster,Casado/a,3,Híbrido,Indefinido,Manager,Barcelona,Argentina,2015-12-31,40
+EMP-0337,2023-03-17,,Atención al cliente,Especialista Atención al cliente,Valencia,M,1999-03-20,44700,Grado,Soltero/a,0,Presencial,Indefinido,Especialista,Valencia,Colombia,2023-03-17,30
+EMP-0338,2024-11-17,,Finanzas,Manager Finanzas,Madrid,F,1987-12-22,53300,FP,Soltero/a,1,Híbrido,Temporal,Manager,Madrid,España,2024-11-17,40
+EMP-0339,2016-04-13,,Marketing,Especialista Marketing,Barcelona,F,1986-12-06,46900,FP,Soltero/a,2,Remoto,Indefinido,Especialista,Barcelona,Italia,2016-04-13,40
+EMP-0340,2021-02-27,,Ventas,Dirección Ventas,Valencia,M,1973-12-05,74400,Máster,Otro,0,Híbrido,Indefinido,Dirección,Valencia,España,2021-02-27,40
+EMP-0341,2018-01-21,,Legal,Manager Legal,Bilbao,M,1969-10-07,55600,FP,Soltero/a,0,Presencial,Indefinido,Manager,Bizkaia,España,2018-01-21,40
+EMP-0342,2025-07-10,,Legal,Manager Legal,Valencia,F,1975-05-29,58900,Máster,Casado/a,1,Remoto,Indefinido,Manager,Valencia,Colombia,2025-07-10,40
+EMP-0343,2021-05-25,,Finanzas,Manager Finanzas,Valencia,F,1968-01-06,53200,Grado,Soltero/a,0,Remoto,Indefinido,Manager,Valencia,Argentina,2021-05-25,40
+EMP-0344,2021-08-29,,Marketing,Junior Marketing,Valencia,F,1994-10-10,29300,Bachillerato,Casado/a,1,Híbrido,Indefinido,Junior,Valencia,Italia,2021-08-29,40
+EMP-0345,2020-06-21,,Tecnología,Manager Tecnología,Valencia,M,1980-04-12,60400,Grado,Soltero/a,0,Remoto,Indefinido,Manager,Valencia,Colombia,2020-06-21,40
+EMP-0346,2019-08-02,,Tecnología,Dirección Tecnología,Madrid,F,1992-09-25,78700,Máster,Otro,1,Remoto,Indefinido,Dirección,Madrid,Colombia,2019-08-02,40
+EMP-0347,2021-05-13,,Tecnología,Dirección Tecnología,Sevilla,M,1976-12-20,75700,Máster,Soltero/a,0,Híbrido,Temporal,Dirección,Sevilla,Portugal,2021-05-13,40
+EMP-0348,2017-11-08,,Finanzas,Manager Finanzas,Sevilla,M,1983-08-26,53900,Grado,Casado/a,2,Remoto,Indefinido,Manager,Sevilla,Portugal,2017-11-08,30
+EMP-0349,2023-09-21,,Atención al cliente,Especialista Atención al cliente,Valencia,F,1992-02-15,39000,Grado,Otro,0,Remoto,Indefinido,Especialista,Valencia,Italia,2023-09-21,40
+EMP-0350,2015-01-03,,Finanzas,Manager Finanzas,Barcelona,F,1977-12-31,53300,FP,Casado/a,3,Remoto,Indefinido,Manager,Barcelona,Italia,2015-01-03,40
+EMP-0351,2022-12-21,,Legal,Dirección Legal,Barcelona,M,1979-12-12,80900,FP,Casado/a,3,Presencial,Indefinido,Dirección,Barcelona,España,2022-12-21,40
+EMP-0352,2019-01-02,,Personas,Junior Personas,Madrid,F,1979-07-05,30500,FP,Otro,2,Presencial,Indefinido,Junior,Madrid,España,2019-01-02,30
+EMP-0353,2020-11-20,,Finanzas,Junior Finanzas,Bilbao,M,1999-10-09,35300,Máster,Soltero/a,2,Remoto,Indefinido,Junior,Bizkaia,Argentina,2020-11-20,30
+EMP-0354,2016-11-11,,Operaciones,Dirección Operaciones,Madrid,F,1994-09-28,76900,Bachillerato,Otro,2,Presencial,Indefinido,Dirección,Madrid,Italia,2016-11-11,40
+EMP-0355,2024-02-23,,Personas,Dirección Personas,Madrid,F,1970-05-16,75400,Máster,Otro,1,Presencial,Indefinido,Dirección,Madrid,España,2024-02-23,40
+EMP-0356,2019-11-26,,Finanzas,Manager Finanzas,Madrid,F,1985-03-13,60600,FP,Casado/a,1,Presencial,Indefinido,Manager,Madrid,Argentina,2019-11-26,40
+EMP-0357,2023-12-27,,Marketing,Junior Marketing,Madrid,M,1982-09-27,33100,Bachillerato,Otro,2,Híbrido,Temporal,Junior,Madrid,España,2023-12-27,40
+EMP-0358,2023-02-22,,Legal,Especialista Legal,Madrid,F,1997-03-25,39800,FP,Casado/a,3,Híbrido,Temporal,Especialista,Madrid,España,2023-02-22,40
+EMP-0359,2017-04-21,,Legal,Manager Legal,Sevilla,F,1986-10-26,57500,FP,Soltero/a,1,Presencial,Indefinido,Manager,Sevilla,Colombia,2017-04-21,40
+EMP-0360,2021-03-08,,Personas,Junior Personas,Valencia,F,1974-04-24,28000,Bachillerato,Otro,1,Híbrido,Indefinido,Junior,Valencia,España,2021-03-08,40
+EMP-0361,2024-08-20,,Atención al cliente,Junior Atención al cliente,Barcelona,F,1970-11-02,35700,Grado,Otro,2,Híbrido,Indefinido,Junior,Barcelona,España,2024-08-20,40
+EMP-0362,2021-03-15,,Atención al cliente,Manager Atención al cliente,Madrid,M,1986-06-20,53300,Máster,Casado/a,3,Presencial,Indefinido,Manager,Madrid,España,2021-03-15,40
+EMP-0363,2020-03-24,,Finanzas,Junior Finanzas,Valencia,F,1985-02-21,30600,Máster,Casado/a,0,Híbrido,Indefinido,Junior,Valencia,Colombia,2020-03-24,30
+EMP-0364,2018-01-15,,Tecnología,Manager Tecnología,Sevilla,M,1992-11-17,60000,FP,Soltero/a,2,Remoto,Indefinido,Manager,Sevilla,Portugal,2018-01-15,40
+EMP-0365,2025-04-15,,Tecnología,Manager Tecnología,Madrid,F,2000-09-29,55600,Bachillerato,Otro,2,Híbrido,Indefinido,Manager,Madrid,Colombia,2025-04-15,40
+EMP-0366,2017-02-19,,Finanzas,Manager Finanzas,Valencia,F,1965-01-12,60800,FP,Otro,1,Remoto,Temporal,Manager,Valencia,Italia,2017-02-19,40
+EMP-0367,2016-04-01,,Atención al cliente,Junior Atención al cliente,Sevilla,M,1971-12-22,33600,Bachillerato,Casado/a,1,Presencial,Indefinido,Junior,Sevilla,Argentina,2016-04-01,30
+EMP-0368,2021-11-17,,Finanzas,Junior Finanzas,Barcelona,F,1985-11-07,28100,Máster,Casado/a,1,Remoto,Temporal,Junior,Barcelona,Colombia,2021-11-17,40
+EMP-0369,2022-09-28,,Legal,Junior Legal,Barcelona,F,2000-11-23,28000,Bachillerato,Soltero/a,1,Remoto,Temporal,Junior,Barcelona,Italia,2022-09-28,30
+EMP-0370,2022-10-28,,Finanzas,Dirección Finanzas,Madrid,M,1986-09-22,76900,Grado,Casado/a,3,Remoto,Temporal,Dirección,Madrid,Colombia,2022-10-28,40
+EMP-0371,2018-09-27,,Tecnología,Junior Tecnología,Barcelona,F,1992-06-29,31100,FP,Soltero/a,2,Presencial,Indefinido,Junior,Barcelona,Italia,2018-09-27,40
+EMP-0372,2018-02-18,,Ventas,Dirección Ventas,Bilbao,M,1977-05-24,81500,Bachillerato,Soltero/a,2,Remoto,Indefinido,Dirección,Bizkaia,Portugal,2018-02-18,40
+EMP-0373,2019-03-18,,Atención al cliente,Especialista Atención al cliente,Barcelona,M,1974-08-30,39800,Grado,Otro,0,Presencial,Temporal,Especialista,Barcelona,Portugal,2019-03-18,40
+EMP-0374,2022-02-23,,Finanzas,Manager Finanzas,Sevilla,M,1968-01-10,55700,Grado,Casado/a,2,Remoto,Indefinido,Manager,Sevilla,Argentina,2022-02-23,40
+EMP-0375,2023-05-13,,Marketing,Junior Marketing,Madrid,M,1972-07-19,32300,Bachillerato,Soltero/a,1,Presencial,Indefinido,Junior,Madrid,España,2023-05-13,40
+EMP-0376,2021-07-04,,Finanzas,Junior Finanzas,Valencia,M,1976-01-09,34900,Grado,Casado/a,1,Remoto,Indefinido,Junior,Valencia,Italia,2021-07-04,40
+EMP-0377,2017-12-05,,Tecnología,Manager Tecnología,Madrid,M,2000-11-08,59600,Grado,Soltero/a,2,Presencial,Temporal,Manager,Madrid,Argentina,2017-12-05,40
+EMP-0378,2023-11-18,,Operaciones,Junior Operaciones,Barcelona,F,2001-05-13,28100,FP,Soltero/a,0,Híbrido,Indefinido,Junior,Barcelona,Portugal,2023-11-18,40
+EMP-0379,2020-03-05,,Personas,Manager Personas,Sevilla,F,1970-01-15,57700,Grado,Otro,3,Remoto,Indefinido,Manager,Sevilla,Italia,2020-03-05,40
+EMP-0380,2024-05-18,,Personas,Especialista Personas,Valencia,M,1974-07-06,46500,Bachillerato,Otro,2,Remoto,Indefinido,Especialista,Valencia,Colombia,2024-05-18,40
+EMP-0381,2024-10-22,,Operaciones,Junior Operaciones,Bilbao,F,1977-07-26,29800,Grado,Otro,3,Híbrido,Indefinido,Junior,Bizkaia,Portugal,2024-10-22,40
+EMP-0382,2018-07-02,,Finanzas,Manager Finanzas,Madrid,M,1986-03-15,55800,Grado,Otro,2,Híbrido,Indefinido,Manager,Madrid,Colombia,2018-07-02,40
+EMP-0383,2022-06-22,,Tecnología,Especialista Tecnología,Bilbao,F,1984-09-02,44600,Grado,Casado/a,3,Híbrido,Indefinido,Especialista,Bizkaia,España,2022-06-22,40
+EMP-0384,2021-02-24,,Tecnología,Especialista Tecnología,Valencia,M,1970-08-23,45300,Grado,Otro,2,Remoto,Indefinido,Especialista,Valencia,España,2021-02-24,40
+EMP-0385,2023-12-01,,Atención al cliente,Especialista Atención al cliente,Barcelona,M,1997-04-10,44900,Bachillerato,Soltero/a,2,Híbrido,Indefinido,Especialista,Barcelona,Colombia,2023-12-01,40
+EMP-0386,2021-09-01,,Atención al cliente,Especialista Atención al cliente,Bilbao,F,1983-12-09,46800,Máster,Casado/a,2,Remoto,Temporal,Especialista,Bizkaia,Italia,2021-09-01,40
+EMP-0387,2015-09-20,,Marketing,Dirección Marketing,Bilbao,M,1991-12-22,79900,Máster,Soltero/a,1,Remoto,Indefinido,Dirección,Bizkaia,Italia,2015-09-20,40
+EMP-0388,2022-07-02,,Atención al cliente,Junior Atención al cliente,Madrid,M,1971-10-06,35600,Máster,Casado/a,1,Remoto,Indefinido,Junior,Madrid,Colombia,2022-07-02,40
+EMP-0389,2023-06-11,,Finanzas,Manager Finanzas,Sevilla,F,1984-04-20,60200,Máster,Casado/a,0,Presencial,Indefinido,Manager,Sevilla,España,2023-06-11,40
+EMP-0390,2021-08-21,,Legal,Junior Legal,Barcelona,M,2001-08-11,28800,Bachillerato,Otro,2,Presencial,Indefinido,Junior,Barcelona,Italia,2021-08-21,40
+EMP-0391,2020-01-03,,Ventas,Manager Ventas,Bilbao,F,1979-08-27,56600,Bachillerato,Otro,2,Presencial,Indefinido,Manager,Bizkaia,España,2020-01-03,40
+EMP-0392,2016-07-19,,Tecnología,Junior Tecnología,Valencia,F,1983-02-19,31300,FP,Soltero/a,2,Remoto,Indefinido,Junior,Valencia,España,2016-07-19,40
+EMP-0393,2021-10-12,,Tecnología,Especialista Tecnología,Madrid,M,2000-07-24,41100,Grado,Otro,2,Presencial,Temporal,Especialista,Madrid,Argentina,2021-10-12,40
+EMP-0394,2024-01-29,,Tecnología,Manager Tecnología,Sevilla,M,1981-05-31,57300,Bachillerato,Soltero/a,1,Presencial,Indefinido,Manager,Sevilla,Colombia,2024-01-29,40
+EMP-0395,2018-10-26,,Marketing,Dirección Marketing,Barcelona,F,1986-04-04,77400,Bachillerato,Casado/a,3,Presencial,Temporal,Dirección,Barcelona,Colombia,2018-10-26,40
+EMP-0396,2016-09-19,,Atención al cliente,Especialista Atención al cliente,Barcelona,F,1980-02-18,40900,Máster,Casado/a,0,Presencial,Indefinido,Especialista,Barcelona,Argentina,2016-09-19,40
+EMP-0397,2022-08-07,,Tecnología,Junior Tecnología,Bilbao,F,1998-08-23,34900,FP,Casado/a,1,Remoto,Indefinido,Junior,Bizkaia,España,2022-08-07,40
+EMP-0398,2022-04-27,,Operaciones,Manager Operaciones,Barcelona,M,1996-01-18,54800,FP,Casado/a,3,Híbrido,Indefinido,Manager,Barcelona,España,2022-04-27,40
+EMP-0399,2022-10-29,,Tecnología,Junior Tecnología,Barcelona,F,1994-02-26,33300,Bachillerato,Otro,1,Híbrido,Indefinido,Junior,Barcelona,Argentina,2022-10-29,40
+EMP-0400,2024-04-04,,Legal,Manager Legal,Barcelona,M,1975-03-21,59100,Bachillerato,Soltero/a,2,Híbrido,Indefinido,Manager,Barcelona,España,2024-04-04,40
+EMP-0401,2023-10-03,,Ventas,Junior Ventas,Bilbao,F,1984-03-02,31800,Grado,Soltero/a,3,Híbrido,Indefinido,Junior,Bizkaia,Colombia,2023-10-03,40
+EMP-0402,2022-01-14,,Finanzas,Manager Finanzas,Madrid,M,1983-11-05,53800,Grado,Soltero/a,2,Híbrido,Indefinido,Manager,Madrid,Colombia,2022-01-14,40
+EMP-0403,2021-07-06,,Legal,Especialista Legal,Barcelona,M,1972-10-25,42200,Máster,Soltero/a,1,Presencial,Indefinido,Especialista,Barcelona,Portugal,2021-07-06,30
+EMP-0404,2023-09-08,,Legal,Junior Legal,Madrid,F,1994-09-29,30800,Máster,Soltero/a,1,Remoto,Indefinido,Junior,Madrid,Colombia,2023-09-08,40
+EMP-0405,2022-12-21,,Personas,Junior Personas,Barcelona,F,1995-07-03,30900,Grado,Otro,2,Presencial,Temporal,Junior,Barcelona,Portugal,2022-12-21,40
+EMP-0406,2023-07-31,,Ventas,Dirección Ventas,Barcelona,M,1985-09-30,82600,Máster,Otro,0,Presencial,Temporal,Dirección,Barcelona,Italia,2023-07-31,40
+EMP-0407,2016-01-19,,Finanzas,Manager Finanzas,Madrid,M,1998-05-29,54300,Bachillerato,Soltero/a,2,Remoto,Indefinido,Manager,Madrid,Portugal,2016-01-19,40
+EMP-0408,2021-11-23,,Atención al cliente,Especialista Atención al cliente,Barcelona,F,1965-08-02,39400,Bachillerato,Otro,0,Remoto,Indefinido,Especialista,Barcelona,Portugal,2021-11-23,40
+EMP-0409,2018-10-30,,Legal,Dirección Legal,Madrid,M,1974-10-04,78300,Bachillerato,Otro,1,Presencial,Indefinido,Dirección,Madrid,Argentina,2018-10-30,40
+EMP-0410,2015-09-26,,Legal,Especialista Legal,Sevilla,F,1996-01-24,44700,Máster,Otro,2,Híbrido,Indefinido,Especialista,Sevilla,Italia,2015-09-26,40
+EMP-0411,2015-04-08,,Legal,Dirección Legal,Valencia,M,1968-09-18,74700,Bachillerato,Soltero/a,2,Híbrido,Indefinido,Dirección,Valencia,España,2015-04-08,40
+EMP-0412,2023-06-16,,Marketing,Manager Marketing,Bilbao,M,1992-07-17,59000,Bachillerato,Soltero/a,2,Híbrido,Indefinido,Manager,Bizkaia,Italia,2023-06-16,40
+EMP-0413,2017-10-17,,Personas,Manager Personas,Barcelona,M,1974-02-08,59600,Bachillerato,Soltero/a,2,Remoto,Indefinido,Manager,Barcelona,España,2017-10-17,40
+EMP-0414,2023-12-03,,Finanzas,Junior Finanzas,Sevilla,F,1982-01-23,27700,Máster,Casado/a,1,Presencial,Indefinido,Junior,Sevilla,Portugal,2023-12-03,40
+EMP-0415,2016-02-18,,Legal,Especialista Legal,Sevilla,F,1986-05-14,46900,FP,Otro,1,Híbrido,Indefinido,Especialista,Sevilla,Argentina,2016-02-18,40
+EMP-0416,2017-04-25,,Legal,Junior Legal,Valencia,M,1990-08-10,33500,Bachillerato,Otro,2,Remoto,Indefinido,Junior,Valencia,Portugal,2017-04-25,40
+EMP-0417,2015-01-22,,Tecnología,Especialista Tecnología,Sevilla,F,1994-05-31,40200,FP,Otro,1,Presencial,Indefinido,Especialista,Sevilla,Colombia,2015-01-22,40
+EMP-0418,2019-04-20,,Tecnología,Manager Tecnología,Barcelona,M,1998-05-14,52100,Bachillerato,Otro,3,Presencial,Indefinido,Manager,Barcelona,Argentina,2019-04-20,40
+EMP-0419,2022-07-20,,Personas,Dirección Personas,Bilbao,F,1967-05-11,79100,Bachillerato,Casado/a,1,Remoto,Indefinido,Dirección,Bizkaia,Italia,2022-07-20,40
+EMP-0420,2017-12-03,,Operaciones,Junior Operaciones,Bilbao,M,1966-12-28,28600,FP,Soltero/a,1,Remoto,Temporal,Junior,Bizkaia,Portugal,2017-12-03,40
+EMP-0421,2024-05-29,,Personas,Manager Personas,Bilbao,F,1974-03-09,53000,Bachillerato,Soltero/a,0,Remoto,Indefinido,Manager,Bizkaia,Portugal,2024-05-29,40
+EMP-0422,2022-01-14,,Personas,Dirección Personas,Sevilla,M,1989-02-26,79600,Grado,Otro,0,Híbrido,Indefinido,Dirección,Sevilla,Colombia,2022-01-14,40
+EMP-0423,2016-06-12,,Ventas,Dirección Ventas,Bilbao,F,1991-12-01,75800,FP,Casado/a,1,Remoto,Indefinido,Dirección,Bizkaia,España,2016-06-12,30
+EMP-0424,2021-01-22,,Finanzas,Dirección Finanzas,Bilbao,F,1991-01-02,78500,Bachillerato,Otro,2,Híbrido,Indefinido,Dirección,Bizkaia,Italia,2021-01-22,40
+EMP-0425,2017-05-29,,Legal,Manager Legal,Barcelona,F,1965-10-26,56000,Bachillerato,Casado/a,1,Híbrido,Indefinido,Manager,Barcelona,Colombia,2017-05-29,40
+EMP-0426,2022-07-10,,Ventas,Junior Ventas,Valencia,F,1981-03-16,34900,Bachillerato,Otro,2,Presencial,Indefinido,Junior,Valencia,Argentina,2022-07-10,40
+EMP-0427,2020-11-26,,Ventas,Junior Ventas,Bilbao,M,1991-08-30,28300,Grado,Otro,2,Remoto,Indefinido,Junior,Bizkaia,Colombia,2020-11-26,40
+EMP-0428,2024-10-13,,Legal,Dirección Legal,Madrid,F,1999-09-28,82300,FP,Soltero/a,3,Presencial,Indefinido,Dirección,Madrid,Argentina,2024-10-13,40
+EMP-0429,2019-02-09,,Tecnología,Especialista Tecnología,Barcelona,M,1981-03-02,43800,FP,Otro,1,Remoto,Indefinido,Especialista,Barcelona,España,2019-02-09,30
+EMP-0430,2021-06-28,,Ventas,Manager Ventas,Valencia,M,2001-09-10,58300,FP,Otro,1,Remoto,Indefinido,Manager,Valencia,Portugal,2021-06-28,40
+EMP-0431,2018-11-07,,Ventas,Dirección Ventas,Sevilla,M,1994-01-24,77900,Máster,Casado/a,3,Presencial,Temporal,Dirección,Sevilla,España,2018-11-07,40
+EMP-0432,2018-11-03,,Personas,Junior Personas,Sevilla,F,1994-07-20,32400,FP,Casado/a,1,Presencial,Indefinido,Junior,Sevilla,Portugal,2018-11-03,40
+EMP-0433,2016-04-28,,Ventas,Especialista Ventas,Valencia,F,1987-06-08,46800,Grado,Otro,0,Híbrido,Indefinido,Especialista,Valencia,Portugal,2016-04-28,40
+EMP-0434,2017-01-20,,Legal,Manager Legal,Barcelona,F,1979-11-15,56200,Máster,Soltero/a,3,Presencial,Indefinido,Manager,Barcelona,España,2017-01-20,40
+EMP-0435,2017-07-14,,Ventas,Manager Ventas,Madrid,F,1999-04-04,57300,Grado,Soltero/a,0,Presencial,Indefinido,Manager,Madrid,Argentina,2017-07-14,40
+EMP-0436,2017-09-25,,Operaciones,Especialista Operaciones,Sevilla,F,1999-05-07,46700,Grado,Casado/a,2,Híbrido,Indefinido,Especialista,Sevilla,Italia,2017-09-25,40
+EMP-0437,2022-06-11,,Operaciones,Especialista Operaciones,Bilbao,F,1979-05-10,46800,Bachillerato,Soltero/a,3,Híbrido,Indefinido,Especialista,Bizkaia,España,2022-06-11,40
+EMP-0438,2024-09-07,,Marketing,Dirección Marketing,Sevilla,F,1965-07-07,80700,Bachillerato,Casado/a,0,Híbrido,Temporal,Dirección,Sevilla,Colombia,2024-09-07,40
+EMP-0439,2022-04-15,,Operaciones,Dirección Operaciones,Barcelona,M,1970-02-11,75200,FP,Casado/a,1,Híbrido,Temporal,Dirección,Barcelona,España,2022-04-15,40
+EMP-0440,2019-03-19,,Finanzas,Especialista Finanzas,Barcelona,M,1965-09-26,41600,FP,Casado/a,3,Remoto,Indefinido,Especialista,Barcelona,España,2019-03-19,40
+EMP-0441,2019-04-21,,Operaciones,Dirección Operaciones,Sevilla,M,1979-09-14,79900,Grado,Otro,1,Remoto,Indefinido,Dirección,Sevilla,España,2019-04-21,40
+EMP-0442,2022-08-07,,Marketing,Dirección Marketing,Sevilla,F,1998-03-10,77200,FP,Casado/a,1,Remoto,Indefinido,Dirección,Sevilla,Italia,2022-08-07,40
+EMP-0443,2016-05-15,,Operaciones,Manager Operaciones,Barcelona,F,1972-09-02,60300,Grado,Casado/a,1,Híbrido,Indefinido,Manager,Barcelona,Italia,2016-05-15,40
+EMP-0444,2017-03-07,,Atención al cliente,Dirección Atención al cliente,Madrid,F,1994-12-06,75500,Bachillerato,Otro,0,Presencial,Indefinido,Dirección,Madrid,Italia,2017-03-07,40
+EMP-0445,2023-04-29,,Ventas,Especialista Ventas,Barcelona,F,1968-02-13,41900,FP,Otro,3,Presencial,Temporal,Especialista,Barcelona,Italia,2023-04-29,40
+EMP-0446,2016-01-24,,Operaciones,Dirección Operaciones,Valencia,F,1997-05-04,80800,Bachillerato,Soltero/a,3,Remoto,Indefinido,Dirección,Valencia,Colombia,2016-01-24,40
+EMP-0447,2022-01-30,,Legal,Especialista Legal,Sevilla,F,1985-11-08,40800,Máster,Otro,3,Híbrido,Indefinido,Especialista,Sevilla,Colombia,2022-01-30,40
+EMP-0448,2015-04-16,,Finanzas,Manager Finanzas,Bilbao,F,1988-06-26,58700,Bachillerato,Soltero/a,1,Híbrido,Indefinido,Manager,Bizkaia,Argentina,2015-04-16,40
+EMP-0449,2017-12-28,,Atención al cliente,Dirección Atención al cliente,Bilbao,M,1997-03-23,82700,Bachillerato,Otro,0,Remoto,Indefinido,Dirección,Bizkaia,Italia,2017-12-28,40
+EMP-0450,2016-05-19,,Finanzas,Manager Finanzas,Barcelona,F,1969-03-11,58700,Bachillerato,Otro,2,Híbrido,Indefinido,Manager,Barcelona,Italia,2016-05-19,40
+EMP-0451,2017-06-02,,Ventas,Junior Ventas,Bilbao,M,1972-07-05,27900,FP,Soltero/a,1,Remoto,Indefinido,Junior,Bizkaia,Italia,2017-06-02,40
+EMP-0452,2019-09-07,,Atención al cliente,Manager Atención al cliente,Valencia,M,1985-11-15,55500,Máster,Otro,2,Presencial,Indefinido,Manager,Valencia,Italia,2019-09-07,40
+EMP-0453,2021-05-02,,Tecnología,Manager Tecnología,Bilbao,M,1978-01-31,59200,FP,Casado/a,3,Remoto,Indefinido,Manager,Bizkaia,Italia,2021-05-02,40
+EMP-0454,2020-07-20,,Tecnología,Especialista Tecnología,Valencia,F,1975-06-13,42000,Bachillerato,Soltero/a,0,Híbrido,Indefinido,Especialista,Valencia,Italia,2020-07-20,40
+EMP-0455,2020-01-18,,Ventas,Especialista Ventas,Sevilla,M,1989-10-03,40700,Máster,Casado/a,1,Presencial,Indefinido,Especialista,Sevilla,España,2020-01-18,40
+EMP-0456,2021-09-10,,Personas,Especialista Personas,Bilbao,F,1967-10-28,38900,Máster,Soltero/a,2,Presencial,Indefinido,Especialista,Bizkaia,Argentina,2021-09-10,40
+EMP-0457,2019-09-29,,Legal,Junior Legal,Bilbao,F,1985-12-12,33400,Bachillerato,Casado/a,3,Híbrido,Indefinido,Junior,Bizkaia,Italia,2019-09-29,40
+EMP-0458,2023-11-04,,Ventas,Dirección Ventas,Madrid,M,1974-10-26,79800,Máster,Casado/a,2,Remoto,Indefinido,Dirección,Madrid,Colombia,2023-11-04,40
+EMP-0459,2016-01-25,,Ventas,Junior Ventas,Valencia,F,1968-08-25,33500,Grado,Otro,1,Remoto,Indefinido,Junior,Valencia,España,2016-01-25,40
+EMP-0460,2024-03-03,,Atención al cliente,Dirección Atención al cliente,Bilbao,F,1976-07-06,80900,Máster,Otro,3,Remoto,Temporal,Dirección,Bizkaia,Argentina,2024-03-03,40
+EMP-0461,2015-04-23,,Personas,Junior Personas,Bilbao,M,1976-04-28,27400,Bachillerato,Casado/a,2,Remoto,Indefinido,Junior,Bizkaia,Colombia,2015-04-23,40
+EMP-0462,2022-04-13,,Legal,Dirección Legal,Sevilla,F,1981-05-10,77700,Grado,Otro,0,Remoto,Temporal,Dirección,Sevilla,Portugal,2022-04-13,40
+EMP-0463,2023-10-20,,Personas,Manager Personas,Sevilla,F,1977-02-25,55300,Grado,Otro,0,Remoto,Indefinido,Manager,Sevilla,España,2023-10-20,40
+EMP-0464,2025-07-08,,Marketing,Junior Marketing,Bilbao,F,1997-07-24,34100,Máster,Otro,2,Presencial,Indefinido,Junior,Bizkaia,Argentina,2025-07-08,30
+EMP-0465,2025-06-17,,Finanzas,Especialista Finanzas,Valencia,M,1984-05-11,44300,Grado,Soltero/a,0,Presencial,Indefinido,Especialista,Valencia,España,2025-06-17,40
+EMP-0466,2015-11-04,,Personas,Dirección Personas,Madrid,M,1984-08-07,74600,Grado,Casado/a,1,Híbrido,Temporal,Dirección,Madrid,Portugal,2015-11-04,40
+EMP-0467,2023-12-05,,Atención al cliente,Junior Atención al cliente,Barcelona,F,1967-06-07,32900,Bachillerato,Soltero/a,3,Presencial,Indefinido,Junior,Barcelona,Argentina,2023-12-05,40
+EMP-0468,2015-02-17,,Personas,Junior Personas,Barcelona,F,1973-10-28,34700,Máster,Otro,1,Híbrido,Temporal,Junior,Barcelona,Colombia,2015-02-17,40
+EMP-0469,2024-03-02,,Ventas,Junior Ventas,Sevilla,F,1993-07-14,27000,FP,Soltero/a,3,Remoto,Indefinido,Junior,Sevilla,Italia,2024-03-02,40
+EMP-0470,2023-01-08,,Legal,Dirección Legal,Sevilla,M,2001-07-13,77500,FP,Casado/a,3,Remoto,Indefinido,Dirección,Sevilla,Argentina,2023-01-08,30
+EMP-0471,2024-08-05,,Operaciones,Junior Operaciones,Madrid,M,1969-06-08,30800,Grado,Otro,1,Presencial,Indefinido,Junior,Madrid,Portugal,2024-08-05,40
+EMP-0472,2023-04-07,,Personas,Dirección Personas,Sevilla,M,1988-01-03,75400,Máster,Otro,1,Presencial,Indefinido,Dirección,Sevilla,España,2023-04-07,40
+EMP-0473,2018-03-01,,Finanzas,Junior Finanzas,Bilbao,M,1991-08-31,30900,Grado,Otro,3,Remoto,Temporal,Junior,Bizkaia,España,2018-03-01,40
+EMP-0474,2020-11-11,,Personas,Junior Personas,Barcelona,M,2001-05-06,29100,Bachillerato,Otro,0,Remoto,Indefinido,Junior,Barcelona,España,2020-11-11,40
+EMP-0475,2025-02-26,,Operaciones,Dirección Operaciones,Sevilla,M,1990-10-31,81100,Máster,Otro,0,Híbrido,Indefinido,Dirección,Sevilla,Italia,2025-02-26,40
+EMP-0476,2021-01-27,,Ventas,Especialista Ventas,Valencia,M,1985-02-06,45300,Máster,Otro,0,Híbrido,Indefinido,Especialista,Valencia,Colombia,2021-01-27,40
+EMP-0477,2021-09-28,,Legal,Junior Legal,Barcelona,M,1992-03-25,27400,Máster,Otro,0,Remoto,Indefinido,Junior,Barcelona,Argentina,2021-09-28,40
+EMP-0478,2025-05-24,,Marketing,Manager Marketing,Madrid,F,1999-01-18,55500,Máster,Casado/a,0,Remoto,Indefinido,Manager,Madrid,Italia,2025-05-24,40
+EMP-0479,2018-02-19,,Legal,Junior Legal,Valencia,F,1993-03-21,33800,Grado,Otro,1,Remoto,Indefinido,Junior,Valencia,Italia,2018-02-19,40
+EMP-0480,2025-07-24,,Personas,Especialista Personas,Bilbao,M,1996-08-15,44500,Grado,Otro,2,Presencial,Indefinido,Especialista,Bizkaia,Portugal,2025-07-24,40
+EMP-0481,2016-01-28,,Atención al cliente,Manager Atención al cliente,Bilbao,F,1983-12-28,59300,FP,Casado/a,3,Presencial,Indefinido,Manager,Bizkaia,Argentina,2016-01-28,40
+EMP-0482,2022-03-23,,Atención al cliente,Manager Atención al cliente,Sevilla,M,1984-10-30,58700,Bachillerato,Soltero/a,3,Remoto,Indefinido,Manager,Sevilla,Colombia,2022-03-23,40
+EMP-0483,2018-10-16,,Operaciones,Manager Operaciones,Sevilla,F,1981-09-01,58400,Bachillerato,Soltero/a,2,Remoto,Indefinido,Manager,Sevilla,Colombia,2018-10-16,30
+EMP-0484,2022-06-24,,Marketing,Manager Marketing,Valencia,M,1978-08-29,57500,Grado,Soltero/a,1,Remoto,Indefinido,Manager,Valencia,Argentina,2022-06-24,40
+EMP-0485,2022-02-06,,Legal,Junior Legal,Valencia,F,1993-12-08,33800,Grado,Otro,0,Híbrido,Indefinido,Junior,Valencia,Argentina,2022-02-06,40
+EMP-0486,2016-01-30,,Marketing,Manager Marketing,Sevilla,F,1985-04-19,59800,Máster,Soltero/a,3,Presencial,Indefinido,Manager,Sevilla,España,2016-01-30,40
+EMP-0487,2025-06-05,,Marketing,Junior Marketing,Bilbao,F,1985-07-25,33000,FP,Casado/a,2,Presencial,Indefinido,Junior,Bizkaia,Italia,2025-06-05,40
+EMP-0488,2018-11-09,,Atención al cliente,Especialista Atención al cliente,Bilbao,F,1966-09-27,42100,Bachillerato,Otro,1,Híbrido,Indefinido,Especialista,Bizkaia,Italia,2018-11-09,40
+EMP-0489,2018-03-12,,Marketing,Dirección Marketing,Valencia,F,1967-07-20,81400,Bachillerato,Casado/a,0,Presencial,Indefinido,Dirección,Valencia,Colombia,2018-03-12,30
+EMP-0490,2016-07-06,,Marketing,Junior Marketing,Sevilla,M,1997-06-25,33800,Bachillerato,Soltero/a,3,Remoto,Indefinido,Junior,Sevilla,Colombia,2016-07-06,40
+EMP-0491,2018-01-24,,Ventas,Junior Ventas,Barcelona,F,1967-10-11,30200,FP,Casado/a,1,Presencial,Indefinido,Junior,Barcelona,Argentina,2018-01-24,40
+EMP-0492,2020-12-31,,Atención al cliente,Especialista Atención al cliente,Sevilla,M,1992-07-04,39900,FP,Soltero/a,3,Híbrido,Indefinido,Especialista,Sevilla,Italia,2020-12-31,40
+EMP-0493,2025-02-17,,Marketing,Especialista Marketing,Valencia,F,1984-05-12,44000,Máster,Otro,1,Presencial,Indefinido,Especialista,Valencia,Colombia,2025-02-17,30
+EMP-0494,2024-04-04,,Ventas,Especialista Ventas,Valencia,M,1980-09-03,46900,Grado,Soltero/a,2,Híbrido,Indefinido,Especialista,Valencia,Portugal,2024-04-04,40
+EMP-0495,2016-11-02,,Tecnología,Junior Tecnología,Sevilla,M,1995-02-17,28300,Bachillerato,Otro,0,Híbrido,Indefinido,Junior,Sevilla,Argentina,2016-11-02,30
+EMP-0496,2023-11-15,,Legal,Manager Legal,Bilbao,F,1984-03-21,59700,Máster,Otro,1,Remoto,Indefinido,Manager,Bizkaia,Italia,2023-11-15,40
+EMP-0497,2025-02-15,,Personas,Junior Personas,Sevilla,M,1994-11-06,28700,Máster,Otro,1,Presencial,Indefinido,Junior,Sevilla,Portugal,2025-02-15,40
+EMP-0498,2018-04-21,,Operaciones,Dirección Operaciones,Barcelona,M,1980-01-26,75600,FP,Casado/a,3,Híbrido,Temporal,Dirección,Barcelona,Portugal,2018-04-21,30
+EMP-0499,2017-07-02,,Finanzas,Manager Finanzas,Madrid,F,1967-03-13,58500,FP,Casado/a,0,Presencial,Indefinido,Manager,Madrid,España,2017-07-02,30
+EMP-0500,2022-09-02,,Atención al cliente,Junior Atención al cliente,Madrid,M,1984-01-16,33600,FP,Otro,0,Presencial,Indefinido,Junior,Madrid,España,2022-09-02,40
+EMP-0501,2015-11-14,,Atención al cliente,Manager Atención al cliente,Bilbao,F,1966-08-09,60100,Bachillerato,Casado/a,2,Remoto,Indefinido,Manager,Bizkaia,España,2015-11-14,30
+EMP-0502,2018-10-29,,Finanzas,Dirección Finanzas,Barcelona,M,1975-03-29,80500,FP,Soltero/a,0,Híbrido,Indefinido,Dirección,Barcelona,Portugal,2018-10-29,40
+EMP-0503,2018-12-08,,Operaciones,Especialista Operaciones,Barcelona,M,1976-05-21,43700,Grado,Soltero/a,1,Presencial,Indefinido,Especialista,Barcelona,Portugal,2018-12-08,30
+EMP-0504,2025-01-22,,Ventas,Especialista Ventas,Barcelona,M,1979-03-03,39900,Grado,Otro,0,Remoto,Indefinido,Especialista,Barcelona,Italia,2025-01-22,40
+EMP-0505,2016-11-29,,Tecnología,Dirección Tecnología,Barcelona,F,1995-11-13,75000,Grado,Otro,3,Presencial,Indefinido,Dirección,Barcelona,Colombia,2016-11-29,40
+EMP-0506,2021-11-09,,Ventas,Manager Ventas,Barcelona,M,1971-05-23,59900,Grado,Soltero/a,2,Presencial,Temporal,Manager,Barcelona,Italia,2021-11-09,40
+EMP-0507,2024-06-24,,Tecnología,Dirección Tecnología,Sevilla,M,1967-05-16,79200,Máster,Casado/a,2,Híbrido,Indefinido,Dirección,Sevilla,Italia,2024-06-24,40
+EMP-0508,2021-02-06,,Ventas,Especialista Ventas,Madrid,F,1975-09-29,44100,Máster,Soltero/a,1,Presencial,Indefinido,Especialista,Madrid,Argentina,2021-02-06,40
+EMP-0509,2017-07-26,,Ventas,Especialista Ventas,Barcelona,M,1977-04-28,45900,Grado,Otro,1,Remoto,Indefinido,Especialista,Barcelona,Argentina,2017-07-26,40
+EMP-0510,2020-08-01,,Tecnología,Junior Tecnología,Bilbao,M,2000-06-11,28000,Máster,Soltero/a,0,Presencial,Indefinido,Junior,Bizkaia,España,2020-08-01,40
+EMP-0511,2017-01-20,,Atención al cliente,Junior Atención al cliente,Madrid,F,1990-10-17,32500,Grado,Otro,2,Híbrido,Indefinido,Junior,Madrid,España,2017-01-20,40
+EMP-0512,2018-04-25,,Legal,Manager Legal,Madrid,F,1982-08-09,59200,FP,Otro,3,Presencial,Indefinido,Manager,Madrid,Colombia,2018-04-25,40
+EMP-0513,2016-11-09,,Ventas,Especialista Ventas,Madrid,M,1979-03-30,46100,Bachillerato,Soltero/a,0,Presencial,Indefinido,Especialista,Madrid,Colombia,2016-11-09,40
+EMP-0514,2016-07-30,,Personas,Manager Personas,Valencia,M,1994-12-15,59500,Grado,Otro,1,Remoto,Indefinido,Manager,Valencia,Italia,2016-07-30,40
+EMP-0515,2015-07-27,,Operaciones,Dirección Operaciones,Valencia,M,1978-04-27,74800,Bachillerato,Casado/a,1,Híbrido,Indefinido,Dirección,Valencia,Colombia,2015-07-27,40
+EMP-0516,2023-09-11,,Legal,Especialista Legal,Bilbao,M,1978-11-04,39000,Grado,Casado/a,3,Remoto,Indefinido,Especialista,Bizkaia,España,2023-09-11,40
+EMP-0517,2015-10-12,,Finanzas,Dirección Finanzas,Madrid,F,1991-12-06,74100,FP,Soltero/a,2,Híbrido,Indefinido,Dirección,Madrid,Argentina,2015-10-12,40
+EMP-0518,2020-12-15,,Personas,Junior Personas,Valencia,M,1978-10-16,30500,Grado,Soltero/a,0,Híbrido,Indefinido,Junior,Valencia,España,2020-12-15,40
+EMP-0519,2019-02-20,,Legal,Junior Legal,Sevilla,F,2000-12-24,30500,Máster,Otro,3,Híbrido,Indefinido,Junior,Sevilla,Portugal,2019-02-20,40
+EMP-0520,2015-08-25,,Finanzas,Dirección Finanzas,Bilbao,M,1976-02-26,82900,Bachillerato,Soltero/a,2,Híbrido,Indefinido,Dirección,Bizkaia,Argentina,2015-08-25,40
+EMP-0521,2015-08-08,,Legal,Dirección Legal,Madrid,F,1974-06-20,80300,Grado,Casado/a,3,Híbrido,Indefinido,Dirección,Madrid,Colombia,2015-08-08,40
+EMP-0522,2023-12-16,,Personas,Dirección Personas,Barcelona,M,1982-09-06,77200,Bachillerato,Soltero/a,3,Híbrido,Indefinido,Dirección,Barcelona,España,2023-12-16,40
+EMP-0523,2021-11-06,,Finanzas,Junior Finanzas,Sevilla,M,1974-11-02,32100,Máster,Otro,0,Presencial,Temporal,Junior,Sevilla,Colombia,2021-11-06,30
+EMP-0524,2024-01-29,,Marketing,Junior Marketing,Bilbao,M,1991-01-11,34300,Bachillerato,Otro,0,Híbrido,Indefinido,Junior,Bizkaia,Argentina,2024-01-29,40
+EMP-0525,2022-03-13,,Tecnología,Especialista Tecnología,Sevilla,M,1977-10-15,41100,Grado,Soltero/a,3,Presencial,Indefinido,Especialista,Sevilla,Italia,2022-03-13,40
+EMP-0526,2018-12-08,,Personas,Junior Personas,Madrid,F,1980-07-12,28900,Máster,Casado/a,3,Remoto,Temporal,Junior,Madrid,España,2018-12-08,40
+EMP-0527,2022-10-23,,Finanzas,Especialista Finanzas,Sevilla,M,1997-12-12,44400,Bachillerato,Soltero/a,0,Híbrido,Indefinido,Especialista,Sevilla,Italia,2022-10-23,40
+EMP-0528,2017-09-02,,Operaciones,Dirección Operaciones,Valencia,M,2000-09-25,78700,Bachillerato,Casado/a,3,Remoto,Indefinido,Dirección,Valencia,Colombia,2017-09-02,40
+EMP-0529,2024-03-17,,Finanzas,Junior Finanzas,Madrid,F,1974-01-23,28800,FP,Soltero/a,1,Híbrido,Indefinido,Junior,Madrid,Argentina,2024-03-17,40
+EMP-0530,2016-04-14,,Ventas,Especialista Ventas,Madrid,F,1994-07-29,40300,Máster,Soltero/a,2,Híbrido,Indefinido,Especialista,Madrid,Argentina,2016-04-14,40
+EMP-0531,2020-10-02,,Ventas,Especialista Ventas,Valencia,M,1986-09-02,39200,Grado,Soltero/a,1,Presencial,Indefinido,Especialista,Valencia,Portugal,2020-10-02,40
+EMP-0532,2017-07-31,,Operaciones,Dirección Operaciones,Bilbao,F,1994-02-15,78400,FP,Otro,1,Presencial,Indefinido,Dirección,Bizkaia,Portugal,2017-07-31,40
+EMP-0533,2020-03-19,,Operaciones,Manager Operaciones,Bilbao,M,1984-05-20,54900,Grado,Casado/a,3,Híbrido,Temporal,Manager,Bizkaia,Argentina,2020-03-19,40
+EMP-0534,2015-01-12,,Ventas,Manager Ventas,Madrid,M,1999-05-06,59700,Grado,Otro,2,Presencial,Indefinido,Manager,Madrid,Colombia,2015-01-12,40
+EMP-0535,2025-06-13,,Tecnología,Junior Tecnología,Valencia,M,1980-03-30,31200,FP,Soltero/a,1,Remoto,Indefinido,Junior,Valencia,Colombia,2025-06-13,40
+EMP-0536,2018-04-17,,Personas,Especialista Personas,Valencia,M,1969-04-02,43800,Grado,Soltero/a,0,Presencial,Indefinido,Especialista,Valencia,Italia,2018-04-17,40
+EMP-0537,2019-09-27,,Marketing,Manager Marketing,Sevilla,F,1986-10-11,54200,Bachillerato,Otro,0,Remoto,Indefinido,Manager,Sevilla,Italia,2019-09-27,40
+EMP-0538,2018-02-04,,Legal,Manager Legal,Valencia,M,1994-06-03,52300,Grado,Soltero/a,1,Presencial,Indefinido,Manager,Valencia,Argentina,2018-02-04,40
+EMP-0539,2021-05-21,,Legal,Dirección Legal,Barcelona,F,1966-09-19,77700,Bachillerato,Otro,0,Remoto,Indefinido,Dirección,Barcelona,Portugal,2021-05-21,30
+EMP-0540,2016-08-31,,Finanzas,Junior Finanzas,Bilbao,F,1988-10-13,35800,Grado,Soltero/a,3,Híbrido,Indefinido,Junior,Bizkaia,Italia,2016-08-31,40
+EMP-0541,2018-01-04,,Tecnología,Manager Tecnología,Sevilla,M,1974-07-09,55800,Bachillerato,Casado/a,1,Remoto,Indefinido,Manager,Sevilla,Italia,2018-01-04,40
+EMP-0542,2015-12-25,,Tecnología,Dirección Tecnología,Madrid,F,1987-01-16,77100,FP,Otro,3,Presencial,Indefinido,Dirección,Madrid,España,2015-12-25,40
+EMP-0543,2023-07-11,,Finanzas,Junior Finanzas,Madrid,F,1970-02-27,30800,Grado,Soltero/a,3,Presencial,Indefinido,Junior,Madrid,Argentina,2023-07-11,40
+EMP-0544,2020-02-25,,Personas,Dirección Personas,Bilbao,M,1997-04-09,76800,Grado,Soltero/a,1,Presencial,Indefinido,Dirección,Bizkaia,Italia,2020-02-25,40
+EMP-0545,2019-10-28,,Finanzas,Junior Finanzas,Barcelona,F,1979-10-09,32300,FP,Otro,0,Híbrido,Indefinido,Junior,Barcelona,Colombia,2019-10-28,40
+EMP-0546,2024-11-17,,Legal,Junior Legal,Valencia,F,1995-06-23,27600,Máster,Otro,1,Remoto,Indefinido,Junior,Valencia,Colombia,2024-11-17,40
+EMP-0547,2020-11-04,,Atención al cliente,Especialista Atención al cliente,Valencia,M,1992-03-15,39600,Máster,Soltero/a,3,Remoto,Indefinido,Especialista,Valencia,Colombia,2020-11-04,40
+EMP-0548,2023-05-27,,Marketing,Junior Marketing,Madrid,M,1992-03-02,30700,FP,Otro,1,Remoto,Indefinido,Junior,Madrid,Portugal,2023-05-27,40
+EMP-0549,2015-08-19,,Personas,Junior Personas,Madrid,M,1988-07-05,34500,FP,Soltero/a,0,Presencial,Indefinido,Junior,Madrid,España,2015-08-19,40
+EMP-0550,2017-12-15,,Atención al cliente,Manager Atención al cliente,Sevilla,F,1999-03-30,58400,Bachillerato,Casado/a,0,Híbrido,Temporal,Manager,Sevilla,Argentina,2017-12-15,40
+EMP-0551,2022-09-01,,Marketing,Dirección Marketing,Barcelona,F,1992-11-26,81500,FP,Soltero/a,2,Remoto,Indefinido,Dirección,Barcelona,Italia,2022-09-01,30
+EMP-0552,2017-11-05,,Operaciones,Especialista Operaciones,Sevilla,F,1993-09-20,41400,Bachillerato,Soltero/a,0,Híbrido,Indefinido,Especialista,Sevilla,Argentina,2017-11-05,40
+EMP-0553,2017-07-01,,Atención al cliente,Junior Atención al cliente,Valencia,M,1968-10-19,31900,FP,Casado/a,3,Remoto,Indefinido,Junior,Valencia,Colombia,2017-07-01,40
+EMP-0554,2018-07-15,,Finanzas,Manager Finanzas,Valencia,M,1984-02-20,59300,Bachillerato,Otro,0,Presencial,Indefinido,Manager,Valencia,Italia,2018-07-15,40
+EMP-0555,2025-01-22,,Marketing,Dirección Marketing,Valencia,F,1984-11-18,75100,FP,Otro,3,Presencial,Indefinido,Dirección,Valencia,Argentina,2025-01-22,40
+EMP-0556,2023-05-27,,Ventas,Junior Ventas,Barcelona,F,1998-08-21,30600,Bachillerato,Otro,2,Híbrido,Indefinido,Junior,Barcelona,España,2023-05-27,40
+EMP-0557,2015-01-23,,Finanzas,Especialista Finanzas,Valencia,F,1975-05-10,39600,FP,Otro,0,Remoto,Indefinido,Especialista,Valencia,Argentina,2015-01-23,40
+EMP-0558,2021-12-31,,Ventas,Junior Ventas,Bilbao,M,1971-01-22,28100,Grado,Otro,3,Remoto,Indefinido,Junior,Bizkaia,Italia,2021-12-31,40
+EMP-0559,2015-07-03,,Legal,Junior Legal,Sevilla,F,1981-10-24,28900,Máster,Soltero/a,2,Presencial,Indefinido,Junior,Sevilla,Italia,2015-07-03,40
+EMP-0560,2024-02-15,,Personas,Especialista Personas,Barcelona,F,1991-07-29,45000,Bachillerato,Soltero/a,3,Híbrido,Indefinido,Especialista,Barcelona,España,2024-02-15,40
+EMP-0561,2023-07-16,,Legal,Junior Legal,Sevilla,F,1997-05-30,33500,Grado,Otro,2,Presencial,Temporal,Junior,Sevilla,Colombia,2023-07-16,40
+EMP-0562,2015-01-24,,Personas,Dirección Personas,Valencia,F,1991-08-27,82800,Bachillerato,Soltero/a,3,Híbrido,Indefinido,Dirección,Valencia,Portugal,2015-01-24,40
+EMP-0563,2015-11-15,,Marketing,Manager Marketing,Barcelona,M,1986-03-18,56100,FP,Casado/a,2,Presencial,Indefinido,Manager,Barcelona,Colombia,2015-11-15,40
+EMP-0564,2022-10-12,,Operaciones,Manager Operaciones,Bilbao,F,1977-06-11,54400,FP,Casado/a,0,Híbrido,Indefinido,Manager,Bizkaia,Italia,2022-10-12,40
+EMP-0565,2019-07-23,,Tecnología,Especialista Tecnología,Madrid,M,1993-12-08,39600,FP,Casado/a,1,Presencial,Indefinido,Especialista,Madrid,España,2019-07-23,40
+EMP-0566,2017-04-01,,Ventas,Dirección Ventas,Valencia,M,1973-10-15,75000,Bachillerato,Casado/a,3,Presencial,Temporal,Dirección,Valencia,Portugal,2017-04-01,40
+EMP-0567,2023-12-22,,Marketing,Manager Marketing,Bilbao,M,1979-07-09,60300,Bachillerato,Otro,1,Presencial,Indefinido,Manager,Bizkaia,Argentina,2023-12-22,40
+EMP-0568,2020-10-30,,Marketing,Manager Marketing,Barcelona,M,1997-07-12,58500,FP,Soltero/a,0,Presencial,Temporal,Manager,Barcelona,Italia,2020-10-30,40
+EMP-0569,2022-10-06,,Atención al cliente,Manager Atención al cliente,Madrid,M,1968-02-14,57900,Grado,Otro,1,Presencial,Indefinido,Manager,Madrid,España,2022-10-06,40
+EMP-0570,2015-07-12,,Ventas,Manager Ventas,Bilbao,F,1980-10-19,58300,Grado,Otro,1,Híbrido,Indefinido,Manager,Bizkaia,Colombia,2015-07-12,40
+EMP-0571,2025-08-09,,Ventas,Especialista Ventas,Bilbao,F,1988-07-16,44100,Bachillerato,Soltero/a,0,Remoto,Indefinido,Especialista,Bizkaia,Italia,2025-08-09,40
+EMP-0572,2020-08-09,,Operaciones,Especialista Operaciones,Barcelona,F,1981-05-30,39300,FP,Soltero/a,1,Remoto,Indefinido,Especialista,Barcelona,España,2020-08-09,40
+EMP-0573,2022-03-24,,Personas,Especialista Personas,Valencia,M,1970-03-16,41300,Bachillerato,Otro,0,Presencial,Indefinido,Especialista,Valencia,Portugal,2022-03-24,40
+EMP-0574,2017-11-15,,Marketing,Especialista Marketing,Madrid,M,1990-08-08,44700,Máster,Soltero/a,2,Híbrido,Indefinido,Especialista,Madrid,Italia,2017-11-15,40
+EMP-0575,2023-06-07,,Ventas,Junior Ventas,Madrid,M,1969-02-20,35700,Bachillerato,Soltero/a,3,Híbrido,Indefinido,Junior,Madrid,España,2023-06-07,40
+EMP-0576,2017-05-18,,Atención al cliente,Manager Atención al cliente,Valencia,M,1989-09-16,59900,Máster,Soltero/a,3,Híbrido,Indefinido,Manager,Valencia,Colombia,2017-05-18,30
+EMP-0577,2016-05-24,,Operaciones,Manager Operaciones,Bilbao,M,1991-08-10,56500,Bachillerato,Otro,1,Remoto,Indefinido,Manager,Bizkaia,España,2016-05-24,40
+EMP-0578,2021-07-04,,Finanzas,Especialista Finanzas,Valencia,M,1991-07-25,44900,FP,Casado/a,1,Remoto,Indefinido,Especialista,Valencia,España,2021-07-04,40
+EMP-0579,2018-02-23,,Marketing,Manager Marketing,Sevilla,M,1988-04-21,53700,Grado,Otro,3,Híbrido,Indefinido,Manager,Sevilla,Colombia,2018-02-23,40
+EMP-0580,2024-05-14,,Finanzas,Junior Finanzas,Bilbao,M,1996-08-18,29400,FP,Otro,1,Presencial,Indefinido,Junior,Bizkaia,España,2024-05-14,40
+EMP-0581,2016-02-06,,Personas,Especialista Personas,Madrid,M,1972-05-13,44700,Máster,Otro,1,Híbrido,Indefinido,Especialista,Madrid,Italia,2016-02-06,40
+EMP-0582,2024-10-13,,Legal,Especialista Legal,Barcelona,M,1988-03-24,45300,Grado,Soltero/a,0,Remoto,Indefinido,Especialista,Barcelona,Italia,2024-10-13,40
+EMP-0583,2017-03-12,,Finanzas,Manager Finanzas,Valencia,F,2001-06-22,57500,Bachillerato,Otro,1,Híbrido,Indefinido,Manager,Valencia,Italia,2017-03-12,40
+EMP-0584,2023-03-07,,Atención al cliente,Dirección Atención al cliente,Sevilla,M,1989-05-04,78900,Grado,Soltero/a,2,Presencial,Indefinido,Dirección,Sevilla,Colombia,2023-03-07,40
+EMP-0585,2021-05-11,,Finanzas,Manager Finanzas,Bilbao,F,1995-11-23,59100,Máster,Soltero/a,3,Híbrido,Indefinido,Manager,Bizkaia,España,2021-05-11,40
+EMP-0586,2018-04-18,,Tecnología,Manager Tecnología,Bilbao,M,1990-11-01,58900,Máster,Soltero/a,0,Híbrido,Indefinido,Manager,Bizkaia,Portugal,2018-04-18,40
+EMP-0587,2017-04-09,,Legal,Junior Legal,Sevilla,F,1965-03-19,27100,Grado,Casado/a,1,Presencial,Indefinido,Junior,Sevilla,España,2017-04-09,30
+EMP-0588,2022-05-27,,Operaciones,Dirección Operaciones,Sevilla,M,1977-02-20,74700,Máster,Soltero/a,0,Remoto,Temporal,Dirección,Sevilla,Colombia,2022-05-27,40
+EMP-0589,2025-09-17,,Personas,Especialista Personas,Bilbao,F,1968-01-24,42400,Bachillerato,Soltero/a,0,Presencial,Temporal,Especialista,Bizkaia,Italia,2025-09-17,40
+EMP-0590,2019-08-04,,Marketing,Especialista Marketing,Bilbao,M,1988-08-24,47000,Máster,Otro,3,Remoto,Indefinido,Especialista,Bizkaia,Portugal,2019-08-04,30
+EMP-0591,2025-02-19,,Operaciones,Especialista Operaciones,Madrid,M,1989-03-08,38600,Máster,Soltero/a,3,Híbrido,Indefinido,Especialista,Madrid,España,2025-02-19,40
+EMP-0592,2020-02-14,,Personas,Junior Personas,Sevilla,M,1984-06-12,34800,FP,Soltero/a,0,Presencial,Indefinido,Junior,Sevilla,Colombia,2020-02-14,40
+EMP-0593,2015-11-18,,Finanzas,Manager Finanzas,Madrid,M,2001-07-21,52100,FP,Casado/a,1,Remoto,Indefinido,Manager,Madrid,Italia,2015-11-18,30
+EMP-0594,2022-08-11,,Tecnología,Dirección Tecnología,Barcelona,F,1981-02-07,76600,FP,Otro,1,Híbrido,Indefinido,Dirección,Barcelona,Portugal,2022-08-11,40
+EMP-0595,2019-12-23,,Operaciones,Manager Operaciones,Barcelona,F,1972-06-06,56600,Bachillerato,Soltero/a,0,Remoto,Temporal,Manager,Barcelona,España,2019-12-23,40
+EMP-0596,2020-11-14,,Tecnología,Dirección Tecnología,Bilbao,F,1990-08-12,78100,Máster,Soltero/a,1,Presencial,Indefinido,Dirección,Bizkaia,España,2020-11-14,40
+EMP-0597,2020-06-08,,Personas,Especialista Personas,Valencia,M,1988-07-29,43500,Grado,Soltero/a,0,Híbrido,Indefinido,Especialista,Valencia,Italia,2020-06-08,40
+EMP-0598,2023-01-15,,Legal,Junior Legal,Barcelona,M,1992-10-08,28000,FP,Otro,3,Híbrido,Indefinido,Junior,Barcelona,España,2023-01-15,40
+EMP-0599,2018-07-13,,Marketing,Especialista Marketing,Madrid,M,1981-12-25,40000,Bachillerato,Casado/a,3,Híbrido,Temporal,Especialista,Madrid,Argentina,2018-07-13,40
+EMP-0600,2020-12-30,,Personas,Junior Personas,Madrid,F,2001-07-12,27200,FP,Otro,0,Remoto,Indefinido,Junior,Madrid,España,2020-12-30,40
+EMP-0601,2024-10-21,,Atención al cliente,Dirección Atención al cliente,Sevilla,F,1989-11-12,77500,Máster,Soltero/a,3,Remoto,Temporal,Dirección,Sevilla,España,2024-10-21,40
+EMP-0602,2022-10-18,,Marketing,Manager Marketing,Bilbao,F,1998-02-15,53300,Bachillerato,Otro,3,Presencial,Temporal,Manager,Bizkaia,Portugal,2022-10-18,40
+EMP-0603,2017-04-23,,Personas,Especialista Personas,Bilbao,M,1967-10-08,38100,FP,Soltero/a,2,Remoto,Temporal,Especialista,Bizkaia,Portugal,2017-04-23,40
+EMP-0604,2016-03-14,,Finanzas,Especialista Finanzas,Valencia,M,1994-01-20,46100,Bachillerato,Casado/a,2,Remoto,Indefinido,Especialista,Valencia,Portugal,2016-03-14,40
+EMP-0605,2021-04-19,,Personas,Manager Personas,Sevilla,F,1996-12-31,58300,Máster,Otro,2,Híbrido,Indefinido,Manager,Sevilla,España,2021-04-19,40
+EMP-0606,2024-06-27,,Tecnología,Manager Tecnología,Madrid,F,1978-02-17,54000,Grado,Casado/a,2,Híbrido,Indefinido,Manager,Madrid,Italia,2024-06-27,40
+EMP-0607,2016-02-02,,Finanzas,Dirección Finanzas,Barcelona,M,1997-10-28,76700,Grado,Otro,1,Remoto,Indefinido,Dirección,Barcelona,España,2016-02-02,40
+EMP-0608,2020-06-24,,Operaciones,Manager Operaciones,Bilbao,M,1992-04-04,55300,Grado,Otro,2,Híbrido,Temporal,Manager,Bizkaia,España,2020-06-24,40
+EMP-0609,2022-03-09,,Marketing,Dirección Marketing,Valencia,F,1993-01-12,78700,Máster,Otro,1,Remoto,Indefinido,Dirección,Valencia,Italia,2022-03-09,40
+EMP-0610,2015-10-07,,Legal,Junior Legal,Madrid,F,1997-08-19,31400,Máster,Soltero/a,1,Híbrido,Temporal,Junior,Madrid,Colombia,2015-10-07,40
+EMP-0611,2015-03-11,,Ventas,Dirección Ventas,Sevilla,M,1977-11-11,79000,Máster,Otro,2,Remoto,Indefinido,Dirección,Sevilla,Portugal,2015-03-11,40
+EMP-0612,2021-04-14,,Operaciones,Especialista Operaciones,Bilbao,F,1979-06-23,44300,Bachillerato,Casado/a,2,Remoto,Indefinido,Especialista,Bizkaia,Colombia,2021-04-14,40
+EMP-0613,2025-01-26,,Legal,Junior Legal,Barcelona,M,1978-06-07,31900,Máster,Soltero/a,1,Remoto,Indefinido,Junior,Barcelona,Argentina,2025-01-26,40
+EMP-0614,2018-11-05,,Finanzas,Manager Finanzas,Bilbao,M,1970-07-28,60200,FP,Otro,2,Presencial,Indefinido,Manager,Bizkaia,Colombia,2018-11-05,40
+EMP-0615,2018-10-30,,Atención al cliente,Manager Atención al cliente,Valencia,M,1965-02-01,57000,Bachillerato,Otro,0,Híbrido,Indefinido,Manager,Valencia,Colombia,2018-10-30,40
+EMP-0616,2021-04-22,,Tecnología,Especialista Tecnología,Barcelona,M,1979-03-02,44000,FP,Soltero/a,1,Híbrido,Indefinido,Especialista,Barcelona,Italia,2021-04-22,40
+EMP-0617,2016-08-02,,Tecnología,Manager Tecnología,Valencia,F,1999-05-07,52800,Bachillerato,Soltero/a,0,Presencial,Indefinido,Manager,Valencia,Colombia,2016-08-02,40
+EMP-0618,2022-06-20,,Atención al cliente,Especialista Atención al cliente,Sevilla,F,2001-01-01,38700,Bachillerato,Soltero/a,3,Presencial,Indefinido,Especialista,Sevilla,Colombia,2022-06-20,40
+EMP-0619,2022-12-29,,Legal,Manager Legal,Valencia,F,1966-05-20,56700,Grado,Soltero/a,0,Presencial,Indefinido,Manager,Valencia,Argentina,2022-12-29,40
+EMP-0620,2016-06-14,,Tecnología,Dirección Tecnología,Valencia,M,1971-08-05,75400,Grado,Otro,1,Híbrido,Temporal,Dirección,Valencia,Portugal,2016-06-14,30
+EMP-0621,2025-02-01,,Ventas,Dirección Ventas,Madrid,F,1993-03-01,81900,Máster,Otro,3,Presencial,Indefinido,Dirección,Madrid,Italia,2025-02-01,40
+EMP-0622,2022-01-07,,Finanzas,Especialista Finanzas,Barcelona,M,1967-12-08,41300,Bachillerato,Otro,3,Remoto,Indefinido,Especialista,Barcelona,España,2022-01-07,40
+EMP-0623,2020-02-18,,Ventas,Junior Ventas,Valencia,F,1997-10-07,35500,Máster,Casado/a,0,Presencial,Indefinido,Junior,Valencia,Colombia,2020-02-18,40
+EMP-0624,2017-06-30,,Marketing,Dirección Marketing,Valencia,F,1979-04-27,76500,Máster,Otro,3,Remoto,Temporal,Dirección,Valencia,Italia,2017-06-30,40
+EMP-0625,2018-03-12,,Personas,Junior Personas,Bilbao,M,1969-05-25,31900,FP,Soltero/a,0,Remoto,Indefinido,Junior,Bizkaia,Italia,2018-03-12,40
+EMP-0626,2017-05-01,,Operaciones,Junior Operaciones,Bilbao,M,1981-12-17,30500,Máster,Soltero/a,2,Remoto,Indefinido,Junior,Bizkaia,España,2017-05-01,40
+EMP-0627,2020-08-16,,Marketing,Manager Marketing,Barcelona,M,1998-03-13,55300,Bachillerato,Soltero/a,1,Presencial,Indefinido,Manager,Barcelona,Argentina,2020-08-16,40
+EMP-0628,2018-08-25,,Marketing,Dirección Marketing,Sevilla,M,1988-07-04,80400,Grado,Casado/a,3,Remoto,Indefinido,Dirección,Sevilla,Italia,2018-08-25,30
+EMP-0629,2021-05-01,,Finanzas,Especialista Finanzas,Barcelona,F,1970-11-14,38200,Grado,Otro,2,Remoto,Indefinido,Especialista,Barcelona,Italia,2021-05-01,40
+EMP-0630,2021-11-21,,Tecnología,Especialista Tecnología,Madrid,F,1974-09-28,44100,Grado,Soltero/a,1,Híbrido,Indefinido,Especialista,Madrid,Portugal,2021-11-21,30
+EMP-0631,2015-10-28,,Operaciones,Manager Operaciones,Barcelona,M,1967-08-28,59600,Bachillerato,Otro,1,Híbrido,Indefinido,Manager,Barcelona,España,2015-10-28,40
+EMP-0632,2020-07-18,,Operaciones,Manager Operaciones,Barcelona,F,1965-01-10,54900,Grado,Casado/a,1,Presencial,Indefinido,Manager,Barcelona,Colombia,2020-07-18,40
+EMP-0633,2016-08-14,,Personas,Manager Personas,Madrid,M,2000-03-27,58800,Grado,Otro,2,Remoto,Indefinido,Manager,Madrid,Colombia,2016-08-14,40
+EMP-0634,2018-12-23,,Finanzas,Dirección Finanzas,Madrid,M,1975-04-04,81700,FP,Otro,0,Presencial,Indefinido,Dirección,Madrid,Colombia,2018-12-23,40
+EMP-0635,2022-05-09,,Marketing,Manager Marketing,Barcelona,M,1996-07-28,54800,Bachillerato,Casado/a,0,Remoto,Indefinido,Manager,Barcelona,España,2022-05-09,40
+EMP-0636,2021-08-28,,Legal,Junior Legal,Valencia,F,1965-05-25,28800,Grado,Otro,1,Híbrido,Indefinido,Junior,Valencia,España,2021-08-28,40
+EMP-0637,2019-10-03,,Marketing,Dirección Marketing,Madrid,M,1985-10-14,79500,Grado,Casado/a,1,Remoto,Temporal,Dirección,Madrid,España,2019-10-03,40
+EMP-0638,2015-03-28,,Finanzas,Manager Finanzas,Bilbao,F,1999-11-23,60500,FP,Casado/a,3,Híbrido,Indefinido,Manager,Bizkaia,Portugal,2015-03-28,30
+EMP-0639,2025-01-01,,Tecnología,Manager Tecnología,Valencia,M,2001-07-17,58400,Bachillerato,Soltero/a,0,Híbrido,Temporal,Manager,Valencia,Portugal,2025-01-01,40
+EMP-0640,2021-02-17,,Tecnología,Especialista Tecnología,Valencia,M,1972-07-05,45900,Bachillerato,Otro,2,Presencial,Indefinido,Especialista,Valencia,España,2021-02-17,40
+EMP-0641,2023-03-29,,Personas,Especialista Personas,Bilbao,M,1971-08-02,44800,Grado,Casado/a,0,Remoto,Temporal,Especialista,Bizkaia,Italia,2023-03-29,40
+EMP-0642,2019-08-28,,Tecnología,Junior Tecnología,Bilbao,F,2000-05-09,27600,Máster,Soltero/a,1,Remoto,Indefinido,Junior,Bizkaia,España,2019-08-28,40
+EMP-0643,2022-05-20,,Operaciones,Junior Operaciones,Madrid,M,1981-05-12,35800,Máster,Casado/a,3,Presencial,Temporal,Junior,Madrid,Argentina,2022-05-20,40
+EMP-0644,2022-04-17,,Legal,Dirección Legal,Valencia,M,1974-03-14,83000,Máster,Otro,1,Híbrido,Indefinido,Dirección,Valencia,España,2022-04-17,40
+EMP-0645,2020-11-12,,Tecnología,Dirección Tecnología,Sevilla,F,1976-11-27,76100,Grado,Casado/a,3,Presencial,Indefinido,Dirección,Sevilla,Argentina,2020-11-12,40
+EMP-0646,2023-03-21,,Ventas,Especialista Ventas,Sevilla,M,1980-05-06,42300,FP,Otro,1,Híbrido,Indefinido,Especialista,Sevilla,Colombia,2023-03-21,40
+EMP-0647,2024-11-16,,Personas,Especialista Personas,Madrid,M,1979-05-22,45100,Grado,Soltero/a,2,Híbrido,Indefinido,Especialista,Madrid,España,2024-11-16,40
+EMP-0648,2015-04-28,,Operaciones,Manager Operaciones,Barcelona,F,1988-08-05,53500,Grado,Otro,0,Remoto,Indefinido,Manager,Barcelona,España,2015-04-28,40
+EMP-0649,2016-10-11,,Operaciones,Especialista Operaciones,Barcelona,M,1969-01-02,41700,Bachillerato,Soltero/a,0,Remoto,Indefinido,Especialista,Barcelona,Colombia,2016-10-11,40
+EMP-0650,2022-03-22,,Tecnología,Manager Tecnología,Sevilla,M,1985-02-13,59900,FP,Otro,0,Remoto,Temporal,Manager,Sevilla,Colombia,2022-03-22,40
+EMP-0651,2015-09-07,,Finanzas,Especialista Finanzas,Madrid,F,1974-03-08,39300,Bachillerato,Casado/a,3,Híbrido,Indefinido,Especialista,Madrid,Portugal,2015-09-07,40
+EMP-0652,2025-02-08,,Operaciones,Junior Operaciones,Sevilla,M,1999-04-22,29000,Bachillerato,Casado/a,2,Presencial,Indefinido,Junior,Sevilla,Portugal,2025-02-08,40
+EMP-0653,2019-01-20,,Marketing,Especialista Marketing,Sevilla,M,1986-03-03,39600,Máster,Soltero/a,1,Presencial,Indefinido,Especialista,Sevilla,Colombia,2019-01-20,40
+EMP-0654,2020-10-19,,Marketing,Dirección Marketing,Valencia,M,2000-10-19,74300,Máster,Otro,0,Remoto,Indefinido,Dirección,Valencia,Portugal,2020-10-19,40
+EMP-0655,2025-04-30,,Tecnología,Dirección Tecnología,Madrid,M,1994-07-07,80900,FP,Soltero/a,0,Híbrido,Indefinido,Dirección,Madrid,Portugal,2025-04-30,40
+EMP-0656,2020-01-07,,Legal,Dirección Legal,Bilbao,M,1985-05-29,80700,Grado,Otro,1,Remoto,Indefinido,Dirección,Bizkaia,España,2020-01-07,40
+EMP-0657,2017-11-12,,Ventas,Especialista Ventas,Madrid,F,1967-02-07,38600,Bachillerato,Soltero/a,3,Remoto,Indefinido,Especialista,Madrid,España,2017-11-12,40
+EMP-0658,2023-04-26,,Finanzas,Dirección Finanzas,Bilbao,F,1985-07-10,80300,Grado,Casado/a,2,Presencial,Indefinido,Dirección,Bizkaia,España,2023-04-26,40
+EMP-0659,2018-10-26,,Atención al cliente,Junior Atención al cliente,Valencia,M,1977-08-13,30200,Bachillerato,Soltero/a,2,Remoto,Indefinido,Junior,Valencia,Argentina,2018-10-26,40
+EMP-0660,2025-08-04,,Tecnología,Especialista Tecnología,Bilbao,F,1972-03-30,46300,Grado,Otro,3,Presencial,Indefinido,Especialista,Bizkaia,Italia,2025-08-04,40
+EMP-0661,2023-05-28,,Legal,Especialista Legal,Sevilla,F,1989-08-20,38600,Grado,Otro,1,Remoto,Indefinido,Especialista,Sevilla,Portugal,2023-05-28,40
+EMP-0662,2016-09-23,,Ventas,Especialista Ventas,Barcelona,M,1995-05-26,46400,Máster,Casado/a,1,Híbrido,Indefinido,Especialista,Barcelona,España,2016-09-23,40
+EMP-0663,2025-04-01,,Operaciones,Manager Operaciones,Barcelona,M,1999-10-21,56700,Grado,Soltero/a,2,Remoto,Indefinido,Manager,Barcelona,Argentina,2025-04-01,40
+EMP-0664,2023-11-30,,Ventas,Junior Ventas,Barcelona,M,1992-01-19,33200,FP,Casado/a,0,Remoto,Indefinido,Junior,Barcelona,Argentina,2023-11-30,40
+EMP-0665,2023-11-19,,Marketing,Especialista Marketing,Bilbao,F,1993-09-14,40800,Grado,Soltero/a,2,Remoto,Temporal,Especialista,Bizkaia,Italia,2023-11-19,40
+EMP-0666,2018-01-31,,Marketing,Manager Marketing,Madrid,M,1998-04-18,57400,Grado,Soltero/a,0,Presencial,Indefinido,Manager,Madrid,Portugal,2018-01-31,40
+EMP-0667,2015-07-14,,Atención al cliente,Junior Atención al cliente,Madrid,F,1991-05-20,33300,Grado,Otro,1,Remoto,Indefinido,Junior,Madrid,Portugal,2015-07-14,40
+EMP-0668,2025-08-20,,Operaciones,Especialista Operaciones,Barcelona,M,1991-05-15,40200,Máster,Casado/a,3,Remoto,Indefinido,Especialista,Barcelona,Portugal,2025-08-20,40
+EMP-0669,2024-10-21,,Ventas,Especialista Ventas,Bilbao,M,1987-09-10,43200,Grado,Soltero/a,2,Remoto,Indefinido,Especialista,Bizkaia,Italia,2024-10-21,40
+EMP-0670,2015-03-23,,Marketing,Manager Marketing,Sevilla,F,1967-05-27,54700,FP,Soltero/a,3,Híbrido,Temporal,Manager,Sevilla,Portugal,2015-03-23,30
+EMP-0671,2022-08-14,,Personas,Dirección Personas,Bilbao,F,1971-11-15,80700,Bachillerato,Otro,1,Remoto,Temporal,Dirección,Bizkaia,Italia,2022-08-14,40
+EMP-0672,2024-06-13,,Finanzas,Dirección Finanzas,Barcelona,F,1981-04-19,81100,Grado,Otro,1,Remoto,Indefinido,Dirección,Barcelona,España,2024-06-13,40
+EMP-0673,2019-01-18,,Atención al cliente,Junior Atención al cliente,Bilbao,F,1998-01-17,32300,Bachillerato,Soltero/a,3,Híbrido,Indefinido,Junior,Bizkaia,España,2019-01-18,40
+EMP-0674,2015-08-15,,Legal,Junior Legal,Barcelona,M,1995-08-22,31900,FP,Otro,0,Híbrido,Indefinido,Junior,Barcelona,Colombia,2015-08-15,40
+EMP-0675,2020-07-23,,Personas,Dirección Personas,Valencia,F,1991-07-17,77800,Grado,Otro,1,Remoto,Indefinido,Dirección,Valencia,Colombia,2020-07-23,40
+EMP-0676,2016-09-18,,Atención al cliente,Junior Atención al cliente,Sevilla,F,1986-07-18,32900,Máster,Otro,1,Presencial,Indefinido,Junior,Sevilla,Colombia,2016-09-18,40
+EMP-0677,2016-09-29,,Atención al cliente,Especialista Atención al cliente,Bilbao,M,1984-03-24,39000,Máster,Soltero/a,2,Híbrido,Indefinido,Especialista,Bizkaia,Portugal,2016-09-29,40
+EMP-0678,2020-09-04,,Ventas,Manager Ventas,Bilbao,F,1986-11-15,54200,Máster,Otro,1,Remoto,Indefinido,Manager,Bizkaia,España,2020-09-04,40
+EMP-0679,2024-07-30,,Atención al cliente,Dirección Atención al cliente,Madrid,M,2001-04-06,79900,FP,Otro,1,Híbrido,Indefinido,Dirección,Madrid,Argentina,2024-07-30,40
+EMP-0680,2021-10-05,,Atención al cliente,Junior Atención al cliente,Sevilla,M,1978-04-13,33500,Bachillerato,Soltero/a,3,Presencial,Indefinido,Junior,Sevilla,Argentina,2021-10-05,40
+EMP-0681,2016-09-17,,Ventas,Junior Ventas,Bilbao,M,1977-12-18,35200,FP,Otro,1,Presencial,Indefinido,Junior,Bizkaia,España,2016-09-17,40
+EMP-0682,2022-03-04,,Atención al cliente,Junior Atención al cliente,Sevilla,M,1996-12-01,32000,Máster,Casado/a,3,Presencial,Temporal,Junior,Sevilla,Colombia,2022-03-04,40
+EMP-0683,2025-03-21,,Legal,Especialista Legal,Valencia,F,1983-09-02,43800,Máster,Casado/a,0,Híbrido,Indefinido,Especialista,Valencia,Italia,2025-03-21,40
+EMP-0684,2016-11-12,,Marketing,Manager Marketing,Barcelona,M,1975-11-02,53000,Grado,Soltero/a,0,Híbrido,Indefinido,Manager,Barcelona,Italia,2016-11-12,40
+EMP-0685,2016-02-29,,Finanzas,Dirección Finanzas,Valencia,M,1965-10-27,78400,Máster,Casado/a,2,Remoto,Temporal,Dirección,Valencia,Colombia,2016-02-29,30
+EMP-0686,2020-11-15,,Legal,Manager Legal,Sevilla,M,1966-05-22,52100,FP,Soltero/a,0,Remoto,Indefinido,Manager,Sevilla,Argentina,2020-11-15,40
+EMP-0687,2025-04-08,,Operaciones,Junior Operaciones,Barcelona,M,1975-08-20,33400,Bachillerato,Soltero/a,2,Presencial,Indefinido,Junior,Barcelona,España,2025-04-08,40
+EMP-0688,2023-05-23,,Tecnología,Manager Tecnología,Madrid,M,1984-03-04,54200,Máster,Soltero/a,0,Remoto,Indefinido,Manager,Madrid,Argentina,2023-05-23,40
+EMP-0689,2015-09-22,,Legal,Manager Legal,Sevilla,F,1996-01-30,57400,Grado,Soltero/a,3,Híbrido,Indefinido,Manager,Sevilla,Colombia,2015-09-22,40
+EMP-0690,2024-05-07,,Tecnología,Especialista Tecnología,Sevilla,F,1992-04-29,46300,Grado,Otro,2,Híbrido,Indefinido,Especialista,Sevilla,Portugal,2024-05-07,30
+EMP-0691,2018-03-29,,Legal,Junior Legal,Bilbao,F,1982-01-20,27400,Bachillerato,Otro,0,Híbrido,Indefinido,Junior,Bizkaia,España,2018-03-29,30
+EMP-0692,2021-08-14,,Marketing,Especialista Marketing,Sevilla,F,1989-03-13,40000,Máster,Otro,1,Híbrido,Indefinido,Especialista,Sevilla,España,2021-08-14,30
+EMP-0693,2019-10-06,,Legal,Manager Legal,Barcelona,M,1991-12-08,57800,Grado,Otro,0,Híbrido,Indefinido,Manager,Barcelona,Argentina,2019-10-06,40
+EMP-0694,2023-12-04,,Finanzas,Especialista Finanzas,Madrid,F,1991-09-10,39800,Bachillerato,Otro,0,Presencial,Indefinido,Especialista,Madrid,Italia,2023-12-04,40
+EMP-0695,2015-11-24,,Atención al cliente,Especialista Atención al cliente,Bilbao,F,1965-12-12,40100,Bachillerato,Soltero/a,3,Híbrido,Indefinido,Especialista,Bizkaia,Colombia,2015-11-24,40
+EMP-0696,2016-09-24,,Legal,Junior Legal,Sevilla,M,1973-11-16,30700,Máster,Casado/a,1,Híbrido,Indefinido,Junior,Sevilla,Colombia,2016-09-24,40
+EMP-0697,2021-03-26,,Finanzas,Especialista Finanzas,Barcelona,M,1973-12-28,45800,Grado,Casado/a,2,Remoto,Indefinido,Especialista,Barcelona,Italia,2021-03-26,40
+EMP-0698,2015-04-29,,Atención al cliente,Manager Atención al cliente,Barcelona,M,1977-08-05,55400,Grado,Otro,1,Híbrido,Indefinido,Manager,Barcelona,Colombia,2015-04-29,40
+EMP-0699,2017-04-29,,Legal,Dirección Legal,Sevilla,M,1988-11-14,79100,Bachillerato,Casado/a,0,Híbrido,Temporal,Dirección,Sevilla,España,2017-04-29,40
+EMP-0700,2019-06-21,,Tecnología,Especialista Tecnología,Madrid,M,1992-02-27,42400,Grado,Soltero/a,2,Remoto,Indefinido,Especialista,Madrid,Colombia,2019-06-21,40
+EMP-0701,2024-11-06,,Marketing,Manager Marketing,Barcelona,F,1989-02-03,54800,Máster,Otro,2,Remoto,Temporal,Manager,Barcelona,España,2024-11-06,40
+EMP-0702,2019-12-25,,Personas,Dirección Personas,Barcelona,F,1986-05-30,82700,FP,Soltero/a,2,Presencial,Indefinido,Dirección,Barcelona,Italia,2019-12-25,40
+EMP-0703,2016-04-25,,Personas,Manager Personas,Valencia,F,1983-08-25,53700,Grado,Casado/a,3,Remoto,Temporal,Manager,Valencia,Colombia,2016-04-25,40
+EMP-0704,2016-09-23,,Personas,Junior Personas,Madrid,F,1967-09-20,33300,FP,Soltero/a,3,Presencial,Indefinido,Junior,Madrid,España,2016-09-23,40
+EMP-0705,2022-07-12,,Marketing,Especialista Marketing,Barcelona,F,1967-06-15,43600,Grado,Casado/a,2,Presencial,Indefinido,Especialista,Barcelona,Italia,2022-07-12,40
+EMP-0706,2021-01-09,,Tecnología,Junior Tecnología,Valencia,M,1988-08-29,29300,Bachillerato,Otro,2,Híbrido,Indefinido,Junior,Valencia,Italia,2021-01-09,40
+EMP-0707,2025-07-03,,Ventas,Especialista Ventas,Valencia,F,1973-05-23,38600,Bachillerato,Soltero/a,0,Presencial,Indefinido,Especialista,Valencia,Italia,2025-07-03,40
+EMP-0708,2018-01-22,,Personas,Junior Personas,Barcelona,F,1994-07-05,31100,Bachillerato,Otro,2,Remoto,Indefinido,Junior,Barcelona,Portugal,2018-01-22,40
+EMP-0709,2017-11-26,,Personas,Manager Personas,Bilbao,F,1989-01-31,58100,Grado,Casado/a,0,Remoto,Indefinido,Manager,Bizkaia,Italia,2017-11-26,40
+EMP-0710,2018-03-09,,Finanzas,Junior Finanzas,Bilbao,F,1968-09-23,28600,Grado,Soltero/a,3,Presencial,Indefinido,Junior,Bizkaia,Argentina,2018-03-09,40
+EMP-0711,2020-08-11,,Legal,Junior Legal,Valencia,F,1996-11-11,33900,FP,Casado/a,0,Presencial,Indefinido,Junior,Valencia,España,2020-08-11,40
+EMP-0712,2016-11-05,,Operaciones,Dirección Operaciones,Sevilla,M,1992-02-16,76300,Máster,Casado/a,1,Remoto,Indefinido,Dirección,Sevilla,Italia,2016-11-05,40
+EMP-0713,2024-08-13,,Tecnología,Especialista Tecnología,Valencia,M,1997-07-27,38400,Bachillerato,Soltero/a,1,Remoto,Indefinido,Especialista,Valencia,Colombia,2024-08-13,40
+EMP-0714,2018-11-10,,Operaciones,Manager Operaciones,Barcelona,M,1988-05-16,58600,FP,Soltero/a,2,Presencial,Indefinido,Manager,Barcelona,Italia,2018-11-10,40
+EMP-0715,2019-09-08,,Operaciones,Junior Operaciones,Valencia,M,1999-02-21,27300,Grado,Soltero/a,0,Híbrido,Indefinido,Junior,Valencia,España,2019-09-08,40
+EMP-0716,2016-08-28,,Marketing,Manager Marketing,Madrid,M,1973-12-28,60100,Máster,Casado/a,1,Híbrido,Temporal,Manager,Madrid,Colombia,2016-08-28,40
+EMP-0717,2016-11-29,,Marketing,Manager Marketing,Valencia,M,1997-02-16,53200,Bachillerato,Soltero/a,0,Presencial,Indefinido,Manager,Valencia,España,2016-11-29,40
+EMP-0718,2019-02-15,,Operaciones,Dirección Operaciones,Barcelona,F,1975-01-28,79300,Máster,Casado/a,0,Híbrido,Indefinido,Dirección,Barcelona,Argentina,2019-02-15,40
+EMP-0719,2017-12-04,,Legal,Manager Legal,Barcelona,F,1983-08-02,53500,Bachillerato,Otro,0,Presencial,Indefinido,Manager,Barcelona,Argentina,2017-12-04,30
+EMP-0720,2015-04-06,,Finanzas,Junior Finanzas,Valencia,F,1966-04-30,27300,Bachillerato,Casado/a,0,Remoto,Indefinido,Junior,Valencia,España,2015-04-06,40
+EMP-0721,2015-04-17,,Personas,Junior Personas,Sevilla,M,1992-12-26,30200,Máster,Soltero/a,2,Presencial,Temporal,Junior,Sevilla,España,2015-04-17,40
+EMP-0722,2017-08-24,,Marketing,Junior Marketing,Bilbao,M,1975-03-03,27000,Máster,Otro,1,Híbrido,Indefinido,Junior,Bizkaia,Portugal,2017-08-24,40
+EMP-0723,2025-04-05,,Tecnología,Especialista Tecnología,Sevilla,F,1981-02-13,40300,FP,Soltero/a,0,Presencial,Indefinido,Especialista,Sevilla,Argentina,2025-04-05,40
+EMP-0724,2021-08-01,,Finanzas,Junior Finanzas,Bilbao,M,1984-12-25,27200,FP,Otro,1,Híbrido,Indefinido,Junior,Bizkaia,Argentina,2021-08-01,40
+EMP-0725,2016-12-10,,Legal,Especialista Legal,Madrid,F,1971-01-31,46200,Bachillerato,Soltero/a,3,Remoto,Indefinido,Especialista,Madrid,Portugal,2016-12-10,40
+EMP-0726,2019-07-13,,Legal,Especialista Legal,Sevilla,F,1983-10-25,38900,FP,Casado/a,3,Remoto,Indefinido,Especialista,Sevilla,España,2019-07-13,40
+EMP-0727,2024-01-11,,Personas,Dirección Personas,Sevilla,M,1984-11-07,75900,Grado,Casado/a,3,Híbrido,Temporal,Dirección,Sevilla,Argentina,2024-01-11,40
+EMP-0728,2019-07-25,,Marketing,Dirección Marketing,Barcelona,M,1996-01-11,74400,Máster,Soltero/a,2,Presencial,Temporal,Dirección,Barcelona,Italia,2019-07-25,30
+EMP-0729,2018-03-25,,Ventas,Dirección Ventas,Valencia,M,1991-01-25,78400,FP,Otro,1,Híbrido,Indefinido,Dirección,Valencia,Argentina,2018-03-25,40
+EMP-0730,2019-05-02,,Marketing,Dirección Marketing,Bilbao,F,1980-10-05,77800,Grado,Otro,2,Presencial,Indefinido,Dirección,Bizkaia,Italia,2019-05-02,40
+EMP-0731,2018-08-28,,Ventas,Junior Ventas,Bilbao,F,1997-12-18,31900,Máster,Soltero/a,0,Remoto,Indefinido,Junior,Bizkaia,Italia,2018-08-28,40
+EMP-0732,2018-09-08,,Finanzas,Manager Finanzas,Valencia,F,1971-03-12,57800,Bachillerato,Otro,1,Remoto,Temporal,Manager,Valencia,Italia,2018-09-08,40
+EMP-0733,2021-09-22,,Legal,Junior Legal,Barcelona,F,1985-08-15,34000,Grado,Otro,1,Presencial,Indefinido,Junior,Barcelona,Portugal,2021-09-22,40
+EMP-0734,2016-12-27,,Tecnología,Dirección Tecnología,Sevilla,F,1986-12-08,81700,Bachillerato,Otro,2,Remoto,Temporal,Dirección,Sevilla,Argentina,2016-12-27,40
+EMP-0735,2016-02-27,,Atención al cliente,Manager Atención al cliente,Madrid,M,1972-12-12,52700,FP,Otro,1,Remoto,Indefinido,Manager,Madrid,España,2016-02-27,40
+EMP-0736,2019-03-18,,Finanzas,Manager Finanzas,Bilbao,M,2001-02-06,56300,Máster,Casado/a,2,Remoto,Indefinido,Manager,Bizkaia,España,2019-03-18,40
+EMP-0737,2017-01-17,,Finanzas,Junior Finanzas,Madrid,F,1969-02-01,33600,Máster,Otro,2,Remoto,Indefinido,Junior,Madrid,Portugal,2017-01-17,40
+EMP-0738,2023-09-09,,Operaciones,Junior Operaciones,Valencia,M,1993-10-31,33700,Máster,Otro,2,Remoto,Indefinido,Junior,Valencia,Italia,2023-09-09,40
+EMP-0739,2023-06-06,,Marketing,Dirección Marketing,Barcelona,M,1975-02-22,77300,Máster,Otro,1,Híbrido,Indefinido,Dirección,Barcelona,España,2023-06-06,40
+EMP-0740,2021-01-10,,Legal,Junior Legal,Madrid,M,1985-05-02,30700,Máster,Otro,2,Remoto,Indefinido,Junior,Madrid,Argentina,2021-01-10,40
+EMP-0741,2021-06-23,,Legal,Especialista Legal,Bilbao,M,1989-06-01,44600,FP,Otro,3,Remoto,Indefinido,Especialista,Bizkaia,España,2021-06-23,40
+EMP-0742,2025-05-21,,Ventas,Manager Ventas,Sevilla,F,1987-09-25,56400,Grado,Soltero/a,1,Híbrido,Temporal,Manager,Sevilla,Colombia,2025-05-21,40
+EMP-0743,2018-05-03,,Finanzas,Junior Finanzas,Valencia,M,1978-07-31,35800,FP,Soltero/a,1,Remoto,Indefinido,Junior,Valencia,Italia,2018-05-03,40
+EMP-0744,2022-06-27,,Operaciones,Dirección Operaciones,Bilbao,M,1972-04-13,82400,Grado,Casado/a,2,Híbrido,Indefinido,Dirección,Bizkaia,Argentina,2022-06-27,40
+EMP-0745,2019-02-21,,Operaciones,Junior Operaciones,Barcelona,F,1971-06-04,31300,Máster,Soltero/a,2,Híbrido,Indefinido,Junior,Barcelona,España,2019-02-21,40
+EMP-0746,2022-04-09,,Legal,Especialista Legal,Barcelona,F,1994-09-19,40600,FP,Otro,0,Remoto,Indefinido,Especialista,Barcelona,Argentina,2022-04-09,40
+EMP-0747,2023-08-05,,Finanzas,Manager Finanzas,Valencia,F,1997-02-23,57200,Máster,Soltero/a,1,Presencial,Temporal,Manager,Valencia,Argentina,2023-08-05,40
+EMP-0748,2019-11-08,,Atención al cliente,Dirección Atención al cliente,Barcelona,M,2001-10-29,82200,FP,Otro,0,Híbrido,Temporal,Dirección,Barcelona,Italia,2019-11-08,40
+EMP-0749,2024-06-25,,Legal,Junior Legal,Bilbao,F,1969-05-06,33500,Bachillerato,Soltero/a,0,Híbrido,Indefinido,Junior,Bizkaia,Portugal,2024-06-25,40
+EMP-0750,2015-02-13,,Marketing,Junior Marketing,Madrid,F,1998-07-02,29800,FP,Soltero/a,2,Híbrido,Indefinido,Junior,Madrid,Italia,2015-02-13,40
+EMP-0751,2025-06-15,,Finanzas,Dirección Finanzas,Bilbao,M,1996-01-26,81400,Bachillerato,Otro,2,Presencial,Indefinido,Dirección,Bizkaia,Italia,2025-06-15,40
+EMP-0752,2018-03-17,,Marketing,Especialista Marketing,Barcelona,M,1968-11-03,43300,FP,Casado/a,2,Presencial,Indefinido,Especialista,Barcelona,Italia,2018-03-17,40
+EMP-0753,2022-10-09,,Finanzas,Junior Finanzas,Barcelona,M,1977-09-25,34700,Máster,Soltero/a,0,Híbrido,Indefinido,Junior,Barcelona,Colombia,2022-10-09,40
+EMP-0754,2024-08-11,,Operaciones,Junior Operaciones,Madrid,F,1990-02-02,28100,Máster,Casado/a,2,Presencial,Indefinido,Junior,Madrid,Argentina,2024-08-11,40
+EMP-0755,2016-09-10,,Legal,Junior Legal,Barcelona,M,1990-09-06,27700,Bachillerato,Casado/a,2,Presencial,Indefinido,Junior,Barcelona,Colombia,2016-09-10,40
+EMP-0756,2021-07-11,,Personas,Manager Personas,Barcelona,M,1988-06-22,60600,Bachillerato,Soltero/a,2,Remoto,Temporal,Manager,Barcelona,Portugal,2021-07-11,40
+EMP-0757,2024-03-04,,Finanzas,Dirección Finanzas,Madrid,M,1966-08-25,76300,Máster,Casado/a,3,Híbrido,Indefinido,Dirección,Madrid,Colombia,2024-03-04,40
+EMP-0758,2025-04-15,,Ventas,Junior Ventas,Barcelona,F,2001-03-21,31100,FP,Soltero/a,1,Remoto,Indefinido,Junior,Barcelona,España,2025-04-15,40
+EMP-0759,2024-02-09,,Operaciones,Junior Operaciones,Barcelona,M,1999-07-16,35400,Grado,Soltero/a,2,Remoto,Indefinido,Junior,Barcelona,Italia,2024-02-09,40
+EMP-0760,2023-05-30,,Marketing,Especialista Marketing,Madrid,M,1968-04-14,41500,Bachillerato,Soltero/a,0,Remoto,Indefinido,Especialista,Madrid,Italia,2023-05-30,40
+EMP-0761,2016-05-16,,Finanzas,Manager Finanzas,Madrid,M,1993-02-26,56200,Máster,Soltero/a,1,Remoto,Temporal,Manager,Madrid,Argentina,2016-05-16,40
+EMP-0762,2019-12-09,,Legal,Especialista Legal,Valencia,F,1973-08-26,40400,Bachillerato,Otro,2,Híbrido,Indefinido,Especialista,Valencia,España,2019-12-09,40
+EMP-0763,2023-11-17,,Operaciones,Especialista Operaciones,Madrid,M,1999-11-01,42700,FP,Soltero/a,0,Remoto,Indefinido,Especialista,Madrid,Argentina,2023-11-17,30
+EMP-0764,2020-01-01,,Operaciones,Junior Operaciones,Valencia,M,1978-02-27,33100,Máster,Casado/a,3,Presencial,Indefinido,Junior,Valencia,España,2020-01-01,40
+EMP-0765,2019-12-16,,Personas,Especialista Personas,Sevilla,F,1982-02-24,39600,Grado,Casado/a,0,Remoto,Indefinido,Especialista,Sevilla,Portugal,2019-12-16,40
+EMP-0766,2017-11-29,,Legal,Dirección Legal,Barcelona,F,1982-03-28,75000,Grado,Casado/a,2,Presencial,Indefinido,Dirección,Barcelona,Portugal,2017-11-29,40
+EMP-0767,2024-02-25,,Operaciones,Junior Operaciones,Madrid,M,1996-02-08,33500,Máster,Soltero/a,3,Remoto,Indefinido,Junior,Madrid,Portugal,2024-02-25,40
+EMP-0768,2023-07-26,,Marketing,Dirección Marketing,Barcelona,M,1975-01-17,76200,Grado,Otro,1,Presencial,Indefinido,Dirección,Barcelona,España,2023-07-26,40
+EMP-0769,2020-11-23,,Legal,Dirección Legal,Bilbao,M,1990-06-26,74400,Bachillerato,Casado/a,0,Remoto,Indefinido,Dirección,Bizkaia,Portugal,2020-11-23,40
+EMP-0770,2024-11-08,,Atención al cliente,Dirección Atención al cliente,Sevilla,M,1997-10-28,81700,Máster,Otro,2,Presencial,Indefinido,Dirección,Sevilla,Argentina,2024-11-08,40
+EMP-0771,2024-09-27,,Legal,Dirección Legal,Barcelona,M,1980-04-15,74200,FP,Soltero/a,2,Remoto,Indefinido,Dirección,Barcelona,España,2024-09-27,40
+EMP-0772,2023-01-02,,Atención al cliente,Junior Atención al cliente,Madrid,M,1992-07-08,34100,Bachillerato,Casado/a,1,Presencial,Indefinido,Junior,Madrid,Italia,2023-01-02,40
+EMP-0773,2016-07-14,,Marketing,Junior Marketing,Madrid,F,1992-06-01,29600,Bachillerato,Casado/a,0,Híbrido,Indefinido,Junior,Madrid,Portugal,2016-07-14,40
+EMP-0774,2022-05-15,,Personas,Junior Personas,Barcelona,M,1966-12-18,33000,Grado,Otro,3,Remoto,Indefinido,Junior,Barcelona,España,2022-05-15,40
+EMP-0775,2015-01-21,,Finanzas,Dirección Finanzas,Sevilla,M,1968-01-21,77500,Máster,Otro,1,Presencial,Indefinido,Dirección,Sevilla,Argentina,2015-01-21,40
+EMP-0776,2020-04-12,,Finanzas,Dirección Finanzas,Bilbao,M,1981-02-23,75800,Bachillerato,Otro,3,Híbrido,Indefinido,Dirección,Bizkaia,Argentina,2020-04-12,40
+EMP-0777,2024-08-20,,Personas,Junior Personas,Valencia,M,2000-05-13,28300,Bachillerato,Casado/a,0,Presencial,Indefinido,Junior,Valencia,Italia,2024-08-20,40
+EMP-0778,2023-07-29,,Marketing,Junior Marketing,Madrid,F,1986-06-05,30200,Grado,Casado/a,2,Presencial,Indefinido,Junior,Madrid,España,2023-07-29,40
+EMP-0779,2021-02-20,,Operaciones,Dirección Operaciones,Bilbao,M,2000-06-27,81000,Bachillerato,Soltero/a,0,Híbrido,Temporal,Dirección,Bizkaia,Colombia,2021-02-20,40
+EMP-0780,2024-07-05,,Personas,Especialista Personas,Madrid,F,1965-08-27,44700,Grado,Soltero/a,2,Remoto,Indefinido,Especialista,Madrid,Argentina,2024-07-05,40
+EMP-0781,2023-03-29,,Legal,Dirección Legal,Valencia,M,1965-12-20,74600,Máster,Otro,0,Híbrido,Indefinido,Dirección,Valencia,Colombia,2023-03-29,40
+EMP-0782,2021-11-13,,Personas,Junior Personas,Valencia,F,1980-07-21,35600,Máster,Casado/a,2,Híbrido,Indefinido,Junior,Valencia,Portugal,2021-11-13,40
+EMP-0783,2018-12-18,,Finanzas,Dirección Finanzas,Bilbao,F,2000-01-17,79200,Bachillerato,Otro,3,Presencial,Indefinido,Dirección,Bizkaia,España,2018-12-18,40
+EMP-0784,2025-04-02,,Ventas,Especialista Ventas,Valencia,F,2000-12-02,43800,Máster,Casado/a,3,Remoto,Indefinido,Especialista,Valencia,Argentina,2025-04-02,40
+EMP-0785,2025-07-20,,Tecnología,Junior Tecnología,Valencia,M,1979-06-24,34500,Grado,Otro,0,Híbrido,Indefinido,Junior,Valencia,Colombia,2025-07-20,40
+EMP-0786,2015-08-05,,Operaciones,Especialista Operaciones,Valencia,M,1991-05-19,44600,Grado,Otro,2,Presencial,Indefinido,Especialista,Valencia,Argentina,2015-08-05,40
+EMP-0787,2015-01-12,,Tecnología,Especialista Tecnología,Bilbao,F,1998-11-05,45300,FP,Soltero/a,3,Híbrido,Indefinido,Especialista,Bizkaia,Italia,2015-01-12,40
+EMP-0788,2020-03-07,,Operaciones,Dirección Operaciones,Barcelona,F,2000-10-15,82200,FP,Casado/a,2,Remoto,Temporal,Dirección,Barcelona,Argentina,2020-03-07,40
+EMP-0789,2021-02-14,,Operaciones,Manager Operaciones,Sevilla,M,1990-06-12,55100,Grado,Soltero/a,3,Presencial,Indefinido,Manager,Sevilla,Italia,2021-02-14,40
+EMP-0790,2022-08-17,,Legal,Dirección Legal,Bilbao,F,1971-08-09,77400,Grado,Casado/a,1,Presencial,Indefinido,Dirección,Bizkaia,Argentina,2022-08-17,40
+EMP-0791,2025-07-12,,Marketing,Junior Marketing,Barcelona,F,1999-04-12,28100,FP,Casado/a,3,Híbrido,Indefinido,Junior,Barcelona,Argentina,2025-07-12,40
+EMP-0792,2021-12-19,,Operaciones,Dirección Operaciones,Bilbao,F,1994-09-03,78400,Máster,Casado/a,2,Presencial,Indefinido,Dirección,Bizkaia,Italia,2021-12-19,40
+EMP-0793,2019-11-07,,Ventas,Junior Ventas,Valencia,M,1974-09-23,30400,Bachillerato,Casado/a,2,Presencial,Indefinido,Junior,Valencia,Portugal,2019-11-07,40
+EMP-0794,2020-05-28,,Tecnología,Manager Tecnología,Bilbao,F,1968-05-13,57800,FP,Casado/a,3,Remoto,Indefinido,Manager,Bizkaia,Portugal,2020-05-28,40
+EMP-0795,2018-07-14,,Ventas,Dirección Ventas,Sevilla,M,1984-11-27,79800,Bachillerato,Casado/a,2,Remoto,Indefinido,Dirección,Sevilla,Colombia,2018-07-14,40
+EMP-0796,2022-10-25,,Ventas,Junior Ventas,Bilbao,F,1997-12-26,33900,FP,Otro,1,Presencial,Indefinido,Junior,Bizkaia,Argentina,2022-10-25,40
+EMP-0797,2016-01-03,,Tecnología,Especialista Tecnología,Sevilla,F,1992-10-22,47000,Máster,Otro,2,Remoto,Indefinido,Especialista,Sevilla,Colombia,2016-01-03,40
+EMP-0798,2015-08-07,,Operaciones,Dirección Operaciones,Barcelona,F,1994-10-28,75300,FP,Otro,2,Presencial,Indefinido,Dirección,Barcelona,España,2015-08-07,40
+EMP-0799,2023-06-30,,Marketing,Manager Marketing,Sevilla,F,1970-09-13,57800,Máster,Soltero/a,1,Híbrido,Temporal,Manager,Sevilla,Argentina,2023-06-30,40
+EMP-0800,2024-02-28,,Tecnología,Dirección Tecnología,Madrid,M,1977-05-19,77100,Grado,Soltero/a,0,Remoto,Indefinido,Dirección,Madrid,Argentina,2024-02-28,40
+EMP-0801,2022-10-25,,Legal,Dirección Legal,Madrid,M,1991-06-06,82400,Grado,Otro,3,Presencial,Indefinido,Dirección,Madrid,España,2022-10-25,40
+EMP-0802,2017-09-19,,Operaciones,Manager Operaciones,Valencia,M,1996-07-19,57600,Bachillerato,Soltero/a,1,Presencial,Indefinido,Manager,Valencia,Colombia,2017-09-19,40
+EMP-0803,2021-01-10,,Operaciones,Especialista Operaciones,Bilbao,F,1981-07-24,46800,FP,Casado/a,2,Híbrido,Temporal,Especialista,Bizkaia,Portugal,2021-01-10,40
+EMP-0804,2024-01-24,,Marketing,Especialista Marketing,Bilbao,M,1984-10-22,39000,Grado,Otro,1,Híbrido,Indefinido,Especialista,Bizkaia,Italia,2024-01-24,30
+EMP-0805,2016-05-02,,Atención al cliente,Manager Atención al cliente,Madrid,F,1977-07-11,57700,Máster,Otro,3,Presencial,Indefinido,Manager,Madrid,Colombia,2016-05-02,40
+EMP-0806,2024-02-26,,Ventas,Manager Ventas,Madrid,F,1986-09-27,55800,Grado,Otro,1,Híbrido,Indefinido,Manager,Madrid,España,2024-02-26,40
+EMP-0807,2021-07-06,,Marketing,Junior Marketing,Madrid,F,1996-03-08,30100,Grado,Soltero/a,0,Presencial,Temporal,Junior,Madrid,Portugal,2021-07-06,40
+EMP-0808,2016-01-04,,Operaciones,Manager Operaciones,Bilbao,M,1979-05-18,58400,Grado,Otro,2,Híbrido,Indefinido,Manager,Bizkaia,España,2016-01-04,40
+EMP-0809,2025-02-16,,Finanzas,Manager Finanzas,Barcelona,M,1972-06-30,54100,Máster,Otro,2,Remoto,Indefinido,Manager,Barcelona,España,2025-02-16,40
+EMP-0810,2016-08-19,,Operaciones,Junior Operaciones,Madrid,F,1980-03-27,29700,Bachillerato,Soltero/a,1,Presencial,Indefinido,Junior,Madrid,Italia,2016-08-19,40
+EMP-0811,2020-09-18,,Atención al cliente,Manager Atención al cliente,Barcelona,F,1967-03-19,55600,FP,Soltero/a,2,Remoto,Indefinido,Manager,Barcelona,Argentina,2020-09-18,40
+EMP-0812,2020-08-17,,Marketing,Dirección Marketing,Valencia,F,1966-01-10,76000,FP,Casado/a,0,Presencial,Indefinido,Dirección,Valencia,España,2020-08-17,40
+EMP-0813,2021-09-29,,Personas,Dirección Personas,Bilbao,F,1968-10-03,76500,Máster,Otro,1,Híbrido,Indefinido,Dirección,Bizkaia,Italia,2021-09-29,40
+EMP-0814,2022-10-24,,Personas,Manager Personas,Barcelona,F,1985-05-14,57000,Bachillerato,Otro,0,Remoto,Indefinido,Manager,Barcelona,Portugal,2022-10-24,40
+EMP-0815,2015-03-27,,Tecnología,Manager Tecnología,Valencia,M,1991-09-19,57600,FP,Soltero/a,2,Remoto,Indefinido,Manager,Valencia,Portugal,2015-03-27,40
+EMP-0816,2021-05-07,,Atención al cliente,Manager Atención al cliente,Madrid,M,1970-01-13,53800,Grado,Otro,0,Presencial,Indefinido,Manager,Madrid,Italia,2021-05-07,40
+EMP-0817,2024-06-18,,Finanzas,Manager Finanzas,Sevilla,F,1999-08-19,54500,FP,Otro,3,Híbrido,Indefinido,Manager,Sevilla,Italia,2024-06-18,40
+EMP-0818,2017-05-13,,Ventas,Especialista Ventas,Barcelona,M,1979-07-31,42500,Grado,Otro,2,Híbrido,Temporal,Especialista,Barcelona,Italia,2017-05-13,40
+EMP-0819,2023-12-17,,Ventas,Especialista Ventas,Madrid,F,1965-12-22,38300,Máster,Casado/a,0,Presencial,Temporal,Especialista,Madrid,España,2023-12-17,40
+EMP-0820,2018-12-17,,Marketing,Manager Marketing,Barcelona,F,1995-04-20,52400,FP,Otro,0,Presencial,Indefinido,Manager,Barcelona,España,2018-12-17,40
+EMP-0821,2022-05-22,2023-09-07,Personas,Junior Personas,Barcelona,M,1967-08-04,28500,Bachillerato,Otro,3,Presencial,Indefinido,Junior,Barcelona,Argentina,2022-05-22,40
+EMP-0822,2015-09-04,2024-03-10,Legal,Manager Legal,Barcelona,F,1980-07-15,53100,Bachillerato,Casado/a,1,Presencial,Temporal,Manager,Barcelona,Italia,2015-09-04,40
+EMP-0823,2020-02-09,2025-03-28,Tecnología,Junior Tecnología,Barcelona,M,1968-03-17,32000,Máster,Casado/a,3,Híbrido,Indefinido,Junior,Barcelona,Argentina,2020-02-09,40
+EMP-0824,2021-12-31,2024-06-02,Personas,Manager Personas,Madrid,F,1981-11-12,58200,Grado,Casado/a,1,Híbrido,Indefinido,Manager,Madrid,España,2021-12-31,40
+EMP-0825,2025-07-19,2025-12-28,Tecnología,Manager Tecnología,Madrid,F,1994-12-21,52400,Bachillerato,Casado/a,0,Remoto,Indefinido,Manager,Madrid,España,2025-07-19,40
+EMP-0826,2024-09-12,2025-08-13,Personas,Manager Personas,Sevilla,F,1974-10-16,52500,Máster,Soltero/a,1,Remoto,Indefinido,Manager,Sevilla,Portugal,2024-09-12,40
+EMP-0827,2024-10-10,2025-11-02,Marketing,Especialista Marketing,Sevilla,M,2001-09-26,42600,Grado,Soltero/a,3,Presencial,Indefinido,Especialista,Sevilla,Colombia,2024-10-10,40
+EMP-0828,2015-08-14,2023-09-19,Personas,Dirección Personas,Valencia,M,1995-06-29,75100,Grado,Casado/a,1,Remoto,Indefinido,Dirección,Valencia,Argentina,2015-08-14,40
+EMP-0829,2016-02-05,2025-06-08,Marketing,Especialista Marketing,Barcelona,M,1968-01-20,44100,Grado,Soltero/a,2,Híbrido,Indefinido,Especialista,Barcelona,Colombia,2016-02-05,40
+EMP-0830,2021-11-01,2023-08-07,Legal,Especialista Legal,Valencia,F,1987-12-26,38600,Grado,Casado/a,0,Híbrido,Temporal,Especialista,Valencia,Argentina,2021-11-01,40
+EMP-0831,2017-12-04,2025-05-20,Tecnología,Manager Tecnología,Barcelona,M,1967-08-15,54500,Bachillerato,Otro,1,Presencial,Indefinido,Manager,Barcelona,Argentina,2017-12-04,40
+EMP-0832,2022-07-26,2024-11-28,Ventas,Especialista Ventas,Madrid,F,1999-05-03,39100,FP,Soltero/a,3,Híbrido,Indefinido,Especialista,Madrid,Argentina,2022-07-26,40
+EMP-0833,2024-10-20,2025-08-02,Legal,Junior Legal,Madrid,F,1983-06-08,34300,FP,Otro,2,Híbrido,Temporal,Junior,Madrid,España,2024-10-20,40
+EMP-0834,2023-05-23,2024-04-30,Finanzas,Especialista Finanzas,Barcelona,M,1980-12-14,41900,Máster,Otro,2,Híbrido,Indefinido,Especialista,Barcelona,Argentina,2023-05-23,40
+EMP-0835,2016-03-20,2024-07-24,Ventas,Especialista Ventas,Bilbao,F,1970-08-11,42500,Grado,Otro,1,Presencial,Indefinido,Especialista,Bizkaia,Colombia,2016-03-20,40
+EMP-0836,2024-01-24,2024-10-05,Finanzas,Manager Finanzas,Madrid,F,2001-04-20,52700,Grado,Soltero/a,0,Presencial,Indefinido,Manager,Madrid,Italia,2024-01-24,40
+EMP-0837,2021-11-12,2025-02-28,Ventas,Manager Ventas,Valencia,M,1987-05-10,59900,Máster,Soltero/a,0,Híbrido,Indefinido,Manager,Valencia,Colombia,2021-11-12,40
+EMP-0838,2020-02-02,2024-03-28,Legal,Especialista Legal,Sevilla,M,1993-02-15,42100,FP,Soltero/a,0,Híbrido,Indefinido,Especialista,Sevilla,Argentina,2020-02-02,40
+EMP-0839,2015-08-05,2023-09-14,Operaciones,Especialista Operaciones,Valencia,M,1998-06-28,44900,Máster,Casado/a,0,Remoto,Indefinido,Especialista,Valencia,Portugal,2015-08-05,40
+EMP-0840,2025-05-28,2025-12-05,Operaciones,Junior Operaciones,Bilbao,F,1982-07-29,29800,Máster,Casado/a,2,Remoto,Indefinido,Junior,Bizkaia,Colombia,2025-05-28,30
+EMP-0841,2015-10-12,2024-04-08,Marketing,Manager Marketing,Sevilla,M,1992-12-25,54700,FP,Casado/a,2,Remoto,Indefinido,Manager,Sevilla,Portugal,2015-10-12,40
+EMP-0842,2020-04-19,2024-03-05,Personas,Manager Personas,Sevilla,M,1995-04-15,59800,Grado,Soltero/a,2,Híbrido,Temporal,Manager,Sevilla,Italia,2020-04-19,40
+EMP-0843,2015-08-30,2025-01-24,Tecnología,Dirección Tecnología,Bilbao,M,1973-03-06,77600,Bachillerato,Casado/a,2,Presencial,Indefinido,Dirección,Bizkaia,Colombia,2015-08-30,40
+EMP-0844,2024-12-18,2025-11-16,Legal,Especialista Legal,Barcelona,M,1983-02-21,38100,Máster,Otro,1,Híbrido,Indefinido,Especialista,Barcelona,Argentina,2024-12-18,40
+EMP-0845,2015-08-05,2024-03-31,Legal,Junior Legal,Valencia,F,1991-03-17,33700,FP,Soltero/a,1,Presencial,Indefinido,Junior,Valencia,Italia,2015-08-05,40
+EMP-0846,2017-07-02,2023-07-09,Tecnología,Manager Tecnología,Madrid,M,1967-03-17,59300,FP,Casado/a,1,Presencial,Temporal,Manager,Madrid,España,2017-07-02,40
+EMP-0847,2025-04-02,2025-10-06,Ventas,Manager Ventas,Barcelona,M,1982-12-15,54400,FP,Soltero/a,3,Híbrido,Indefinido,Manager,Barcelona,Argentina,2025-04-02,40
+EMP-0848,2023-07-22,2024-04-17,Finanzas,Junior Finanzas,Valencia,F,2001-06-26,30500,Grado,Otro,0,Híbrido,Temporal,Junior,Valencia,Portugal,2023-07-22,40
+EMP-0849,2017-08-10,2024-09-15,Tecnología,Especialista Tecnología,Valencia,F,1986-09-22,45200,Bachillerato,Otro,1,Híbrido,Indefinido,Especialista,Valencia,España,2017-08-10,40
+EMP-0850,2020-11-05,2025-02-15,Tecnología,Dirección Tecnología,Sevilla,M,1991-07-27,82400,FP,Otro,1,Remoto,Indefinido,Dirección,Sevilla,Colombia,2020-11-05,40
+EMP-0851,2023-06-30,2025-02-19,Atención al cliente,Junior Atención al cliente,Valencia,M,1985-04-28,28900,FP,Casado/a,3,Híbrido,Temporal,Junior,Valencia,Colombia,2023-06-30,30
+EMP-0852,2020-12-01,2025-07-19,Marketing,Junior Marketing,Madrid,M,1966-11-15,34800,FP,Otro,2,Remoto,Indefinido,Junior,Madrid,España,2020-12-01,40
+EMP-0853,2019-01-16,2025-01-01,Atención al cliente,Manager Atención al cliente,Madrid,F,1971-08-27,54000,FP,Otro,2,Presencial,Indefinido,Manager,Madrid,Argentina,2019-01-16,40
+EMP-0854,2021-09-23,2024-07-17,Finanzas,Junior Finanzas,Sevilla,M,1979-08-07,33300,Máster,Soltero/a,2,Presencial,Indefinido,Junior,Sevilla,Portugal,2021-09-23,40
+EMP-0855,2025-05-12,2025-12-06,Atención al cliente,Especialista Atención al cliente,Bilbao,F,1981-03-14,42500,Máster,Casado/a,2,Presencial,Indefinido,Especialista,Bizkaia,Italia,2025-05-12,40
+EMP-0856,2024-01-09,2025-04-20,Tecnología,Dirección Tecnología,Barcelona,M,1977-11-22,76500,Máster,Soltero/a,1,Presencial,Indefinido,Dirección,Barcelona,España,2024-01-09,40
+EMP-0857,2020-11-18,2025-04-02,Marketing,Dirección Marketing,Sevilla,F,1990-11-25,83000,Bachillerato,Otro,0,Híbrido,Indefinido,Dirección,Sevilla,Portugal,2020-11-18,40
+EMP-0858,2019-01-25,2025-03-05,Marketing,Dirección Marketing,Sevilla,M,1985-04-24,82600,Grado,Soltero/a,1,Remoto,Temporal,Dirección,Sevilla,Colombia,2019-01-25,40
+EMP-0859,2016-05-25,2024-01-19,Ventas,Dirección Ventas,Valencia,F,1968-06-15,76800,FP,Casado/a,1,Remoto,Indefinido,Dirección,Valencia,España,2016-05-25,40
+EMP-0860,2019-04-16,2024-05-25,Personas,Junior Personas,Bilbao,M,1974-03-11,31100,Bachillerato,Otro,3,Presencial,Indefinido,Junior,Bizkaia,Portugal,2019-04-16,40
+EMP-0861,2017-01-12,2024-04-13,Atención al cliente,Especialista Atención al cliente,Bilbao,F,1981-12-23,42600,FP,Otro,0,Híbrido,Temporal,Especialista,Bizkaia,Colombia,2017-01-12,40
+EMP-0862,2024-08-13,2025-08-14,Marketing,Dirección Marketing,Valencia,M,1965-05-06,75200,Grado,Soltero/a,2,Remoto,Temporal,Dirección,Valencia,Argentina,2024-08-13,30
+EMP-0863,2018-06-13,2025-07-18,Atención al cliente,Manager Atención al cliente,Bilbao,F,1991-01-16,54300,Máster,Soltero/a,2,Híbrido,Indefinido,Manager,Bizkaia,Italia,2018-06-13,40
+EMP-0864,2024-11-04,2025-09-30,Marketing,Especialista Marketing,Valencia,M,1978-07-25,44100,Grado,Soltero/a,0,Híbrido,Indefinido,Especialista,Valencia,Argentina,2024-11-04,40
+EMP-0865,2023-05-27,2025-10-15,Ventas,Dirección Ventas,Sevilla,F,1969-02-06,81400,Máster,Soltero/a,0,Presencial,Indefinido,Dirección,Sevilla,Portugal,2023-05-27,40
+EMP-0866,2015-02-18,2023-06-11,Ventas,Manager Ventas,Madrid,M,1996-09-12,52100,Máster,Otro,0,Híbrido,Indefinido,Manager,Madrid,Portugal,2015-02-18,40
+EMP-0867,2024-03-31,2024-11-16,Legal,Especialista Legal,Bilbao,F,1980-02-20,41100,Máster,Otro,0,Presencial,Indefinido,Especialista,Bizkaia,Colombia,2024-03-31,40
+EMP-0868,2019-01-03,2025-02-04,Personas,Junior Personas,Madrid,M,1983-10-23,34500,Máster,Casado/a,1,Híbrido,Indefinido,Junior,Madrid,Italia,2019-01-03,40
+EMP-0869,2020-05-20,2025-09-23,Atención al cliente,Especialista Atención al cliente,Bilbao,F,1979-09-02,45500,Grado,Otro,2,Remoto,Indefinido,Especialista,Bizkaia,Portugal,2020-05-20,40
+EMP-0870,2016-01-14,2024-03-04,Operaciones,Junior Operaciones,Valencia,F,1975-12-22,32500,Bachillerato,Otro,2,Remoto,Indefinido,Junior,Valencia,Italia,2016-01-14,40
+EMP-0871,2025-01-16,2025-11-21,Operaciones,Especialista Operaciones,Madrid,M,1981-02-14,38200,FP,Casado/a,2,Presencial,Indefinido,Especialista,Madrid,Italia,2025-01-16,40
+EMP-0872,2016-12-30,2023-10-15,Personas,Dirección Personas,Madrid,F,1974-01-23,76800,Máster,Otro,0,Remoto,Indefinido,Dirección,Madrid,Argentina,2016-12-30,40
+EMP-0873,2018-03-24,2024-10-05,Atención al cliente,Junior Atención al cliente,Valencia,M,1985-07-03,33400,Grado,Soltero/a,3,Remoto,Indefinido,Junior,Valencia,Portugal,2018-03-24,40
+EMP-0874,2020-02-13,2024-09-02,Operaciones,Junior Operaciones,Sevilla,F,1978-10-23,33300,Máster,Soltero/a,2,Remoto,Indefinido,Junior,Sevilla,España,2020-02-13,40
+EMP-0875,2024-12-20,2025-10-25,Operaciones,Junior Operaciones,Madrid,M,2000-04-19,28000,FP,Soltero/a,3,Presencial,Indefinido,Junior,Madrid,Italia,2024-12-20,40
+EMP-0876,2022-03-19,2024-05-12,Legal,Junior Legal,Bilbao,F,1987-06-20,35700,Máster,Soltero/a,3,Híbrido,Indefinido,Junior,Bizkaia,España,2022-03-19,40
+EMP-0877,2016-09-08,2023-05-24,Finanzas,Manager Finanzas,Sevilla,M,1995-06-13,60100,Bachillerato,Otro,3,Remoto,Indefinido,Manager,Sevilla,España,2016-09-08,40
+EMP-0878,2017-03-15,2023-01-04,Operaciones,Junior Operaciones,Sevilla,M,1988-08-30,28000,FP,Soltero/a,2,Presencial,Temporal,Junior,Sevilla,Colombia,2017-03-15,40
+EMP-0879,2024-07-16,2025-07-08,Ventas,Junior Ventas,Barcelona,M,1972-08-19,33600,Bachillerato,Soltero/a,2,Remoto,Temporal,Junior,Barcelona,Portugal,2024-07-16,40
+EMP-0880,2021-11-30,2024-03-30,Operaciones,Dirección Operaciones,Valencia,F,1988-06-02,79200,Bachillerato,Soltero/a,0,Presencial,Temporal,Dirección,Valencia,Argentina,2021-11-30,40
+EMP-0881,2020-01-10,2025-06-04,Operaciones,Junior Operaciones,Barcelona,M,1991-03-07,32600,Bachillerato,Otro,2,Remoto,Indefinido,Junior,Barcelona,Colombia,2020-01-10,40
+EMP-0882,2015-10-04,2025-06-10,Operaciones,Especialista Operaciones,Valencia,M,1970-03-07,44500,Grado,Otro,2,Híbrido,Indefinido,Especialista,Valencia,España,2015-10-04,40
+EMP-0883,2022-10-08,2024-05-14,Ventas,Manager Ventas,Barcelona,F,1990-12-29,57800,FP,Casado/a,3,Presencial,Indefinido,Manager,Barcelona,Italia,2022-10-08,40
+EMP-0884,2017-01-13,2024-11-13,Finanzas,Especialista Finanzas,Barcelona,M,1992-10-02,44900,FP,Otro,0,Presencial,Indefinido,Especialista,Barcelona,Argentina,2017-01-13,40
+EMP-0885,2023-11-17,2025-04-14,Marketing,Especialista Marketing,Sevilla,F,1999-05-12,45100,Bachillerato,Casado/a,1,Remoto,Indefinido,Especialista,Sevilla,Portugal,2023-11-17,40
+EMP-0886,2015-03-24,2024-06-29,Finanzas,Especialista Finanzas,Barcelona,F,1976-09-08,45500,Bachillerato,Soltero/a,3,Remoto,Indefinido,Especialista,Barcelona,Argentina,2015-03-24,40
+EMP-0887,2025-09-17,2026-02-12,Personas,Especialista Personas,Valencia,M,1984-08-08,42900,FP,Soltero/a,1,Remoto,Indefinido,Especialista,Valencia,Italia,2025-09-17,40
+EMP-0888,2024-11-12,2025-12-03,Finanzas,Junior Finanzas,Valencia,M,1973-08-05,30100,FP,Soltero/a,3,Presencial,Indefinido,Junior,Valencia,Portugal,2024-11-12,40
+EMP-0889,2022-03-24,2023-10-23,Legal,Dirección Legal,Sevilla,M,1973-06-21,78200,Máster,Soltero/a,2,Presencial,Indefinido,Dirección,Sevilla,Colombia,2022-03-24,40
+EMP-0890,2019-09-03,2025-08-19,Atención al cliente,Junior Atención al cliente,Madrid,M,1990-09-02,29900,FP,Soltero/a,0,Híbrido,Indefinido,Junior,Madrid,Argentina,2019-09-03,40
+EMP-0891,2019-07-25,2023-10-04,Marketing,Dirección Marketing,Sevilla,M,1967-09-21,75900,Bachillerato,Casado/a,0,Presencial,Indefinido,Dirección,Sevilla,Argentina,2019-07-25,40
+EMP-0892,2017-06-10,2024-01-18,Ventas,Especialista Ventas,Valencia,F,1972-09-26,40900,FP,Soltero/a,1,Presencial,Indefinido,Especialista,Valencia,Portugal,2017-06-10,40
+EMP-0893,2020-10-28,2024-02-21,Ventas,Dirección Ventas,Sevilla,M,1981-12-09,78700,Grado,Casado/a,3,Híbrido,Indefinido,Dirección,Sevilla,Argentina,2020-10-28,30
+EMP-0894,2024-08-30,2025-06-19,Operaciones,Manager Operaciones,Sevilla,M,1982-03-12,59000,FP,Casado/a,3,Presencial,Indefinido,Manager,Sevilla,España,2024-08-30,40
+EMP-0895,2019-09-03,2024-05-20,Atención al cliente,Manager Atención al cliente,Sevilla,F,1990-10-06,57700,Grado,Otro,2,Remoto,Indefinido,Manager,Sevilla,Argentina,2019-09-03,40
+EMP-0896,2019-03-16,2025-08-19,Atención al cliente,Especialista Atención al cliente,Madrid,F,2000-10-11,40300,FP,Casado/a,3,Remoto,Indefinido,Especialista,Madrid,Portugal,2019-03-16,40
+EMP-0897,2024-09-15,2025-10-16,Operaciones,Junior Operaciones,Bilbao,F,1987-06-07,28300,Máster,Otro,0,Híbrido,Indefinido,Junior,Bizkaia,Italia,2024-09-15,40
+EMP-0898,2019-08-07,2023-11-16,Finanzas,Manager Finanzas,Madrid,F,1976-08-22,56400,Bachillerato,Otro,3,Remoto,Indefinido,Manager,Madrid,Portugal,2019-08-07,40
+EMP-0899,2019-05-01,2024-03-14,Marketing,Manager Marketing,Valencia,F,1971-05-03,55800,Bachillerato,Soltero/a,2,Presencial,Indefinido,Manager,Valencia,Colombia,2019-05-01,40
+EMP-0900,2020-06-25,2023-10-16,Personas,Junior Personas,Sevilla,M,1984-05-26,32200,Grado,Casado/a,2,Remoto,Temporal,Junior,Sevilla,Argentina,2020-06-25,40
+EMP-0901,2023-10-01,2025-06-05,Ventas,Junior Ventas,Bilbao,F,1991-05-30,27900,Bachillerato,Otro,0,Híbrido,Indefinido,Junior,Bizkaia,Colombia,2023-10-01,40
+EMP-0902,2018-01-13,2024-07-15,Operaciones,Dirección Operaciones,Valencia,F,1969-04-11,74800,Máster,Casado/a,3,Remoto,Temporal,Dirección,Valencia,España,2018-01-13,40
+EMP-0903,2019-06-25,2025-01-28,Ventas,Especialista Ventas,Barcelona,M,1998-12-19,39300,Grado,Otro,1,Híbrido,Indefinido,Especialista,Barcelona,Colombia,2019-06-25,40
+EMP-0904,2021-09-10,2023-04-20,Atención al cliente,Dirección Atención al cliente,Madrid,M,1991-06-22,75500,Máster,Casado/a,0,Híbrido,Indefinido,Dirección,Madrid,Argentina,2021-09-10,40
+EMP-0905,2024-07-16,2025-02-23,Finanzas,Manager Finanzas,Bilbao,M,1995-04-24,53700,Grado,Otro,1,Presencial,Indefinido,Manager,Bizkaia,Colombia,2024-07-16,30
+EMP-0906,2023-11-01,2024-08-02,Finanzas,Manager Finanzas,Madrid,F,1977-06-09,52200,FP,Soltero/a,0,Híbrido,Indefinido,Manager,Madrid,Italia,2023-11-01,40
+EMP-0907,2022-05-16,2023-06-23,Legal,Junior Legal,Valencia,M,1977-06-19,31300,Máster,Soltero/a,2,Presencial,Indefinido,Junior,Valencia,Italia,2022-05-16,40
+EMP-0908,2020-08-20,2025-07-14,Marketing,Especialista Marketing,Barcelona,M,1974-11-28,39900,Grado,Otro,2,Remoto,Indefinido,Especialista,Barcelona,Italia,2020-08-20,40
+EMP-0909,2018-03-03,2024-01-14,Marketing,Especialista Marketing,Madrid,F,1978-12-21,39300,Bachillerato,Casado/a,2,Remoto,Indefinido,Especialista,Madrid,España,2018-03-03,40
+EMP-0910,2015-07-31,2025-01-24,Marketing,Junior Marketing,Valencia,M,1975-05-24,29900,Grado,Casado/a,2,Híbrido,Indefinido,Junior,Valencia,Portugal,2015-07-31,30
+EMP-0911,2025-03-09,2025-09-27,Ventas,Dirección Ventas,Madrid,F,1994-03-03,75500,FP,Casado/a,3,Presencial,Indefinido,Dirección,Madrid,Argentina,2025-03-09,40
+EMP-0912,2015-12-29,2025-06-27,Legal,Junior Legal,Barcelona,M,1987-06-04,27700,Bachillerato,Soltero/a,3,Híbrido,Indefinido,Junior,Barcelona,Argentina,2015-12-29,40
+EMP-0913,2023-07-12,2024-04-18,Tecnología,Junior Tecnología,Valencia,M,1995-02-17,35200,Bachillerato,Soltero/a,3,Presencial,Indefinido,Junior,Valencia,Italia,2023-07-12,40
+EMP-0914,2023-09-04,2025-07-18,Marketing,Dirección Marketing,Bilbao,M,1984-03-14,77100,FP,Otro,1,Presencial,Indefinido,Dirección,Bizkaia,Colombia,2023-09-04,40
+EMP-0915,2020-04-04,2025-07-12,Operaciones,Dirección Operaciones,Barcelona,M,1965-07-24,77400,Bachillerato,Soltero/a,1,Remoto,Temporal,Dirección,Barcelona,Italia,2020-04-04,40
+EMP-0916,2016-09-28,2025-07-29,Personas,Especialista Personas,Barcelona,M,1978-09-01,46300,Máster,Otro,3,Híbrido,Indefinido,Especialista,Barcelona,Italia,2016-09-28,40
+EMP-0917,2015-02-25,2025-10-21,Finanzas,Manager Finanzas,Madrid,M,1970-02-24,53100,Grado,Otro,1,Híbrido,Temporal,Manager,Madrid,Portugal,2015-02-25,40
+EMP-0918,2022-07-01,2025-04-02,Finanzas,Dirección Finanzas,Sevilla,M,1969-01-21,77300,Máster,Otro,3,Presencial,Indefinido,Dirección,Sevilla,España,2022-07-01,40
+EMP-0919,2021-10-23,2023-04-13,Legal,Manager Legal,Madrid,M,1966-12-24,58600,Bachillerato,Casado/a,2,Híbrido,Indefinido,Manager,Madrid,Argentina,2021-10-23,40
+EMP-0920,2017-09-14,2024-06-03,Operaciones,Especialista Operaciones,Bilbao,M,1997-04-30,39500,Máster,Otro,0,Híbrido,Indefinido,Especialista,Bizkaia,Argentina,2017-09-14,40
+EMP-0921,2020-04-15,2023-06-29,Atención al cliente,Especialista Atención al cliente,Madrid,M,1994-04-18,39200,FP,Otro,0,Híbrido,Indefinido,Especialista,Madrid,Argentina,2020-04-15,40
+EMP-0922,2018-05-07,2025-02-05,Personas,Especialista Personas,Barcelona,F,1982-12-25,39800,FP,Otro,0,Híbrido,Indefinido,Especialista,Barcelona,Italia,2018-05-07,40
+EMP-0923,2023-09-09,2025-02-25,Atención al cliente,Especialista Atención al cliente,Valencia,F,1999-06-10,40100,FP,Soltero/a,3,Presencial,Temporal,Especialista,Valencia,Colombia,2023-09-09,40
+EMP-0924,2022-04-29,2025-04-11,Personas,Especialista Personas,Sevilla,F,1965-03-19,46500,Bachillerato,Soltero/a,0,Remoto,Indefinido,Especialista,Sevilla,España,2022-04-29,40
+EMP-0925,2016-11-09,2023-06-17,Atención al cliente,Dirección Atención al cliente,Valencia,F,1970-03-10,74700,Máster,Soltero/a,2,Remoto,Indefinido,Dirección,Valencia,Italia,2016-11-09,40
+EMP-0926,2017-12-12,2023-09-26,Personas,Junior Personas,Valencia,M,1968-11-11,29900,Máster,Otro,2,Remoto,Temporal,Junior,Valencia,Italia,2017-12-12,40
+EMP-0927,2020-12-12,2024-12-05,Operaciones,Junior Operaciones,Bilbao,M,1990-10-01,35000,Máster,Otro,3,Remoto,Indefinido,Junior,Bizkaia,Colombia,2020-12-12,40
+EMP-0928,2024-07-21,2025-04-07,Tecnología,Especialista Tecnología,Valencia,F,1975-05-23,41000,Bachillerato,Casado/a,3,Híbrido,Indefinido,Especialista,Valencia,Italia,2024-07-21,40
+EMP-0929,2019-02-17,2025-03-26,Ventas,Dirección Ventas,Barcelona,F,1976-04-14,78700,Bachillerato,Soltero/a,0,Remoto,Temporal,Dirección,Barcelona,Italia,2019-02-17,40
+EMP-0930,2016-05-28,2024-09-03,Marketing,Especialista Marketing,Madrid,M,1973-02-28,38900,Bachillerato,Soltero/a,0,Presencial,Temporal,Especialista,Madrid,Colombia,2016-05-28,40
+EMP-0931,2015-10-11,2024-07-25,Ventas,Especialista Ventas,Sevilla,M,1986-06-13,43800,Bachillerato,Casado/a,2,Remoto,Indefinido,Especialista,Sevilla,Argentina,2015-10-11,40
+EMP-0932,2025-07-04,2025-12-26,Personas,Especialista Personas,Barcelona,F,1966-11-24,46400,Bachillerato,Soltero/a,3,Remoto,Indefinido,Especialista,Barcelona,Italia,2025-07-04,40
+EMP-0933,2020-05-19,2024-01-11,Finanzas,Manager Finanzas,Barcelona,M,1973-07-08,60900,Grado,Otro,0,Presencial,Indefinido,Manager,Barcelona,Italia,2020-05-19,40
+EMP-0934,2017-03-22,2024-11-21,Finanzas,Dirección Finanzas,Sevilla,M,1979-10-28,74800,Grado,Casado/a,2,Híbrido,Indefinido,Dirección,Sevilla,Colombia,2017-03-22,40
+EMP-0935,2017-02-07,2024-11-17,Operaciones,Manager Operaciones,Valencia,M,1977-04-09,60500,FP,Soltero/a,0,Híbrido,Indefinido,Manager,Valencia,Argentina,2017-02-07,40
+EMP-0936,2023-09-06,2024-03-10,Tecnología,Manager Tecnología,Valencia,M,1968-08-22,60500,Bachillerato,Casado/a,3,Híbrido,Temporal,Manager,Valencia,Colombia,2023-09-06,40
+EMP-0937,2023-06-29,2025-06-26,Personas,Junior Personas,Valencia,F,1971-05-28,30300,FP,Soltero/a,3,Remoto,Indefinido,Junior,Valencia,Italia,2023-06-29,40
+EMP-0938,2024-05-16,2025-01-28,Legal,Manager Legal,Sevilla,F,1988-03-14,57500,FP,Casado/a,2,Remoto,Indefinido,Manager,Sevilla,Italia,2024-05-16,40
+EMP-0939,2024-03-28,2025-07-06,Finanzas,Junior Finanzas,Valencia,M,1966-02-25,28200,Máster,Soltero/a,0,Híbrido,Indefinido,Junior,Valencia,Colombia,2024-03-28,40
+EMP-0940,2016-10-13,2025-09-23,Operaciones,Especialista Operaciones,Valencia,M,1968-05-26,39100,FP,Otro,0,Remoto,Indefinido,Especialista,Valencia,España,2016-10-13,40
+EMP-0941,2016-11-21,2024-09-28,Personas,Dirección Personas,Bilbao,F,1966-04-17,79900,Bachillerato,Otro,3,Presencial,Indefinido,Dirección,Bizkaia,Italia,2016-11-21,40
+EMP-0942,2024-06-21,2025-02-10,Atención al cliente,Manager Atención al cliente,Sevilla,M,1969-01-05,59800,Grado,Soltero/a,0,Presencial,Indefinido,Manager,Sevilla,España,2024-06-21,40
+EMP-0943,2019-11-30,2023-07-04,Personas,Dirección Personas,Valencia,M,1998-12-25,79000,Bachillerato,Soltero/a,2,Remoto,Indefinido,Dirección,Valencia,Portugal,2019-11-30,40
+EMP-0944,2023-10-12,2024-08-13,Finanzas,Junior Finanzas,Bilbao,F,1989-02-20,35200,Grado,Otro,1,Remoto,Indefinido,Junior,Bizkaia,Portugal,2023-10-12,40
+EMP-0945,2024-08-28,2025-09-12,Legal,Especialista Legal,Barcelona,M,1972-07-30,38600,FP,Soltero/a,3,Híbrido,Temporal,Especialista,Barcelona,España,2024-08-28,40
+EMP-0946,2022-08-17,2024-08-23,Ventas,Manager Ventas,Barcelona,M,1970-09-07,56500,Grado,Otro,2,Híbrido,Indefinido,Manager,Barcelona,España,2022-08-17,40
+EMP-0947,2022-04-22,2024-03-04,Ventas,Dirección Ventas,Sevilla,F,1966-08-08,80000,Máster,Soltero/a,2,Presencial,Indefinido,Dirección,Sevilla,Italia,2022-04-22,40
+EMP-0948,2020-02-29,2025-04-26,Personas,Dirección Personas,Madrid,M,1965-01-15,81700,Máster,Casado/a,2,Remoto,Indefinido,Dirección,Madrid,Italia,2020-02-29,40
+EMP-0949,2018-04-27,2025-08-19,Marketing,Junior Marketing,Madrid,M,1995-12-23,27900,FP,Soltero/a,1,Presencial,Temporal,Junior,Madrid,Argentina,2018-04-27,40
+EMP-0950,2015-08-18,2023-04-05,Marketing,Junior Marketing,Valencia,F,1991-07-13,30100,Grado,Soltero/a,0,Híbrido,Temporal,Junior,Valencia,Colombia,2015-08-18,30
+EMP-0951,2022-07-13,2024-09-03,Atención al cliente,Dirección Atención al cliente,Madrid,F,1993-10-11,75000,Bachillerato,Otro,0,Híbrido,Indefinido,Dirección,Madrid,Colombia,2022-07-13,40
+EMP-0952,2015-05-10,2025-02-16,Tecnología,Junior Tecnología,Sevilla,M,1980-11-29,27800,Grado,Casado/a,0,Presencial,Indefinido,Junior,Sevilla,Portugal,2015-05-10,40
+EMP-0953,2018-01-14,2024-01-04,Atención al cliente,Especialista Atención al cliente,Valencia,M,1992-04-01,39000,FP,Soltero/a,1,Remoto,Temporal,Especialista,Valencia,Colombia,2018-01-14,40
+EMP-0954,2025-03-29,2025-09-27,Marketing,Manager Marketing,Sevilla,F,1982-09-10,57300,Máster,Otro,3,Remoto,Indefinido,Manager,Sevilla,Italia,2025-03-29,40
+EMP-0955,2023-09-27,2025-11-12,Finanzas,Dirección Finanzas,Bilbao,M,1983-02-26,75600,Máster,Soltero/a,2,Presencial,Indefinido,Dirección,Bizkaia,Portugal,2023-09-27,40
+EMP-0956,2020-03-01,2023-05-08,Marketing,Especialista Marketing,Sevilla,M,1967-11-30,41200,Máster,Otro,0,Híbrido,Indefinido,Especialista,Sevilla,Colombia,2020-03-01,40
+EMP-0957,2025-08-03,2025-12-24,Legal,Manager Legal,Barcelona,M,1974-12-29,57900,FP,Soltero/a,1,Presencial,Temporal,Manager,Barcelona,Argentina,2025-08-03,40
+EMP-0958,2016-01-24,2025-04-07,Personas,Manager Personas,Valencia,M,1985-10-06,59300,Bachillerato,Soltero/a,1,Remoto,Temporal,Manager,Valencia,Portugal,2016-01-24,30
+EMP-0959,2024-06-22,2025-11-05,Marketing,Dirección Marketing,Madrid,M,1999-05-14,74500,Máster,Casado/a,1,Presencial,Indefinido,Dirección,Madrid,Italia,2024-06-22,40
+EMP-0960,2020-05-02,2025-09-18,Marketing,Junior Marketing,Barcelona,M,1992-10-05,35900,FP,Casado/a,1,Remoto,Indefinido,Junior,Barcelona,Argentina,2020-05-02,40
+EMP-0961,2025-06-22,2025-12-15,Ventas,Especialista Ventas,Sevilla,M,2001-04-19,43200,Máster,Otro,3,Remoto,Temporal,Especialista,Sevilla,Portugal,2025-06-22,40
+EMP-0962,2019-08-10,2024-07-11,Ventas,Especialista Ventas,Sevilla,M,1974-06-25,42400,Bachillerato,Casado/a,3,Híbrido,Indefinido,Especialista,Sevilla,Portugal,2019-08-10,40
+EMP-0963,2017-04-28,2025-05-30,Legal,Manager Legal,Madrid,F,1968-11-15,53600,Máster,Casado/a,3,Remoto,Indefinido,Manager,Madrid,Italia,2017-04-28,40
+EMP-0964,2021-03-06,2023-07-14,Operaciones,Manager Operaciones,Valencia,F,1992-10-31,59300,Bachillerato,Otro,2,Presencial,Indefinido,Manager,Valencia,Portugal,2021-03-06,40
+EMP-0965,2024-05-25,2025-03-08,Personas,Especialista Personas,Barcelona,F,1995-06-16,42400,Máster,Casado/a,3,Remoto,Indefinido,Especialista,Barcelona,España,2024-05-25,40
+EMP-0966,2025-09-27,2026-03-25,Finanzas,Especialista Finanzas,Valencia,F,1977-12-25,38100,FP,Otro,0,Presencial,Indefinido,Especialista,Valencia,Colombia,2025-09-27,40
+EMP-0967,2022-11-06,2024-06-11,Operaciones,Dirección Operaciones,Sevilla,M,1992-03-07,76000,Grado,Otro,1,Remoto,Temporal,Dirección,Sevilla,Italia,2022-11-06,40
+EMP-0968,2016-01-17,2025-01-19,Ventas,Junior Ventas,Sevilla,F,2001-11-09,34100,Bachillerato,Soltero/a,1,Presencial,Temporal,Junior,Sevilla,España,2016-01-17,40
+EMP-0969,2016-02-14,2023-03-16,Tecnología,Manager Tecnología,Valencia,F,1972-01-15,54500,Bachillerato,Soltero/a,1,Presencial,Indefinido,Manager,Valencia,Colombia,2016-02-14,30
+EMP-0970,2022-03-24,2025-05-30,Personas,Dirección Personas,Sevilla,F,1999-06-17,75700,FP,Casado/a,3,Presencial,Indefinido,Dirección,Sevilla,Italia,2022-03-24,40
+EMP-0971,2020-03-29,2024-05-24,Personas,Junior Personas,Bilbao,F,1984-06-22,31800,Máster,Otro,2,Presencial,Indefinido,Junior,Bizkaia,Portugal,2020-03-29,40
+EMP-0972,2024-03-01,2024-09-27,Personas,Junior Personas,Barcelona,F,1996-02-02,35100,Grado,Casado/a,0,Híbrido,Temporal,Junior,Barcelona,Argentina,2024-03-01,40
+EMP-0973,2019-04-16,2025-10-16,Ventas,Manager Ventas,Madrid,F,1970-12-08,58700,FP,Casado/a,2,Presencial,Temporal,Manager,Madrid,Portugal,2019-04-16,40
+EMP-0974,2017-08-08,2023-05-28,Finanzas,Manager Finanzas,Sevilla,M,1993-03-23,60000,FP,Otro,0,Remoto,Indefinido,Manager,Sevilla,España,2017-08-08,40
+EMP-0975,2015-01-12,2025-06-20,Atención al cliente,Dirección Atención al cliente,Barcelona,F,1996-11-14,77500,Grado,Otro,1,Presencial,Indefinido,Dirección,Barcelona,Colombia,2015-01-12,40
+EMP-0976,2023-10-15,2025-04-09,Legal,Dirección Legal,Bilbao,F,1980-02-26,80300,Máster,Otro,0,Remoto,Indefinido,Dirección,Bizkaia,Portugal,2023-10-15,30
+EMP-0977,2016-02-06,2025-08-27,Personas,Especialista Personas,Valencia,M,1988-04-14,41800,FP,Otro,1,Presencial,Indefinido,Especialista,Valencia,Argentina,2016-02-06,40
+EMP-0978,2025-01-23,2025-11-08,Personas,Manager Personas,Barcelona,F,1987-07-04,55000,Bachillerato,Soltero/a,1,Presencial,Indefinido,Manager,Barcelona,Italia,2025-01-23,40
+EMP-0979,2024-08-31,2025-09-24,Operaciones,Especialista Operaciones,Barcelona,F,1989-10-29,38900,Bachillerato,Soltero/a,2,Remoto,Temporal,Especialista,Barcelona,Italia,2024-08-31,40
+EMP-0980,2017-07-02,2024-10-04,Ventas,Junior Ventas,Madrid,M,1979-01-02,30700,Bachillerato,Casado/a,1,Híbrido,Temporal,Junior,Madrid,España,2017-07-02,40
+EMP-0981,2020-01-15,2024-09-14,Operaciones,Dirección Operaciones,Madrid,M,1974-04-21,76600,Grado,Casado/a,0,Remoto,Indefinido,Dirección,Madrid,Argentina,2020-01-15,40
+EMP-0982,2019-12-09,2024-12-26,Tecnología,Junior Tecnología,Barcelona,F,1968-07-07,27200,Grado,Otro,0,Híbrido,Temporal,Junior,Barcelona,Italia,2019-12-09,40
+EMP-0983,2023-06-28,2024-06-27,Atención al cliente,Manager Atención al cliente,Madrid,M,1985-05-05,59000,Grado,Casado/a,2,Remoto,Indefinido,Manager,Madrid,España,2023-06-28,40
+EMP-0984,2018-01-16,2025-12-12,Personas,Especialista Personas,Barcelona,F,1981-08-09,43000,Grado,Soltero/a,0,Híbrido,Indefinido,Especialista,Barcelona,Argentina,2018-01-16,40
+EMP-0985,2019-12-16,2024-07-29,Personas,Junior Personas,Madrid,M,1978-06-24,34700,FP,Soltero/a,0,Presencial,Indefinido,Junior,Madrid,Argentina,2019-12-16,40
+EMP-0986,2015-01-22,2025-05-22,Finanzas,Junior Finanzas,Sevilla,F,2001-07-30,30900,Máster,Soltero/a,2,Presencial,Indefinido,Junior,Sevilla,Argentina,2015-01-22,40
+EMP-0987,2020-03-18,2025-08-03,Personas,Dirección Personas,Valencia,M,1980-01-20,79400,Bachillerato,Casado/a,0,Remoto,Indefinido,Dirección,Valencia,Argentina,2020-03-18,30
+EMP-0988,2024-11-22,2025-07-24,Atención al cliente,Dirección Atención al cliente,Sevilla,M,1965-05-01,77600,Grado,Otro,3,Híbrido,Indefinido,Dirección,Sevilla,Colombia,2024-11-22,40
+EMP-0989,2023-04-22,2025-10-27,Tecnología,Manager Tecnología,Sevilla,M,1976-08-22,60200,Máster,Soltero/a,0,Remoto,Indefinido,Manager,Sevilla,Portugal,2023-04-22,40
+EMP-0990,2024-09-21,2025-07-10,Tecnología,Junior Tecnología,Sevilla,F,2001-05-20,35800,Bachillerato,Soltero/a,1,Presencial,Indefinido,Junior,Sevilla,Portugal,2024-09-21,30
+EMP-0991,2024-07-24,2025-02-26,Finanzas,Manager Finanzas,Madrid,F,1972-05-12,57500,FP,Otro,3,Híbrido,Indefinido,Manager,Madrid,Italia,2024-07-24,40
+EMP-0992,2021-10-05,2024-02-18,Ventas,Junior Ventas,Valencia,M,1991-03-18,34600,Máster,Soltero/a,2,Presencial,Temporal,Junior,Valencia,Colombia,2021-10-05,40
+EMP-0993,2015-09-04,2024-08-06,Legal,Especialista Legal,Madrid,M,1996-11-11,45300,FP,Otro,3,Presencial,Indefinido,Especialista,Madrid,España,2015-09-04,40
+EMP-0994,2023-12-07,2024-12-10,Marketing,Dirección Marketing,Sevilla,M,1978-08-22,81300,FP,Soltero/a,3,Híbrido,Indefinido,Dirección,Sevilla,Colombia,2023-12-07,40
+EMP-0995,2017-02-15,2025-05-12,Marketing,Manager Marketing,Barcelona,M,1985-02-23,56400,Bachillerato,Soltero/a,2,Presencial,Indefinido,Manager,Barcelona,Argentina,2017-02-15,40
+EMP-0996,2016-12-09,2024-06-03,Finanzas,Manager Finanzas,Madrid,M,1999-06-10,56400,FP,Otro,2,Presencial,Indefinido,Manager,Madrid,España,2016-12-09,40
+EMP-0997,2021-11-12,2025-10-10,Finanzas,Junior Finanzas,Sevilla,M,1986-03-15,28700,Bachillerato,Soltero/a,3,Híbrido,Temporal,Junior,Sevilla,Colombia,2021-11-12,40
+EMP-0998,2022-12-22,2024-01-19,Tecnología,Dirección Tecnología,Sevilla,F,1971-09-12,78200,Bachillerato,Casado/a,3,Híbrido,Indefinido,Dirección,Sevilla,Portugal,2022-12-22,40
+EMP-0999,2017-08-18,2025-05-05,Personas,Dirección Personas,Barcelona,F,1974-09-27,81400,FP,Soltero/a,3,Presencial,Indefinido,Dirección,Barcelona,Italia,2017-08-18,40
+EMP-1000,2022-04-09,2024-10-30,Personas,Especialista Personas,Sevilla,M,1979-11-12,46300,Máster,Otro,2,Remoto,Indefinido,Especialista,Sevilla,España,2022-04-09,40

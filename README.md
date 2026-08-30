@@ -12,7 +12,7 @@ El kit incluye diez medidas DAX, datos de ejemplo, un diccionario de datos y un 
 
 Los campos mínimos son `PersonaID` y `FechaAlta` en Personas, y `EpisodioID`, `PersonaID` y `FechaInicio` en Bajas médicas. Las filas con IDs duplicados, fechas incoherentes o personas inexistentes se excluyen y quedan detalladas en `filas_rechazadas.csv`.
 
-Todo el procesamiento se hace localmente. Los CSV y el proyecto PBIP se guardan en `C:\PeopleAnalyticsDaxKit\datos-ejemplo`.
+Todo el procesamiento se hace localmente. Los CSV, `insights.csv`, el informe de filas rechazadas y el proyecto PBIP se guardan en `datos-procesados` junto al importador.
 
 ## Desarrollo y distribución
 

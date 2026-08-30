@@ -1,0 +1,153 @@
+table Personas
+	measure 'Plantilla al cierre' =
+			VAR FechaCorte = MAX ( Calendario[Fecha] )
+			RETURN CALCULATE ( DISTINCTCOUNT ( Personas[PersonaID] ), REMOVEFILTERS ( Calendario ), Personas[FechaAlta] <= FechaCorte, ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > FechaCorte )
+		formatString: 0
+
+	measure 'Altas del periodo' =
+			VAR InicioPeriodo = MIN ( Calendario[Fecha] )
+			VAR FinPeriodo = MAX ( Calendario[Fecha] )
+			RETURN CALCULATE ( DISTINCTCOUNT ( Personas[PersonaID] ), REMOVEFILTERS ( Calendario ), Personas[FechaAlta] >= InicioPeriodo, Personas[FechaAlta] <= FinPeriodo )
+		formatString: 0
+
+	measure 'Bajas del periodo' =
+			VAR InicioPeriodo = MIN ( Calendario[Fecha] )
+			VAR FinPeriodo = MAX ( Calendario[Fecha] )
+			RETURN CALCULATE ( DISTINCTCOUNT ( Personas[PersonaID] ), REMOVEFILTERS ( Calendario ), NOT ISBLANK ( Personas[FechaBajaEmpresa] ), Personas[FechaBajaEmpresa] >= InicioPeriodo, Personas[FechaBajaEmpresa] <= FinPeriodo )
+		formatString: 0
+
+	measure 'Salario medio' = AVERAGE ( Personas[SalarioAnual] )
+		formatString: #,0 €
+
+	measure 'Rotacion anual %' = DIVIDE ( [Bajas del periodo], [Plantilla al cierre] )
+		formatString: 0.0 %
+
+	measure 'Edad media' = AVERAGE ( Personas[Edad] )
+		formatString: 0.0
+
+	measure 'Antiguedad media' = AVERAGE ( Personas[Antigüedad años] )
+		formatString: 0.0
+
+	measure 'Mujeres %' = DIVIDE ( CALCULATE ( [Plantilla al cierre], Personas[Sexo] = "F" ), [Plantilla al cierre] )
+		formatString: 0.0 %
+
+	measure 'Mujeres en plantilla' = CALCULATE ( [Plantilla al cierre], Personas[Sexo] = "F" )
+		formatString: 0
+
+	measure 'Salario mediano' = MEDIAN ( Personas[SalarioAnual] )
+		formatString: #,0 €
+
+	measure 'Coste salarial anual' = SUM ( Personas[SalarioAnual] )
+		formatString: #,0 €
+
+	measure 'Brecha salarial %' =
+			VAR PuestosComparables =
+				FILTER (
+					VALUES ( Personas[PuestoTrabajo] ),
+					CALCULATE ( COUNTROWS ( Personas ), REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "F" ) > 0
+						&& CALCULATE ( COUNTROWS ( Personas ), REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "M" ) > 0
+				)
+			VAR BrechaPonderada =
+				SUMX (
+					PuestosComparables,
+					VAR SalarioMujeres = CALCULATE ( AVERAGE ( Personas[SalarioAnual] ), REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "F" )
+					VAR SalarioHombres = CALCULATE ( AVERAGE ( Personas[SalarioAnual] ), REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "M" )
+					VAR Peso = CALCULATE ( COUNTROWS ( Personas ), REMOVEFILTERS ( Personas[Sexo] ) )
+					RETURN DIVIDE ( SalarioHombres - SalarioMujeres, SalarioHombres ) * Peso
+				)
+			VAR PersonasComparables = SUMX ( PuestosComparables, CALCULATE ( COUNTROWS ( Personas ), REMOVEFILTERS ( Personas[Sexo] ) ) )
+			RETURN DIVIDE ( BrechaPonderada, PersonasComparables )
+		formatString: 0.0 %
+
+	column PersonaID
+		dataType: string
+		sourceColumn: PersonaID
+		summarizeBy: none
+	column FechaAlta
+		dataType: dateTime
+		formatString: Short Date
+		sourceColumn: FechaAlta
+		summarizeBy: none
+	column FechaBajaEmpresa
+		dataType: dateTime
+		formatString: Short Date
+		sourceColumn: FechaBajaEmpresa
+		summarizeBy: none
+	column Departamento
+		dataType: string
+		sourceColumn: Departamento
+		summarizeBy: none
+	column PuestoTrabajo
+		dataType: string
+		sourceColumn: PuestoTrabajo
+		summarizeBy: none
+	column Centro
+		dataType: string
+		sourceColumn: Centro
+		summarizeBy: none
+	column Sexo
+		dataType: string
+		sourceColumn: Sexo
+		summarizeBy: none
+	column FechaNacimiento
+		dataType: dateTime
+		formatString: Short Date
+		sourceColumn: FechaNacimiento
+		summarizeBy: none
+	column SalarioAnual
+		dataType: int64
+		formatString: #,0
+		sourceColumn: SalarioAnual
+		summarizeBy: sum
+	column NivelEducativo
+		dataType: string
+		sourceColumn: NivelEducativo
+	column EstadoCivil
+		dataType: string
+		sourceColumn: EstadoCivil
+	column NumeroHijos
+		dataType: int64
+		sourceColumn: NumeroHijos
+		summarizeBy: sum
+	column ModalidadTrabajo
+		dataType: string
+		sourceColumn: ModalidadTrabajo
+	column TipoContrato
+		dataType: string
+		sourceColumn: TipoContrato
+	column NivelPuesto
+		dataType: string
+		sourceColumn: NivelPuesto
+	column Provincia
+		dataType: string
+		sourceColumn: Provincia
+	column Nacionalidad
+		dataType: string
+		sourceColumn: Nacionalidad
+	column FechaInicioPuesto
+		dataType: dateTime
+		formatString: Short Date
+		sourceColumn: FechaInicioPuesto
+	column JornadaSemanal
+		dataType: int64
+		sourceColumn: JornadaSemanal
+	column Edad = DATEDIFF ( Personas[FechaNacimiento], TODAY (), YEAR )
+		dataType: int64
+	column 'Tramo edad' = SWITCH ( TRUE (), Personas[Edad] < 30, "Menos de 30", Personas[Edad] < 40, "30–39", Personas[Edad] < 50, "40–49", Personas[Edad] < 60, "50–59", "60 o más" )
+		dataType: string
+	column 'Antigüedad años' = DATEDIFF ( Personas[FechaAlta], TODAY (), YEAR )
+		dataType: int64
+	column 'Tramo antigüedad' = SWITCH ( TRUE (), Personas[Antigüedad años] < 1, "Menos de 1 año", Personas[Antigüedad años] < 3, "1–2 años", Personas[Antigüedad años] < 5, "3–4 años", "5+ años" )
+		dataType: string
+	column 'Tramo salarial' = SWITCH ( TRUE (), Personas[SalarioAnual] < 30000, "< 30k", Personas[SalarioAnual] < 40000, "30k–40k", Personas[SalarioAnual] < 50000, "40k–50k", "50k+" )
+		dataType: string
+
+	partition Personas = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\PeopleAnalyticsDaxKit\datos-ejemplo\personas.csv"),[Delimiter=",", Columns=19, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Types = Table.TransformColumnTypes(Headers,{{"PersonaID", type text},{"FechaAlta", type date},{"FechaBajaEmpresa", type date},{"Departamento", type text},{"PuestoTrabajo", type text},{"Centro", type text},{"Sexo", type text},{"FechaNacimiento", type date},{"SalarioAnual", Int64.Type},{"NivelEducativo", type text},{"EstadoCivil", type text},{"NumeroHijos", Int64.Type},{"ModalidadTrabajo", type text},{"TipoContrato", type text},{"NivelPuesto", type text},{"Provincia", type text},{"Nacionalidad", type text},{"FechaInicioPuesto", type date},{"JornadaSemanal", Int64.Type}}, "en-US")
+				in
+				    Types

@@ -26,6 +26,11 @@
       <div class="file-card"><div><span>Archivo seleccionado</span><strong id="fileName"></strong></div><button id="changeButton" class="secondary">Cambiar archivo</button></div>
       <div id="summary" class="summary"></div>
       <div class="profiles"><label>Perfil de mapeo<select id="profileSelect"><option value="">Selecciona un perfil</option></select></label><button id="saveProfileButton" class="secondary">Guardar mapeo</button></div>
+      <section class="palette-panel" aria-labelledby="paletteTitle">
+        <div><h3 id="paletteTitle">Estilo de Power BI</h3><p>El informe genera tonos claros, oscuros y complementarios a partir de estos dos colores.</p></div>
+        <label class="color-field">Color principal<input id="primaryColor" type="color" value="#123AA7"><output id="primaryHex">#123AA7</output></label>
+        <label class="color-field">Color secundario<input id="secondaryColor" type="color" value="#3569D4"><output id="secondaryHex">#3569D4</output></label>
+      </section>
 
       <div class="mapping-grid">
         <article class="panel">
@@ -41,7 +46,7 @@
       </div>
       <div class="footer-action">
         <div><strong>Los campos con * son obligatorios</strong><p>Se generarán los CSV y se abrirá Power BI automáticamente.</p></div>
-        <button id="convertButton">Generar y abrir Power BI →</button>
+        <div class="report-actions"><button id="plusButton" class="secondary">Generar informe Plus</button><button id="convertButton">Generar informe Demo →</button></div>
       </div>
     </section>
 

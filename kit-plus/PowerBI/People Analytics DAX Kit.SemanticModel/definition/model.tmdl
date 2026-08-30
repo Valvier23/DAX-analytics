@@ -1,0 +1,6 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-ES
+
+	annotation PBI_QueryOrder = ["Personas","BajasMedicas","Calendario","InsightsAutomaticos"]

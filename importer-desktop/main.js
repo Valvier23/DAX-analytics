@@ -6,11 +6,13 @@ const core = require("./core");
 
 app.disableHardwareAcceleration();
 
-function ensurePowerBiProject(projectDir, outputDir) {
+function ensurePowerBiProject(projectDir, outputDir, edition = "demo") {
+  fs.mkdirSync(projectDir, { recursive: true });
   const targetPbip = path.join(projectDir, "People Analytics DAX Kit.pbip");
+  const template = edition === "plus" ? "PowerBIPlus" : "PowerBI";
   const bundledDirs = app.isPackaged
-    ? [path.join(process.resourcesPath, "PowerBI"), path.join(path.dirname(process.execPath), "resources", "PowerBI")]
-    : [path.resolve(__dirname, "..", "kit-free", "PowerBI")];
+    ? [path.join(process.resourcesPath, template), path.join(path.dirname(process.execPath), "resources", template)]
+    : [path.resolve(__dirname, "..", edition === "plus" ? "kit-plus" : "kit-free", "PowerBI")];
   const bundledDir = bundledDirs.find((dir) => fs.existsSync(path.join(dir, "People Analytics DAX Kit.pbip")));
   if (!bundledDir) {
     throw new Error("No se encontró el proyecto Power BI incluido en el importador.");
@@ -21,6 +23,7 @@ function ensurePowerBiProject(projectDir, outputDir) {
   const sources = [
     ["Personas.tmdl", "personas.csv"],
     ["BajasMedicas.tmdl", "bajas_medicas.csv"],
+    ...(edition === "plus" ? [["Insights.tmdl", "insights.csv"]] : []),
   ];
   for (const [fileName, csvName] of sources) {
     const definition = path.join(projectDir, "People Analytics DAX Kit.SemanticModel", "definition", "tables", fileName);
@@ -94,11 +97,13 @@ app.whenReady().then(() => {
       const missingLeave = requiredLeave.filter((field) => !config.bajasMapping[field]);
       if (missingLeave.length) throw new Error(`Falta mapear en Bajas médicas: ${missingLeave.join(", ")}.`);
     }
-    const projectDir = process.env.PORTABLE_EXECUTABLE_DIR || (app.isPackaged ? path.dirname(process.execPath) : path.resolve(__dirname, "..", "kit-free"));
-    const outputDir = path.join(projectDir, "datos-ejemplo");
+    const distributionDir = process.env.PORTABLE_EXECUTABLE_DIR || (app.isPackaged ? path.dirname(process.execPath) : path.resolve(__dirname, ".."));
+    const outputDir = path.join(distributionDir, "datos-procesados");
+    const reportDir = path.join(outputDir, "PowerBI");
     const result = core.convertWorkbook({ ...config, outputDir });
     try {
-      const pbip = ensurePowerBiProject(projectDir, outputDir);
+      const pbip = ensurePowerBiProject(reportDir, outputDir, config.edition);
+      result.palette = core.applyPowerBiPalette(reportDir, config.colors);
       const openError = await shell.openPath(pbip);
       result.powerBiOpened = !openError;
       result.powerBiError = openError || "";
