@@ -1,0 +1,78 @@
+table InsightsAutomaticos
+	measure 'Insights detectados' = COUNTROWS ( InsightsAutomaticos )
+		formatString: 0
+
+	measure 'Riesgos detectados' = CALCULATE ( COUNTROWS ( InsightsAutomaticos ), InsightsAutomaticos[Prioridad] = "Riesgo" )
+		formatString: 0
+
+	measure 'Impacto medio' = AVERAGE ( InsightsAutomaticos[Impacto] )
+		formatString: 0
+
+	column InsightID
+		dataType: string
+		sourceColumn: InsightID
+		summarizeBy: none
+	column Categoria
+		dataType: string
+		sourceColumn: Categoria
+	column Prioridad
+		dataType: string
+		sourceColumn: Prioridad
+	column Hallazgo
+		dataType: string
+		sourceColumn: Titulo
+	column Detalle
+		dataType: string
+		sourceColumn: Detalle
+	column 'Metrica evaluada'
+		dataType: string
+		sourceColumn: Metrica
+	column Periodo
+		dataType: string
+		sourceColumn: Periodo
+	column Segmento
+		dataType: string
+		sourceColumn: Segmento
+	column ValorActual
+		dataType: double
+		sourceColumn: ValorActual
+		summarizeBy: sum
+	column ValorAnterior
+		dataType: double
+		sourceColumn: ValorAnterior
+		summarizeBy: sum
+	column VariacionPct
+		dataType: double
+		sourceColumn: VariacionPct
+		summarizeBy: sum
+	column Impacto
+		dataType: int64
+		sourceColumn: Impacto
+		summarizeBy: sum
+	column Urgencia
+		dataType: int64
+		sourceColumn: Urgencia
+		summarizeBy: sum
+	column Confianza
+		dataType: int64
+		sourceColumn: Confianza
+		summarizeBy: sum
+	column 'Siguiente paso'
+		dataType: string
+		sourceColumn: Recomendacion
+	column Grafico
+		dataType: string
+		sourceColumn: Grafico
+	column 'Validar en'
+		dataType: string
+		sourceColumn: PaginaValidacion
+
+	partition InsightsAutomaticos = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\\PeopleAnalyticsDaxKit\\datos-ejemplo\\insights.csv"),[Delimiter=",", Columns=17, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Types = Table.TransformColumnTypes(Headers,{{"InsightID", type text},{"Categoria", type text},{"Prioridad", type text},{"Titulo", type text},{"Detalle", type text},{"Metrica", type text},{"Periodo", type text},{"Segmento", type text},{"ValorActual", type number},{"ValorAnterior", type number},{"VariacionPct", type number},{"Impacto", Int64.Type},{"Urgencia", Int64.Type},{"Confianza", Int64.Type},{"Recomendacion", type text},{"Grafico", type text},{"PaginaValidacion", type text}})
+				in
+				    Types

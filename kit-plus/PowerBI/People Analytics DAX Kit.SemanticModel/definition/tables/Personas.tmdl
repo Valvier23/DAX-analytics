@@ -41,9 +41,22 @@ table Personas
 		formatString: #,0 €
 
 	measure 'Brecha salarial %' =
-		VAR SalarioMujeres = CALCULATE ( [Salario medio], Personas[Sexo] = "F" )
-		VAR SalarioHombres = CALCULATE ( [Salario medio], Personas[Sexo] = "M" )
-		RETURN DIVIDE ( SalarioHombres - SalarioMujeres, SalarioHombres )
+			VAR PuestosComparables =
+				FILTER (
+					VALUES ( Personas[PuestoTrabajo] ),
+					CALCULATE ( COUNTROWS ( Personas ), REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "F" ) > 0
+						&& CALCULATE ( COUNTROWS ( Personas ), REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "M" ) > 0
+				)
+			VAR BrechaPonderada =
+				SUMX (
+					PuestosComparables,
+					VAR SalarioMujeres = CALCULATE ( AVERAGE ( Personas[SalarioAnual] ), REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "F" )
+					VAR SalarioHombres = CALCULATE ( AVERAGE ( Personas[SalarioAnual] ), REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "M" )
+					VAR Peso = CALCULATE ( COUNTROWS ( Personas ), REMOVEFILTERS ( Personas[Sexo] ) )
+					RETURN DIVIDE ( SalarioHombres - SalarioMujeres, SalarioHombres ) * Peso
+				)
+			VAR PersonasComparables = SUMX ( PuestosComparables, CALCULATE ( COUNTROWS ( Personas ), REMOVEFILTERS ( Personas[Sexo] ) ) )
+			RETURN DIVIDE ( BrechaPonderada, PersonasComparables )
 		formatString: 0.0 %
 
 	column PersonaID
