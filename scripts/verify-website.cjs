@@ -24,6 +24,9 @@ const {chromium}=require('playwright'),http=require('node:http'),fs=require('nod
    assert.match(await page.locator('[data-copy="sourceFile"]').textContent(),lang==='en'?/employees.xlsx/:/personas.xlsx/);
    const text=await page.locator('body').innerText();assert.ok(!text.includes('undefined'));if(lang==='en')assert.ok(!/personas.xlsx|Episodios|Preguntas|Idioma/.test(text));
    const geometry=await page.evaluate(()=>({viewport:innerWidth,scroll:document.documentElement.scrollWidth}));assert.ok(geometry.scroll<=width,JSON.stringify(geometry));
+   assert.equal(await page.locator('#roadmap .roadmap-card').count(),4);
+   for(const card of await page.locator('#roadmap .roadmap-card').all())assert.ok(await card.evaluate(e=>e.scrollWidth<=e.clientWidth),'Roadmap card overflow');
+   if((width===390||width===1280)&&lang==='es')await page.locator('#roadmap').screenshot({path:path.join(out,`roadmap-${width}-${theme}.png`)});
    if((width===390||width===1280)&&lang==='en'&&theme==='dark'){await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:path.join(out,`english-${width}.png`),fullPage:true});}
    cases++;
   }
