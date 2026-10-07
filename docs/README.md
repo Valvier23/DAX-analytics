@@ -1,6 +1,6 @@
 # Web de Axzify
 
-Landing estática en español de Axzify / People Analytics DAX Kit. Presenta el importador local de Excel para Windows x64, el kit Free y la plantilla Plus. La demo de plantilla, movimientos y ausencias utiliza datos ficticios: no procesa archivos ni integra Power BI.
+Landing estática bilingüe de Axzify / People Analytics DAX Kit. Español es el idioma inicial; English se selecciona sin navegar ni cambiar la URL. La elección y el tema se guardan localmente. Presenta el importador para Windows x64 y los informes Demo y Plus. La demo utiliza datos ficticios: no procesa archivos ni integra Power BI.
 
 ## Publicar en GitHub Pages
 
@@ -8,6 +8,10 @@ En Settings → Pages selecciona Deploy from a branch, la rama main y la carpeta
 
 ## Editar y probar
 
-Edita docs/index.html y ábrelo en un navegador o sírvelo con un servidor estático. Comprueba las tres vistas, navegación con teclado, anclas y descarga.
+Edita los textos de ambos idiomas en `docs/site-copy.js` y la composición en `scripts/build-website.cjs`. Ejecuta `node scripts/build-website.cjs` para regenerar `docs/index.html`, que incluye contenido español aunque JavaScript esté desactivado. La publicación sirve los archivos ya generados y no necesita ejecutar ese comando.
+
+Los estilos están en `docs/site.css` y `docs/theme.css`. `docs/language.js` traduce texto y atributos accesibles dentro de la página; `docs/demo.js` mantiene la vista activa al cambiar idioma. `docs/en.html` conserva los enlaces antiguos mediante una redirección a la raíz con inglés seleccionado.
+
+Pruebas: `node --test tests/web-language.test.cjs tests/web-theme.test.cjs`. `scripts/verify-website.cjs` usa Playwright y Edge sin ventana para comprobar URL, persistencia, demo y ausencia de desbordamiento en móvil y escritorio. No se conecta a sesiones del usuario.
 
 La aplicación React de app/ es una landing independiente. Esta actualización afecta a la web estática de Axzify. Las funciones del roadmap se distinguen del kit actual.

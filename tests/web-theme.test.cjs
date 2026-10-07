@@ -16,5 +16,5 @@ test('la página publicada carga el tema antes del contenido y ofrece un selecto
  assert.ok(html.indexOf('src="theme.js?')<html.indexOf('<body'));
  assert.match(html,/href="theme.css\?/);
  assert.match(html,/label class="theme-control" for="theme-select"/);
- for(const value of ['system','light','dark'])assert.ok(html.includes(`option value="${value}"`));
+ for(const value of ['system','light','dark'])assert.match(html,new RegExp(`<option\\b[^>]*value="${value}"`));
 });
