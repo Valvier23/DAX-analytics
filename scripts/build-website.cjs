@@ -11,8 +11,8 @@ const html=`<!doctype html>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="${copy.description}"><title>${copy.title}</title>
 <script src="theme.js?v=20261008"></script>
-<link rel="stylesheet" href="site.css?v=20261008-visual"><link rel="stylesheet" href="theme.css?v=20261008-header">
-<script src="site-copy.js?v=20261008-visual" defer></script><script src="report-preview.js?v=20261008-visual" defer></script><script src="demo.js?v=20261008-visual" defer></script><script src="language.js?v=20261008-story" defer></script>
+<link rel="stylesheet" href="site.css?v=20261008-compact"><link rel="stylesheet" href="theme.css?v=20261008-compact">
+<script src="site-copy.js?v=20261008-visual" defer></script><script src="report-preview.js?v=20261008-visual" defer></script><script src="demo.js?v=20261008-visual" defer></script><script src="navigation.js?v=20261008-compact" defer></script><script src="language.js?v=20261008-story" defer></script>
 </head><body>
 <nav aria-label="${copy.nav}" data-copy-aria="nav"><a class="logo" href="#">axzify<span>↗</span></a>
 <div class="links">${text('a','how','href="#como"')}${text('a','demo','href="#demo"')}${text('a','roadmapNav','href="#roadmap"')}${text('a','download','class="pill" href="#descarga"')}</div>

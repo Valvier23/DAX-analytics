@@ -11,7 +11,7 @@ const {chromium}=require('playwright'),http=require('node:http'),fs=require('nod
  let browser;
  try{
   browser=await chromium.launch({headless:true,executablePath:process.env.TEST_BROWSER||'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'});
-  const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
+  const page=await browser.newPage({reducedMotion:'reduce'}),errors=[];page.on('pageerror',e=>errors.push(e.message));
   const url=`http://127.0.0.1:${server.address().port}/?campaign=qa#demo`;
   await page.goto(url);await page.locator('[data-area="ausencias"]').click();
   await page.locator('#preguntas details').first().evaluate(e=>e.open=true);
@@ -32,6 +32,12 @@ const {chromium}=require('playwright'),http=require('node:http'),fs=require('nod
     assert.ok(!(await page.locator('#demo-chart').innerHTML()).includes('NaN'));
    }
    assert.equal(await page.locator('#hero-chart svg').count(),1);
+   const previewColour=await page.locator('.report-window').evaluate(e=>getComputedStyle(e).backgroundColor);
+   assert.equal(previewColour,theme==='dark'?'rgb(23, 40, 36)':'rgb(250, 251, 248)');
+   if(width===1280)assert.ok((await page.locator('.report-stage').boundingBox()).width<=540);
+   await page.locator('nav a[href="#descarga"]').click();assert.equal(page.url(),url);
+   const navBox=await page.locator('nav').boundingBox(),sectionBox=await page.locator('#descarga').boundingBox();
+   assert.ok(Math.abs(navBox.y)<1,'Navigation stays at the top');assert.ok(sectionBox.y>=navBox.height,'Section clears sticky header');
    for(const card of await page.locator('#roadmap .roadmap-card').all())assert.ok(await card.evaluate(e=>e.scrollWidth<=e.clientWidth),'Roadmap card overflow');
    if((width===390||width===1280)&&lang==='es')await page.locator('#roadmap').screenshot({path:path.join(out,`roadmap-${width}-${theme}.png`)});
    if((width===390||width===1280)&&lang==='en'&&theme==='dark'){await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:path.join(out,`english-${width}.png`),fullPage:true});await page.locator('.hero').screenshot({path:path.join(out,`hero-${width}.png`)});}
@@ -39,6 +45,9 @@ const {chromium}=require('playwright'),http=require('node:http'),fs=require('nod
   }
   await page.reload();assert.equal(await page.locator('#language-select').inputValue(),'en');assert.equal(await page.locator('#theme-select').inputValue(),'dark');assert.equal(page.url(),url);
   await page.goto(url.replace('/?campaign=qa#demo','/en.html#demo'));await page.waitForURL(url.replace('/?campaign=qa#demo','/#demo'));assert.equal(await page.locator('html').getAttribute('lang'),'en');
+  const cleanUrl=url.replace('#demo','');await page.goto(cleanUrl);
+  for(const id of ['como','demo','roadmap']){await page.locator(`nav a[href="#${id}"]`).click();assert.equal(page.url(),cleanUrl);assert.equal(await page.evaluate(()=>document.activeElement.id),id);}
+  await page.locator('nav .logo').click();assert.equal(page.url(),cleanUrl);assert.equal(await page.evaluate(()=>scrollY),0);
   assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,cases,urlUnchanged:true,demoPreserved:true,preferencesPersisted:true,legacyLinkRedirected:true}));
  }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 })().catch(e=>{console.error(e);process.exitCode=1;});
