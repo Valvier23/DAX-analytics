@@ -35,8 +35,8 @@ const {chromium}=require('playwright'),http=require('node:http'),fs=require('nod
    const previewColour=await page.locator('.report-window').evaluate(e=>getComputedStyle(e).backgroundColor);
    assert.equal(previewColour,theme==='dark'?'rgb(30, 30, 30)':'rgb(250, 251, 248)');
    if(width===1280)assert.ok((await page.locator('.report-stage').boundingBox()).width<=540);
-   await page.locator('nav a[href="#descarga"]').click();assert.equal(page.url(),url);
-   const navBox=await page.locator('nav').boundingBox(),sectionBox=await page.locator('#descarga').boundingBox();
+   await page.locator('[data-copy="heroSecondary"]').click();assert.equal(page.url(),url);
+   const navBox=await page.locator('nav').boundingBox(),sectionBox=await page.locator('#demo').boundingBox();
    assert.ok(Math.abs(navBox.y)<1,'Navigation stays at the top');assert.ok(sectionBox.y>=navBox.height,'Section clears sticky header');
    for(const card of await page.locator('#roadmap .roadmap-card').all())assert.ok(await card.evaluate(e=>e.scrollWidth<=e.clientWidth),'Roadmap card overflow');
    if((width===390||width===1280)&&lang==='es')await page.locator('#roadmap').screenshot({path:path.join(out,`roadmap-${width}-${theme}.png`)});
@@ -48,6 +48,12 @@ const {chromium}=require('playwright'),http=require('node:http'),fs=require('nod
   const cleanUrl=url.replace('#demo','');await page.goto(cleanUrl);
   for(const id of ['como','demo','roadmap']){await page.locator(`nav a[href="#${id}"]`).click();assert.equal(page.url(),cleanUrl);assert.equal(await page.evaluate(()=>document.activeElement.id),id);}
   await page.locator('nav .logo').click();assert.equal(page.url(),cleanUrl);assert.equal(await page.evaluate(()=>scrollY),0);
+  await page.route('https://github.com/Valvier23/DAX-analytics/raw/**',route=>route.fulfill({status:200,headers:{'Content-Type':'application/zip','Content-Disposition':'attachment; filename="axzify-test.zip"'},body:'test download'}));
+  for(const selector of ['nav [data-copy="download"]','[data-copy="heroCta"]']){
+   const link=page.locator(selector);assert.match(await link.getAttribute('href'),/people-analytics-dax-kit-free\.zip/);
+   const [downloadEvent]=await Promise.all([page.waitForEvent('download'),link.click()]);
+   assert.equal(downloadEvent.suggestedFilename(),'axzify-test.zip');assert.equal(page.url(),cleanUrl);
+  }
   assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,cases,urlUnchanged:true,demoPreserved:true,preferencesPersisted:true,legacyLinkRedirected:true}));
  }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 })().catch(e=>{console.error(e);process.exitCode=1;});
