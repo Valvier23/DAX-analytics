@@ -1,142 +1,233 @@
 {
-    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-    "name":  "filterDepartamento",
-    "position":  {
-                     "x":  950,
-                     "y":  10,
-                     "z":  22,
-                     "height":  88,
-                     "width":  280,
-                     "tabOrder":  22
-                 },
-    "visual":  {
-                   "visualType":  "slicer",
-                   "query":  {
-                                 "queryState":  {
-                                                    "Values":  {
-                                                                   "projections":  [
-                                                                                       {
-                                                                                           "field":  {
-                                                                                                         "Column":  {
-                                                                                                                        "Expression":  {
-                                                                                                                                           "SourceRef":  {
-                                                                                                                                                             "Entity":  "Personas"
-                                                                                                                                                         }
-                                                                                                                                       },
-                                                                                                                        "Property":  "Departamento"
-                                                                                                                    }
-                                                                                                     },
-                                                                                           "queryRef":  "Personas.Departamento",
-                                                                                           "nativeQueryRef":  "Departamento",
-                                                                                           "active":  true
-                                                                                       }
-                                                                                   ]
-                                                               }
-                                                }
-                             },
-                   "visualContainerObjects":  {
-                                                  "title":  [
-                                                                {
-                                                                    "properties":  {
-                                                                                       "show":  {
-                                                                                                    "expr":  {
-                                                                                                                 "Literal":  {
-                                                                                                                                 "Value":  "false"
-                                                                                                                             }
-                                                                                                             }
-                                                                                                },
-                                                                                       "text":  {
-                                                                                                    "expr":  {
-                                                                                                                 "Literal":  {
-                                                                                                                                 "Value":  "\u0027Departamento\u0027"
-                                                                                                                             }
-                                                                                                             }
-                                                                                                }
-                                                                                   }
-                                                                }
-                                                            ],
-                                                  "padding":  [
-                                                                  {
-                                                                      "properties":  {
-                                                                                         "left":  {
-                                                                                                      "expr":  {
-                                                                                                                   "Literal":  {
-                                                                                                                                   "Value":  "8D"
-                                                                                                                               }
-                                                                                                               }
-                                                                                                  },
-                                                                                         "right":  {
-                                                                                                       "expr":  {
-                                                                                                                    "Literal":  {
-                                                                                                                                    "Value":  "8D"
-                                                                                                                                }
-                                                                                                                }
-                                                                                                   },
-                                                                                         "bottom":  {
-                                                                                                        "expr":  {
-                                                                                                                     "Literal":  {
-                                                                                                                                     "Value":  "8D"
-                                                                                                                                 }
-                                                                                                                 }
-                                                                                                    },
-                                                                                         "top":  {
-                                                                                                     "expr":  {
-                                                                                                                  "Literal":  {
-                                                                                                                                  "Value":  "8D"
-                                                                                                                              }
-                                                                                                              }
-                                                                                                 }
-                                                                                     }
-                                                                  }
-                                                              ]
-                                              },
-                   "objects":  {
-                                   "data":  [
-                                                {
-                                                    "properties":  {
-                                                                       "mode":  {
-                                                                                    "expr":  {
-                                                                                                 "Literal":  {
-                                                                                                                 "Value":  "\u0027Dropdown\u0027"
-                                                                                                             }
-                                                                                             }
-                                                                                }
-                                                                   }
-                                                }
-                                            ],
-                                   "header":  [
-                                                  {
-                                                      "properties":  {
-                                                                         "text":  {
-                                                                                      "expr":  {
-                                                                                                   "Literal":  {
-                                                                                                                   "Value":  "\u0027Departamento\u0027"
-                                                                                                               }
-                                                                                               }
-                                                                                  },
-                                                                         "show":  {
-                                                                                      "expr":  {
-                                                                                                   "Literal":  {
-                                                                                                                   "Value":  "true"
-                                                                                                               }
-                                                                                               }
-                                                                                  }
-                                                                     }
-                                                  }
-                                              ],
-                                   "items":  [
-                                                 {
-                                                     "properties":  {
-                                                                        "fontSize":  {
-                                                                                         "expr":  {
-                                                                                                      "Literal":  {
-                                                                                                                      "Value":  "10D"
-                                                                                                                  }
-                                                                                                  }
-                                                                                     }
-                                                                    }
-                                                 }
-                                             ]
-                               }
-               }
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "filterDepartamento",
+  "position": {
+    "x": 556,
+    "y": 98,
+    "z": 5,
+    "width": 410,
+    "height": 70,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Personas"
+                    }
+                  },
+                  "Property": "Departamento"
+                }
+              },
+              "queryRef": "Personas.Departamento",
+              "nativeQueryRef": "Departamento"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Departamento'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#16332F'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DCE5E0'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Departamento'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "syncGroup": {
+      "groupName": "PeopleAnalytics_Departamento",
+      "fieldChanges": true,
+      "filterChanges": true
+    }
+  }
 }

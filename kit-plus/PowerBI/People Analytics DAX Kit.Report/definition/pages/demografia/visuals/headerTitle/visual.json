@@ -1,100 +1,126 @@
 {
-    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-    "name":  "headerTitle",
-    "position":  {
-                     "x":  30,
-                     "y":  14,
-                     "z":  20,
-                     "height":  48,
-                     "width":  800,
-                     "tabOrder":  20
-                 },
-    "visual":  {
-                   "visualType":  "textbox",
-                   "objects":  {
-                                   "general":  [
-                                                   {
-                                                       "properties":  {
-                                                                          "paragraphs":  [
-                                                                                             {
-                                                                                                 "textRuns":  [
-                                                                                                                  {
-                                                                                                                      "value":  "Perfil demográfico de la plantilla",
-                                                                                                                      "textStyle":  {
-                                                                                                                                        "fontFamily":  "Segoe UI Semibold",
-                                                                                                                                        "fontSize":  "25px",
-                                                                                                                                        "color":  "#123AA7"
-                                                                                                                                    }
-                                                                                                                  }
-                                                                                                              ],
-                                                                                                 "horizontalTextAlignment":  "left"
-                                                                                             }
-                                                                                         ]
-                                                                      }
-                                                   }
-                                               ]
-                               },
-                   "visualContainerObjects":  {
-                                                  "background":  [
-                                                                     {
-                                                                         "properties":  {
-                                                                                            "show":  {
-                                                                                                         "expr":  {
-                                                                                                                      "Literal":  {
-                                                                                                                                      "Value":  "false"
-                                                                                                                                  }
-                                                                                                                  }
-                                                                                                     }
-                                                                                        }
-                                                                     }
-                                                                 ],
-                                                  "border":  [
-                                                                 {
-                                                                     "properties":  {
-                                                                                        "show":  {
-                                                                                                     "expr":  {
-                                                                                                                  "Literal":  {
-                                                                                                                                  "Value":  "false"
-                                                                                                                              }
-                                                                                                              }
-                                                                                                 }
-                                                                                    }
-                                                                 }
-                                                             ],
-                                                  "padding":  [
-                                                                  {
-                                                                      "properties":  {
-                                                                                         "left":  {
-                                                                                                      "expr":  {
-                                                                                                                   "Literal":  {
-                                                                                                                                   "Value":  "0D"
-                                                                                                                               }
-                                                                                                               }
-                                                                                                  },
-                                                                                         "right":  {
-                                                                                                       "expr":  {
-                                                                                                                    "Literal":  {
-                                                                                                                                    "Value":  "0D"
-                                                                                                                                }
-                                                                                                                }
-                                                                                                   },
-                                                                                         "bottom":  {
-                                                                                                        "expr":  {
-                                                                                                                     "Literal":  {
-                                                                                                                                     "Value":  "0D"
-                                                                                                                                 }
-                                                                                                                 }
-                                                                                                    },
-                                                                                         "top":  {
-                                                                                                     "expr":  {
-                                                                                                                  "Literal":  {
-                                                                                                                                  "Value":  "0D"
-                                                                                                                              }
-                                                                                                              }
-                                                                                                 }
-                                                                                     }
-                                                                  }
-                                                              ]
-                                              }
-               }
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "headerTitle",
+  "position": {
+    "x": 40,
+    "y": 35,
+    "z": 0,
+    "width": 1340,
+    "height": 38,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Qué estructura tiene la plantilla activa",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "27px",
+                      "color": "#16332F"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
 }

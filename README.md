@@ -1,28 +1,24 @@
 # People Analytics DAX Kit
 
-Kit gratuito para analizar plantilla, altas, bajas, rotación y absentismo en Power BI sin errores de contexto temporal.
+Producto local para convertir Excel de RR. HH. y analizar plantilla, movimientos, rotación y ausencia médica en Power BI. Free tiene una página; Plus, nueve.
 
-## Contenido y uso
+## Uso
 
-El kit incluye diez medidas DAX, datos de ejemplo, un diccionario de datos y un importador local para Windows. El proyecto Power BI va integrado en el importador y se crea automáticamente junto a los CSV. En equipos con poco espacio en C:, abre `Abrir importador desde esta carpeta.cmd` después de extraer el ZIP: usa una carpeta temporal local y evita la extracción en C:.
+1. Abre el importador Windows y selecciona el Excel.
+2. Revisa el mapeo de Personas y, opcionalmente, Bajas médicas.
+3. Genera los CSV y abre/actualiza el PBIP en Power BI Desktop.
+4. Confirma periodo y cobertura de fuentes antes de interpretar tasas.
 
-1. Abre el importador y selecciona o arrastra tu Excel.
-2. Revisa el mapeo de Personas y Bajas médicas; puedes guardar perfiles para reutilizarlos.
-3. Genera los CSV y abre el proyecto PBIP.
+Los resultados se guardan en `datos-procesados` junto a la distribución: CSV, filas rechazadas, insights, catálogo de KPI, perfil, periodo y proyecto PowerBI. El procesamiento es local; las filas inválidas se excluyen y se registran.
 
-Los campos mínimos son `PersonaID` y `FechaAlta` en Personas, y `EpisodioID`, `PersonaID` y `FechaInicio` en Bajas médicas. Las filas con IDs duplicados, fechas incoherentes o personas inexistentes se excluyen y quedan detalladas en `filas_rechazadas.csv`.
+FechaBajaEmpresa es el primer día fuera de plantilla; FechaFin médica sí se incluye. Rotación usa plantilla media diaria, sin anualizar; ausencia cuenta días naturales únicos persona/día limitados al empleo. Salarios y organización son una instantánea.
 
-Todo el procesamiento se hace localmente. Los CSV, `insights.csv`, el informe de filas rechazadas y el proyecto PBIP se guardan en `datos-procesados` junto al importador.
+Consulta [metodología](docs/report-methodology.md), [Free](kit-free/README.md), [Plus](kit-plus/README.md) y [diccionario](kit-free/diccionario-datos.md).
 
 ## Desarrollo y distribución
 
-Se necesita Node.js 22.13 o posterior.
+Para generar o revisar PBIP desde PowerShell sin abrir Power BI, consulta [Generar informe sin pantalla](docs/generar-informe-sin-pantalla.md). El mismo módulo genera los proyectos del importador y permite comprobar las páginas adicionales sin Electron.
 
-- `npm run dev`: inicia la landing.
-- `npm test`: prueba la landing.
-- `npm run lint`: comprueba estilo y tipos.
-- `npm run package:kit`: crea `public/downloads/people-analytics-dax-kit-free.zip` a partir del ejecutable portable ya compilado.
-- `cd importer-desktop; npm test`: prueba la conversión de Excel.
-- `cd importer-desktop; npm run dist:win`: crea el ejecutable portable Windows x64.
+Node.js 22.13 o posterior. `npm run dev`, `npm test`, `npm run lint` y `npm run build` corresponden a la landing. En `importer-desktop`, `npm test` comprueba conversión y `npm run dist:win` recompila el portable Windows x64. `npm run package:kit` requiere el ejecutable compilado y crea el ZIP Free.
 
-Antes de publicar, falta firmar el ejecutable, validarlo visualmente en Windows 10 y 11, comprobar libros de más de 100.000 filas y configurar pago/soporte para la edición Pro.
+Los cambios fuente no reconstruyen ejecutables ni ZIP anteriores. Recompilar y verificar la distribución antes de publicarla. Firma digital, pruebas Windows y rendimiento con grandes libros siguen siendo comprobaciones de publicación.

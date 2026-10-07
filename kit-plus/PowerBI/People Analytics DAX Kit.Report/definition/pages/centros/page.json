@@ -1,1 +1,8 @@
-{"$schema":"https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json","name":"centros","displayName":"Centros y departamentos","displayOption":"FitToPage","height":720,"width":1280}
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "centros",
+  "displayName": "08 · Centros y departamentos",
+  "displayOption": "FitToPage",
+  "height": 1104,
+  "width": 1440
+}

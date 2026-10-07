@@ -1,10 +1,26 @@
 table Calendario
 	column Fecha
 		dataType: dateTime
-		formatString: Short Date
-		summarizeBy: none
+		formatString: dd/MM/yyyy
 		sourceColumn: [Fecha]
-
+		summarizeBy: none
+	column Ano = YEAR ( Calendario[Fecha] )
+		dataType: int64
+	column Mes = FORMAT ( Calendario[Fecha], "MMM" )
+		dataType: string
+		sortByColumn: MesNumero
+	column MesNumero = MONTH ( Calendario[Fecha] )
+		dataType: int64
+		isHidden
+	column AnoMes = FORMAT ( Calendario[Fecha], "yyyy-MM" )
+		dataType: string
+	column MesEtiqueta = FORMAT ( Calendario[Fecha], "MMM yy", "es-ES" )
+		dataType: string
+		sortByColumn: AnoMes
 	partition Calendario = calculated
 		mode: import
-		source = SELECTCOLUMNS ( CALENDAR ( DATE ( 2023, 1, 1 ), DATE ( 2025, 12, 31 ) ), "Fecha", [Date] )
+		source =
+				VAR Fechas = FILTER ( UNION ( SELECTCOLUMNS ( Personas, "Dia", Personas[FechaAlta] ), SELECTCOLUMNS ( Personas, "Dia", Personas[FechaBajaEmpresa] ), SELECTCOLUMNS ( BajasMedicas, "Dia", BajasMedicas[FechaInicio] ), SELECTCOLUMNS ( BajasMedicas, "Dia", BajasMedicas[FechaFin] ) ), NOT ISBLANK ( [Dia] ) )
+				VAR Desde = COALESCE ( MINX ( Fechas, [Dia] ), TODAY () )
+				VAR Hasta = MAX ( TODAY (), COALESCE ( MAXX ( Fechas, [Dia] ), TODAY () ) )
+				RETURN SELECTCOLUMNS ( CALENDAR ( Desde, Hasta ), "Fecha", [Date] )

@@ -1,111 +1,228 @@
--- 01 · Plantilla al cierre
+-- Selección continua MIN–MAX. Calendario desconectado; Personas 1 → * BajasMedicas.
+-- Baja de empresa excluida; fin médico incluido. Salarios: instantánea actual.
+
+-- Tabla: Personas
 Plantilla al cierre =
-VAR FechaCorte = MAX ( Calendario[Fecha] )
-RETURN
-CALCULATE (
-    DISTINCTCOUNT ( Personas[PersonaID] ),
-    REMOVEFILTERS ( Calendario ),
-    Personas[FechaAlta] <= FechaCorte,
-    ISBLANK ( Personas[FechaBajaEmpresa] )
-        || Personas[FechaBajaEmpresa] > FechaCorte
-)
+VAR Corte = MAX ( Calendario[Fecha] )
+RETURN COALESCE ( COUNTROWS ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) ) ), 0 )
 
--- 02 · Plantilla al inicio
+-- Tabla: Personas
 Plantilla al inicio =
-VAR FechaCorte = MIN ( Calendario[Fecha] )
-RETURN
-CALCULATE (
-    DISTINCTCOUNT ( Personas[PersonaID] ),
-    REMOVEFILTERS ( Calendario ),
-    Personas[FechaAlta] < FechaCorte,
-    ISBLANK ( Personas[FechaBajaEmpresa] )
-        || Personas[FechaBajaEmpresa] >= FechaCorte
-)
+VAR Corte = MIN ( Calendario[Fecha] ) - 1
+RETURN COALESCE ( COUNTROWS ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) ) ), 0 )
 
--- 03 · Plantilla media diaria
-Plantilla media diaria =
-AVERAGEX ( VALUES ( Calendario[Fecha] ), [Plantilla al cierre] )
-
--- 04 · Altas del periodo
+-- Tabla: Personas
 Altas del periodo =
-VAR InicioPeriodo = MIN ( Calendario[Fecha] )
-VAR FinPeriodo = MAX ( Calendario[Fecha] )
-RETURN
-CALCULATE (
-    DISTINCTCOUNT ( Personas[PersonaID] ),
-    REMOVEFILTERS ( Calendario ),
-    Personas[FechaAlta] >= InicioPeriodo,
-    Personas[FechaAlta] <= FinPeriodo
-)
+VAR Inicio = MIN ( Calendario[Fecha] )
+VAR Fin = MAX ( Calendario[Fecha] )
+RETURN COALESCE ( COUNTROWS ( FILTER ( Personas, NOT ISBLANK ( Personas[FechaAlta] ) && Personas[FechaAlta] >= Inicio && Personas[FechaAlta] <= Fin ) ), 0 )
 
--- 05 · Bajas del periodo
+-- Tabla: Personas
 Bajas del periodo =
-VAR InicioPeriodo = MIN ( Calendario[Fecha] )
-VAR FinPeriodo = MAX ( Calendario[Fecha] )
-RETURN
-CALCULATE (
-    DISTINCTCOUNT ( Personas[PersonaID] ),
-    REMOVEFILTERS ( Calendario ),
-    NOT ISBLANK ( Personas[FechaBajaEmpresa] ),
-    Personas[FechaBajaEmpresa] >= InicioPeriodo,
-    Personas[FechaBajaEmpresa] <= FinPeriodo
-)
+VAR Inicio = MIN ( Calendario[Fecha] )
+VAR Fin = MAX ( Calendario[Fecha] )
+RETURN COALESCE ( COUNTROWS ( FILTER ( Personas, NOT ISBLANK ( Personas[FechaBajaEmpresa] ) && Personas[FechaBajaEmpresa] >= Inicio && Personas[FechaBajaEmpresa] <= Fin ) ), 0 )
 
--- 06 · Rotación del periodo
-Rotación del periodo =
+-- Tabla: Personas
+Dias del periodo =
+DATEDIFF ( MIN ( Calendario[Fecha] ), MAX ( Calendario[Fecha] ), DAY ) + 1
+
+-- Tabla: Personas
+Exposicion persona dias =
+VAR Inicio = MIN ( Calendario[Fecha] )
+VAR Fin = MAX ( Calendario[Fecha] )
+RETURN COALESCE ( SUMX ( Personas, VAR Desde = MAX ( Inicio, Personas[FechaAlta] ) VAR Hasta = MIN ( Fin, COALESCE ( Personas[FechaBajaEmpresa], Fin + 1 ) - 1 ) RETURN MAX ( 0, INT ( Hasta - Desde ) + 1 ) ), 0 )
+
+-- Tabla: Personas
+Plantilla media diaria =
+DIVIDE ( [Exposicion persona dias], [Dias del periodo] )
+
+-- Tabla: Personas
+Cambio neto =
+[Altas del periodo] - [Bajas del periodo]
+
+-- Tabla: Personas
+Crecimiento neto % =
+DIVIDE ( [Cambio neto], [Plantilla al inicio] )
+
+-- Tabla: Personas
+Rotacion del periodo % =
 DIVIDE ( [Bajas del periodo], [Plantilla media diaria] )
 
--- 07 · Personas con baja médica
-Personas con baja médica =
-VAR InicioPeriodo = MIN ( Calendario[Fecha] )
-VAR FinPeriodo = MAX ( Calendario[Fecha] )
-RETURN
-CALCULATE (
-    DISTINCTCOUNT ( BajasMedicas[PersonaID] ),
-    REMOVEFILTERS ( Calendario ),
-    BajasMedicas[FechaInicio] <= FinPeriodo,
-    ISBLANK ( BajasMedicas[FechaFin] )
-        || BajasMedicas[FechaFin] >= InicioPeriodo
-)
+-- Tabla: Personas
+Rotacion anual % =
+[Rotacion del periodo %]
 
--- 08 · Episodios de baja médica
+-- Tabla: Personas
+Retencion cohorte inicial % =
+VAR Inicio = MIN ( Calendario[Fecha] )
+VAR Fin = MAX ( Calendario[Fecha] )
+VAR Cohorte = FILTER ( Personas, Personas[FechaAlta] < Inicio && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] >= Inicio ) )
+RETURN DIVIDE ( COUNTROWS ( FILTER ( Cohorte, ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Fin ) ), COUNTROWS ( Cohorte ) )
+
+-- Tabla: Personas
+Bajas antes de un ano =
+VAR Inicio = MIN ( Calendario[Fecha] )
+VAR Fin = MAX ( Calendario[Fecha] )
+RETURN COALESCE ( COUNTROWS ( FILTER ( Personas, NOT ISBLANK ( Personas[FechaBajaEmpresa] ) && Personas[FechaBajaEmpresa] >= Inicio && Personas[FechaBajaEmpresa] <= Fin && Personas[FechaBajaEmpresa] < EDATE ( Personas[FechaAlta], 12 ) ) ), 0 )
+
+-- Tabla: Personas
+Salario medio =
+VAR Corte = MAX ( Calendario[Fecha] )
+RETURN AVERAGEX ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && NOT ISBLANK ( Personas[SalarioAnual] ) && Personas[SalarioAnual] > 0 ), Personas[SalarioAnual] )
+
+-- Tabla: Personas
+Salario mediano =
+VAR Corte = MAX ( Calendario[Fecha] )
+RETURN MEDIANX ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && NOT ISBLANK ( Personas[SalarioAnual] ) && Personas[SalarioAnual] > 0 ), Personas[SalarioAnual] )
+
+-- Tabla: Personas
+Coste salarial anual =
+VAR Corte = MAX ( Calendario[Fecha] )
+RETURN SUMX ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && NOT ISBLANK ( Personas[SalarioAnual] ) && Personas[SalarioAnual] > 0 ), Personas[SalarioAnual] )
+
+-- Tabla: Personas
+Personas con salario =
+VAR Corte = MAX ( Calendario[Fecha] )
+RETURN COALESCE ( COUNTROWS ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && NOT ISBLANK ( Personas[SalarioAnual] ) && Personas[SalarioAnual] > 0 ) ), 0 )
+
+-- Tabla: Personas
+Cobertura salarial % =
+DIVIDE ( [Personas con salario], [Plantilla al cierre] )
+
+-- Tabla: Personas
+Edad media =
+VAR Corte = MAX ( Calendario[Fecha] )
+RETURN AVERAGEX ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && NOT ISBLANK ( Personas[FechaNacimiento] ) && Personas[FechaNacimiento] <= Corte ), VAR Nacimiento = Personas[FechaNacimiento] RETURN YEAR ( Corte ) - YEAR ( Nacimiento ) - IF ( FORMAT ( Corte, "MMdd" ) < FORMAT ( Nacimiento, "MMdd" ), 1, 0 ) )
+
+-- Tabla: Personas
+Cobertura nacimiento % =
+VAR Corte = MAX ( Calendario[Fecha] )
+RETURN DIVIDE ( COUNTROWS ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && NOT ISBLANK ( Personas[FechaNacimiento] ) && Personas[FechaNacimiento] <= Corte ) ), [Plantilla al cierre] )
+
+-- Tabla: Personas
+Lectura de calidad =
+VAR Base = [Plantilla al cierre]
+VAR Salarios = Base - [Personas con salario]
+VAR Nacimientos = ROUND ( Base * ( 1 - [Cobertura nacimiento %] ), 0 )
+VAR Sexo = ROUND ( Base * ( 1 - [Cobertura sexo %] ), 0 )
+RETURN IF ( Base = 0, "Sin plantilla en el corte", IF ( Salarios + Nacimientos + Sexo = 0, "Campos analizados completos", "Hay campos por completar" ) )
+
+-- Tabla: Personas
+Plantilla por tramo de edad =
+VAR Corte = MAX ( Calendario[Fecha] )
+VAR Desde = SELECTEDVALUE ( TramosEdad[Desde], 0 )
+VAR Hasta = SELECTEDVALUE ( TramosEdad[Hasta], 999 )
+RETURN COALESCE ( COUNTROWS ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && VAR Nacimiento = Personas[FechaNacimiento] VAR Valida = NOT ISBLANK ( Nacimiento ) && Nacimiento <= Corte VAR EdadCorte = YEAR ( Corte ) - YEAR ( Nacimiento ) - IF ( FORMAT ( Corte, "MMdd" ) < FORMAT ( Nacimiento, "MMdd" ), 1, 0 ) RETURN IF ( Desde = -1, NOT Valida, Valida && EdadCorte >= Desde && EdadCorte <= Hasta ) ) ), 0 )
+
+-- Tabla: Personas
+Antiguedad media =
+VAR Corte = MAX ( Calendario[Fecha] )
+RETURN AVERAGEX ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) ), DIVIDE ( DATEDIFF ( Personas[FechaAlta], Corte, DAY ), 365.25 ) )
+
+-- Tabla: Personas
+Mujeres en plantilla =
+CALCULATE ( [Plantilla al cierre], KEEPFILTERS ( Personas[Sexo] = "F" ) )
+
+-- Tabla: Personas
+Mujeres % =
+DIVIDE ( [Mujeres en plantilla], [Plantilla al cierre] )
+
+-- Tabla: Personas
+Cobertura sexo % =
+VAR Corte = MAX ( Calendario[Fecha] )
+RETURN DIVIDE ( COUNTROWS ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && NOT ISBLANK ( Personas[Sexo] ) && Personas[Sexo] <> "" ) ), [Plantilla al cierre] )
+
+-- Tabla: Personas
+Representacion mujeres comparable % =
+IF ( [Plantilla al cierre] >= 10, [Mujeres %] )
+
+-- Tabla: Personas
+Brecha salarial % =
+VAR F = CALCULATE ( [Personas con salario], REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "F" )
+VAR H = CALCULATE ( [Personas con salario], REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "M" )
+VAR SF = CALCULATE ( [Salario medio], REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "F" )
+VAR SH = CALCULATE ( [Salario medio], REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "M" )
+RETURN IF ( F >= 8 && H >= 8, DIVIDE ( SH - SF, SH ) )
+
+-- Tabla: Personas
+Rotacion anterior % =
+VAR Inicio = MIN ( Calendario[Fecha] )
+VAR Fin = MAX ( Calendario[Fecha] )
+VAR Dias = INT ( Fin - Inicio ) + 1
+VAR Desde = Inicio - Dias
+VAR Cobertura = MINX ( ALL ( Calendario ), Calendario[Fecha] )
+RETURN IF ( Desde >= Cobertura, CALCULATE ( [Rotacion del periodo %], REMOVEFILTERS ( Calendario ), DATESBETWEEN ( Calendario[Fecha], Desde, Inicio - 1 ) ) )
+
+-- Tabla: Personas
+Cambio rotacion pp =
+IF ( NOT ISBLANK ( [Rotacion anterior %] ), ( [Rotacion del periodo %] - [Rotacion anterior %] ) * 100 )
+
+-- Tabla: Personas
+Contexto del periodo =
+"PERIODO · " & FORMAT ( MIN ( Calendario[Fecha] ), "dd/MM/yyyy" ) & " — " & FORMAT ( MAX ( Calendario[Fecha] ), "dd/MM/yyyy" ) & "  |  " & IF ( HASONEVALUE ( Personas[Departamento] ), SELECTEDVALUE ( Personas[Departamento] ), "Varios / todos los departamentos" )
+
+-- Tabla: Personas
+Lectura ejecutiva =
+"BALANCE · " & FORMAT ( [Plantilla al inicio], "#,0" ) & " al inicio + " & FORMAT ( [Altas del periodo], "#,0" ) & " altas − " & FORMAT ( [Bajas del periodo], "#,0" ) & " bajas = " & FORMAT ( [Plantilla al cierre], "#,0" ) & " al cierre.  |  Rotación: " & IF ( ISBLANK ( [Rotacion del periodo %] ), "sin base", FORMAT ( [Rotacion del periodo %], "0.0%" ) ) & ". Revisar tasas y tamaño de cada área."
+
+-- Tabla: BajasMedicas
 Episodios de baja médica =
-VAR InicioPeriodo = MIN ( Calendario[Fecha] )
-VAR FinPeriodo = MAX ( Calendario[Fecha] )
-RETURN
-CALCULATE (
-    DISTINCTCOUNT ( BajasMedicas[EpisodioID] ),
-    REMOVEFILTERS ( Calendario ),
-    BajasMedicas[FechaInicio] <= FinPeriodo,
-    ISBLANK ( BajasMedicas[FechaFin] )
-        || BajasMedicas[FechaFin] >= InicioPeriodo
-)
+VAR Inicio = MIN ( Calendario[Fecha] )
+VAR Fin = MAX ( Calendario[Fecha] )
+RETURN IF ( ISEMPTY ( ALL ( BajasMedicas ) ), BLANK (), COALESCE ( COUNTROWS ( FILTER ( BajasMedicas,
+  VAR Desde = MAX ( Inicio, MAX ( BajasMedicas[FechaInicio], RELATED ( Personas[FechaAlta] ) ) )
+  VAR Hasta = MIN ( Fin, MIN ( COALESCE ( BajasMedicas[FechaFin], Fin ), COALESCE ( RELATED ( Personas[FechaBajaEmpresa] ), Fin + 1 ) - 1 ) )
+  RETURN Desde <= Hasta ) ), 0 ) )
 
--- 09 · Días de baja dentro del periodo
-Días de baja dentro del periodo =
-VAR InicioPeriodo = MIN ( Calendario[Fecha] )
-VAR FinPeriodo = MAX ( Calendario[Fecha] )
-RETURN
-SUMX (
-    FILTER (
-        BajasMedicas,
-        BajasMedicas[FechaInicio] <= FinPeriodo
-            && ( ISBLANK ( BajasMedicas[FechaFin] )
-                || BajasMedicas[FechaFin] >= InicioPeriodo )
-    ),
-    VAR InicioImputable = MAX ( BajasMedicas[FechaInicio], InicioPeriodo )
-    VAR FinImputable = MIN ( COALESCE ( BajasMedicas[FechaFin], FinPeriodo ), FinPeriodo )
-    RETURN DATEDIFF ( InicioImputable, FinImputable, DAY ) + 1
-)
+-- Tabla: BajasMedicas
+Personas con baja médica =
+VAR Inicio = MIN ( Calendario[Fecha] )
+VAR Fin = MAX ( Calendario[Fecha] )
+RETURN IF ( ISEMPTY ( ALL ( BajasMedicas ) ), BLANK (), COALESCE ( COUNTROWS ( SUMMARIZE ( FILTER ( BajasMedicas,
+  VAR Desde = MAX ( Inicio, MAX ( BajasMedicas[FechaInicio], RELATED ( Personas[FechaAlta] ) ) )
+  VAR Hasta = MIN ( Fin, MIN ( COALESCE ( BajasMedicas[FechaFin], Fin ), COALESCE ( RELATED ( Personas[FechaBajaEmpresa] ), Fin + 1 ) - 1 ) )
+  RETURN Desde <= Hasta ), BajasMedicas[PersonaID] ) ), 0 ) )
 
--- 10 · Personas con baja médica únicas
-Personas con baja médica (únicas) =
-VAR InicioPeriodo = MIN ( Calendario[Fecha] )
-VAR FinPeriodo = MAX ( Calendario[Fecha] )
-RETURN
-CALCULATE (
-    DISTINCTCOUNT ( BajasMedicas[PersonaID] ),
-    REMOVEFILTERS ( Calendario ),
-    BajasMedicas[FechaInicio] <= FinPeriodo,
-    COALESCE ( BajasMedicas[FechaFin], FinPeriodo ) >= InicioPeriodo
-)
+-- Tabla: BajasMedicas
+Días de baja =
+VAR Inicio = MIN ( Calendario[Fecha] )
+VAR Fin = MAX ( Calendario[Fecha] )
+RETURN IF ( ISEMPTY ( ALL ( BajasMedicas ) ), BLANK (),
+  COALESCE ( SUMX ( CALENDAR ( Inicio, Fin ),
+    VAR Dia = [Date]
+    RETURN COALESCE ( CALCULATE ( DISTINCTCOUNT ( BajasMedicas[PersonaID] ),
+      FILTER ( BajasMedicas, BajasMedicas[FechaInicio] <= Dia
+        && ( ISBLANK ( BajasMedicas[FechaFin] ) || BajasMedicas[FechaFin] >= Dia )
+        && RELATED ( Personas[FechaAlta] ) <= Dia
+        && ( ISBLANK ( RELATED ( Personas[FechaBajaEmpresa] ) ) || RELATED ( Personas[FechaBajaEmpresa] ) > Dia ) ) ), 0 ) ), 0 ) )
+
+-- Tabla: BajasMedicas
+Tasa absentismo % =
+DIVIDE ( [Días de baja], [Exposicion persona dias] )
+
+-- Tabla: BajasMedicas
+Dias baja por persona =
+DIVIDE ( [Días de baja], [Personas con baja médica] )
+
+-- Tabla: BajasMedicas
+Ausencia anterior % =
+VAR Inicio = MIN ( Calendario[Fecha] )
+VAR Fin = MAX ( Calendario[Fecha] )
+VAR Dias = INT ( Fin - Inicio ) + 1
+VAR Desde = Inicio - Dias
+VAR Cobertura = MINX ( ALL ( Calendario ), Calendario[Fecha] )
+RETURN IF ( Desde >= Cobertura, CALCULATE ( [Tasa absentismo %], REMOVEFILTERS ( Calendario ), DATESBETWEEN ( Calendario[Fecha], Desde, Inicio - 1 ) ) )
+
+-- Tabla: BajasMedicas
+Cambio ausencia pp =
+IF ( NOT ISBLANK ( [Ausencia anterior %] ), ( [Tasa absentismo %] - [Ausencia anterior %] ) * 100 )
+
+-- Tabla: BajasMedicas
+Ultimo inicio registrado =
+CALCULATE ( MAX ( BajasMedicas[FechaInicio] ), REMOVEFILTERS ( Calendario ) )
+
+-- Tabla: BajasMedicas
+Cobertura de ausencias =
+VAR Ultima = CALCULATE ( MAX ( BajasMedicas[FechaInicio] ), REMOVEFILTERS ( Calendario ) )
+RETURN IF ( ISBLANK ( Ultima ), "SIN REGISTROS MÉDICOS · Cobertura no confirmada", "FUENTE MÉDICA · Último inicio registrado: " & FORMAT ( Ultima, "dd/MM/yyyy" ) & ". Un cero no confirma ausencia de bajas ni cobertura completa." )

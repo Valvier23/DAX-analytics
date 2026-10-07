@@ -1,63 +1,200 @@
 table Personas
 	measure 'Plantilla al cierre' =
-			VAR FechaCorte = MAX ( Calendario[Fecha] )
-			RETURN CALCULATE ( DISTINCTCOUNT ( Personas[PersonaID] ), REMOVEFILTERS ( Calendario ), Personas[FechaAlta] <= FechaCorte, ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > FechaCorte )
-		formatString: 0
+			VAR Corte = MAX ( Calendario[Fecha] )
+			RETURN COALESCE ( COUNTROWS ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) ) ), 0 )
+		formatString: #,0
+		displayFolder: Indicadores
+
+	measure 'Plantilla al inicio' =
+			VAR Corte = MIN ( Calendario[Fecha] ) - 1
+			RETURN COALESCE ( COUNTROWS ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) ) ), 0 )
+		formatString: #,0
+		displayFolder: Indicadores
 
 	measure 'Altas del periodo' =
-			VAR InicioPeriodo = MIN ( Calendario[Fecha] )
-			VAR FinPeriodo = MAX ( Calendario[Fecha] )
-			RETURN CALCULATE ( DISTINCTCOUNT ( Personas[PersonaID] ), REMOVEFILTERS ( Calendario ), Personas[FechaAlta] >= InicioPeriodo, Personas[FechaAlta] <= FinPeriodo )
-		formatString: 0
+			VAR Inicio = MIN ( Calendario[Fecha] )
+			VAR Fin = MAX ( Calendario[Fecha] )
+			RETURN COALESCE ( COUNTROWS ( FILTER ( Personas, NOT ISBLANK ( Personas[FechaAlta] ) && Personas[FechaAlta] >= Inicio && Personas[FechaAlta] <= Fin ) ), 0 )
+		formatString: #,0
+		displayFolder: Indicadores
 
 	measure 'Bajas del periodo' =
-			VAR InicioPeriodo = MIN ( Calendario[Fecha] )
-			VAR FinPeriodo = MAX ( Calendario[Fecha] )
-			RETURN CALCULATE ( DISTINCTCOUNT ( Personas[PersonaID] ), REMOVEFILTERS ( Calendario ), NOT ISBLANK ( Personas[FechaBajaEmpresa] ), Personas[FechaBajaEmpresa] >= InicioPeriodo, Personas[FechaBajaEmpresa] <= FinPeriodo )
-		formatString: 0
+			VAR Inicio = MIN ( Calendario[Fecha] )
+			VAR Fin = MAX ( Calendario[Fecha] )
+			RETURN COALESCE ( COUNTROWS ( FILTER ( Personas, NOT ISBLANK ( Personas[FechaBajaEmpresa] ) && Personas[FechaBajaEmpresa] >= Inicio && Personas[FechaBajaEmpresa] <= Fin ) ), 0 )
+		formatString: #,0
+		displayFolder: Indicadores
 
-	measure 'Salario medio' = AVERAGE ( Personas[SalarioAnual] )
-		formatString: #,0 €
+	measure 'Dias del periodo' =
+			DATEDIFF ( MIN ( Calendario[Fecha] ), MAX ( Calendario[Fecha] ), DAY ) + 1
+		formatString: #,0
+		displayFolder: Indicadores
 
-	measure 'Rotacion anual %' = DIVIDE ( [Bajas del periodo], [Plantilla al cierre] )
-		formatString: 0.0 %
+	measure 'Exposicion persona dias' =
+			VAR Inicio = MIN ( Calendario[Fecha] )
+			VAR Fin = MAX ( Calendario[Fecha] )
+			RETURN COALESCE ( SUMX ( Personas, VAR Desde = MAX ( Inicio, Personas[FechaAlta] ) VAR Hasta = MIN ( Fin, COALESCE ( Personas[FechaBajaEmpresa], Fin + 1 ) - 1 ) RETURN MAX ( 0, INT ( Hasta - Desde ) + 1 ) ), 0 )
+		formatString: #,0
+		displayFolder: Indicadores
 
-	measure 'Edad media' = AVERAGE ( Personas[Edad] )
-		formatString: 0.0
+	measure 'Plantilla media diaria' =
+			DIVIDE ( [Exposicion persona dias], [Dias del periodo] )
+		formatString: #,0.0
+		displayFolder: Indicadores
 
-	measure 'Antiguedad media' = AVERAGE ( Personas[Antigüedad años] )
-		formatString: 0.0
+	measure 'Cambio neto' =
+			[Altas del periodo] - [Bajas del periodo]
+		formatString: +#,0;-#,0;0
+		displayFolder: Indicadores
 
-	measure 'Mujeres %' = DIVIDE ( CALCULATE ( [Plantilla al cierre], Personas[Sexo] = "F" ), [Plantilla al cierre] )
-		formatString: 0.0 %
+	measure 'Crecimiento neto %' =
+			DIVIDE ( [Cambio neto], [Plantilla al inicio] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Indicadores
 
-	measure 'Mujeres en plantilla' = CALCULATE ( [Plantilla al cierre], Personas[Sexo] = "F" )
-		formatString: 0
+	measure 'Rotacion del periodo %' =
+			DIVIDE ( [Bajas del periodo], [Plantilla media diaria] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Indicadores
 
-	measure 'Salario mediano' = MEDIAN ( Personas[SalarioAnual] )
-		formatString: #,0 €
+	measure 'Rotacion anual %' =
+			[Rotacion del periodo %]
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Compatibilidad; no anualizada
 
-	measure 'Coste salarial anual' = SUM ( Personas[SalarioAnual] )
-		formatString: #,0 €
+	measure 'Retencion cohorte inicial %' =
+			VAR Inicio = MIN ( Calendario[Fecha] )
+			VAR Fin = MAX ( Calendario[Fecha] )
+			VAR Cohorte = FILTER ( Personas, Personas[FechaAlta] < Inicio && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] >= Inicio ) )
+			RETURN DIVIDE ( COUNTROWS ( FILTER ( Cohorte, ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Fin ) ), COUNTROWS ( Cohorte ) )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Indicadores
+
+	measure 'Bajas antes de un ano' =
+			VAR Inicio = MIN ( Calendario[Fecha] )
+			VAR Fin = MAX ( Calendario[Fecha] )
+			RETURN COALESCE ( COUNTROWS ( FILTER ( Personas, NOT ISBLANK ( Personas[FechaBajaEmpresa] ) && Personas[FechaBajaEmpresa] >= Inicio && Personas[FechaBajaEmpresa] <= Fin && Personas[FechaBajaEmpresa] < EDATE ( Personas[FechaAlta], 12 ) ) ), 0 )
+		formatString: #,0
+		displayFolder: Indicadores
+
+	measure 'Salario medio' =
+			VAR Corte = MAX ( Calendario[Fecha] )
+			RETURN AVERAGEX ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && NOT ISBLANK ( Personas[SalarioAnual] ) && Personas[SalarioAnual] > 0 ), Personas[SalarioAnual] )
+		formatString: #,0 "€"
+		displayFolder: Indicadores
+
+	measure 'Salario mediano' =
+			VAR Corte = MAX ( Calendario[Fecha] )
+			RETURN MEDIANX ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && NOT ISBLANK ( Personas[SalarioAnual] ) && Personas[SalarioAnual] > 0 ), Personas[SalarioAnual] )
+		formatString: #,0 "€"
+		displayFolder: Indicadores
+
+	measure 'Coste salarial anual' =
+			VAR Corte = MAX ( Calendario[Fecha] )
+			RETURN SUMX ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && NOT ISBLANK ( Personas[SalarioAnual] ) && Personas[SalarioAnual] > 0 ), Personas[SalarioAnual] )
+		formatString: #,0 "€"
+		displayFolder: Indicadores
+
+	measure 'Personas con salario' =
+			VAR Corte = MAX ( Calendario[Fecha] )
+			RETURN COALESCE ( COUNTROWS ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && NOT ISBLANK ( Personas[SalarioAnual] ) && Personas[SalarioAnual] > 0 ) ), 0 )
+		formatString: #,0
+		displayFolder: Indicadores
+
+	measure 'Cobertura salarial %' =
+			DIVIDE ( [Personas con salario], [Plantilla al cierre] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Indicadores
+
+	measure 'Edad media' =
+			VAR Corte = MAX ( Calendario[Fecha] )
+			RETURN AVERAGEX ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && NOT ISBLANK ( Personas[FechaNacimiento] ) && Personas[FechaNacimiento] <= Corte ), VAR Nacimiento = Personas[FechaNacimiento] RETURN YEAR ( Corte ) - YEAR ( Nacimiento ) - IF ( FORMAT ( Corte, "MMdd" ) < FORMAT ( Nacimiento, "MMdd" ), 1, 0 ) )
+		formatString: #,0.0
+		displayFolder: Indicadores
+
+	measure 'Cobertura nacimiento %' =
+			VAR Corte = MAX ( Calendario[Fecha] )
+			RETURN DIVIDE ( COUNTROWS ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && NOT ISBLANK ( Personas[FechaNacimiento] ) && Personas[FechaNacimiento] <= Corte ) ), [Plantilla al cierre] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Indicadores
+
+	measure 'Lectura de calidad' =
+			VAR Base = [Plantilla al cierre]
+			VAR Salarios = Base - [Personas con salario]
+			VAR Nacimientos = ROUND ( Base * ( 1 - [Cobertura nacimiento %] ), 0 )
+			VAR Sexo = ROUND ( Base * ( 1 - [Cobertura sexo %] ), 0 )
+			RETURN IF ( Base = 0, "Sin plantilla en el corte", IF ( Salarios + Nacimientos + Sexo = 0, "Campos analizados completos", "Hay campos por completar" ) )
+		formatString: General
+		displayFolder: Indicadores
+
+	measure 'Plantilla por tramo de edad' =
+			VAR Corte = MAX ( Calendario[Fecha] )
+			VAR Desde = SELECTEDVALUE ( TramosEdad[Desde], 0 )
+			VAR Hasta = SELECTEDVALUE ( TramosEdad[Hasta], 999 )
+			RETURN COALESCE ( COUNTROWS ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && VAR Nacimiento = Personas[FechaNacimiento] VAR Valida = NOT ISBLANK ( Nacimiento ) && Nacimiento <= Corte VAR EdadCorte = YEAR ( Corte ) - YEAR ( Nacimiento ) - IF ( FORMAT ( Corte, "MMdd" ) < FORMAT ( Nacimiento, "MMdd" ), 1, 0 ) RETURN IF ( Desde = -1, NOT Valida, Valida && EdadCorte >= Desde && EdadCorte <= Hasta ) ) ), 0 )
+		formatString: #,0
+		displayFolder: Indicadores
+
+	measure 'Antiguedad media' =
+			VAR Corte = MAX ( Calendario[Fecha] )
+			RETURN AVERAGEX ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) ), DIVIDE ( DATEDIFF ( Personas[FechaAlta], Corte, DAY ), 365.25 ) )
+		formatString: #,0.0
+		displayFolder: Indicadores
+
+	measure 'Mujeres en plantilla' =
+			CALCULATE ( [Plantilla al cierre], KEEPFILTERS ( Personas[Sexo] = "F" ) )
+		formatString: #,0
+		displayFolder: Indicadores
+
+	measure 'Mujeres %' =
+			DIVIDE ( [Mujeres en plantilla], [Plantilla al cierre] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Indicadores
+
+	measure 'Cobertura sexo %' =
+			VAR Corte = MAX ( Calendario[Fecha] )
+			RETURN DIVIDE ( COUNTROWS ( FILTER ( Personas, Personas[FechaAlta] <= Corte && ( ISBLANK ( Personas[FechaBajaEmpresa] ) || Personas[FechaBajaEmpresa] > Corte ) && NOT ISBLANK ( Personas[Sexo] ) && Personas[Sexo] <> "" ) ), [Plantilla al cierre] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Indicadores
+
+	measure 'Representacion mujeres comparable %' =
+			IF ( [Plantilla al cierre] >= 10, [Mujeres %] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Indicadores
 
 	measure 'Brecha salarial %' =
-			VAR PuestosComparables =
-				FILTER (
-					VALUES ( Personas[PuestoTrabajo] ),
-					CALCULATE ( COUNTROWS ( Personas ), REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "F" ) > 0
-						&& CALCULATE ( COUNTROWS ( Personas ), REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "M" ) > 0
-				)
-			VAR BrechaPonderada =
-				SUMX (
-					PuestosComparables,
-					VAR SalarioMujeres = CALCULATE ( AVERAGE ( Personas[SalarioAnual] ), REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "F" )
-					VAR SalarioHombres = CALCULATE ( AVERAGE ( Personas[SalarioAnual] ), REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "M" )
-					VAR Peso = CALCULATE ( COUNTROWS ( Personas ), REMOVEFILTERS ( Personas[Sexo] ) )
-					RETURN DIVIDE ( SalarioHombres - SalarioMujeres, SalarioHombres ) * Peso
-				)
-			VAR PersonasComparables = SUMX ( PuestosComparables, CALCULATE ( COUNTROWS ( Personas ), REMOVEFILTERS ( Personas[Sexo] ) ) )
-			RETURN DIVIDE ( BrechaPonderada, PersonasComparables )
-		formatString: 0.0 %
+			VAR F = CALCULATE ( [Personas con salario], REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "F" )
+			VAR H = CALCULATE ( [Personas con salario], REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "M" )
+			VAR SF = CALCULATE ( [Salario medio], REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "F" )
+			VAR SH = CALCULATE ( [Salario medio], REMOVEFILTERS ( Personas[Sexo] ), Personas[Sexo] = "M" )
+			RETURN IF ( F >= 8 && H >= 8, DIVIDE ( SH - SF, SH ) )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Indicadores
+
+	measure 'Rotacion anterior %' =
+			VAR Inicio = MIN ( Calendario[Fecha] )
+			VAR Fin = MAX ( Calendario[Fecha] )
+			VAR Dias = INT ( Fin - Inicio ) + 1
+			VAR Desde = Inicio - Dias
+			VAR Cobertura = MINX ( ALL ( Calendario ), Calendario[Fecha] )
+			RETURN IF ( Desde >= Cobertura, CALCULATE ( [Rotacion del periodo %], REMOVEFILTERS ( Calendario ), DATESBETWEEN ( Calendario[Fecha], Desde, Inicio - 1 ) ) )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Indicadores
+
+	measure 'Cambio rotacion pp' =
+			IF ( NOT ISBLANK ( [Rotacion anterior %] ), ( [Rotacion del periodo %] - [Rotacion anterior %] ) * 100 )
+		formatString: +0.0 "pp";-0.0 "pp";0.0 "pp"
+		displayFolder: Indicadores
+
+	measure 'Contexto del periodo' =
+			"PERIODO · " & FORMAT ( MIN ( Calendario[Fecha] ), "dd/MM/yyyy" ) & " — " & FORMAT ( MAX ( Calendario[Fecha] ), "dd/MM/yyyy" ) & "  |  " & IF ( HASONEVALUE ( Personas[Departamento] ), SELECTEDVALUE ( Personas[Departamento] ), "Varios / todos los departamentos" )
+		formatString: General
+		displayFolder: Indicadores
+
+	measure 'Lectura ejecutiva' =
+			"BALANCE · " & FORMAT ( [Plantilla al inicio], "#,0" ) & " al inicio + " & FORMAT ( [Altas del periodo], "#,0" ) & " altas − " & FORMAT ( [Bajas del periodo], "#,0" ) & " bajas = " & FORMAT ( [Plantilla al cierre], "#,0" ) & " al cierre.  |  Rotación: " & IF ( ISBLANK ( [Rotacion del periodo %] ), "sin base", FORMAT ( [Rotacion del periodo %], "0.0%" ) ) & ". Revisar tasas y tamaño de cada área."
+		formatString: General
+		displayFolder: Indicadores
 
 	column PersonaID
 		dataType: string
@@ -131,15 +268,22 @@ table Personas
 	column JornadaSemanal
 		dataType: int64
 		sourceColumn: JornadaSemanal
-	column Edad = DATEDIFF ( Personas[FechaNacimiento], TODAY (), YEAR )
+	column Edad = IF ( NOT ISBLANK ( Personas[FechaNacimiento] ), VAR Corte = TODAY () VAR Nacimiento = Personas[FechaNacimiento] RETURN YEAR ( Corte ) - YEAR ( Nacimiento ) - IF ( FORMAT ( Corte, "MMdd" ) < FORMAT ( Nacimiento, "MMdd" ), 1, 0 ) )
 		dataType: int64
+		isHidden
 	column 'Tramo edad' = SWITCH ( TRUE (), Personas[Edad] < 30, "Menos de 30", Personas[Edad] < 40, "30–39", Personas[Edad] < 50, "40–49", Personas[Edad] < 60, "50–59", "60 o más" )
 		dataType: string
-	column 'Antigüedad años' = DATEDIFF ( Personas[FechaAlta], TODAY (), YEAR )
+		isHidden
+	column 'Antigüedad años' = DIVIDE ( DATEDIFF ( Personas[FechaAlta], COALESCE ( Personas[FechaBajaEmpresa], TODAY () ), DAY ), 365.25 )
 		dataType: int64
+		isHidden
 	column 'Tramo antigüedad' = SWITCH ( TRUE (), Personas[Antigüedad años] < 1, "Menos de 1 año", Personas[Antigüedad años] < 3, "1–2 años", Personas[Antigüedad años] < 5, "3–4 años", "5+ años" )
 		dataType: string
-	column 'Tramo salarial' = SWITCH ( TRUE (), Personas[SalarioAnual] < 30000, "< 30k", Personas[SalarioAnual] < 40000, "30k–40k", Personas[SalarioAnual] < 50000, "40k–50k", "50k+" )
+		isHidden
+	column 'Tramo salarial' = SWITCH ( TRUE (), ISBLANK ( Personas[SalarioAnual] ) || Personas[SalarioAnual] <= 0, "Sin dato", Personas[SalarioAnual] < 30000, "< 30k", Personas[SalarioAnual] < 40000, "30k–40k", Personas[SalarioAnual] < 50000, "40k–50k", "50k+" )
+		dataType: string
+
+	column 'Tramo antiguedad salida' = IF ( ISBLANK ( Personas[FechaBajaEmpresa] ), BLANK (), VAR Meses = DATEDIFF ( Personas[FechaAlta], Personas[FechaBajaEmpresa], DAY ) / 365.25 RETURN SWITCH ( TRUE (), Meses < 1, "01 · Menos de 1 año", Meses < 3, "02 · 1–2 años", Meses < 5, "03 · 3–4 años", "04 · 5+ años" ) )
 		dataType: string
 
 	partition Personas = m

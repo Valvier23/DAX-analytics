@@ -1,0 +1,6 @@
+relationship BajasMedicas_Personas
+	fromColumn: BajasMedicas.PersonaID
+	toColumn: Personas.PersonaID
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: oneDirection

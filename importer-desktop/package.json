@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "node test-core.js",
-    "dist:win": "electron-builder --win portable --x64"
+    "dist:win": "electron-builder --win portable --x64",
+    "generate": "node generate-report.cjs"
   },
   "dependencies": {
     "xlsx": "0.18.5"
@@ -23,7 +24,11 @@
       "preload.js",
       "core.js",
       "renderer/**/*",
-      "package.json"
+      "package.json",
+      "report-metrics.js",
+      "report-period.js",
+      "report-project.js",
+      "generate-report.cjs"
     ],
     "extraResources": [
       {
@@ -40,7 +45,9 @@
       "target": [
         {
           "target": "portable",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ],
       "artifactName": "PeopleAnalyticsImporter-Desktop-next.exe"

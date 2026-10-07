@@ -1,0 +1,20 @@
+table TramosEdad
+	column Tramo
+		dataType: string
+		sourceColumn: [Tramo]
+		sortByColumn: Orden
+	column Desde
+		dataType: int64
+		sourceColumn: [Desde]
+		isHidden
+	column Hasta
+		dataType: int64
+		sourceColumn: [Hasta]
+		isHidden
+	column Orden
+		dataType: int64
+		sourceColumn: [Orden]
+		isHidden
+	partition TramosEdad = calculated
+		mode: import
+		source = DATATABLE ( "Tramo", STRING, "Desde", INTEGER, "Hasta", INTEGER, "Orden", INTEGER, { { "Menos de 30", 0, 29, 1 }, { "30–39", 30, 39, 2 }, { "40–49", 40, 49, 3 }, { "50–59", 50, 59, 4 }, { "60 o más", 60, 999, 5 }, { "Sin dato válido", -1, -1, 6 } } )

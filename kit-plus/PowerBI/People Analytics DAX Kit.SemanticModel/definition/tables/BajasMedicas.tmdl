@@ -1,24 +1,73 @@
 table BajasMedicas
-	measure 'Personas con baja médica' =
-			VAR InicioPeriodo = MIN ( Calendario[Fecha] )
-			VAR FinPeriodo = MAX ( Calendario[Fecha] )
-			RETURN CALCULATE ( DISTINCTCOUNT ( BajasMedicas[PersonaID] ), REMOVEFILTERS ( Calendario ), BajasMedicas[FechaInicio] <= FinPeriodo, ISBLANK ( BajasMedicas[FechaFin] ) || BajasMedicas[FechaFin] >= InicioPeriodo )
-		formatString: 0
+	measure 'Episodios de baja médica' =
+			VAR Inicio = MIN ( Calendario[Fecha] )
+			VAR Fin = MAX ( Calendario[Fecha] )
+			RETURN IF ( ISEMPTY ( ALL ( BajasMedicas ) ), BLANK (), COALESCE ( COUNTROWS ( FILTER ( BajasMedicas,
+			  VAR Desde = MAX ( Inicio, MAX ( BajasMedicas[FechaInicio], RELATED ( Personas[FechaAlta] ) ) )
+			  VAR Hasta = MIN ( Fin, MIN ( COALESCE ( BajasMedicas[FechaFin], Fin ), COALESCE ( RELATED ( Personas[FechaBajaEmpresa] ), Fin + 1 ) - 1 ) )
+			  RETURN Desde <= Hasta ) ), 0 ) )
+		formatString: #,0
+		displayFolder: Indicadores
 
-	measure 'Episodios de baja médica' = DISTINCTCOUNT ( BajasMedicas[EpisodioID] )
-		formatString: 0
+	measure 'Personas con baja médica' =
+			VAR Inicio = MIN ( Calendario[Fecha] )
+			VAR Fin = MAX ( Calendario[Fecha] )
+			RETURN IF ( ISEMPTY ( ALL ( BajasMedicas ) ), BLANK (), COALESCE ( COUNTROWS ( SUMMARIZE ( FILTER ( BajasMedicas,
+			  VAR Desde = MAX ( Inicio, MAX ( BajasMedicas[FechaInicio], RELATED ( Personas[FechaAlta] ) ) )
+			  VAR Hasta = MIN ( Fin, MIN ( COALESCE ( BajasMedicas[FechaFin], Fin ), COALESCE ( RELATED ( Personas[FechaBajaEmpresa] ), Fin + 1 ) - 1 ) )
+			  RETURN Desde <= Hasta ), BajasMedicas[PersonaID] ) ), 0 ) )
+		formatString: #,0
+		displayFolder: Indicadores
 
 	measure 'Días de baja' =
-			VAR InicioPeriodo = MIN ( Calendario[Fecha] )
-			VAR FinPeriodo = MAX ( Calendario[Fecha] )
-			RETURN SUMX ( FILTER ( BajasMedicas, BajasMedicas[FechaInicio] <= FinPeriodo && ( ISBLANK ( BajasMedicas[FechaFin] ) || BajasMedicas[FechaFin] >= InicioPeriodo ) ), VAR InicioImputable = MAX ( BajasMedicas[FechaInicio], InicioPeriodo ) VAR FinImputable = MIN ( COALESCE ( BajasMedicas[FechaFin], FinPeriodo ), FinPeriodo ) RETURN DATEDIFF ( InicioImputable, FinImputable, DAY ) + 1 )
-		formatString: 0
+			VAR Inicio = MIN ( Calendario[Fecha] )
+			VAR Fin = MAX ( Calendario[Fecha] )
+			RETURN IF ( ISEMPTY ( ALL ( BajasMedicas ) ), BLANK (),
+			  COALESCE ( SUMX ( CALENDAR ( Inicio, Fin ),
+			    VAR Dia = [Date]
+			    RETURN COALESCE ( CALCULATE ( DISTINCTCOUNT ( BajasMedicas[PersonaID] ),
+			      FILTER ( BajasMedicas, BajasMedicas[FechaInicio] <= Dia
+			        && ( ISBLANK ( BajasMedicas[FechaFin] ) || BajasMedicas[FechaFin] >= Dia )
+			        && RELATED ( Personas[FechaAlta] ) <= Dia
+			        && ( ISBLANK ( RELATED ( Personas[FechaBajaEmpresa] ) ) || RELATED ( Personas[FechaBajaEmpresa] ) > Dia ) ) ), 0 ) ), 0 ) )
+		formatString: #,0
+		displayFolder: Indicadores
 
-	measure 'Tasa absentismo %' = DIVIDE ( [Días de baja], [Plantilla al cierre] * COUNTROWS ( VALUES ( Calendario[Fecha] ) ) )
-		formatString: 0.0 %
+	measure 'Tasa absentismo %' =
+			DIVIDE ( [Días de baja], [Exposicion persona dias] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Indicadores
 
-	measure 'Dias baja por persona' = DIVIDE ( [Días de baja], [Personas con baja médica] )
-		formatString: 0.0
+	measure 'Dias baja por persona' =
+			DIVIDE ( [Días de baja], [Personas con baja médica] )
+		formatString: #,0.0
+		displayFolder: Indicadores
+
+	measure 'Ausencia anterior %' =
+			VAR Inicio = MIN ( Calendario[Fecha] )
+			VAR Fin = MAX ( Calendario[Fecha] )
+			VAR Dias = INT ( Fin - Inicio ) + 1
+			VAR Desde = Inicio - Dias
+			VAR Cobertura = MINX ( ALL ( Calendario ), Calendario[Fecha] )
+			RETURN IF ( Desde >= Cobertura, CALCULATE ( [Tasa absentismo %], REMOVEFILTERS ( Calendario ), DATESBETWEEN ( Calendario[Fecha], Desde, Inicio - 1 ) ) )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Indicadores
+
+	measure 'Cambio ausencia pp' =
+			IF ( NOT ISBLANK ( [Ausencia anterior %] ), ( [Tasa absentismo %] - [Ausencia anterior %] ) * 100 )
+		formatString: +0.0 "pp";-0.0 "pp";0.0 "pp"
+		displayFolder: Indicadores
+
+	measure 'Ultimo inicio registrado' =
+			CALCULATE ( MAX ( BajasMedicas[FechaInicio] ), REMOVEFILTERS ( Calendario ) )
+		formatString: dd/MM/yyyy
+		displayFolder: Indicadores
+
+	measure 'Cobertura de ausencias' =
+			VAR Ultima = CALCULATE ( MAX ( BajasMedicas[FechaInicio] ), REMOVEFILTERS ( Calendario ) )
+			RETURN IF ( ISBLANK ( Ultima ), "SIN REGISTROS MÉDICOS · Cobertura no confirmada", "FUENTE MÉDICA · Último inicio registrado: " & FORMAT ( Ultima, "dd/MM/yyyy" ) & ". Un cero no confirma ausencia de bajas ni cobertura completa." )
+		formatString: General
+		displayFolder: Indicadores
 
 	column EpisodioID
 		dataType: string

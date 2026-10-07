@@ -1,48 +1,26 @@
 # People Analytics DAX Kit — Free
 
-Diez medidas base para construir un modelo de plantilla, rotación y absentismo en Power BI sin errores de solapamiento temporal.
+Informe de una página: plantilla, balance, rotación y ausencia registrada, con evolución y comparación por departamento.
 
-## Instalación
+## Uso
 
-### Opción rápida: informe incluido
+Selecciona el Excel y la edición Free en el importador, revisa el mapeo y genera el PBIP. Abre y actualiza en Power BI Desktop. Confirma el periodo y la cobertura con RR. HH. El importador propone desde el 1 de enero hasta la última fecha registrada; no acredita integridad de la fuente.
 
-1. Extrae todo el ZIP.
-2. Haz doble clic en `PeopleAnalyticsImporter.exe`, situado en la raíz del ZIP.
-3. Selecciona o arrastra tu Excel dentro del menú.
-4. Revisa el mapeo y pulsa `Generar CSV y abrir Power BI`.
+## Instalación manual
 
-### Opción manual
+Reutiliza preferentemente el PBIP y ajusta rutas CSV en Power Query. Contiene Personas (1) → BajasMedicas (*) en dirección única, Calendario desconectado y tabla auxiliar TramosEdad desconectada.
 
-1. Importa `personas.csv` (40 personas) y `bajas_medicas.csv` (28 episodios).
-2. Crea una tabla calendario continua llamada `Calendario` con una columna `Fecha`.
-3. Relaciona `Calendario[Fecha]` con ninguna de las fechas de Personas: las medidas aplican el periodo de forma explícita.
-4. Relaciona `Personas[PersonaID]` (1) con `BajasMedicas[PersonaID]` (*).
-5. Crea las medidas copiando cada bloque de `medidas.dax`.
+`medidas.dax` contiene medidas generadas desde el mismo modelo, con su tabla indicada; ya no son solo diez. Copiarlas requiere conservar nombres, relación, Calendario y TramosEdad. La definición auxiliar está en `PowerBI/People Analytics DAX Kit.SemanticModel/definition/tables/TramosEdad.tmdl`. No basta con copiar fórmulas sin dependencias.
 
-## Supuestos
+## Convenciones
 
-- Una fila por persona en `Personas`.
-- Una fila por episodio en `BajasMedicas`.
-- `FechaBajaEmpresa` vacía significa que la persona sigue activa.
-- `FechaFin` vacía significa que el episodio médico sigue abierto.
-- La rotación incluida es bajas del periodo / plantilla media diaria. Otras definiciones son posibles, pero deben declararse.
+- Alta incluida y baja de empresa excluida: primer día fuera de plantilla.
+- Inicio y fin médicos incluidos; fin vacío significa episodio abierto.
+- Rotación = bajas / plantilla media diaria, sin anualizar.
+- Ausencia = días naturales únicos persona/día / exposición persona/día, limitada al empleo.
+- Personas y episodios cuentan solo si aportan días imputables; personas únicas no se suman entre meses.
+- Salarios positivos informados de activos al cierre; organización y salarios del archivo actual, sin historia.
 
-## Advertencia metodológica
+Un cero médico no confirma cobertura completa; sin registros médicos globales se presenta sin dato. Consulta [metodología](../docs/report-methodology.md) y [diccionario](diccionario-datos.md).
 
-`Personas con baja médica` no debe sumarse entre meses: una persona puede aparecer en varios meses si el episodio los atraviesa. Para acumulados únicos usa `Personas con baja médica (únicas)`.
-
-Licencia: CC BY 4.0. Puedes usar y adaptar el material atribuyendo “People Analytics DAX Kit”.
-
-## Qué permite comprobar el dataset
-
-- Episodios que atraviesan dos meses.
-- Episodios abiertos sin fecha de fin.
-- Personas con más de un episodio.
-- Altas y bajas de empresa dentro del periodo.
-- Segmentación por departamento, centro, sexo, edad y salario.
-
-## Importador gráfico
-
-`PeopleAnalyticsImporter-Desktop.exe` abre una aplicación de escritorio independiente; no inicia Chrome, Edge, PowerShell ni un servidor web. Permite seleccionar o arrastrar un `.xlsx`, detecta sus hojas y cabeceras y propone un mapeo editable antes de generar los CSV.
-
-Las fechas se normalizan a `YYYY-MM-DD` y el puesto de trabajo se conserva como texto aunque contenga acentos, comas o saltos de línea. Al cerrar la ventana se termina el proceso completo.
+El ejemplo contiene 40 personas y 28 episodios. Los binarios/ZIP anteriores requieren recompilación para incorporar cambios fuente. Licencia del material: CC BY 4.0, atribución “People Analytics DAX Kit”.
