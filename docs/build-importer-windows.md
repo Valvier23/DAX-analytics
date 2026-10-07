@@ -17,6 +17,6 @@ Resultado: `importer-desktop/dist/PeopleAnalyticsImporter-Desktop-next.exe`. Inc
 
 Desde la raíz del repositorio, ejecutar `scripts/verify-packaged-importer.cjs` con el ejecutable de `dist/win-unpacked` en modo `ELECTRON_RUN_AS_NODE=1`. El script compara hashes de módulos y plantillas con sus fuentes y genera Demo y Plus a partir del Excel sintético. Restaurar la variable de entorno al terminar.
 
-La evidencia de esta compilación está en `outputs/compiled-app-verification/packaged-verification.json`: seis módulos comparados, 234 archivos de plantilla, generación de una página Demo y catorce Plus, sin abrir Power BI. También registra la huella SHA-256 del portable y la prueba de integridad del contenedor.
+La evidencia de esta compilación está en `outputs/compiled-app-verification/packaged-verification.json`: doce archivos de aplicación comparados, 234 archivos de plantilla, generación de una página Demo y catorce Plus en inglés y español, sin abrir Power BI. También registra la huella SHA-256 del portable y la prueba de integridad del contenedor.
 
 Esta prueba verifica el código incluido en el paquete y sus recursos; no prueba interacción con la interfaz del importador ni el render nativo de los PBIP.

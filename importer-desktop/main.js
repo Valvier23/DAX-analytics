@@ -3,17 +3,18 @@ const path = require("path");
 const fs = require("fs");
 const os = require("os");
 const core = require("./core");
+const {t} = require("./locale");
 
 app.disableHardwareAcceleration();
 
-function ensurePowerBiProject(projectDir, outputDir, edition = "demo") {
+function ensurePowerBiProject(projectDir, outputDir, edition = "demo", reportLanguage = "en") {
   const template = edition === "plus" ? "PowerBIPlus" : "PowerBI";
   const bundledDirs = app.isPackaged
     ? [path.join(process.resourcesPath, template), path.join(path.dirname(process.execPath), "resources", template)]
     : [path.resolve(__dirname, "..", edition === "plus" ? "kit-plus" : "kit-free", "PowerBI")];
   const templateDir = bundledDirs.find(dir => fs.existsSync(path.join(dir, "People Analytics DAX Kit.pbip")));
   if (!templateDir) throw new Error("No se encontró el proyecto Power BI incluido en el importador.");
-  return require("./report-project").createPowerBiProject({templateDir, projectDir, outputDir, edition});
+  return require("./report-project").createPowerBiProject({templateDir, projectDir, outputDir, edition, reportLanguage});
 }
 function createWindow() {
   const win = new BrowserWindow({
@@ -43,23 +44,23 @@ app.whenReady().then(() => {
   };
   ipcMain.handle("profiles:list", () => Object.keys(readProfiles()).sort());
   ipcMain.handle("profiles:load", (_event, name) => readProfiles()[name] || null);
-  ipcMain.handle("profiles:save", (_event, name, profile) => {
-    if (!/^[\p{L}\p{N} _.-]{1,60}$/u.test(name || "")) throw new Error("El nombre del perfil no es válido.");
+  ipcMain.handle("profiles:save", (_event, name, profile, language) => {
+    if (!/^[\p{L}\p{N} _.-]{1,60}$/u.test(name || "")) throw new Error(t("El nombre del perfil no es válido.",language));
     const profiles = readProfiles(); profiles[name] = profile;
     fs.writeFileSync(profilesPath, JSON.stringify(profiles, null, 2), "utf8");
     return Object.keys(profiles).sort();
   });
-  ipcMain.handle("choose-file", async () => {
+  ipcMain.handle("choose-file", async (_event, language) => {
     const result = await dialog.showOpenDialog({
-      title: "Selecciona el Excel de People Analytics",
+      title: t("Selecciona el Excel de People Analytics",language),
       properties: ["openFile"],
-      filters: [{ name: "Archivos Excel", extensions: ["xlsx", "xls"] }]
+      filters: [{ name: t("Archivos Excel",language), extensions: ["xlsx", "xls"] }]
     });
     return result.canceled ? null : result.filePaths[0];
   });
 
-  ipcMain.handle("analyze", async (_event, filePath) => {
-    if (!filePath || !fs.existsSync(filePath)) throw new Error("No se encuentra el archivo seleccionado.");
+  ipcMain.handle("analyze", async (_event, filePath, language) => {
+    if (!filePath || !fs.existsSync(filePath)) throw new Error(t("No se encuentra el archivo seleccionado.",language));
     const analysis = core.analyzeWorkbook(filePath);
     analysis.guesses = Object.fromEntries(analysis.sheets.map((sheet) => [sheet.name, {
       personas: core.guessMapping(sheet.headers, core.PERSONAS_FIELDS),
@@ -71,11 +72,11 @@ app.whenReady().then(() => {
   ipcMain.handle("convert", async (_event, config) => {
     const requiredPeople = ["PersonaID", "FechaAlta"];
     const missingPeople = requiredPeople.filter((field) => !config.personasMapping[field]);
-    if (missingPeople.length) throw new Error(`Falta mapear en Personas: ${missingPeople.join(", ")}.`);
+    if (missingPeople.length) throw new Error(t("Falta mapear en Personas: {fields}.",config.appLanguage,{fields:missingPeople.map(f=>t(f,config.appLanguage)).join(", ")}));
     if (config.bajasSheet) {
       const requiredLeave = ["EpisodioID", "PersonaID", "FechaInicio"];
       const missingLeave = requiredLeave.filter((field) => !config.bajasMapping[field]);
-      if (missingLeave.length) throw new Error(`Falta mapear en Bajas médicas: ${missingLeave.join(", ")}.`);
+      if (missingLeave.length) throw new Error(t("Falta mapear en Bajas médicas: {fields}.",config.appLanguage,{fields:missingLeave.map(f=>t(f,config.appLanguage)).join(", ")}));
     }
     const distributionDir = process.env.PORTABLE_EXECUTABLE_DIR || (app.isPackaged ? path.dirname(process.execPath) : path.resolve(__dirname, ".."));
     const outputDir = path.join(distributionDir, "datos-procesados");
@@ -83,14 +84,14 @@ app.whenReady().then(() => {
     const reportDir = fs.mkdtempSync(path.join(outputDir, "PowerBI-"));
     const result = core.convertWorkbook({ ...config, outputDir });
     try {
-      const pbip = ensurePowerBiProject(reportDir, outputDir, config.edition);
+      const pbip = ensurePowerBiProject(reportDir, outputDir, config.edition, config.reportLanguage);
       result.palette = core.applyPowerBiPalette(reportDir, config.colors);
       const openError = await shell.openPath(pbip);
       result.powerBiOpened = !openError;
       result.powerBiError = openError || "";
     } catch (error) {
       result.powerBiOpened = false;
-      result.powerBiError = `No se pudo crear el proyecto PBIP: ${error.message || String(error)}`;
+      result.powerBiError = t("No se pudo crear el proyecto PBIP: {error}",config.appLanguage,{error:t(error.message || String(error),config.appLanguage)});
     }
     return result;
   });

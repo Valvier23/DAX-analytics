@@ -28,7 +28,10 @@
       "report-metrics.js",
       "report-period.js",
       "report-project.js",
-      "generate-report.cjs"
+      "generate-report.cjs",
+      "locale.js",
+      "report-language.js",
+      "report-translations.json"
     ],
     "extraResources": [
       {

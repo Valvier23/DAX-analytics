@@ -1,17 +1,26 @@
 {
   "updated": "2026-10-08",
-  "revision": "panoramic-16-9",
-  "bytes": 81487127,
-  "executableSha256": "D25536C8C8C401A9248B6CA1F1E08916F271669AFF407B7D4755358BA3BF5622",
+  "revision": "bilingual-app-and-reports",
+  "bytes": 81494412,
+  "executableSha256": "71DB81DB6ACA6237530C16D16D50FAB372CCC6B2E2BF621FAF0FCAE6982A416F",
   "file": "people-analytics-dax-kit-free.zip",
-  "sha256": "0C658069E340423C7F4EED36D0F35728FC573AE832FAA70522535BA05863CB8E",
+  "sha256": "2D7D43F43C5C96C3D85B10546FC74C6668D621B7F6397B554A00BA6E7138985A",
+  "languages": [
+    "en",
+    "es"
+  ],
+  "defaultAppLanguage": "en",
+  "defaultReportLanguage": "en",
   "validation": {
     "plusExamplePages": 14,
-    "demoPages": 1,
     "packagedTemplateFiles": 234,
+    "demoPages": 1,
+    "packagedApplicationFiles": 12,
+    "nativeReportRenderVerified": false,
     "plusBasePages": 9,
     "powerBiOpened": false,
-    "automatedTests": 17,
-    "nativeRenderVerified": false
+    "headlessAppLanguageCombinations": 4,
+    "packagedLanguageScenarios": 4,
+    "automatedTests": 26
   }
 }

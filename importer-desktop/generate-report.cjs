@@ -9,9 +9,9 @@ function generate(config){
  const result=core.convertWorkbook({...config,outputDir});
  const projectDir=fs.mkdtempSync(path.join(outputDir,'PowerBI-'));
  const templateDir=path.resolve(__dirname,'..',edition==='plus'?'kit-plus':'kit-free','PowerBI');
- const project=createPowerBiProject({templateDir,projectDir,outputDir,edition});
+ const project=createPowerBiProject({templateDir,projectDir,outputDir,edition,reportLanguage:config.reportLanguage});
  core.applyPowerBiPalette(projectDir,config.colors);
- return {...result,project,powerBiOpened:false};
+ return {...result,project,reportLanguage:require('./locale').language(config.reportLanguage),powerBiOpened:false};
 }
 if(require.main===module){
  try{

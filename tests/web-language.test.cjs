@@ -10,7 +10,7 @@ test('español principal e inglés segundo, con textos y metadatos propios',()=>
  }
  const en=fs.readFileSync('docs/en.html','utf8');
  for(const leftover of ['Resumen de plantilla','Episodios iniciados','Cómo funciona','Datos de origen','Personas activas','es-ES'])assert.ok(!en.includes(leftover),leftover);
- assert.ok(en.includes('currently in Spanish'));
+ assert.ok(en.includes('Choose English or Spanish independently'));
 });
 test('el selector abre la versión elegida conservando la sección',()=>{
  for(const current of ['es','en']){

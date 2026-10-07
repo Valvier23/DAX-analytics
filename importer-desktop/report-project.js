@@ -1,11 +1,13 @@
 const fs=require('node:fs'),path=require('node:path');
 const {applyReportPeriod}=require('./report-period');
+const {applyReportLanguage}=require('./report-language');
+const {language}=require('./locale');
 const read=file=>JSON.parse(fs.readFileSync(file,'utf8'));
 const write=(file,doc)=>{fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,JSON.stringify(doc,null,2));};
 const literal=value=>({expr:{Literal:{Value:String(value)}}});
 const column=name=>({Column:{Expression:{SourceRef:{Entity:'Personas'}},Property:name}});
 function setText(visual,value){visual.visual.objects.general[0].properties.paragraphs[0].textRuns[0].value=value;return visual;}
-function applyDynamicPeoplePages(projectDir,profile){
+function applyDynamicPeoplePages(projectDir,profile,reportLanguage='en'){
  const fields=profile.fields||[],pages=profile.pages||[];
  for(const field of fields)if(!/^Extra_[a-z0-9_]+$/i.test(field.name)||!['number','text'].includes(field.type))throw Error('Campo adicional inválido');
  for(const page of pages)if(!/^[a-z0-9_-]+$/i.test(page.key)||!page.fields?.length||page.fields.some(f=>!fields.some(known=>known.name===f.name)))throw Error('Página adicional inválida');
@@ -32,7 +34,9 @@ function applyDynamicPeoplePages(projectDir,profile){
   const coverages=page.fields.map(f=>f.validCoverage??f.coverage),invalid=page.fields.reduce((sum,f)=>sum+(f.invalidCount||0),0);
   const minimum=Math.min(...coverages),maximum=Math.max(...coverages),range=minimum===maximum?`${minimum}%`:`entre ${minimum}% y ${maximum}%`;
   const fieldCount=page.fields.length===1?'1 campo adicional':`${page.fields.length} campos adicionales`;
-  setText(coverage,`${fieldCount} · Cobertura válida al importar: ${range}. Sin filtros.\n${invalid} valores no numéricos se han dejado en blanco. Revisa la escala y el significado de cada campo antes de comparar.`);visuals.push(coverage);
+  setText(coverage,language(reportLanguage)==='en'
+    ? `${page.fields.length} additional field${page.fields.length===1?'':'s'} · Valid coverage at import: ${minimum===maximum?minimum+'%':'between '+minimum+'% and '+maximum+'%'}. Unfiltered.\n${invalid} non-numeric values were left blank. Check each field’s scale and meaning before comparing.`
+    : `${fieldCount} · Cobertura válida al importar: ${range}. Sin filtros.\n${invalid} valores no numéricos se han dejado en blanco. Revisa la escala y el significado de cada campo antes de comparar.`);visuals.push(coverage);
   const detail=baseVisual('detail');Object.assign(detail.position,{y:296,height:520});
   detail.visual.visualContainerObjects.title[0].properties.text=literal("'Detalle de personas activas al cierre'");
   const cols=[{name:'Departamento',label:'Departamento'},{name:'PuestoTrabajo',label:'Puesto'},...page.fields,{name:'PersonaID',label:'ID persona'}];
@@ -46,7 +50,7 @@ function applyDynamicPeoplePages(projectDir,profile){
  }
  write(metadataPath,metadata);
 }
-function createPowerBiProject({templateDir,projectDir,outputDir,edition='demo'}){
+function createPowerBiProject({templateDir,projectDir,outputDir,edition='demo',reportLanguage='en'}){
  if(fs.existsSync(projectDir)&&fs.readdirSync(projectDir).length)throw Error('La carpeta del proyecto debe estar vacía para conservar informes existentes.');
  const pbip='People Analytics DAX Kit.pbip';if(!fs.existsSync(path.join(templateDir,pbip)))throw Error('No se encuentra la plantilla Power BI.');
  fs.cpSync(templateDir,projectDir,{recursive:true,filter:source=>!source.split(path.sep).some(p=>p==='.pbi'||p==='.git')});
@@ -56,8 +60,9 @@ function createPowerBiProject({templateDir,projectDir,outputDir,edition='demo'})
   const csvPath=path.join(path.resolve(outputDir),csv).replaceAll('"','""');
   fs.writeFileSync(file,fs.readFileSync(file,'utf8').replace(/File\.Contents\("[^"]+"\)/g,()=>`File.Contents("${csvPath}")`));
  }
- const profilePath=path.join(outputDir,'perfil_dataset.json');if(edition==='plus'&&fs.existsSync(profilePath))applyDynamicPeoplePages(projectDir,read(profilePath));
+ const profilePath=path.join(outputDir,'perfil_dataset.json');if(edition==='plus'&&fs.existsSync(profilePath))applyDynamicPeoplePages(projectDir,read(profilePath),reportLanguage);
  const periodPath=path.join(outputDir,'periodo_informe.json');if(fs.existsSync(periodPath)){const p=read(periodPath);applyReportPeriod(projectDir,p.startDate,p.endDate);}
+ applyReportLanguage(projectDir,reportLanguage);
  return path.join(projectDir,pbip);
 }
 module.exports={createPowerBiProject};

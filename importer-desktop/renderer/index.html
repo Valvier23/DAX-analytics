@@ -10,48 +10,54 @@
   <main>
     <header>
       <div class="logo">PA</div>
-      <div><p class="eyebrow">PEOPLE ANALYTICS DAX KIT</p><h1>Importador de Excel</h1></div>
-      <span class="local">100 % local</span>
+      <div><p class="eyebrow">PEOPLE ANALYTICS DAX KIT</p><h1 data-i18n="Importador de Excel">Importador de Excel</h1></div>
+      <span class="local" data-i18n="100 % local">100 % local</span>
     </header>
+    <section class="language-panel" aria-label="Language settings">
+      <label><span data-i18n="Idioma de la app">App language</span><select id="appLanguage"><option value="en">English</option><option value="es">Español</option></select></label>
+      <label><span data-i18n="Idioma del informe">Report language</span><select id="reportLanguage"><option value="en">English</option><option value="es">Español</option></select></label>
+      <p data-i18n="El idioma de la app cambia esta interfaz. El del informe se aplica a los informes nuevos.">App language changes this interface. Report language applies to newly generated reports.</p>
+    </section>
 
     <section id="dropZone" class="drop-zone">
       <div class="excel">X</div>
-      <h2>Arrastra aquí tu archivo Excel</h2>
-      <p>También puedes seleccionarlo manualmente. No se sube ningún dato a internet.</p>
-      <button id="chooseButton">Seleccionar Excel</button>
-      <small>Formatos admitidos: .xlsx y .xls</small>
+      <h2 data-i18n="Arrastra aquí tu archivo Excel">Arrastra aquí tu archivo Excel</h2>
+      <p data-i18n="También puedes seleccionarlo manualmente. No se sube ningún dato a internet.">También puedes seleccionarlo manualmente. No se sube ningún dato a internet.</p>
+      <button id="chooseButton" data-i18n="Seleccionar Excel">Seleccionar Excel</button>
+      <small data-i18n="Formatos admitidos: .xlsx y .xls">Formatos admitidos: .xlsx y .xls</small>
     </section>
 
     <section id="workspace" class="hidden">
-      <div class="file-card"><div><span>Archivo seleccionado</span><strong id="fileName"></strong></div><button id="changeButton" class="secondary">Cambiar archivo</button></div>
+      <div class="file-card"><div><span data-i18n="Archivo seleccionado">Archivo seleccionado</span><strong id="fileName"></strong></div><button id="changeButton" class="secondary" data-i18n="Cambiar archivo">Cambiar archivo</button></div>
       <div id="summary" class="summary"></div>
-      <div class="profiles"><label>Perfil de mapeo<select id="profileSelect"><option value="">Selecciona un perfil</option></select></label><button id="saveProfileButton" class="secondary">Guardar mapeo</button></div>
+      <div class="profiles"><label><span data-i18n="Perfil de mapeo">Perfil de mapeo</span><select id="profileSelect"><option value="" data-i18n="Selecciona un perfil">Selecciona un perfil</option></select></label><button id="saveProfileButton" class="secondary" data-i18n="Guardar mapeo">Guardar mapeo</button></div>
       <section class="palette-panel" aria-labelledby="paletteTitle">
-        <div><h3 id="paletteTitle">Estilo de Power BI</h3><p>El informe genera tonos claros, oscuros y complementarios a partir de estos dos colores.</p></div>
-        <label class="color-field">Color principal<input id="primaryColor" type="color" value="#123AA7"><output id="primaryHex">#123AA7</output></label>
-        <label class="color-field">Color secundario<input id="secondaryColor" type="color" value="#3569D4"><output id="secondaryHex">#3569D4</output></label>
+        <div><h3 id="paletteTitle" data-i18n="Estilo de Power BI">Estilo de Power BI</h3><p data-i18n="El informe genera tonos claros, oscuros y complementarios a partir de estos dos colores.">El informe genera tonos claros, oscuros y complementarios a partir de estos dos colores.</p></div>
+        <label class="color-field"><span data-i18n="Color principal">Color principal</span><input id="primaryColor" type="color" value="#123AA7"><output id="primaryHex">#123AA7</output></label>
+        <label class="color-field"><span data-i18n="Color secundario">Color secundario</span><input id="secondaryColor" type="color" value="#3569D4"><output id="secondaryHex">#3569D4</output></label>
       </section>
 
       <div class="mapping-grid">
         <article class="panel">
-          <div class="panel-title"><span>1</span><div><h3>Personas</h3><p>Plantilla, altas, bajas y segmentación</p></div></div>
-          <label>Hoja de Excel<select id="personasSheet"></select></label>
+          <div class="panel-title"><span>1</span><div><h3 data-i18n="Personas">Personas</h3><p data-i18n="Plantilla, altas, bajas y segmentación">Plantilla, altas, bajas y segmentación</p></div></div>
+          <label><span data-i18n="Hoja de Excel">Hoja de Excel</span><select id="personasSheet"></select></label>
           <div id="personasFields" class="fields"></div>
         </article>
         <article class="panel">
-          <div class="panel-title"><span>2</span><div><h3>Bajas médicas</h3><p>Episodios de absentismo (opcional)</p></div></div>
-          <label>Hoja de Excel<select id="bajasSheet"></select></label>
+          <div class="panel-title"><span>2</span><div><h3 data-i18n="Bajas médicas">Bajas médicas</h3><p data-i18n="Episodios de absentismo (opcional)">Episodios de absentismo (opcional)</p></div></div>
+          <label><span data-i18n="Hoja de Excel">Hoja de Excel</span><select id="bajasSheet"></select></label>
           <div id="bajasFields" class="fields"></div>
         </article>
       </div>
       <div class="footer-action">
-        <div><strong>Los campos con * son obligatorios</strong><p>Se generarán los CSV y se abrirá Power BI automáticamente.</p></div>
-        <div class="report-actions"><button id="plusButton" class="secondary">Generar informe Plus</button><button id="convertButton">Generar informe Demo →</button></div>
+        <div><strong data-i18n="Los campos con * son obligatorios">Los campos con * son obligatorios</strong><p data-i18n="Se generarán los CSV y se abrirá Power BI automáticamente.">Se generarán los CSV y se abrirá Power BI automáticamente.</p></div>
+        <div class="report-actions"><button id="plusButton" class="secondary" data-i18n="Generar informe Plus">Generar informe Plus</button><button id="convertButton" data-i18n="Generar informe Demo →">Generar informe Demo →</button></div>
       </div>
     </section>
 
     <div id="status" class="status hidden"></div>
   </main>
+  <script src="../locale.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
