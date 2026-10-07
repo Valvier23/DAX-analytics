@@ -33,7 +33,7 @@ const {chromium}=require('playwright'),http=require('node:http'),fs=require('nod
    }
    assert.equal(await page.locator('#hero-chart svg').count(),1);
    const previewColour=await page.locator('.report-window').evaluate(e=>getComputedStyle(e).backgroundColor);
-   assert.equal(previewColour,theme==='dark'?'rgb(23, 40, 36)':'rgb(250, 251, 248)');
+   assert.equal(previewColour,theme==='dark'?'rgb(30, 30, 30)':'rgb(250, 251, 248)');
    if(width===1280)assert.ok((await page.locator('.report-stage').boundingBox()).width<=540);
    await page.locator('nav a[href="#descarga"]').click();assert.equal(page.url(),url);
    const navBox=await page.locator('nav').boundingBox(),sectionBox=await page.locator('#descarga').boundingBox();

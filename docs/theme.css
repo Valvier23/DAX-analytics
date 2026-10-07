@@ -2,23 +2,23 @@
 .theme-control{position:relative;display:block;font-size:12px;white-space:nowrap}
 .theme-control select{font:inherit;color:var(--ink);background:var(--paper);border:1px solid #cad1c4;border-radius:20px;padding:9px 32px 9px 13px;min-height:38px;min-width:96px;cursor:pointer;appearance:none;-webkit-appearance:none}
 select:focus-visible{outline:3px solid #72a935;outline-offset:4px}
-html[data-theme=dark]{color-scheme:dark;--paper:#111a1b;--ink:#e7efe9;--muted:#aebfb6}
+html[data-theme=dark]{color-scheme:dark;--paper:#141414;--ink:#f0f0f0;--muted:#b2b2b2}
 [data-theme=dark] .logo span,[data-theme=dark] h1 em{color:#b3dd76}
-[data-theme=dark] .pill,[data-theme=dark] .theme-control select{border-color:#465a51}
+[data-theme=dark] .pill,[data-theme=dark] .theme-control select{border-color:#414141}
 [data-theme=dark] .primary,[data-theme=dark] .tabs button[aria-selected=true]{background:#c7f36b;color:#142e32;border-color:#c7f36b}
-[data-theme=dark] .visual,[data-theme=dark] .demo-wrap{background:#1d2b28}
-[data-theme=dark] .visual:before{border-color:#465a51}
-[data-theme=dark] .sheet{background:#1d2b28;border-color:#465a51}
-[data-theme=dark] .sheet-title{background:#263832}
-[data-theme=dark] .sheet td,[data-theme=dark] .sheet th{border-color:#3a4d44}
+[data-theme=dark] .visual,[data-theme=dark] .demo-wrap{background:#202020}
+[data-theme=dark] .visual:before{border-color:#414141}
+[data-theme=dark] .sheet{background:#202020;border-color:#414141}
+[data-theme=dark] .sheet-title{background:#292929}
+[data-theme=dark] .sheet td,[data-theme=dark] .sheet th{border-color:#363636}
 [data-theme=dark] .bad{color:#f0ce91;background:#403522}
 [data-theme=dark] .transform{color:#b3dd76}
-[data-theme=dark] .dashboard,[data-theme=dark] .cta{background:#142e32;color:#fff}
+[data-theme=dark] .dashboard,[data-theme=dark] .cta{background:#191919;color:#fff}
 [data-theme=dark] .cta .pill{color:#142e32}
-[data-theme=dark] .strip{color:var(--muted);border-color:#3a4d44}
-[data-theme=dark] .step,[data-theme=dark] details{border-color:#3a4d44}
-[data-theme=dark] .number{color:#b3c7b9}
-[data-theme=dark] .tabs button{color:var(--ink);border-color:#59705e}
+[data-theme=dark] .strip{color:var(--muted);border-color:#363636}
+[data-theme=dark] .step,[data-theme=dark] details{border-color:#363636}
+[data-theme=dark] .number{color:#bdbdbd}
+[data-theme=dark] .tabs button{color:var(--ink);border-color:#505050}
 
 /* Preferences are separate from navigation and sit at the right edge. */
 nav{display:grid;grid-template-columns:auto minmax(0,1fr) auto;height:auto;min-height:86px;gap:24px;padding-top:16px;padding-bottom:16px}
@@ -33,18 +33,32 @@ nav .links{display:flex;justify-content:flex-end;gap:24px;min-width:0}
 /* Sticky navigation and report previews follow the selected appearance. */
 html{scroll-padding-top:var(--header-offset,110px)}
 body>nav{position:sticky;top:0;z-index:100;max-width:none;background:var(--paper);border-bottom:1px solid #dce1d5;box-shadow:0 4px 18px #142e3208;padding-left:max(24px,calc((100% - 1208px)/2));padding-right:max(24px,calc((100% - 1208px)/2))}
-[data-theme=dark] body>nav{border-color:#2b4039;box-shadow:0 4px 18px #0002}
-[data-theme=dark] .report-window{background:#172824;color:#e4eee5;border-color:#3a5447;--report-accent:#b7e775}
-[data-theme=dark] .report-toolbar,[data-theme=dark] .report-bottom,[data-theme=dark] .report-source{border-color:#364b40}
-[data-theme=dark] .preview-badge{background:#2b3d2a;border-color:#526949;color:#c7f36b}
+[data-theme=dark] body>nav{border-color:#303030;box-shadow:0 4px 18px #0002}
+[data-theme=dark] .report-window{background:#1e1e1e;color:#eeeeee;border-color:#404040;--report-accent:#b7e775}
+[data-theme=dark] .report-toolbar,[data-theme=dark] .report-bottom,[data-theme=dark] .report-source{border-color:#383838}
+[data-theme=dark] .preview-badge{background:#2b2b2b;border-color:#454545;color:#c7f36b}
 [data-theme=dark] .report-toolbar>b span{color:#c7f36b}
-[data-theme=dark] .report-period,[data-theme=dark] .report-source,[data-theme=dark] .report-chart-heading>span{color:#a4bca9}
-[data-theme=dark] .report-kpis>div{background:#20332c;border-color:#3a5142}
-[data-theme=dark] .report-kpis .report-kpi-main{background:#304526;border-color:#5f7b43}
-[data-theme=dark] .report-kpis small{color:#b9cbb3}
-[data-theme=dark] .report-kpis span{color:#c4dda9}
+[data-theme=dark] .report-period,[data-theme=dark] .report-source,[data-theme=dark] .report-chart-heading>span{color:#aaaaaa}
+[data-theme=dark] .report-kpis>div{background:#272727;border-color:#3b3b3b}
+[data-theme=dark] .report-kpis .report-kpi-main{background:#303030;border-color:#505050}
+[data-theme=dark] .report-kpis small{color:#bcbcbc}
+[data-theme=dark] .report-kpis span{color:#c5c5c5}
 [data-theme=dark] .report-chart{--report-accent:#b7e775}
-[data-theme=dark] .team-track{background:#334d3d}
+[data-theme=dark] .team-track{background:#3a3a3a}
 [data-theme=dark] .team-track i{background:#b7db7a}
-[data-theme=dark] .report-insight{background:#24483f;border:1px solid #3e6252}
+[data-theme=dark] .report-insight{background:#292929;border:1px solid #454545}
 @media(max-width:600px){body>nav{padding-left:20px;padding-right:20px}}
+
+/* Graphite surfaces keep colour reserved for actions and data. */
+[data-theme=dark] h1 em{color:#f0f0f0}
+[data-theme=dark] .report-stage{background:radial-gradient(ellipse at top right,#393939,#222 75%);box-shadow:0 25px 75px #0005}
+[data-theme=dark] .report-window{box-shadow:0 16px 40px #0004}
+[data-theme=dark] .roadmap-card:not(.roadmap-card-4){background:#202020;border-color:#383838}
+[data-theme=dark] .roadmap-card-4{background:radial-gradient(ellipse at top right,#383838,#222 75%);border-color:#484848}
+[data-theme=dark] .roadmap-card-1 .roadmap-number,[data-theme=dark] .roadmap-number,[data-theme=dark] .roadmap-card-4 .roadmap-label{color:#cecece}
+[data-theme=dark] .roadmap-card-4 p,[data-theme=dark] .hero .report-insight p{color:#bdbdbd}
+[data-theme=dark] .roadmap-outcome,[data-theme=dark] .roadmap-card-4 .roadmap-outcome{border-color:#404040;color:#e0e0e0}
+[data-theme=dark] .roadmap-track:before{background:#484848}
+[data-theme=dark] .roadmap-card:before{background:#999}
+[data-theme=dark] .feature-list li{border-color:#383838}
+[data-theme=dark] .preview-badge{color:#ccc}
