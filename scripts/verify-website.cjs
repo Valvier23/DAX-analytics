@@ -25,9 +25,16 @@ const {chromium}=require('playwright'),http=require('node:http'),fs=require('nod
    const text=await page.locator('body').innerText();assert.ok(!text.includes('undefined'));if(lang==='en')assert.ok(!/personas.xlsx|Episodios|Preguntas|Idioma/.test(text));
    const geometry=await page.evaluate(()=>({viewport:innerWidth,scroll:document.documentElement.scrollWidth}));assert.ok(geometry.scroll<=width,JSON.stringify(geometry));
    assert.equal(await page.locator('#roadmap .roadmap-card').count(),4);
+   assert.equal(await page.locator('.roadmap-note').count(),0);
+   for(const key of ['plantilla','movimientos','ausencias']){
+    await page.locator(`[data-area="${key}"]`).click();
+    assert.equal(await page.locator('#demo-chart svg').count(),1);
+    assert.ok(!(await page.locator('#demo-chart').innerHTML()).includes('NaN'));
+   }
+   assert.equal(await page.locator('#hero-chart svg').count(),1);
    for(const card of await page.locator('#roadmap .roadmap-card').all())assert.ok(await card.evaluate(e=>e.scrollWidth<=e.clientWidth),'Roadmap card overflow');
    if((width===390||width===1280)&&lang==='es')await page.locator('#roadmap').screenshot({path:path.join(out,`roadmap-${width}-${theme}.png`)});
-   if((width===390||width===1280)&&lang==='en'&&theme==='dark'){await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:path.join(out,`english-${width}.png`),fullPage:true});}
+   if((width===390||width===1280)&&lang==='en'&&theme==='dark'){await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:path.join(out,`english-${width}.png`),fullPage:true});await page.locator('.hero').screenshot({path:path.join(out,`hero-${width}.png`)});}
    cases++;
   }
   await page.reload();assert.equal(await page.locator('#language-select').inputValue(),'en');assert.equal(await page.locator('#theme-select').inputValue(),'dark');assert.equal(page.url(),url);
