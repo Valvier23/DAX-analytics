@@ -11,7 +11,7 @@ const html=`<!doctype html>
 <meta name="description" content="${copy.description}"><title>${copy.title}</title>
 <script src="theme.js?v=20261008"></script>
 <link rel="stylesheet" href="site.css?v=20261008-story"><link rel="stylesheet" href="theme.css?v=20261008-header">
-<script src="site-copy.js?v=20261008-story" defer></script><script src="demo.js?v=20261008-story" defer></script><script src="language.js?v=20261008-story" defer></script>
+<script src="site-copy.js?v=20261008-roadmap" defer></script><script src="demo.js?v=20261008-story" defer></script><script src="language.js?v=20261008-story" defer></script>
 </head><body>
 <nav aria-label="${copy.nav}" data-copy-aria="nav"><a class="logo" href="#">axzify<span>↗</span></a>
 <div class="links">${text('a','how','href="#como"')}${text('a','demo','href="#demo"')}${text('a','faq','href="#preguntas"')}${text('a','download','class="pill" href="#descarga"')}</div>
