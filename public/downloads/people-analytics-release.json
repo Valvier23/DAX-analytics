@@ -1,15 +1,17 @@
 {
-  "updated": "2026-10-07",
-  "bytes": 81487708,
-  "executableSha256": "A778487B24198FCB4AFAF1CC2999A048CE128EA0FB62B7CD83A90492094B3042",
+  "updated": "2026-10-08",
+  "revision": "panoramic-16-9",
+  "bytes": 81487127,
+  "executableSha256": "D25536C8C8C401A9248B6CA1F1E08916F271669AFF407B7D4755358BA3BF5622",
   "file": "people-analytics-dax-kit-free.zip",
-  "sha256": "53D1C1F5CE22DB318BEDAEAEB0D1202E02D9C34670F903FD2E62AECE50C3556D",
+  "sha256": "0C658069E340423C7F4EED36D0F35728FC573AE832FAA70522535BA05863CB8E",
   "validation": {
     "plusExamplePages": 14,
-    "plusBasePages": 9,
     "demoPages": 1,
-    "packagedTemplateFiles": 236,
+    "packagedTemplateFiles": 234,
+    "plusBasePages": 9,
     "powerBiOpened": false,
-    "automatedTests": 15
+    "automatedTests": 17,
+    "nativeRenderVerified": false
   }
 }

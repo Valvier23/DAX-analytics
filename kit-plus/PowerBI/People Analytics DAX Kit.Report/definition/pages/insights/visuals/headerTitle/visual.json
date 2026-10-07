@@ -3,10 +3,10 @@
   "name": "headerTitle",
   "position": {
     "x": 40,
-    "y": 35,
+    "y": 34,
     "z": 0,
-    "width": 1340,
-    "height": 38,
+    "width": 1520,
+    "height": 34,
     "tabOrder": 0
   },
   "visual": {

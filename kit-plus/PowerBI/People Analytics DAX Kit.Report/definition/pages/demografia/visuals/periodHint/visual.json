@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "periodHint",
   "position": {
-    "x": 680,
+    "x": 840,
     "y": 12,
     "z": 0,
     "width": 720,
-    "height": 22,
+    "height": 20,
     "tabOrder": 0
   },
   "visual": {

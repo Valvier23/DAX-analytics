@@ -3,10 +3,10 @@
   "name": "detail",
   "position": {
     "x": 40,
-    "y": 660,
+    "y": 576,
     "z": 30,
-    "width": 1360,
-    "height": 312,
+    "width": 1520,
+    "height": 240,
     "tabOrder": 30
   },
   "visual": {
@@ -88,7 +88,7 @@
               },
               "queryRef": "Personas.Cambio rotacion pp",
               "nativeQueryRef": "Cambio rotacion pp",
-              "displayName": "Variación · pp"
+              "displayName": "Rotación Δ pp"
             },
             {
               "field": {
@@ -118,7 +118,7 @@
               },
               "queryRef": "BajasMedicas.Cambio ausencia pp",
               "nativeQueryRef": "Cambio ausencia pp",
-              "displayName": "Variación · pp"
+              "displayName": "Ausencia Δ pp"
             }
           ]
         }
@@ -272,7 +272,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -304,7 +304,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "178D"
+                  "Value": "204D"
                 }
               }
             }
@@ -318,7 +318,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "178D"
+                  "Value": "204D"
                 }
               }
             }
@@ -332,7 +332,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "178D"
+                  "Value": "204D"
                 }
               }
             }
@@ -346,7 +346,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "178D"
+                  "Value": "204D"
                 }
               }
             }
@@ -360,7 +360,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "178D"
+                  "Value": "204D"
                 }
               }
             }
@@ -374,7 +374,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "178D"
+                  "Value": "204D"
                 }
               }
             }

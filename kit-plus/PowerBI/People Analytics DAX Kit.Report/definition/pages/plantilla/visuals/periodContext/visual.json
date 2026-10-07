@@ -3,10 +3,10 @@
   "name": "periodContext",
   "position": {
     "x": 40,
-    "y": 980,
+    "y": 832,
     "z": 10,
-    "width": 1360,
-    "height": 38,
+    "width": 1520,
+    "height": 20,
     "tabOrder": 10
   },
   "visual": {
@@ -181,7 +181,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }

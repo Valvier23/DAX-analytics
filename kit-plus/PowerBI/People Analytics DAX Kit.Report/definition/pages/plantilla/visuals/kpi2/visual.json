@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "kpi2",
   "position": {
-    "x": 728,
-    "y": 184,
+    "x": 812,
+    "y": 176,
     "z": 10,
-    "width": 328,
-    "height": 112,
+    "width": 362,
+    "height": 88,
     "tabOrder": 10
   },
   "visual": {
@@ -147,14 +147,14 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "4D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "4D"
                 }
               }
             },
@@ -181,7 +181,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "deptPlantilla",
   "position": {
-    "x": 728,
-    "y": 320,
+    "x": 812,
+    "y": 316,
     "z": 21,
-    "width": 672,
-    "height": 316,
+    "width": 748,
+    "height": 236,
     "tabOrder": 21
   },
   "visual": {
@@ -183,14 +183,14 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "8D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "16D"
                 }
               }
             },
@@ -217,7 +217,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }

@@ -3,10 +3,10 @@
   "name": "trendSalidas",
   "position": {
     "x": 40,
-    "y": 320,
+    "y": 316,
     "z": 20,
-    "width": 672,
-    "height": 316,
+    "width": 748,
+    "height": 236,
     "tabOrder": 20
   },
   "visual": {
@@ -49,24 +49,6 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Calendario"
-                  }
-                },
-                "Property": "MesEtiqueta"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
-        "isDefaultSort": false
       }
     },
     "visualContainerObjects": {
@@ -183,14 +165,14 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "8D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "16D"
                 }
               }
             },
@@ -217,7 +199,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }

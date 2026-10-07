@@ -3,10 +3,10 @@
   "name": "coverageMatrix",
   "position": {
     "x": 40,
-    "y": 320,
+    "y": 316,
     "z": 30,
-    "width": 870,
-    "height": 316,
+    "width": 960,
+    "height": 236,
     "tabOrder": 30
   },
   "visual": {
@@ -242,7 +242,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -274,7 +274,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "153D"
+                  "Value": "175D"
                 }
               }
             }
@@ -288,7 +288,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "153D"
+                  "Value": "175D"
                 }
               }
             }
@@ -302,7 +302,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "153D"
+                  "Value": "175D"
                 }
               }
             }
@@ -316,7 +316,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "153D"
+                  "Value": "175D"
                 }
               }
             }

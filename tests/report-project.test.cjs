@@ -23,6 +23,14 @@ test('generación sin Electron conserva los campos, filtros, corte y formato',()
  const pagesDir=path.join(projectDir,'People Analytics DAX Kit.Report/definition/pages');
  const pages=JSON.parse(fs.readFileSync(path.join(pagesDir,'pages.json')));assert.equal(pages.pageOrder.length,10);
  const dir=path.join(pagesDir,'auto-talento'),visual=name=>JSON.parse(fs.readFileSync(path.join(dir,'visuals',name,'visual.json')));
+ const definition=JSON.parse(fs.readFileSync(path.join(dir,'page.json')));
+ assert.equal(definition.width/definition.height,16/9);
+ const generated=fs.readdirSync(path.join(dir,'visuals')).map(visual);
+ for(const v of generated){const p=v.position;
+  assert.ok(p.x+p.width<=definition.width-32&&p.y+p.height<=definition.height-24,`${v.name}: margen del lienzo`);
+  assert.equal(v.visual.visualContainerObjects.visualHeader[0].properties.show.expr.Literal.Value,'false');
+  for(const other of generated){if(v===other)continue;const q=other.position;assert.ok(!(p.x<q.x+q.width&&p.x+p.width>q.x&&p.y<q.y+q.height&&p.y+p.height>q.y),`${v.name} solapa ${other.name}`);}
+ }
  assert.equal(visual('detail').visual.visualType,'tableEx');
  const labels=visual('detail').visual.query.queryState.Values.projections.map(p=>p.displayName);
  assert.ok(labels.includes('Desempeño'));assert.ok(labels.includes('Potencial'));

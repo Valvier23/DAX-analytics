@@ -60,7 +60,7 @@ medical+=m('Dias baja por persona','DIVIDE ( [Días de baja], [Personas con baja
 medical+=m('Ausencia anterior %',`${period}\nVAR Dias = INT ( Fin - Inicio ) + 1\nVAR Desde = Inicio - Dias\nVAR Cobertura = MINX ( ALL ( Calendario ), Calendario[Fecha] )\nRETURN IF ( Desde >= Cobertura, CALCULATE ( [Tasa absentismo %], REMOVEFILTERS ( Calendario ), DATESBETWEEN ( Calendario[Fecha], Desde, Inicio - 1 ) ) )`,pct);
 medical+=m('Cambio ausencia pp','IF ( NOT ISBLANK ( [Ausencia anterior %] ), ( [Tasa absentismo %] - [Ausencia anterior %] ) * 100 )','+0.0 "pp";-0.0 "pp";0.0 "pp"');
 medical+=m('Ultimo inicio registrado','CALCULATE ( MAX ( BajasMedicas[FechaInicio] ), REMOVEFILTERS ( Calendario ) )','dd/MM/yyyy');
-medical+=m('Cobertura de ausencias',`VAR Ultima = CALCULATE ( MAX ( BajasMedicas[FechaInicio] ), REMOVEFILTERS ( Calendario ) )\nRETURN IF ( ISBLANK ( Ultima ), "SIN REGISTROS MÉDICOS · Cobertura no confirmada", "FUENTE MÉDICA · Último inicio registrado: " & FORMAT ( Ultima, "dd/MM/yyyy" ) & ". Un cero no confirma ausencia de bajas ni cobertura completa." )`,'General');
+medical+=m('Cobertura de ausencias',`VAR Ultima = CALCULATE ( MAX ( BajasMedicas[FechaInicio] ), REMOVEFILTERS ( Calendario ) )\nRETURN IF ( ISBLANK ( Ultima ), "SIN REGISTROS MÉDICOS · Cobertura no confirmada", "REGISTROS DE AUSENCIA · Última fecha de inicio: " & FORMAT ( Ultima, "dd/MM/yyyy" ) & " · Cobertura temporal no confirmada." )`,'General');
 const calendar=`table Calendario
 \tcolumn Fecha
 \t\tdataType: dateTime

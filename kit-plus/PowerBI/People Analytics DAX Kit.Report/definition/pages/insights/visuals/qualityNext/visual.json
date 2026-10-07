@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "qualityNext",
   "position": {
-    "x": 938,
-    "y": 475,
+    "x": 1024,
+    "y": 420,
     "z": 0,
-    "width": 440,
-    "height": 140,
+    "width": 536,
+    "height": 128,
     "tabOrder": 0
   },
   "visual": {

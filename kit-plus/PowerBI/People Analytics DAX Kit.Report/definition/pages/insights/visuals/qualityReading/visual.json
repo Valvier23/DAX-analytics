@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "qualityReading",
   "position": {
-    "x": 938,
-    "y": 385,
+    "x": 1024,
+    "y": 368,
     "z": 10,
-    "width": 440,
-    "height": 70,
+    "width": 536,
+    "height": 40,
     "tabOrder": 10
   },
   "visual": {
@@ -181,7 +181,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }

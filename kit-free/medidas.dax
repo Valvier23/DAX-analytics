@@ -225,4 +225,4 @@ CALCULATE ( MAX ( BajasMedicas[FechaInicio] ), REMOVEFILTERS ( Calendario ) )
 -- Tabla: BajasMedicas
 Cobertura de ausencias =
 VAR Ultima = CALCULATE ( MAX ( BajasMedicas[FechaInicio] ), REMOVEFILTERS ( Calendario ) )
-RETURN IF ( ISBLANK ( Ultima ), "SIN REGISTROS MÉDICOS · Cobertura no confirmada", "FUENTE MÉDICA · Último inicio registrado: " & FORMAT ( Ultima, "dd/MM/yyyy" ) & ". Un cero no confirma ausencia de bajas ni cobertura completa." )
+RETURN IF ( ISBLANK ( Ultima ), "SIN REGISTROS MÉDICOS · Cobertura no confirmada", "REGISTROS DE AUSENCIA · Última fecha de inicio: " & FORMAT ( Ultima, "dd/MM/yyyy" ) & " · Cobertura temporal no confirmada." )
