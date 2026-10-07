@@ -24,7 +24,7 @@ const {chromium}=require('playwright'),http=require('node:http'),fs=require('nod
    assert.match(await page.locator('[data-copy="sourceFile"]').textContent(),lang==='en'?/employees.xlsx/:/personas.xlsx/);
    const text=await page.locator('body').innerText();assert.ok(!text.includes('undefined'));if(lang==='en')assert.ok(!/personas.xlsx|Episodios|Preguntas|Idioma/.test(text));
    const geometry=await page.evaluate(()=>({viewport:innerWidth,scroll:document.documentElement.scrollWidth}));assert.ok(geometry.scroll<=width,JSON.stringify(geometry));
-   assert.equal(await page.locator('#roadmap .roadmap-card').count(),4);
+   assert.equal(await page.locator('#roadmap .roadmap-card').count(),5);
    assert.equal(await page.locator('.roadmap-note').count(),0);
    for(const key of ['plantilla','movimientos','ausencias']){
     await page.locator(`[data-area="${key}"]`).click();

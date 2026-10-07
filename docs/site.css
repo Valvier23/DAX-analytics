@@ -9,4 +9,12 @@
 /* Keep the report secondary to the message, with room on the right. */
 .hero{max-width:1280px;grid-template-columns:1fr 1fr;gap:60px;padding-top:38px;padding-bottom:50px}.report-stage{max-width:540px;justify-self:end;padding:16px;width:100%}.report-heading h2{font-size:22px}.report-body{padding:16px}.report-kpis b{font-size:30px}.report-bottom{gap:12px}.report-toolbar{padding:12px 16px}@media(max-width:1050px){.hero{gap:28px}.report-stage{padding:12px}}@media(max-width:850px){.hero{grid-template-columns:1fr;gap:34px}.report-stage{max-width:540px;margin:0 auto}.hero h1{max-width:620px}}@media(max-width:520px){.report-stage{padding:10px}.report-body{padding:13px}.report-kpis b{font-size:28px}}
 
-.roadmap-more{margin:26px 0 0;text-align:right;font-size:18px;font-weight:600;letter-spacing:-.3px;color:var(--muted)}.roadmap-more:before{content:"+";display:inline-block;margin-right:10px;color:var(--ink)}
+/* The open-ended fifth chapter belongs to the roadmap itself. */
+.roadmap-track .roadmap-future{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px;padding:30px 34px;margin-top:8px;background:linear-gradient(115deg,#e9f0df,#f6f8f0);border-color:#c3d1b4;box-shadow:none}
+.future-mark{width:76px;height:76px;border-radius:22px;display:flex;align-items:center;justify-content:center;gap:7px;background:#dce9ca;border:1px solid #c3d6ae;transform:rotate(-6deg)}
+.future-mark span{height:8px;width:8px;border-radius:50%;background:#577442}.future-mark span:nth-child(2){opacity:.65}.future-mark span:nth-child(3){opacity:.35}
+.roadmap-future .roadmap-label{color:#61744f}.roadmap-future h3{font-size:32px;min-height:0;margin:8px 0;letter-spacing:-1px}.roadmap-future p{margin:0;max-width:680px}.future-arrow{font-size:44px;font-weight:400;color:#78945b;padding-left:15px}
+[data-theme=dark] .roadmap-track .roadmap-future{background:linear-gradient(115deg,#282828,#1d1d1d);border-color:#464646}
+[data-theme=dark] .future-mark{background:#333;border-color:#505050}[data-theme=dark] .future-mark span{background:#c7f36b}
+[data-theme=dark] .roadmap-future .roadmap-label{color:#bcbcbc}[data-theme=dark] .future-arrow{color:#c7f36b}
+@media(max-width:520px){.roadmap-track .roadmap-future{grid-template-columns:1fr auto;gap:20px;padding:23px;margin-top:0}.future-mark{width:56px;height:56px;border-radius:17px;grid-column:1}.future-copy{grid-column:1/-1;grid-row:2}.future-arrow{grid-column:2;grid-row:1;padding:0;font-size:36px}.roadmap-future h3{font-size:28px}.roadmap-future:before{top:44px}}
