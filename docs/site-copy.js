@@ -1,5 +1,6 @@
 (function(root,factory){const copy=factory();if(typeof module==='object'&&module.exports)module.exports=copy;else root.AxzifyCopy=copy;})(globalThis,()=>({
  es:{
+  account:'Mi cuenta',
   title:'Axzify — De los datos de personas a mejores decisiones',description:'Convierte tu Excel de RR. HH. en una visión clara de tu plantilla. People Analytics en Power BI, con tus datos bajo tu control.',
   nav:'Navegación principal',preferences:'Preferencias',language:'Idioma',theme:'Tema',system:'Sistema',light:'Claro',dark:'Oscuro',how:'Qué aporta',demo:'Ejemplos',faq:'Preguntas',download:'Descargar Axzify',
   heroTitle:'Tus datos.<br><em>Tu próxima<br>gran decisión.</em>',heroBody:'Transforma tu Excel de RR. HH. en una visión clara de tu plantilla. Descubre qué cambia, dónde mirar y qué conversación abrir.',heroCta:'Empieza con Axzify',heroSecondary:'Ver ejemplos de informes',
@@ -24,6 +25,7 @@
   areas:{plantilla:{title:'Tu plantilla, en perspectiva',chart:'Personas al cierre de cada mes',kpis:[['AL CIERRE DE JUNIO','820','Personas activas'],['AL INICIO DE ENERO','400','Personas activas'],['CAMBIO NETO','+420','820 − 400 personas']]},movimientos:{title:'Cada movimiento cuenta',chart:'Altas y bajas por mes',kpis:[['ALTAS','540','Enero — junio'],['BAJAS','120','Salidas del periodo'],['BALANCE','+420','540 altas − 120 bajas']]},ausencias:{title:'Otra mirada a la ausencia',chart:'Episodios iniciados por mes',kpis:[['EPISODIOS','78','Iniciados en enero — junio'],['PERSONAS','62','Con episodios en el periodo'],['JUNIO','17','Episodios iniciados']]}}
  },
  en:{
+  account:'My account',
   title:'Axzify — Turn people data into better decisions',description:'Turn your HR spreadsheet into a clear view of your workforce. People Analytics in Power BI, with your data under your control.',
   nav:'Main navigation',preferences:'Preferences',language:'Language',theme:'Theme',system:'System',light:'Light',dark:'Dark',how:'Why Axzify',demo:'Report previews',faq:'FAQ',download:'Download Axzify',
   heroTitle:'Your people data.<br><em>Your next<br>great decision.</em>',heroBody:'Turn your HR spreadsheet into a clear view of your workforce. See what is changing, where to look and which conversation to start.',heroCta:'Start with Axzify',heroSecondary:'See report previews',

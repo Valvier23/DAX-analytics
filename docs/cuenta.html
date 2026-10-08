@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://challenges.cloudflare.com; style-src 'self'; img-src 'self' data:; connect-src https://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Tu cuenta de Axzify: registro, acceso y recuperación de contraseña.">
+  <title>Mi cuenta · Axzify</title>
+  <script src="theme.js?v=20261008"></script>
+  <link rel="stylesheet" href="site.css?v=20261008-future">
+  <link rel="stylesheet" href="theme.css?v=20261008-graphite">
+  <link rel="stylesheet" href="auth.css?v=20261008">
+  <script src="auth-config.js?v=20261008" defer></script>
+  <script src="vendor/supabase.js?v=2.117.3" defer></script>
+  <script src="auth-page.mjs?v=20261008" type="module"></script>
+</head>
+<body>
+  <nav aria-label="Axzify">
+    <a class="logo" href="./">axzify<span>↗</span></a>
+    <a href="./" data-auth-copy="back">Volver a la web</a>
+    <div class="header-preferences">
+      <label class="theme-control"><span data-auth-copy="language">Idioma</span>
+        <select id="account-language" aria-label="Idioma"><option value="es">Español</option><option value="en">English</option></select>
+      </label>
+      <label class="theme-control"><span data-auth-copy="theme">Tema</span>
+        <select id="theme-select" aria-label="Tema"><option value="system" data-auth-copy="system">Sistema</option><option value="light" data-auth-copy="light">Claro</option><option value="dark" data-auth-copy="dark">Oscuro</option></select>
+      </label>
+    </div>
+  </nav>
+  <main class="account-shell">
+    <section class="account-intro">
+      <div class="eyebrow">AXZIFY · PEOPLE ANALYTICS</div>
+      <h1 data-auth-copy="headline">Tu próximo paso.<br>Tu propia cuenta.</h1>
+      <p data-auth-copy="intro">Un lugar para acceder a Axzify y gestionar tu cuenta.</p>
+      <p class="account-note" data-auth-copy="local">Los Excel que procesas con el importador siguen en tu equipo.</p>
+    </section>
+    <section class="account-card" aria-labelledby="account-title">
+      <h2 id="account-title">Mi cuenta</h2>
+      <p id="account-status" role="status" aria-live="polite">Preparando el acceso…</p>
+      <noscript>Activa JavaScript para utilizar el acceso seguro de Axzify.</noscript>
+      <div id="auth-forms" hidden>
+        <div class="account-switch" aria-label="Acceso" id="account-switch">
+          <button type="button" data-mode="login" data-auth-copy="login">Iniciar sesión</button>
+          <button type="button" data-mode="register" data-auth-copy="register">Crear cuenta</button>
+        </div>
+        <form id="account-form">
+          <fieldset id="account-fields" disabled>
+            <label id="name-field" hidden><span data-auth-copy="name">Nombre</span><input id="full-name" name="name" autocomplete="name" maxlength="100"></label>
+            <label id="email-field"><span data-auth-copy="email">Correo electrónico</span><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
+            <label id="password-field"><span data-auth-copy="password">Contraseña</span><input id="password" name="password" type="password" autocomplete="current-password" required aria-describedby="password-hint"></label>
+            <p id="password-hint" class="account-note" data-auth-copy="passwordHint" hidden>Usa al menos 12 caracteres. Puedes utilizar una frase larga (máximo 72 bytes).</p>
+            <label id="confirmation-field" hidden><span data-auth-copy="confirm">Repite la contraseña</span><input id="password-confirmation" name="confirmation" type="password" autocomplete="new-password"></label>
+            <p id="registration-note" class="account-note" data-auth-copy="registrationNote" hidden>Usamos tu nombre y correo para gestionar tu cuenta. Supabase gestiona el acceso y guarda una huella segura de tu contraseña.</p>
+            <div id="account-captcha"></div>
+            <button class="pill primary" id="submit-account" type="submit">Iniciar sesión</button>
+          </fieldset>
+        </form>
+        <button type="button" class="account-text-button" id="recover-button" data-auth-copy="forgot">He olvidado mi contraseña</button>
+        <button type="button" class="account-text-button" id="return-login" data-auth-copy="returnLogin" hidden>Volver al inicio de sesión</button>
+      </div>
+      <div id="account-profile" hidden>
+        <dl><dt data-auth-copy="name">Nombre</dt><dd id="profile-name"></dd><dt data-auth-copy="email">Correo electrónico</dt><dd id="profile-email"></dd><dt data-auth-copy="lastLogin">Último acceso</dt><dd id="profile-last-login"></dd></dl>
+        <p class="account-note" data-auth-copy="sessionNote">Por seguridad, la sesión se guarda solo en esta pestaña. Al salir se cerrarán también las demás sesiones de tu cuenta.</p>
+        <button type="button" class="pill" id="logout-button" data-auth-copy="logout">Cerrar sesión</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

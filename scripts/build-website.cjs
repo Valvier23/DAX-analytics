@@ -15,7 +15,7 @@ const html=`<!doctype html>
 <script src="site-copy.js?v=20261008-more-features" defer></script><script src="report-preview.js?v=20261008-visual" defer></script><script src="demo.js?v=20261008-visual" defer></script><script src="navigation.js?v=20261008-compact" defer></script><script src="language.js?v=20261008-story" defer></script>
 </head><body>
 <nav aria-label="${copy.nav}" data-copy-aria="nav"><a class="logo" href="#">axzify<span>↗</span></a>
-<div class="links">${text('a','how','href="#como"')}${text('a','demo','href="#demo"')}${text('a','roadmapNav','href="#roadmap"')}${text('a','download',`class="pill primary" href="${download}" download`)}</div>
+<div class="links">${text('a','how','href="#como"')}${text('a','demo','href="#demo"')}${text('a','roadmapNav','href="#roadmap"')}${text('a','account','href="cuenta.html"')}${text('a','download',`class="pill primary" href="${download}" download`)}</div>
 <div class="header-preferences" role="group" aria-label="${copy.preferences}" data-copy-aria="preferences">
 <label class="theme-control" for="language-select">${text('span','language','class="control-label"')}<select id="language-select" aria-label="${copy.language}" data-copy-aria="language"><option value="es" lang="es" selected>Español</option><option value="en" lang="en">English</option></select></label>
 <label class="theme-control" for="theme-select">${text('span','theme','class="control-label"')}<select id="theme-select" aria-label="${copy.theme}" data-copy-aria="theme">${text('option','system','value="system"')}${text('option','light','value="light"')}${text('option','dark','value="dark"')}</select></label>

@@ -1,0 +1,27 @@
+[hidden]{display:none!important}
+.account-shell{max-width:1160px;margin:0 auto;padding:70px 36px 100px;display:grid;grid-template-columns:1fr 440px;gap:70px;align-items:start}
+.account-intro h1{font-size:clamp(40px,5vw,64px);letter-spacing:-2.5px;line-height:1.08}
+.account-intro>p{max-width:430px}
+.account-intro h1{white-space:pre-line}
+.account-card{padding:32px;border:1px solid #cad1c4;border-radius:24px;background:var(--paper);min-width:0}
+.account-card h2{margin:0;font-size:26px;letter-spacing:-.6px}
+.account-card fieldset{border:0;padding:0;margin:0;min-width:0}
+.account-card label{display:grid;gap:8px;font-size:14px;margin:18px 0}
+.account-card input{width:100%;min-width:0;padding:13px;border:1px solid #95a49a;border-radius:10px;font:inherit;background:var(--paper);color:var(--ink)}
+.account-card input:focus-visible,.account-card button:focus-visible{outline:3px solid #72a935;outline-offset:3px}
+.account-card button:disabled{opacity:.55;cursor:wait}
+.account-card .primary{width:100%;justify-content:center;margin-top:8px}
+.account-switch{display:flex;gap:8px;margin-top:24px}
+.account-switch button{flex:1;border:1px solid #cad1c4;border-radius:9px;padding:12px 8px;color:var(--ink);background:transparent;font-size:14px}
+.account-switch button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.account-note{font-size:13px;line-height:1.6}
+.account-text-button{display:block;border:0;background:none;color:var(--ink);text-decoration:underline;text-underline-offset:4px;font-size:13px;margin:22px auto 0;padding:6px}
+#account-status{font-size:14px;min-height:24px;overflow-wrap:anywhere}
+#account-status[data-error=true]{color:#b32929}
+.account-card dt{font-size:12px;color:var(--muted);margin-top:22px}
+.account-card dd{margin:6px 0 0;overflow-wrap:anywhere;font-size:16px}
+.account-card dl{margin-bottom:28px}
+[data-theme=dark] .account-card,[data-theme=dark] .account-switch button{border-color:#414141}
+[data-theme=dark] #account-status[data-error=true]{color:#ffadad}
+@media(max-width:850px){.account-shell{grid-template-columns:1fr;max-width:620px;gap:25px;padding:35px 24px 60px}.account-intro h1{font-size:40px;margin:20px 0}.account-intro .account-note{display:none}.account-card{padding:25px}nav{padding-left:24px;padding-right:24px}}
+@media(max-width:420px){.account-shell{padding:24px 16px 45px}.account-card{padding:22px 18px}.account-intro h1{font-size:35px}nav{padding-left:16px;padding-right:16px}nav>a:not(.logo){font-size:12px}.header-preferences{flex-wrap:wrap}}

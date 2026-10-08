@@ -6,7 +6,11 @@ Landing estática bilingüe de Axzify / People Analytics DAX Kit. Español es el
 
 En Settings → Pages selecciona Deploy from a branch, la rama main y la carpeta /docs. No requiere compilación ni dependencias. El ZIP se descarga desde public/downloads de la rama main mediante una URL absoluta de GitHub, compatible con la publicación de /docs.
 
-## Editar y probar
+## Cuentas de usuario
+
+`cuenta.html` incorpora registro, login, recuperación y consulta del perfil mediante Supabase Auth. Antes de activarlo, seguir [la configuración del servicio](../supabase/README.md): proyecto Free, migración de perfiles, confirmación de email, SMTP y claves públicas. La configuración vacía deshabilita los formularios. El cliente oficial fijado se sirve desde `vendor`; no se almacenan contraseñas en GitHub. Las descargas siguen públicas.
+
+## Editar y probar la landing
 
 Edita los textos de ambos idiomas en `docs/site-copy.js` y la composición en `scripts/build-website.cjs`. Ejecuta `node scripts/build-website.cjs` para regenerar `docs/index.html`, que incluye contenido español aunque JavaScript esté desactivado. La publicación sirve los archivos ya generados y no necesita ejecutar ese comando.
 
