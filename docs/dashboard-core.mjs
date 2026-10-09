@@ -43,12 +43,34 @@ export function metrics(people, episodes, filters) {
   }
   const absenceDays = [...absent.values()].reduce((sum,days)=>sum+days.size,0);
   const group = key => Object.entries(atClose.reduce((out,{p})=>{const k=p[key] || '—';out[k]=(out[k]||0)+1;return out;},{})).sort((a,b)=>b[1]-a[1]);
+  const average = exposure/(end-start+1);
+  const leavers = [...intervals.values()].filter(p=>p.last+1>=start&&p.last+1<=end).length;
   return {initial:active(start-1).length, headcount:atClose.length,
     joiners:[...intervals.values()].filter(p=>p.first>=start&&p.first<=end).length,
-    leavers:[...intervals.values()].filter(p=>p.last+1>=start&&p.last+1<=end).length,
-    exposure,average:exposure/(end-start+1),absenceDays,episodes:episodeCount,affected:absent.size,
+    leavers,turnover:average ? leavers/average : null,
+    exposure,average,absenceDays,episodes:episodeCount,affected:absent.size,
     absenceRate:episodes.length && exposure ? absenceDays/exposure : null,
-    departments:group('Departamento'),centers:group('Centro')};
+    departments:group('Departamento'),centers:group('Centro'),composition:group('Sexo')};
+}
+export function departmentBreakdown(people, episodes, filters) {
+  const selected = people.filter(p=>(!filters.department || p.Departamento===filters.department)&&(!filters.center || p.Centro===filters.center));
+  const total = metrics(selected,episodes,filters).headcount;
+  return [...new Set(selected.map(p=>p.Departamento || '—'))].map(name=>{
+    const segment=selected.filter(p=>(p.Departamento || '—')===name);
+    const m=metrics(segment,episodes,{start:filters.start,end:filters.end});
+    return {name,...m,share:total ? m.headcount/total : 0};
+  }).filter(r=>r.exposure || r.joiners || r.leavers).sort((a,b)=>b.headcount-a.headcount || a.name.localeCompare(b.name));
+}
+// Annual snapshots; dates and organization in the file do not prove historical source coverage.
+export function annualComparison(people, episodes, filters) {
+  if(filters.start.slice(5)!=='01-01' || filters.end.slice(5)!=='12-31' || filters.start.slice(0,4)!==filters.end.slice(0,4)) throw new Error('Annual period required');
+  const previousYear=String(Number(filters.start.slice(0,4))-1);
+  const previousFilters={...filters,start:previousYear+'-01-01',end:previousYear+'-12-31'};
+  const firstEmployment=people.map(p=>p.FechaAlta).sort()[0];
+  const firstMedical=episodes.map(e=>e.FechaInicio).sort()[0];
+  return {current:metrics(people,episodes,filters),previous:metrics(people,episodes,previousFilters),previousYear,
+    workforceComparable:!!firstEmployment && firstEmployment<=previousFilters.end,
+    medicalComparable:!!firstMedical && firstMedical<=previousFilters.end};
 }
 export function monthlySeries(people, episodes, filters) {
   const start=day(filters.start),end=day(filters.end);if(end<start)throw new Error('Invalid period');

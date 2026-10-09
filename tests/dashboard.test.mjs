@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {parseCSV, metrics, monthlySeries} from '../docs/dashboard-core.mjs';
+import {parseCSV, metrics, monthlySeries, departmentBreakdown, annualComparison} from '../docs/dashboard-core.mjs';
 
 const people = [
  {PersonaID:'a',FechaAlta:'2024-01-01',FechaBajaEmpresa:'',Departamento:'Ventas',Centro:'Madrid'},
@@ -15,6 +15,27 @@ const episodes = [
 ];
 test('CSV handles BOM, quoted commas and escaped quotes',()=>{
  assert.deepEqual(parseCSV('\uFEFFA,B\r\n"one,two","say ""hi"""\r\n'),[{A:'one,two',B:'say "hi"'}]);
+});
+test('department detail reconciles counts and unique absence days with filtered totals',()=>{
+ const filters={start:'2025-01-01',end:'2025-01-05'};
+ const rows=departmentBreakdown(people,episodes,filters),total=metrics(people,episodes,filters);
+ assert.equal(rows.reduce((n,r)=>n+r.headcount,0),total.headcount);
+ assert.equal(rows.reduce((n,r)=>n+r.absenceDays,0),total.absenceDays);
+ const sales=rows.find(r=>r.name==='Ventas');assert.equal(sales.absenceDays,6);assert.equal(sales.share,.5);assert.equal(sales.absenceRate,6/7);
+ assert.equal(departmentBreakdown(people,episodes,{...filters,center:'Barcelona'}).length,1);
+});
+test('composition includes missing sex and departing people are excluded from closing population',()=>{
+ const enriched=people.map((p,i)=>({...p,Sexo:['F','M',''][i]}));
+ const m=metrics(enriched,episodes,{start:'2025-01-01',end:'2025-01-05'});
+ assert.deepEqual(m.composition,[['F',1],['—',1]]);
+ assert.equal(m.turnover,1/2.4);
+});
+test('annual comparison retains organization filters and suppresses unsupported prior medical year',()=>{
+ const c=annualComparison(people,episodes,{start:'2025-01-01',end:'2025-12-31',department:'Ventas'});
+ assert.equal(c.previous.headcount,1);assert.equal(c.current.headcount,1);assert.equal(c.previousYear,'2024');
+ assert.equal(c.workforceComparable,true);assert.equal(c.medicalComparable,true);
+ const early=annualComparison(people,episodes,{start:'2024-01-01',end:'2024-12-31'});
+ assert.equal(early.workforceComparable,false);assert.equal(early.medicalComparable,false);
 });
 test('employment boundaries reconcile movements and daily exposure',()=>{
  const m=metrics(people,episodes,{start:'2025-01-01',end:'2025-01-05'});

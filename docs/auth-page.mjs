@@ -1,6 +1,6 @@
 import {validateConfig, createAccountService} from './auth-core.mjs';
 import {copy} from './auth-copy.mjs';
-import {createDashboard} from './dashboard.mjs';
+import {createDashboard} from './dashboard.mjs?v=20261009-v2';
 
 const $ = id => document.getElementById(id);
 const dashboard = createDashboard($('account-dashboard'));
