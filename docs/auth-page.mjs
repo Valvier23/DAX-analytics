@@ -1,7 +1,9 @@
 import {validateConfig, createAccountService} from './auth-core.mjs';
 import {copy} from './auth-copy.mjs';
+import {createDashboard} from './dashboard.mjs';
 
 const $ = id => document.getElementById(id);
+const dashboard = createDashboard($('account-dashboard'));
 let language = 'es', mode = 'login', ready = false, busy = false, currentUser = null;
 let statusKey = 'loading', statusError = false, service, client, revision = 0, recovering = false;
 let captchaToken = '', captchaId;
@@ -21,6 +23,8 @@ function setBusy(value) {
 function render() {
   const updating = mode === 'update', registering = mode === 'register', resetting = mode === 'recover';
   const profile = currentUser && !updating;
+  document.querySelector('.account-shell').dataset.authenticated = String(!!profile);
+  if (profile) dashboard.show(language); else dashboard.hide();
   $('account-title').textContent = text(profile ? 'account' : mode);
   $('auth-forms').hidden = !ready || !!profile;
   $('account-profile').hidden = !profile;
@@ -71,6 +75,7 @@ function errorKey(error, fallback = 'failed') {
 }
 function clearProfile() {
   currentUser = null;
+  dashboard.hide();
   for (const id of ['profile-name','profile-email','profile-last-login']) $(id).textContent = '';
 }
 async function refreshUser() {
@@ -207,3 +212,4 @@ async function start() {
   } catch {history.replaceState(null, '', location.pathname);message('failed',true);}
 }
 start();
+
