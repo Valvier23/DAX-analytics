@@ -29,6 +29,8 @@ nav .links{display:flex;justify-content:flex-end;gap:24px;min-width:0}
 .theme-control select option{background:var(--paper);color:var(--ink)}
 @media(max-width:1050px){nav{gap:16px}nav .links{gap:16px}}
 @media(max-width:850px){nav .links a:not(.pill){display:none}}
+nav .links a[data-copy=account]{display:inline-flex;white-space:nowrap;font-weight:600}
+@media(max-width:420px){nav .links{gap:12px;flex-wrap:wrap}nav .links a[data-copy=account]{font-size:12px}}
 @media(max-width:600px){nav{grid-template-columns:1fr auto;gap:12px;padding-top:16px;padding-bottom:16px}.header-preferences{grid-column:1/-1;justify-self:end}nav .links{justify-self:end}.theme-control select{min-width:100px}}
 /* Sticky navigation and report previews follow the selected appearance. */
 html{scroll-padding-top:var(--header-offset,110px)}
@@ -62,3 +64,4 @@ body>nav{position:sticky;top:0;z-index:100;max-width:none;background:var(--paper
 [data-theme=dark] .roadmap-card:before{background:#999}
 [data-theme=dark] .feature-list li{border-color:#383838}
 [data-theme=dark] .preview-badge{color:#ccc}
+
