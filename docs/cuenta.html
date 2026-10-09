@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://challenges.cloudflare.com; style-src 'self'; img-src 'self' data:; connect-src https://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://challenges.cloudflare.com; style-src 'self'; img-src 'self' data:; connect-src 'self' https://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; base-uri 'none'; form-action 'none'; object-src 'none'">
   <meta name="robots" content="noindex">
   <meta name="description" content="Tu cuenta de Axzify: registro, acceso y recuperación de contraseña.">
   <title>Mi cuenta · Axzify</title>
@@ -12,9 +12,10 @@
   <link rel="stylesheet" href="site.css?v=20261008-future">
   <link rel="stylesheet" href="theme.css?v=20261008-graphite">
   <link rel="stylesheet" href="auth.css?v=20261008">
+  <link rel="stylesheet" href="dashboard.css?v=20261009">
   <script src="auth-config.js?v=20261008" defer></script>
   <script src="vendor/supabase.js?v=2.117.3" defer></script>
-  <script src="auth-page.mjs?v=20261008" type="module"></script>
+  <script src="auth-page.mjs?v=20261009" type="module"></script>
 </head>
 <body>
   <nav aria-label="Axzify">
@@ -66,6 +67,8 @@
         <button type="button" class="pill" id="logout-button" data-auth-copy="logout">Cerrar sesión</button>
       </div>
     </section>
+    <section id="account-dashboard" class="analytics" aria-label="People Analytics" hidden></section>
   </main>
 </body>
 </html>
+
